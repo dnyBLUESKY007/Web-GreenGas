@@ -14,6 +14,13 @@ disable-model-invocation: true
 
 分析工作区未提交改动，按模块归纳主题与细节，建议 1～3 条 commit message 及分批提交方案；**用户确认前只分析与建议，确认后才执行 `git add` + `git commit`。**
 
+## 关键约束（优先遵守）
+
+1. **Skill 接受 ≠ 提交授权。** Cursor 弹出「是否运行/接受 skill」只表示加载本 workflow；**绝不**据此进入 Step 7 或执行 `git add` / `git commit`。
+2. **Step 6 必须用 `AskQuestion`。** 完成分析后调用 `AskQuestion` 展示选项卡；不要仅用文字列表追问。若工具不可用，再退回文字询问。
+3. **AskQuestion 后立刻结束本回合。** 调用 `AskQuestion` 是本回合的**最后一步**；同一回合内不得继续 Shell 写操作，不得假设用户已授权。
+4. **Step 7 仅在 AskQuestion 明确选择「授权执行提交」后**（且用户在后续回合未改口）才可运行。
+
 不写 `docs/changelog.md`。Git commit 格式标准与安全准则见 [`.cursor/rules/git-workflow.mdc`](../../rules/git-workflow.mdc)。
 
 已有 commit 历史需整理时，使用 [git-commit-reorganize](../git-commit-reorganize/SKILL.md)，勿与本 skill 混用。
@@ -44,8 +51,8 @@ disable-model-invocation: true
 - [ ] Step 3: 分组生成目标 commit 列表
 - [ ] Step 4: 输出推荐 commit message
 - [ ] Step 5: 输出提交方案
-- [ ] Step 6: 停止，等待用户确认
-- [ ] Step 7: 用户确认后分批提交（可选）
+- [ ] Step 6: 调用 AskQuestion 展示选项卡，结束本回合
+- [ ] Step 7: AskQuestion 授权后分批提交（可选）
 ```
 
 ### Step 1 — 读取工作区（只读）
@@ -136,18 +143,33 @@ git commit -m "type(scope): subject"
 
 **在用户确认之前，不得运行：** `git add`、`git commit`、`git push`。
 
-### Step 6 — 停止并等待用户确认
+### Step 6 — 用 AskQuestion 收集确认并结束本回合
 
-完成 Step 1～5 后**必须停止**，在回复末尾明确询问：
+完成 Step 1～5 后，在回复中输出完整分析，然后**必须**调用 `AskQuestion`（不要仅用文字追问）。若 `AskQuestion` 不可用，再退回 Step 6 末尾的文字确认清单。
 
-- 是否采纳变更总结
-- 各组 commit message 用首选、备选或自定义
-- 是否同意拆分条数（或改为单条）
-- **是否授权执行提交**
+**`AskQuestion` 须作为本回合最后一次 tool call。** 调用后不得再运行 Shell、`git add`、`git commit` 或任何写操作。
 
-### Step 7 — 用户确认后分批提交
+一次 `AskQuestion` 调用包含以下 **3 个 single-select 问题**（`title` 建议：`提交方案确认`）：
 
-仅在用户明确授权后：
+| id | prompt | options（按 Step 3～5 结果动态填写 label） |
+|----|--------|-------------------------------------------|
+| `split_plan` | 采用哪种拆分方案？ | **采纳推荐拆分（N 条）**（N 与条数写入 label）/ **合并为更少条数** / **单条 commit 提交全部** / **其他（下一条消息说明）** |
+| `message_choice` | 各组 commit message 用哪套？ | **全部首选** / **全部备选** / **部分自定义（下一条消息说明）** |
+| `execute` | 下一步？ | **仅分析，暂不提交（推荐）** / **授权执行 git add + git commit** |
+
+规则：
+
+- `split_plan` 的「采纳推荐拆分」option label 须含实际条数（如 `采纳推荐拆分（5 条）`）。
+- 默认推荐 `execute` = **仅分析**；用户选此项时结束，不进入 Step 7。
+- 仅当 `execute` = **授权执行 git add + git commit** 时，下一回合才可进入 Step 7。
+- 用户选「其他」或「部分自定义」→ 等待下一条消息补充，仍不得自动提交。
+- **禁止**把 Cursor 加载 skill 的确认弹窗、或 agent 自行推断的「已授权」，当作 Step 7 许可。
+
+若 `AskQuestion` 不可用，在回复末尾用文字等价询问上述 3 点，并同样结束本回合。
+
+### Step 7 — AskQuestion 授权后分批提交
+
+仅在 AskQuestion 的 `execute` 选择了 **授权执行 git add + git commit**（且用户未在后续消息中撤回）后：
 
 1. 再次 `git status`；工作区若已变化则重新核对或中止。
 2. 按 Step 5 方案顺序，每组：
@@ -178,7 +200,7 @@ git commit -m "type(scope): subject"
 - 分批 add 顺序 / staging 说明 / 预期结果 / 风险
 
 ---
-请确认：是否采纳 message 与拆分方案？是否授权执行 commit？（确认前不会执行 git add 或 git commit）
+（Step 6：此处不文字追问；须调用 AskQuestion 展示上述 3 个选项卡，然后结束本回合）
 ```
 
 Step 7 完成后追加：
