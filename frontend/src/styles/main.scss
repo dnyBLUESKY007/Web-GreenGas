@@ -1,0 +1,21 @@
+@use 'base/variables' as *;
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'layout/container';
+
+@use 'components/button';
+@use 'components/navbar';
+@use 'components/footer';
+@use 'components/section-title';
+@use 'components/hero';
+@use 'components/cards';
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-content {
+  flex: 1;
+}

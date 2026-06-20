@@ -1,0 +1,30 @@
+[
+  {
+    "id": "marine",
+    "name": "Marine HVAC",
+    "category": "Marine",
+    "description": "Corrosion-resistant cooling systems for ships, offshore platforms, and shipyards.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "industrial-factory",
+    "name": "Industrial Factory Cooling",
+    "category": "Manufacturing",
+    "description": "High-capacity chillers and air handling for production lines and warehouses.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "high-temperature",
+    "name": "High-Temperature Applications",
+    "category": "Process Cooling",
+    "description": "Cooling solutions for furnaces, foundries, and heat-intensive processes.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "explosion-proof",
+    "name": "Explosion-Proof HVAC",
+    "category": "Hazardous Environments",
+    "description": "Certified units for chemical plants, oil & gas, and classified areas.",
+    "image": "/images/placeholder.svg"
+  }
+]

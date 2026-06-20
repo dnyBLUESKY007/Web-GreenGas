@@ -1,0 +1,26 @@
+[
+  {
+    "id": "factory-cooling-texas",
+    "name": "Factory Cooling Upgrade",
+    "industry": "Manufacturing",
+    "location": "Texas, USA",
+    "summary": "Custom chiller retrofit for a 12,000 m² production facility.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "marine-hvac-shipyard",
+    "name": "Marine HVAC Package",
+    "industry": "Marine",
+    "location": "Guangzhou, China",
+    "summary": "Explosion-safe cooling units for vessel engine room environments.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "data-center-cooling",
+    "name": "Data Center Precision Cooling",
+    "industry": "Technology",
+    "location": "Shenzhen, China",
+    "summary": "Redundant cooling design with 32% energy reduction vs. legacy system.",
+    "image": "/images/placeholder.svg"
+  }
+]

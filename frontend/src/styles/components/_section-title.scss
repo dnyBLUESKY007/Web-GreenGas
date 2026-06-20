@@ -1,0 +1,23 @@
+@use '../base/variables' as *;
+
+.section-title {
+  max-width: 40rem;
+  margin-bottom: 2rem;
+
+  &__eyebrow {
+    margin-bottom: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $color-primary;
+  }
+
+  &__heading {
+    margin-bottom: 0.75rem;
+  }
+
+  &__description {
+    font-size: 1.0625rem;
+  }
+}

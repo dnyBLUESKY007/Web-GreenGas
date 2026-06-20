@@ -1,0 +1,57 @@
+{
+  "name": "GREENGAS",
+  "tagline": "Custom Cooling Systems for Industrial Facilities",
+  "description": "GREENGAS designs, builds, and installs custom refrigeration and HVAC systems for industrial facilities, government projects, and specialized environments.",
+  "mission": "Deliver reliable, energy-efficient cooling solutions tailored to each client's operational requirements.",
+  "contact": [
+    {
+      "label": "Email",
+      "value": "info@greengas.com",
+      "href": "mailto:info@greengas.com"
+    },
+    {
+      "label": "Phone",
+      "value": "+1 (000) 000-0000",
+      "href": "tel:+10000000000"
+    },
+    {
+      "label": "WhatsApp",
+      "value": "+1 (000) 000-0000",
+      "href": "https://wa.me/10000000000"
+    },
+    {
+      "label": "WeChat",
+      "value": "greengas-official",
+      "href": "#"
+    },
+    {
+      "label": "QQ",
+      "value": "000000000",
+      "href": "#"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do you support custom system design?",
+      "answer": "Yes. Every project starts with site assessment and engineering design tailored to your facility, climate, and process requirements."
+    },
+    {
+      "question": "Can we visit your factory?",
+      "answer": "Factory visits can be arranged by appointment. Contact us to schedule a tour and meet our engineering team."
+    },
+    {
+      "question": "What industries do you serve?",
+      "answer": "We serve manufacturing, marine, data centers, chemical processing, food & beverage, and government infrastructure projects."
+    },
+    {
+      "question": "Do you provide installation and after-sales support?",
+      "answer": "Yes. We handle design, manufacturing, installation, commissioning, and ongoing maintenance support."
+    }
+  ],
+  "stats": [
+    { "value": "300+", "label": "Projects Delivered" },
+    { "value": "15+", "label": "Years Experience" },
+    { "value": "32%", "label": "Avg. Energy Savings" },
+    { "value": "24/7", "label": "Support Available" }
+  ]
+}

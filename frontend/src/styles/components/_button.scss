@@ -1,0 +1,21 @@
+@use '../base/variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background-color $transition-base, color $transition-base;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-bg;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}
