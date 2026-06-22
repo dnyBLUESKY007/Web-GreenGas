@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   server: {
     // 前导 `.` 为 Vite 通配符，覆盖该域名下所有子域
-    allowedHosts: ['.ngrok-free.app', '.ngrok.app', '.ngrok.io'],
+    allowedHosts: ['.ngrok-free.app', '.ngrok-free.dev', '.ngrok.app', '.ngrok.io'],
   },
   resolve: {
     alias: {
