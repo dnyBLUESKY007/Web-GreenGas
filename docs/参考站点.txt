@@ -1,0 +1,315 @@
+（本文件由AI总结，非必要不修改）
+
+# 参考站点汇总（内容与设计理念）
+
+> 本文档记录 LINK 列表中各页面的核心内容与网站设计理念，供 web-greengas 项目参考。
+
+---
+
+## 一、国内工业/特种空调企业（同业参考）
+
+### 1. 智盛宏明（智盛）
+**链接：** https://www.zshmkt.com/company/production
+
+**内容概要：**
+- 广东智盛宏明空调设备有限公司，2018 年成立，注册资本 5000 万元，隶属宏明集团（1993 年创立，总部广州，专注冷热传递与暖通）。
+- 集研发、设计、制造、营销、运营维护于一体，主营工业领域特种空调设备。
+- 产品矩阵：工业空调（风冷/水冷柜机、屋顶机、直膨机组、模块机、螺杆冷水机）、储能/预制舱空调、防腐空调、高温特种空调、恒温恒湿/机房空调、防爆空调、非标定制。
+- 应用领域：电力、储能、石化、机械、冶金、军工、造纸、玻璃、工业冷冻、精密控制、食品药品等。
+- 企业文化强调：以客户为中心、诚信、团队合作、持续创新、质量至上、社会责任。
+
+**设计理念：**
+- WordPress 定制主题，固定顶栏 + 多级下拉导航（产品分类嵌套子类）。
+- 子页面 Banner + 二级 Tab 导航（公司简介/历史/文化/荣誉/优势/质量/董事长致辞）。
+- 中英混排标题（如 "About hongming"），图文左右分栏展示企业介绍。
+- 价值观以卡片/列表块呈现；页头集成搜索、电话直拨（13602262517）。
+- 整体风格：传统企业官网，信息密度高，SEO 与百度统计集成，强调 B2B 信任背书。
+
+---
+
+### 2. 锐劲特
+**链接：** https://www.risita.com.cn/about
+
+**内容概要：**
+- 广东锐劲特空调设备有限公司，佛山 + 郑州双生产基地，集研发、设计、生产、销售、服务于一体。
+- 产品：工业空调、防腐/防爆空调、储能空调、电气室空调、防腐防爆低电空调、农业养殖空调、舒适性工业空调、中央空调、混动空调等。
+- 应用：储能、石化、机械、冶金、军工、造纸、皮革、玻璃、工业冷冻、精密控制、食品药品；服务国家电网、大唐、华润、中石化、中石油、福耀玻璃、玖龙纸业等重点工程。
+- 研发：20 人团队，30+ 研发专利；强调 ISO 质量/环保/职业健康安全体系。
+- 售后：全国近 200 名服务人员，7×24 小时响应，"卖一台设备，提供一流服务"。
+
+**设计理念：**
+- 与智盛宏明类似的 WordPress 工业主题结构（可能同系模板）。
+- 关于页采用 Tab 切换（企业简介 / 企业文化 / 社会责任 / 服务支持 / 生产设备），单页聚合多模块。
+- 左图右文 + 轮播/分页内容区 + 优酷企业视频嵌入 + 资质证书轮播。
+- 页头：Logo 左置、搜索、手机号 CTA；子 Banner 仅面包屑，视觉较简洁。
+- 强调"专业、创新、节能、可靠"与制造能力可视化（设备、检测中心、生产线）。
+
+---
+
+### 3. 日高
+**链接：** https://www.tzrigao.com/
+
+**内容概要：**
+- 日高冷机（江苏）有限公司， slogan「日新月异 步步登高」。
+- 专注特殊环境制冷：极限高低温、盐雾/酸性腐蚀、沙漠戈壁等；产品含机柜空调、方舱/撬体空调、工业分体、防爆、恒温恒湿、水气热交换器、防腐空调。
+- 六大行业应用：机电、电力、通讯、光伏储能、无人机、钢铁；列举西门子、南瑞、华为、三大运营商等合作案例。
+- 数据背书：2009 创立、3 天生产周期、1000+ 客户、100 万+ 累计销量。
+- 新闻动态展示核电、太湖清淤等标杆项目。
+
+**设计理念：**
+- 更现代化的企业站：首页全屏 Slogan + 视频入口 + 产品/应用/数据/客户 Logo/新闻多区块。
+- 行业应用以 Tab/卡片切换，每个行业配代表性客户与「Explore more」引导。
+- 数字 KPI 区块（年份、周期、客户数、销量）增强可信度。
+- 导航清晰分层：产品中心 → 行业应用 → 服务与技术 → 关于 → 新闻 → 联系。
+- 整体偏「特种环境专家」定位，视觉与内容更侧重场景化叙事。
+
+---
+
+### 4. 格灵
+**链接：** https://cn.greennb.com/aboutus.html
+
+**内容概要：**
+- 宁波格灵空调科技有限公司，高新技术企业，ISO9001/14001/45001 认证。
+- 品牌理念 **SPEC**：S 服务当先、P 专业团队、E 品质卓越、C 性价比高。
+- 产品：中央空调主机（水冷螺杆、涡旋模块、风冷热泵等）、单元机（直膨、水源热泵、工业空调、恒温恒湿、特种空调、粮仓空调、高温空调等）、末端与部件。
+- 服务钢铁、化工、电力、制药、军工；出口南非、澳洲、韩国、俄罗斯；国内服务中冶、河钢、鞍钢、包钢等。
+
+**设计理念：**
+- 传统 B2B 门户结构：顶部搜索（多字段）+ 左侧/顶部产品树 + 关于页 Tab（发展历程 / 公司团队）。
+- SPEC 四字母价值观视觉化突出；正文以长段落企业介绍为主，信息偏文档式。
+- 产品分类层级深、型号多，强调「环保、节能、高效」与工程案例背书。
+- 风格相对朴素，功能优先，适合产品型工业企业的 catalog 思路。
+
+---
+
+## 二、国际 HVAC / 制冷 / 工业温控品牌
+
+### 5. Lennox（雷诺士）
+**链接：** https://www.lennox.com/
+
+**内容概要：**
+- 美国百年 HVAC 品牌，Residential + Commercial 双线。
+- 住宅：Ultimate Comfort System、室内空气质量、Smart Thermostats。
+- 商业：VRF、屋顶机、ComfortSense 温控、CORE Unit Controller（降低 TCO）。
+- 强调「Perfect Air」— 让空气更凉、暖、干、净、好；可持续性与社区责任。
+
+**设计理念：**
+- 高端消费级视觉：全宽轮播 Hero（8 屏 residential/commercial 切换）、大图 + 短文案 + CTA。
+- 双受众并行（Homeowners / Dealers / Commercial Contractors），路径分流清晰。
+- 品牌叙事围绕「空气品质」而非单一产品；视频背景、 sustainability 独立区块。
+- 经销商生态位明确（LennoxPros、Become a Dealer），B2B2C 混合模式。
+
+---
+
+### 6. STULZ（施图兹）
+**链接：** https://www.stulz.com/en-us/products/detail/cyberaircwanddx/
+
+**内容概要：**
+- CyberAir CW/DX：数据中心 perimeter CRAC/CRAH，20 kW–1080 kW。
+- CW：行业最大 perimeter 冷水空调；DX：低噪涡旋压缩机、free-cooling、热 gas 再热。
+- 应用场景：小型/中型/大型机房、Hyperscale；Made in USA。
+- 品牌口号 **「Climate. Customized.»** — 用户驱动、定制设计、使命级可靠。
+
+**设计理念：**
+- 典型 B2B 产品详情页：Hero 标题 + 应用场景图标 + Tab（Overview / Benefits / Features / Technical Data）。
+- 技术参数表格化（kW/MBH/Tons/CFM）；文档下载（Data Sheet / IOM）。
+- 本地销售代表查找 + 长表单 Lead Gen（GDPR 合规勾选）。
+- 专业、克制、工程师友好；少营销话术，多规格与选型信息。
+
+---
+
+### 7. Copeland / Vilter（谷轮）
+**链接：** https://www.copeland.com/en-us/products/refrigeration/industrial-refrigeration
+
+**内容概要：**
+- 150 年工业制冷创新，单螺杆压缩机（氨、CO₂ 亚临界/跨临界）。
+- 行业：食品饮品、冷库、工业加工、冰场；强调可持续与低 GWP 冷媒。
+- 产品族：VSCU/VSTC/VSS/VSMC 单螺杆、VMC 往复式、Vission 控制器、Lifecycle Services。
+- 多个 Case Study 证明能效与可靠性。
+
+**设计理念：**
+- 企业级产品营销页：Jump to section 锚点导航、行业卡片分栏、产品 Tab 切换。
+- 可持续叙事贯穿（"Engineered for Sustainability"）；案例故事增强转化。
+- 清晰的「Contact / Where to buy / Service」行动路径。
+- 视觉：专业工业蓝调，内容模块化，兼顾技术深度与销售漏斗。
+
+---
+
+### 8. Aggreko（安凯）
+**链接：** https://www.aggreko.com/en-ca/products/hvac/cooling/air-conditioners
+
+**内容概要：**
+- 临时/租赁工业空调解决方案，1–70 吨，12000+ cfm。
+- 场景：应急备份、季节性调温、活动会展、维护窗口、工艺冷却。
+- 差异化：工程师主导选型、快速部署、第三方清洁检测、低噪 HushPAC、24/7 远程监控。
+- 覆盖食品、石化、施工、造纸、活动、医疗、油气、采矿等行业。
+
+**设计理念：**
+- 服务型 B2B 落地页：问题—方案—能力—行业—FAQ 结构。
+- 强调「Expert advice / Minimal disruption / Safe and secure」三大差异点。
+- 产品以吨位规格列表呈现（1/10/12/15…60 ton）；Brochure 下载 + Success stories。
+- Slogan「Keep your world ON™」；租赁模式决定内容侧重「快速响应」而非产品目录。
+
+---
+
+### 9. Daikin（大金）
+**链接：** https://www.daikin.com/products/ac
+
+**内容概要：**
+- 全球空调第一品牌定位，「Perfecting the Air」品牌主张。
+- 产品：分体/VRV/SkyAir/冷水机/屋顶机/集装箱/船用 HVAC/过滤器等全品类。
+- 优势：广谱产品线、 inverter 节能、紧凑灵活、全球售后。
+- 强调自产冷媒、碳中和战略、Case Study 与品牌故事。
+
+**设计理念：**
+- 全球化企业门户：mega menu 多层级、区域切换、IR/ESG/Careers 并列。
+- 产品页为分类索引 + Advantage 四象限 + Case Study 引流，而非单 SKU 详情。
+- 品牌内容（Perfecting the Air Stories、Tech-Knowledge）与产品并列，偏品牌中心主义。
+- 简洁、国际化、信息架构极深但导航统一。
+
+---
+
+### 10. ISP Canada
+**链接：** https://ispcanada.com/industrial-air-conditioning/
+
+**内容概要：**
+- 面向钢铁/采矿的重型工业空调，极端工况：冷凝温度至 190°F/88°C、腐蚀、强振动、重粉尘、 containment 气体。
+- 应用：MCC 间、PCR、操作室、天车驾驶室。
+- 产品线：Mill Duty AC、加压过滤单元、不锈钢空调、分体系统、240V DC 空调。
+
+**设计理念：**
+- 极简 niche 站点：首页即产品能力清单，几乎无花哨动效。
+- 用极限参数数字建立专业权威（190°F 等），而非品牌故事。
+- 典型北美小型工业品制造商网站：WordPress/静态页、SEO 导向、快速传达「 severe duty 」差异化。
+
+---
+
+## 三、重型装备 / 商用车（品牌与站点结构参考）
+
+### 11. 三一集团
+**链接：** https://www.sanygroup.com/
+
+**内容概要：**
+- 工程机械全球领先品牌，「品质改变世界」；产品涵盖土方、混凝土、起重、路面、桩工、煤炭、港口、风电、重卡、筑工、石油、环境、矿车、锂电、氢能等。
+- 品牌数据：全球 TOP3、灯塔工厂、千亿销售、福布斯 500 强；「三个三」战略（3000 亿 / 3000 工人 / 30000 工程师）。
+- 社会责任故事：土耳其救援、抗疫、国庆晚会国旗吊装。
+
+**设计理念：**
+- 超大型集团门户：巨型产品 mega menu（设备 + 电动化 + 解决方案三线）。
+- 移动端「向上轻扫」交互提示；新闻轮播 + 四大入口（研发/产品/解决方案/影像）。
+- 社会责任全屏 Story 卡片；底部多站点矩阵（海外/功能/国内/上市）。
+- 红色主色、信息极大丰富，体现「大国制造」规模感与民族品牌叙事。
+
+---
+
+### 12. SANY America
+**链接：** https://www.sanyamerica.com/
+
+**内容概要：**
+- 美国市场本土化：Construction / Port / Cranes / Piling 四大品类。
+- 卖点：行业最强标准保修、0% 60 期融资、Cummins/Deutz/Yanmar 等核心部件、「Made for America」。
+- 客户证言视频系列「Why I Choose SANY」；社交媒体 Feed 嵌入。
+
+**设计理念：**
+- 区域子品牌站：Hero 双行 Slogan（Built Around the World / Backed by Local Support）。
+- 证言驱动 + 促销 CTA 并列；产品线以四宫格大卡片 + 动词 CTA（Dig In / Load Up / Rise Up）。
+- YouTube/社交内容聚合；比集团站更 sales-oriented、本地化、经销商导向。
+
+---
+
+### 13. Volvo Trucks US（首页）
+**链接：** https://www.volvotrucks.us/
+
+**内容概要：**
+- 商用半挂车品牌，Slogan「Power. Performance. Purpose.»；EPA 2027 动力总成。
+- 车型线：VNL/VNR/VNR Electric/VNX/VHD/VAH，各配 Explore + Build Yours。
+- 五大承诺：燃油效率、安全、舒适、互联、可持续（电动/可再生柴油/燃料电池）。
+- Electromobility 专题；Find a dealer 地理搜索。
+
+**设计理念：**
+- 现代 AEM 驱动站点：全屏视频 Hero、车型 Carousel、卡片式承诺区。
+- 「Build Yours」Configurator 贯穿；视觉高端、留白多、摄影大片风。
+- B2B 但以品牌情感与驾驶员体验为切入点，非纯参数列表。
+
+---
+
+### 14. Volvo Trucks US（联系页）
+**链接：** https://www.volvotrucks.us/about-volvo/contact-us/
+
+**内容概要：**
+- 三条联系路径：问经销商（首选）、联系表单、FAQ。
+- FAQ 覆盖：配件购买、build sheet、购车流程、融资（Volvo Financial Services）、手册、保修、技术支持、工厂参观。
+- 总部：Greensboro, NC；客户满意度热线。
+
+**设计理念：**
+- 联系页不堆表单，而是**分流**：产品问题 → 经销商，非产品 → 表单/FAQ。
+- FAQ 结构化解答降低客服成本；强调「local dealer is the best resource」。
+- 简洁、实用、符合北美 B2B 售后习惯。
+
+---
+
+## 四、工业 MRO / 综合供应（信息架构参考）
+
+### 15. Global Industrial Canada
+**链接：** https://www.globalindustrial.ca/aboutUs
+
+**内容概要：**
+- 工业设备与用品一站式供应商，「Customer-centric Philosophy」。
+- 数十万 SKU、当日发货、竞争性定价、账户管理工具；专家团队按行业服务。
+
+**设计理念：**
+- 电商/MRO 平台 About 页：极短，四 bullet 价值点，无冗长品牌故事。
+- 顶部 persistent 销售热线、Chat、Knowledge Center、Browse History。
+- 功能导向，信任来自「规模 + 物流 + 价格」，而非制造叙事。
+
+---
+
+## 五、跨站点设计理念对照（web-greengas 可借鉴）
+
+| 维度 | 国内同业（智盛/锐劲/日高/格灵） | 国际 HVAC（Lennox/Daikin/STULZ 等） | 重工品牌（三一/Volvo/SANY US） |
+|------|--------------------------------|--------------------------------------|--------------------------------|
+| **首页焦点** | 产品分类 + 行业应用 + 案例 | 品牌主张 + 解决方案 + 双受众分流 | 产品 Carousel + 品牌故事 + CTA |
+| **导航** | 深层产品下拉 + 关于我们子 Tab | Mega menu + 区域/语言切换 | 车型/产品线 + Dealer Locator |
+| **信任建立** | 资质、重点工程客户、产量数据 | Case Study、认证、TCO/节能数据 | 排名/奖项、社会责任、证言视频 |
+| **视觉风格** | 传统企业站、信息密度高 | 现代留白、摄影/视频、模块化 | 大片 Hero、高端工业美学 |
+| **转化路径** | 电话 / 在线留言 | 表单 + 本地代表 + 文档下载 | Build Yours / Find Dealer |
+| **内容策略** | 特种工况 + 行业垂直 | 技术参数 + 可持续叙事 | 情感品牌 + 本地化服务 |
+
+**共性要点：**
+1. **行业场景化** — 优秀站点均按电力/储能/钢铁/数据中心等场景组织内容，而非仅列产品型号。
+2. **极端参数可视化** — 高温、防腐、防爆等差异化用具体数字和案例证明（日高、ISP、STULZ）。
+3. **B2B 信任链** — 资质证书、标杆客户 Logo、产量/年限 KPI、ISO 体系几乎标配。
+4. **清晰 CTA** — 电话、经销商、询价表单、文档下载至少其一在首屏可达。
+5. **分层信息架构** — 集团品牌（三一） vs 产品详情（STULZ） vs 区域市场（SANY America）页面结构应匹配受众。
+
+---
+
+## 原始链接列表
+
+```
+智盛宏明：https://www.zshmkt.com/company/production
+锐劲特：https://www.risita.com.cn/about
+日高空：https://www.tzrigao.com/
+格灵：https://cn.greennb.com/aboutus.html
+
+https://www.risita.com.cn/about
+https://www.sanygroup.com/
+https://www.volvotrucks.us/
+https://www.lennox.com/
+
+https://www.stulz.com/en-us/products/detail/cyberaircwanddx/?utm_term=perimeter+crah&utm_campaign=CyberAir+CW+%26+DX+-+Search+GSD&utm_source=adwords&utm_medium=ppc&hsa_acc=1707550408&hsa_cam=23514323263&hsa_grp=198016701008&hsa_ad=794817306477&hsa_src=g&hsa_tgt=kwd-2466117333991&hsa_kw=perimeter+crah&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=23514323263&gbraid=0AAAAADtnXy4UZmhoRxQ51yfxrxG0-qy9_&gclid=Cj0KCQjwi8nRBhDhARIsAHZf_pbwJhs2h22hAf7NCCyqkxGC4cUflMpUgw9yKWGBqejnTxTvmn946sEaAvZMEALw_wcB
+
+https://www.copeland.com/en-us/products/refrigeration/industrial-refrigeration?utm_source=google&utm_medium=search-ad&utm_campaign=7015G0000014583QAA-2305-hq-BrandAware-L1&&utm_term=industrial%20hvac&utm_content=viltermay25&gad_source=1
+
+https://www.aggreko.com/en-ca/products/hvac/cooling/air-conditioners
+
+https://www.daikin.com/products/ac
+
+https://ispcanada.com/industrial-air-conditioning/
+
+https://www.volvotrucks.us/about-volvo/contact-us/
+
+https://www.globalindustrial.ca/aboutUs
+
+https://www.sanyamerica.com/
+```
