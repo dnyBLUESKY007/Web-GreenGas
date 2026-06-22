@@ -1,31 +1,47 @@
 {
   "name": "GREENGAS",
   "tagline": "Custom Cooling Systems for Industrial Facilities",
+  "tagline_zh": "工业设施定制冷却系统",
+  "tagline_ru": "Индивидуальные системы охлаждения для промышленных объектов",
   "description": "GREENGAS designs, builds, and installs custom refrigeration and HVAC systems for industrial facilities, government projects, and specialized environments.",
+  "description_zh": "GREENGAS 为工业设施、政府项目及特殊环境设计、制造并安装定制制冷与暖通系统。",
+  "description_ru": "GREENGAS проектирует, производит и устанавливает индивидуальные системы охлаждения и ОВиК для промышленных объектов, государственных проектов и специализированных сред.",
   "mission": "Deliver reliable, energy-efficient cooling solutions tailored to each client's operational requirements.",
+  "mission_zh": "为每位客户的运营需求提供可靠、节能的定制冷却解决方案。",
+  "mission_ru": "Поставлять надёжные и энергоэффективные решения охлаждения, адаптированные под эксплуатационные требования каждого клиента.",
   "contact": [
     {
       "label": "Email",
+      "label_zh": "邮箱",
+      "label_ru": "Email",
       "value": "info@greengas.com",
       "href": "mailto:info@greengas.com"
     },
     {
       "label": "Phone",
+      "label_zh": "电话",
+      "label_ru": "Телефон",
       "value": "+1 (000) 000-0000",
       "href": "tel:+10000000000"
     },
     {
       "label": "WhatsApp",
+      "label_zh": "WhatsApp",
+      "label_ru": "WhatsApp",
       "value": "+1 (000) 000-0000",
       "href": "https://wa.me/10000000000"
     },
     {
       "label": "WeChat",
+      "label_zh": "微信",
+      "label_ru": "WeChat",
       "value": "greengas-official",
       "href": "#"
     },
     {
       "label": "QQ",
+      "label_zh": "QQ",
+      "label_ru": "QQ",
       "value": "000000000",
       "href": "#"
     }
@@ -33,25 +49,61 @@
   "faq": [
     {
       "question": "Do you support custom system design?",
-      "answer": "Yes. Every project starts with site assessment and engineering design tailored to your facility, climate, and process requirements."
+      "question_zh": "是否支持定制系统设计？",
+      "question_ru": "Вы поддерживаете индивидуальное проектирование систем?",
+      "answer": "Yes. Every project starts with site assessment and engineering design tailored to your facility, climate, and process requirements.",
+      "answer_zh": "支持。每个项目均从现场评估开始，并根据您的设施、气候及工艺需求进行工程设计。",
+      "answer_ru": "Да. Каждый проект начинается с оценки площадки и инженерного проектирования с учётом вашего объекта, климата и технологических требований."
     },
     {
       "question": "Can we visit your factory?",
-      "answer": "Factory visits can be arranged by appointment. Contact us to schedule a tour and meet our engineering team."
+      "question_zh": "可以参观工厂吗？",
+      "question_ru": "Можно ли посетить ваш завод?",
+      "answer": "Factory visits can be arranged by appointment. Contact us to schedule a tour and meet our engineering team.",
+      "answer_zh": "可预约参观工厂。请联系我们安排参观并与工程团队见面。",
+      "answer_ru": "Посещение завода можно организовать по предварительной записи. Свяжитесь с нами, чтобы назначить экскурсию и встретиться с инженерной командой."
     },
     {
       "question": "What industries do you serve?",
-      "answer": "We serve manufacturing, marine, data centers, chemical processing, food & beverage, and government infrastructure projects."
+      "question_zh": "服务哪些行业？",
+      "question_ru": "Каким отраслям вы обслуживаете?",
+      "answer": "We serve manufacturing, marine, data centers, chemical processing, food & beverage, and government infrastructure projects.",
+      "answer_zh": "我们服务制造业、船用、数据中心、化工、食品饮料及政府基础设施项目。",
+      "answer_ru": "Мы обслуживаем производство, морскую отрасль, дата-центры, химическую переработку, пищевую промышленность и государственные инфраструктурные проекты."
     },
     {
       "question": "Do you provide installation and after-sales support?",
-      "answer": "Yes. We handle design, manufacturing, installation, commissioning, and ongoing maintenance support."
+      "question_zh": "是否提供安装与售后支持？",
+      "question_ru": "Предоставляете ли вы монтаж и послепродажное обслуживание?",
+      "answer": "Yes. We handle design, manufacturing, installation, commissioning, and ongoing maintenance support.",
+      "answer_zh": "提供。我们负责设计、制造、安装、调试及持续维护支持。",
+      "answer_ru": "Да. Мы выполняем проектирование, производство, монтаж, пусконаладку и постоянное сервисное сопровождение."
     }
   ],
   "stats": [
-    { "value": "300+", "label": "Projects Delivered" },
-    { "value": "15+", "label": "Years Experience" },
-    { "value": "32%", "label": "Avg. Energy Savings" },
-    { "value": "24/7", "label": "Support Available" }
+    {
+      "value": "300+",
+      "label": "Projects Delivered",
+      "label_zh": "已交付项目",
+      "label_ru": "Реализованных проектов"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience",
+      "label_zh": "年行业经验",
+      "label_ru": "Лет опыта"
+    },
+    {
+      "value": "32%",
+      "label": "Avg. Energy Savings",
+      "label_zh": "平均节能",
+      "label_ru": "Средняя экономия энергии"
+    },
+    {
+      "value": "24/7",
+      "label": "Support Available",
+      "label_zh": "全天候支持",
+      "label_ru": "Поддержка 24/7"
+    }
   ]
 }

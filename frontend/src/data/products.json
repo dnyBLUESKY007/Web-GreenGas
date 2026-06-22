@@ -2,29 +2,53 @@
   {
     "id": "marine",
     "name": "Marine HVAC",
+    "name_zh": "船用暖通空调",
+    "name_ru": "Морские системы ОВиК",
     "category": "Marine",
+    "category_zh": "船用",
+    "category_ru": "Морской",
     "description": "Corrosion-resistant cooling systems for ships, offshore platforms, and shipyards.",
+    "description_zh": "适用于船舶、海上平台及船厂的防腐蚀冷却系统。",
+    "description_ru": "Антикоррозионные системы охлаждения для судов, морских платформ и верфей.",
     "image": "/images/placeholder.svg"
   },
   {
     "id": "industrial-factory",
     "name": "Industrial Factory Cooling",
+    "name_zh": "工业工厂冷却",
+    "name_ru": "Промышленное охлаждение заводов",
     "category": "Manufacturing",
+    "category_zh": "制造业",
+    "category_ru": "Производство",
     "description": "High-capacity chillers and air handling for production lines and warehouses.",
+    "description_zh": "面向生产线与仓储的高容量冷水机组与空气处理系统。",
+    "description_ru": "Высокопроизводительные чиллеры и системы обработки воздуха для производственных линий и складов.",
     "image": "/images/placeholder.svg"
   },
   {
     "id": "high-temperature",
     "name": "High-Temperature Applications",
+    "name_zh": "高温应用",
+    "name_ru": "Высокотемпературные применения",
     "category": "Process Cooling",
+    "category_zh": "工艺冷却",
+    "category_ru": "Технологическое охлаждение",
     "description": "Cooling solutions for furnaces, foundries, and heat-intensive processes.",
+    "description_zh": "适用于熔炉、铸造厂及高热工艺环境的冷却方案。",
+    "description_ru": "Решения охлаждения для печей, литейных цехов и теплоёмких технологических процессов.",
     "image": "/images/placeholder.svg"
   },
   {
     "id": "explosion-proof",
     "name": "Explosion-Proof HVAC",
+    "name_zh": "防爆暖通空调",
+    "name_ru": "Взрывозащищённые системы ОВиК",
     "category": "Hazardous Environments",
+    "category_zh": "危险环境",
+    "category_ru": "Опасные среды",
     "description": "Certified units for chemical plants, oil & gas, and classified areas.",
+    "description_zh": "适用于化工厂、油气及防爆区域的认证机组。",
+    "description_ru": "Сертифицированное оборудование для химических заводов, нефтегазовой отрасли и взрывоопасных зон.",
     "image": "/images/placeholder.svg"
   }
 ]

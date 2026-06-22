@@ -1,7 +1,8 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import companyData from '@/data/company.json';
-import { mountLayout } from '@/utils/mountLayout';
+import { t, td } from '@/i18n';
+import { initPage } from '@/utils/mountLayout';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
@@ -17,9 +18,9 @@ function renderAboutPage(): void {
   header.className = 'page-header';
   header.appendChild(
     createSectionTitle({
-      eyebrow: 'About',
+      eyebrow: t('about.eyebrow'),
       title: company.name,
-      description: company.description,
+      description: td(company, 'description'),
     }),
   );
 
@@ -27,8 +28,8 @@ function renderAboutPage(): void {
   missionSection.className = 'section';
   missionSection.innerHTML = `
     <div class="container about-block">
-      <h2 class="about-block__title">Our Mission</h2>
-      <p class="about-block__text">${company.mission}</p>
+      <h2 class="about-block__title">${t('about.mission.title')}</h2>
+      <p class="about-block__text">${td(company, 'mission')}</p>
     </div>
   `;
 
@@ -39,7 +40,7 @@ function renderAboutPage(): void {
       <img
         class="about-block__image"
         src="/images/placeholder.svg"
-        alt="GREENGAS manufacturing facility"
+        alt="${t('about.factory.alt')}"
         width="1200"
         height="640"
         loading="lazy"
@@ -50,5 +51,4 @@ function renderAboutPage(): void {
   main.replaceChildren(header, missionSection, factorySection);
 }
 
-mountLayout('about');
-renderAboutPage();
+initPage('about', renderAboutPage);

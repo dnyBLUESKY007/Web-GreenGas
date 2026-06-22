@@ -1,11 +1,12 @@
 import '@/styles/main.scss';
 import { createContactForm } from '@/components/contact-form/ContactForm';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { t } from '@/i18n';
 import {
   renderContactChannels,
   renderFaq,
 } from '@/pages/contact/renderContact';
-import { mountLayout } from '@/utils/mountLayout';
+import { initPage } from '@/utils/mountLayout';
 
 function renderContactPage(): void {
   const main = document.getElementById('page-content');
@@ -18,9 +19,9 @@ function renderContactPage(): void {
   header.className = 'page-header';
   header.appendChild(
     createSectionTitle({
-      eyebrow: 'Contact',
-      title: 'Get in Touch',
-      description: 'Reach us directly by email, phone, WhatsApp, WeChat, or QQ.',
+      eyebrow: t('contact.eyebrow'),
+      title: t('contact.title'),
+      description: t('contact.desc'),
     }),
   );
 
@@ -44,8 +45,8 @@ function renderContactPage(): void {
   faqContainer.className = 'container';
   faqContainer.appendChild(
     createSectionTitle({
-      eyebrow: 'FAQ',
-      title: 'Common Questions',
+      eyebrow: t('contact.faq.eyebrow'),
+      title: t('contact.faq.title'),
     }),
   );
   const faqMount = document.createElement('div');
@@ -59,5 +60,4 @@ function renderContactPage(): void {
   renderFaq(faqMount);
 }
 
-mountLayout('contact');
-renderContactPage();
+initPage('contact', renderContactPage);

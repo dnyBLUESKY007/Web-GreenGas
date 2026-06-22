@@ -1,11 +1,11 @@
 import type { NavItem, PageId } from '@/types';
 
 export const NAV_ITEMS: readonly NavItem[] = [
-  { id: 'home', label: 'Home', href: '/' },
-  { id: 'solutions', label: 'Solutions', href: '/solutions/' },
-  { id: 'about', label: 'About', href: '/about/' },
-  { id: 'news', label: 'News', href: '/news/' },
-  { id: 'contact', label: 'Contact', href: '/contact/' },
+  { id: 'home', labelKey: 'nav.home', href: '/' },
+  { id: 'solutions', labelKey: 'nav.solutions', href: '/solutions/' },
+  { id: 'about', labelKey: 'nav.about', href: '/about/' },
+  { id: 'news', labelKey: 'nav.news', href: '/news/' },
+  { id: 'contact', labelKey: 'nav.contact', href: '/contact/' },
 ] as const;
 
 export function getNavHref(pageId: PageId): string {

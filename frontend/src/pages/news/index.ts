@@ -1,28 +1,29 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
-import { mountLayout } from '@/utils/mountLayout';
+import { t } from '@/i18n';
+import { initPage } from '@/utils/mountLayout';
 
 interface NewsItem {
   readonly id: string;
   readonly date: string;
-  readonly title: string;
-  readonly excerpt: string;
+  readonly titleKey: string;
+  readonly excerptKey: string;
 }
 
 const PLACEHOLDER_NEWS: readonly NewsItem[] = [
   {
     id: 'product-line-update',
     date: '2026-05-12',
-    title: 'New High-Temperature Chiller Series Released',
-    excerpt: 'Expanded capacity range for foundry and process cooling applications.',
+    titleKey: 'news.item1.title',
+    excerptKey: 'news.item1.excerpt',
   },
   {
     id: 'team-building',
     date: '2026-04-03',
-    title: 'Engineering Team Site Visit',
-    excerpt: 'Field training session with installation crews at a marine project site.',
+    titleKey: 'news.item2.title',
+    excerptKey: 'news.item2.excerpt',
   },
-];
+] as const;
 
 function renderNewsPage(): void {
   const main = document.getElementById('page-content');
@@ -35,9 +36,9 @@ function renderNewsPage(): void {
   header.className = 'page-header';
   header.appendChild(
     createSectionTitle({
-      eyebrow: 'News',
-      title: 'Updates & Announcements',
-      description: 'Product releases, project milestones, and company news.',
+      eyebrow: t('news.eyebrow'),
+      title: t('news.title'),
+      description: t('news.desc'),
     }),
   );
 
@@ -59,11 +60,10 @@ function createNewsCard(item: NewsItem): HTMLElement {
   article.className = 'news-card';
   article.innerHTML = `
     <time class="news-card__date" datetime="${item.date}">${item.date}</time>
-    <h3 class="news-card__title">${item.title}</h3>
-    <p class="news-card__excerpt">${item.excerpt}</p>
+    <h3 class="news-card__title">${t(item.titleKey)}</h3>
+    <p class="news-card__excerpt">${t(item.excerptKey)}</p>
   `;
   return article;
 }
 
-mountLayout('news');
-renderNewsPage();
+initPage('news', renderNewsPage);

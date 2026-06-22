@@ -24,3 +24,16 @@ h3 {
 p {
   color: $color-text-muted;
 }
+
+:root[lang='ru'] {
+  h1 {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  }
+}
+
+:root[lang='zh'] {
+  p {
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+  }
+}

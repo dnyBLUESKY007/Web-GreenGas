@@ -52,11 +52,23 @@
     }
   }
 
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   &__cta {
     display: none;
 
     @media (width >= $breakpoint-md) {
       display: inline-flex;
     }
+  }
+}
+
+:root[lang='ru'] {
+  .navbar__link {
+    font-size: 0.8rem;
   }
 }

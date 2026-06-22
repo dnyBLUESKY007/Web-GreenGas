@@ -1,4 +1,5 @@
 import companyData from '@/data/company.json';
+import { td } from '@/i18n';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
@@ -12,7 +13,7 @@ export function renderStats(container: HTMLElement): void {
     item.className = 'stat-item';
     item.innerHTML = `
       <p class="stat-item__value">${stat.value}</p>
-      <p class="stat-item__label">${stat.label}</p>
+      <p class="stat-item__label">${td(stat, 'label')}</p>
     `;
     grid.appendChild(item);
   }
@@ -28,8 +29,8 @@ export function renderFaq(container: HTMLElement): void {
     const details = document.createElement('details');
     details.className = 'faq-item';
     details.innerHTML = `
-      <summary class="faq-item__question">${item.question}</summary>
-      <p class="faq-item__answer">${item.answer}</p>
+      <summary class="faq-item__question">${td(item, 'question')}</summary>
+      <p class="faq-item__answer">${td(item, 'answer')}</p>
     `;
     list.appendChild(details);
   }
@@ -52,7 +53,7 @@ export function renderContactChannels(container: HTMLElement): void {
 
     const label = document.createElement('span');
     label.className = 'contact-channels__label';
-    label.textContent = channel.label;
+    label.textContent = td(channel, 'label');
 
     item.append(label, link);
     list.appendChild(item);

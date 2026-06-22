@@ -1,27 +1,47 @@
+export type Locale = 'en' | 'zh' | 'ru';
+
 export interface Project {
   readonly id: string;
   readonly name: string;
+  readonly name_zh?: string;
+  readonly name_ru?: string;
   readonly industry: string;
+  readonly industry_zh?: string;
+  readonly industry_ru?: string;
   readonly location: string;
   readonly summary: string;
+  readonly summary_zh?: string;
+  readonly summary_ru?: string;
   readonly image: string;
 }
 
 export interface Product {
   readonly id: string;
   readonly name: string;
+  readonly name_zh?: string;
+  readonly name_ru?: string;
   readonly category: string;
+  readonly category_zh?: string;
+  readonly category_ru?: string;
   readonly description: string;
+  readonly description_zh?: string;
+  readonly description_ru?: string;
   readonly image: string;
 }
 
 export interface FaqItem {
   readonly question: string;
+  readonly question_zh?: string;
+  readonly question_ru?: string;
   readonly answer: string;
+  readonly answer_zh?: string;
+  readonly answer_ru?: string;
 }
 
 export interface ContactChannel {
   readonly label: string;
+  readonly label_zh?: string;
+  readonly label_ru?: string;
   readonly value: string;
   readonly href: string;
 }
@@ -29,29 +49,37 @@ export interface ContactChannel {
 export interface CompanyStat {
   readonly value: string;
   readonly label: string;
+  readonly label_zh?: string;
+  readonly label_ru?: string;
 }
 
 export interface CompanyData {
   readonly name: string;
   readonly tagline: string;
+  readonly tagline_zh?: string;
+  readonly tagline_ru?: string;
   readonly description: string;
+  readonly description_zh?: string;
+  readonly description_ru?: string;
   readonly mission: string;
+  readonly mission_zh?: string;
+  readonly mission_ru?: string;
   readonly contact: readonly ContactChannel[];
   readonly faq: readonly FaqItem[];
   readonly stats: readonly CompanyStat[];
 }
 
 export interface NavItem {
-  readonly label: string;
+  readonly labelKey: string;
   readonly href: string;
   readonly id: string;
 }
 
 export interface PageMeta {
-  readonly title: string;
-  readonly description: string;
-  readonly ogTitle: string;
-  readonly ogDescription: string;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
+  readonly ogTitleKey: string;
+  readonly ogDescriptionKey: string;
   readonly ogImage: string;
 }
 

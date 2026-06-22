@@ -1,46 +1,42 @@
+import { t } from '@/i18n';
 import type { PageId, PageMeta } from '@/types';
 
 const DEFAULT_OG_IMAGE = '/images/placeholder.svg';
 
 export const PAGE_META: Record<PageId, PageMeta> = {
   home: {
-    title: 'Custom Cooling Systems for Industrial Facilities | GREENGAS',
-    description:
-      'GREENGAS designs and installs custom industrial refrigeration and HVAC systems for factories, marine, and specialized environments.',
-    ogTitle: 'Custom Cooling Systems for Industrial Facilities',
-    ogDescription:
-      'Engineering-led cooling solutions for industrial facilities. 300+ projects delivered.',
+    titleKey: 'meta.home.title',
+    descriptionKey: 'meta.home.description',
+    ogTitleKey: 'meta.home.ogTitle',
+    ogDescriptionKey: 'meta.home.ogDescription',
     ogImage: DEFAULT_OG_IMAGE,
   },
   solutions: {
-    title: 'Industrial Cooling Solutions | GREENGAS',
-    description:
-      'Marine HVAC, factory cooling, high-temperature, and explosion-proof systems engineered for your application.',
-    ogTitle: 'Industrial Cooling Solutions',
-    ogDescription: 'Explore cooling solutions by application: marine, factory, high-temp, explosion-proof.',
+    titleKey: 'meta.solutions.title',
+    descriptionKey: 'meta.solutions.description',
+    ogTitleKey: 'meta.solutions.ogTitle',
+    ogDescriptionKey: 'meta.solutions.ogDescription',
     ogImage: DEFAULT_OG_IMAGE,
   },
   about: {
-    title: 'About GREENGAS | Industrial HVAC Engineering',
-    description:
-      'Learn about GREENGAS — our history, mission, engineering team, and manufacturing capabilities.',
-    ogTitle: 'About GREENGAS',
-    ogDescription: 'Industrial refrigeration engineering with 15+ years of project delivery experience.',
+    titleKey: 'meta.about.title',
+    descriptionKey: 'meta.about.description',
+    ogTitleKey: 'meta.about.ogTitle',
+    ogDescriptionKey: 'meta.about.ogDescription',
     ogImage: DEFAULT_OG_IMAGE,
   },
   contact: {
-    title: 'Contact GREENGAS | Request a Consultation',
-    description:
-      'Reach GREENGAS by email, phone, WhatsApp, WeChat, or QQ. FAQ included.',
-    ogTitle: 'Contact GREENGAS',
-    ogDescription: 'Get in touch for custom industrial cooling system consultation.',
+    titleKey: 'meta.contact.title',
+    descriptionKey: 'meta.contact.description',
+    ogTitleKey: 'meta.contact.ogTitle',
+    ogDescriptionKey: 'meta.contact.ogDescription',
     ogImage: DEFAULT_OG_IMAGE,
   },
   news: {
-    title: 'News & Updates | GREENGAS',
-    description: 'Product updates, project milestones, and company news from GREENGAS.',
-    ogTitle: 'GREENGAS News',
-    ogDescription: 'Latest updates from GREENGAS industrial cooling projects.',
+    titleKey: 'meta.news.title',
+    descriptionKey: 'meta.news.description',
+    ogTitleKey: 'meta.news.ogTitle',
+    ogDescriptionKey: 'meta.news.ogDescription',
     ogImage: DEFAULT_OG_IMAGE,
   },
 };
@@ -48,11 +44,11 @@ export const PAGE_META: Record<PageId, PageMeta> = {
 export function applyPageMeta(pageId: PageId): void {
   const meta = PAGE_META[pageId];
 
-  document.title = meta.title;
+  document.title = t(meta.titleKey);
 
-  setMetaTag('name', 'description', meta.description);
-  setMetaTag('property', 'og:title', meta.ogTitle);
-  setMetaTag('property', 'og:description', meta.ogDescription);
+  setMetaTag('name', 'description', t(meta.descriptionKey));
+  setMetaTag('property', 'og:title', t(meta.ogTitleKey));
+  setMetaTag('property', 'og:description', t(meta.ogDescriptionKey));
   setMetaTag('property', 'og:image', meta.ogImage);
   setMetaTag('property', 'og:type', 'website');
 }

@@ -1,4 +1,5 @@
 import productsData from '@/data/products.json';
+import { td } from '@/i18n';
 import type { Product } from '@/types';
 
 export function renderProducts(container: HTMLElement): void {
@@ -14,6 +15,10 @@ export function renderProducts(container: HTMLElement): void {
 }
 
 function createProductCard(product: Product): HTMLElement {
+  const name = td(product, 'name');
+  const category = td(product, 'category');
+  const description = td(product, 'description');
+
   const article = document.createElement('article');
   article.className = 'solution-card';
 
@@ -22,16 +27,16 @@ function createProductCard(product: Product): HTMLElement {
       <img
         class="solution-card__image"
         src="${product.image}"
-        alt="${product.name}"
+        alt="${name}"
         width="400"
         height="280"
         loading="lazy"
       />
     </div>
     <div class="solution-card__body">
-      <p class="solution-card__category">${product.category}</p>
-      <h3 class="solution-card__title">${product.name}</h3>
-      <p class="solution-card__description">${product.description}</p>
+      <p class="solution-card__category">${category}</p>
+      <h3 class="solution-card__title">${name}</h3>
+      <p class="solution-card__description">${description}</p>
     </div>
   `;
 

@@ -2,10 +2,11 @@ import '@/styles/main.scss';
 import { createHero } from '@/components/hero/Hero';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import companyData from '@/data/company.json';
+import { t, td } from '@/i18n';
 import { renderProjects } from '@/pages/projects/renderProjects';
 import { renderProducts } from '@/pages/solutions/renderProducts';
 import { renderStats } from '@/pages/contact/renderContact';
-import { mountLayout } from '@/utils/mountLayout';
+import { initPage } from '@/utils/mountLayout';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
@@ -18,36 +19,36 @@ function renderHomePage(): void {
   }
 
   const hero = createHero({
-    title: company.tagline,
-    subtitle: company.description,
-    ctaLabel: 'Request a Consultation',
+    title: td(company, 'tagline'),
+    subtitle: td(company, 'description'),
+    ctaLabel: t('hero.cta'),
     ctaHref: '/contact/',
     imageSrc: '/images/placeholder.svg',
-    imageAlt: 'GREENGAS industrial facility exterior',
+    imageAlt: t('hero.imageAlt'),
   });
 
   const solutionsSection = createSectionBlock(
     createSectionTitle({
-      eyebrow: 'Solutions',
-      title: 'Cooling Systems by Application',
-      description: 'Engineered for marine, manufacturing, high-temperature, and hazardous environments.',
+      eyebrow: t('home.solutions.eyebrow'),
+      title: t('home.solutions.title'),
+      description: t('home.solutions.desc'),
     }),
     'home-solutions',
   );
 
   const projectsSection = createSectionBlock(
     createSectionTitle({
-      eyebrow: 'Projects',
-      title: 'Recent Installations',
-      description: 'Selected projects showing design, delivery, and operational results.',
+      eyebrow: t('home.projects.eyebrow'),
+      title: t('home.projects.title'),
+      description: t('home.projects.desc'),
     }),
     'home-projects',
   );
 
   const statsSection = createSectionBlock(
     createSectionTitle({
-      eyebrow: 'Capabilities',
-      title: 'Engineering You Can Measure',
+      eyebrow: t('home.capabilities.eyebrow'),
+      title: t('home.capabilities.title'),
     }),
     'home-stats',
   );
@@ -56,8 +57,8 @@ function renderHomePage(): void {
   contactSection.className = 'section section--cta';
   contactSection.innerHTML = `
     <div class="container section--cta__inner">
-      <h2 class="section--cta__title">Ready to discuss your cooling requirements?</h2>
-      <a class="btn btn--primary" href="/contact/">Contact Us</a>
+      <h2 class="section--cta__title">${t('home.cta.title')}</h2>
+      <a class="btn btn--primary" href="/contact/">${t('nav.cta')}</a>
     </div>
   `;
 
@@ -84,5 +85,4 @@ function createSectionBlock(title: HTMLElement, contentId: string): HTMLElement 
   return section;
 }
 
-mountLayout('home');
-renderHomePage();
+initPage('home', renderHomePage);

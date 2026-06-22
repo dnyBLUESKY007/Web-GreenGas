@@ -1,4 +1,6 @@
+import { createLangSwitcher } from '@/components/lang-switcher/LangSwitcher';
 import { NAV_ITEMS } from '@/config/navigation';
+import { t } from '@/i18n';
 import type { PageId } from '@/types';
 
 export function createNavbar(activePageId: PageId): HTMLElement {
@@ -21,7 +23,7 @@ export function createNavbar(activePageId: PageId): HTMLElement {
     const link = document.createElement('a');
     link.className = 'navbar__link';
     link.href = item.href;
-    link.textContent = item.label;
+    link.textContent = t(item.labelKey);
 
     if (item.id === activePageId) {
       link.classList.add('navbar__link--active');
@@ -31,12 +33,18 @@ export function createNavbar(activePageId: PageId): HTMLElement {
     nav.appendChild(link);
   }
 
+  const actions = document.createElement('div');
+  actions.className = 'navbar__actions';
+
+  const langSwitcher = createLangSwitcher();
+
   const cta = document.createElement('a');
   cta.className = 'btn btn--primary navbar__cta';
   cta.href = '/contact/';
-  cta.textContent = 'Contact Us';
+  cta.textContent = t('nav.cta');
 
-  inner.append(brand, nav, cta);
+  actions.append(langSwitcher, cta);
+  inner.append(brand, nav, actions);
   header.appendChild(inner);
 
   return header;

@@ -2,25 +2,43 @@
   {
     "id": "factory-cooling-texas",
     "name": "Factory Cooling Upgrade",
+    "name_zh": "工厂冷却系统升级",
+    "name_ru": "Модернизация заводского охлаждения",
     "industry": "Manufacturing",
+    "industry_zh": "制造业",
+    "industry_ru": "Производство",
     "location": "Texas, USA",
     "summary": "Custom chiller retrofit for a 12,000 m² production facility.",
+    "summary_zh": "为 12,000 平方米生产设施定制冷水机组改造。",
+    "summary_ru": "Индивидуальная модернизация чиллера для производственного объекта площадью 12 000 м².",
     "image": "/images/placeholder.svg"
   },
   {
     "id": "marine-hvac-shipyard",
     "name": "Marine HVAC Package",
+    "name_zh": "船用暖通成套方案",
+    "name_ru": "Комплекс морских ОВиК",
     "industry": "Marine",
+    "industry_zh": "船用",
+    "industry_ru": "Морской",
     "location": "Guangzhou, China",
     "summary": "Explosion-safe cooling units for vessel engine room environments.",
+    "summary_zh": "适用于船舶机舱环境的防爆冷却机组。",
+    "summary_ru": "Взрывобезопасные блоки охлаждения для машинных отделений судов.",
     "image": "/images/placeholder.svg"
   },
   {
     "id": "data-center-cooling",
     "name": "Data Center Precision Cooling",
+    "name_zh": "数据中心精密冷却",
+    "name_ru": "Прецизионное охлаждение дата-центра",
     "industry": "Technology",
+    "industry_zh": "科技",
+    "industry_ru": "Технологии",
     "location": "Shenzhen, China",
     "summary": "Redundant cooling design with 32% energy reduction vs. legacy system.",
+    "summary_zh": "冗余冷却设计，较旧系统节能 32%。",
+    "summary_ru": "Резервированная система охлаждения с экономией энергии 32% по сравнению с устаревшей системой.",
     "image": "/images/placeholder.svg"
   }
 ]

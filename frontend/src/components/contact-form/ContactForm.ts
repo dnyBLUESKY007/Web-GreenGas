@@ -1,3 +1,5 @@
+import { t } from '@/i18n';
+
 export function createContactForm(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'contact-form';
@@ -5,19 +7,19 @@ export function createContactForm(): HTMLElement {
   section.innerHTML = `
     <form class="contact-form__form" id="contact-form" novalidate>
       <div class="contact-form__field">
-        <label class="contact-form__label" for="contact-name">Name</label>
+        <label class="contact-form__label" for="contact-name">${t('form.name')}</label>
         <input class="contact-form__input" id="contact-name" name="name" type="text" required autocomplete="name" />
       </div>
       <div class="contact-form__field">
-        <label class="contact-form__label" for="contact-email">Email</label>
+        <label class="contact-form__label" for="contact-email">${t('form.email')}</label>
         <input class="contact-form__input" id="contact-email" name="email" type="email" required autocomplete="email" />
       </div>
       <div class="contact-form__field">
-        <label class="contact-form__label" for="contact-message">Message</label>
+        <label class="contact-form__label" for="contact-message">${t('form.message')}</label>
         <textarea class="contact-form__textarea" id="contact-message" name="message" rows="5" required></textarea>
       </div>
-      <button class="btn btn--primary contact-form__submit" type="submit">Send Message</button>
-      <p class="contact-form__note">Form submission via EmailJS — configuration pending.</p>
+      <button class="btn btn--primary contact-form__submit" type="submit">${t('form.submit')}</button>
+      <p class="contact-form__note">${t('form.note')}</p>
     </form>
   `;
 
@@ -32,6 +34,5 @@ export function createContactForm(): HTMLElement {
 
 function handleFormSubmit(event: SubmitEvent): void {
   event.preventDefault();
-  // EmailJS integration placeholder — wire up in a later iteration.
-  alert('Thank you. Form integration will be connected via EmailJS.');
+  alert(t('form.alert'));
 }

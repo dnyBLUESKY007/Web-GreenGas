@@ -1,0 +1,30 @@
+@use '../base/variables' as *;
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  &__btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: $color-text-muted;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: color $transition-base, border-color $transition-base, background-color $transition-base;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &--active {
+      color: $color-primary;
+      font-weight: 700;
+      border-color: $color-border;
+      background-color: $color-bg-muted;
+    }
+  }
+}
