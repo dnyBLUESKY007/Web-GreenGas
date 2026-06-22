@@ -2,6 +2,7 @@ import { applyPageMeta } from '@/config/pageMeta';
 import { createFooter } from '@/components/footer/Footer';
 import { createNavbar } from '@/components/navbar/Navbar';
 import { initNavbarScroll } from '@/components/navbar/initNavbarScroll';
+import { createScrollToTop } from '@/components/scroll-to-top/ScrollToTop';
 import { initI18n, onLocaleChange } from '@/i18n';
 import type { PageId } from '@/types';
 
@@ -19,6 +20,19 @@ export function mountLayout(pageId: PageId): void {
   if (footerMount) {
     footerMount.replaceChildren(createFooter());
   }
+
+  ensureScrollToTop();
+}
+
+let scrollToTopMounted = false;
+
+function ensureScrollToTop(): void {
+  if (scrollToTopMounted) {
+    return;
+  }
+
+  document.body.appendChild(createScrollToTop());
+  scrollToTopMounted = true;
 }
 
 /**

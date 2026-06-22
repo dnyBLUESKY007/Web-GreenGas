@@ -12,9 +12,13 @@
     background-color: $color-bg-muted;
   }
 
+  &--compact {
+    padding-block: calc($section-padding-y * 2 / 3);
+  }
+
   &--cta {
-    background-color: $color-primary-dark;
-    color: $color-bg;
+    background-color: $color-bg-section;
+    color: $color-primary-dark;
 
     &__inner {
       display: flex;
@@ -24,7 +28,7 @@
     }
 
     &__title {
-      color: $color-bg;
+      color: $color-primary-dark;
       font-size: clamp(1.5rem, 3vw, 2rem);
     }
   }

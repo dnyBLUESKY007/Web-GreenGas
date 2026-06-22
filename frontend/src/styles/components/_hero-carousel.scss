@@ -1,0 +1,129 @@
+@use '../base/variables' as *;
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  background-color: $color-primary-dark;
+  overflow: hidden;
+
+  &__slides {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 4;
+    min-height: 17rem;
+
+    @media (width < $breakpoint-md) {
+      aspect-ratio: 4 / 3;
+      min-height: 20rem;
+    }
+  }
+
+  &__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease, visibility 500ms ease;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      to right,
+      rgb(0 0 0 / 55%) 0%,
+      rgb(0 0 0 / 35%) 50%,
+      rgb(0 0 0 / 15%) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 36rem;
+    margin-inline-start: clamp(1.5rem, 17.5vw, 14rem);
+  }
+
+  &__headline {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: $color-bg;
+  }
+
+  &__subtitle {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgb(255 255 255 / 85%);
+    max-width: 26rem;
+  }
+
+  &__cta {
+    font-size: 1rem;
+  }
+
+  &__tabs {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 3;
+  }
+
+  &__tab {
+    position: relative;
+    overflow: hidden;
+    width: 2.5rem;
+    height: 3px;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(255 255 255 / 35%);
+    cursor: pointer;
+    padding: 0;
+
+    &--active {
+      background-color: $color-accent;
+    }
+
+    &:hover:not(&--active) {
+      background-color: rgb(255 255 255 / 55%);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 4px;
+    }
+  }
+
+  &__tab-progress {
+    position: absolute;
+    inset: 0;
+    background-color: $color-primary;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+}
+
+@keyframes heroTabProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}

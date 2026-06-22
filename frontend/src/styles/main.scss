@@ -4,17 +4,24 @@
 
 @use 'layout/container';
 
+@use 'components/scroll-to-top';
 @use 'components/button';
 @use 'components/navbar';
 @use 'components/lang-switcher';
 @use 'components/footer';
 @use 'components/section-title';
 @use 'components/hero';
+@use 'components/hero-carousel';
 @use 'components/cards';
 
 body {
   display: flex;
   flex-direction: column;
+}
+
+#site-navbar {
+  height: $navbar-height;
+  flex-shrink: 0;
 }
 
 #page-content {

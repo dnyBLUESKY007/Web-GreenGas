@@ -1,0 +1,39 @@
+@use '../base/variables' as *;
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid $color-border;
+  border-radius: 50%;
+  background-color: $color-bg;
+  color: $color-text;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition: opacity $transition-base, visibility $transition-base, transform $transition-base, box-shadow $transition-base;
+  box-shadow: $shadow-sm;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    box-shadow: $shadow-md;
+    color: $color-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}

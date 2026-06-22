@@ -3,14 +3,14 @@
 .footer {
   margin-top: auto;
   padding: 3rem 0 1.5rem;
-  background-color: $color-primary-dark;
-  color: rgb(255 255 255 / 85%);
+  background-color: $color-bg-section;
+  color: $color-text;
 
   &__inner {
     display: grid;
     gap: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid rgb(255 255 255 / 12%);
+    border-bottom: 1px solid $color-border;
 
     @media (width >= $breakpoint-md) {
       grid-template-columns: 2fr 1fr 1fr;
@@ -18,40 +18,40 @@
   }
 
   &__name {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: $color-bg;
+    color: $color-primary-dark;
   }
 
   &__tagline {
     margin-top: 0.5rem;
-    font-size: 0.875rem;
-    color: rgb(255 255 255 / 70%);
+    font-size: 0.9375rem;
+    color: $color-text-muted;
   }
 
   &__heading {
     margin-bottom: 0.75rem;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: $color-accent;
+    color: $color-primary;
   }
 
   &__list {
     display: grid;
     gap: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
 
     a:hover {
-      color: $color-bg;
+      color: $color-primary;
     }
   }
 
   &__copy {
     width: min(100% - 2rem, $container-max-width);
     margin: 1.5rem auto 0;
-    font-size: 0.8125rem;
-    color: rgb(255 255 255 / 50%);
+    font-size: 0.875rem;
+    color: $color-text-muted;
   }
 }
