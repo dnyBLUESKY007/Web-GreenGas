@@ -28,7 +28,10 @@ function renderContactPage(): void {
   const contactSection = document.createElement('section');
   contactSection.className = 'section';
   const contactContainer = document.createElement('div');
-  contactContainer.className = 'container contact-layout';
+  contactContainer.className = 'container';
+
+  const contactLayout = document.createElement('div');
+  contactLayout.className = 'contact-layout';
 
   const channelsMount = document.createElement('div');
   channelsMount.id = 'contact-channels';
@@ -36,14 +39,17 @@ function renderContactPage(): void {
   const formMount = document.createElement('div');
   formMount.appendChild(createContactForm());
 
-  contactContainer.append(channelsMount, formMount);
+  contactLayout.append(channelsMount, formMount);
+  contactContainer.appendChild(contactLayout);
   contactSection.appendChild(contactContainer);
 
   const faqSection = document.createElement('section');
   faqSection.className = 'section section--muted';
   const faqContainer = document.createElement('div');
   faqContainer.className = 'container';
-  faqContainer.appendChild(
+  const faqContent = document.createElement('div');
+  faqContent.className = 'faq-section-content';
+  faqContent.appendChild(
     createSectionTitle({
       eyebrow: t('contact.faq.eyebrow'),
       title: t('contact.faq.title'),
@@ -51,7 +57,8 @@ function renderContactPage(): void {
   );
   const faqMount = document.createElement('div');
   faqMount.id = 'contact-faq';
-  faqContainer.appendChild(faqMount);
+  faqContent.appendChild(faqMount);
+  faqContainer.appendChild(faqContent);
   faqSection.appendChild(faqContainer);
 
   main.replaceChildren(header, contactSection, faqSection);

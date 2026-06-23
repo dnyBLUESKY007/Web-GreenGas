@@ -6,13 +6,15 @@ export function createContactForm(): HTMLElement {
 
   section.innerHTML = `
     <form class="contact-form__form" id="contact-form" novalidate>
-      <div class="contact-form__field">
-        <label class="contact-form__label" for="contact-name">${t('form.name')}</label>
-        <input class="contact-form__input" id="contact-name" name="name" type="text" required autocomplete="name" />
-      </div>
-      <div class="contact-form__field">
-        <label class="contact-form__label" for="contact-email">${t('form.email')}</label>
-        <input class="contact-form__input" id="contact-email" name="email" type="email" required autocomplete="email" />
+      <div class="contact-form__row">
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="contact-name">${t('form.name')}</label>
+          <input class="contact-form__input" id="contact-name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="contact-email">${t('form.email')}</label>
+          <input class="contact-form__input" id="contact-email" name="email" type="email" required autocomplete="email" />
+        </div>
       </div>
       <div class="contact-form__field">
         <label class="contact-form__label" for="contact-message">${t('form.message')}</label>

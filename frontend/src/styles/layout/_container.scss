@@ -3,6 +3,10 @@
 .container {
   width: min(100% - 2rem, $container-max-width);
   margin-inline: auto;
+
+  &--narrow {
+    max-width: 60rem;
+  }
 }
 
 .section {
@@ -65,10 +69,7 @@
 
 .contact-layout {
   display: grid;
-  gap: 2rem;
-
-  @media (width >= $breakpoint-md) {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+  gap: 2.5rem;
+  width: 70%;
+  margin-inline: auto;
 }
