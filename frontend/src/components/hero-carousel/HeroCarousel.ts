@@ -1,3 +1,6 @@
+export type HeroContentAlign = 'left' | 'center' | 'right';
+export type HeroOverlayStyle = 'left-heavy' | 'right-heavy' | 'minimal';
+
 export interface HeroSlide {
   readonly headline: string;
   readonly subtitle: string;
@@ -5,6 +8,8 @@ export interface HeroSlide {
   readonly ctaHref: string;
   readonly imageSrc: string;
   readonly imageAlt: string;
+  readonly contentAlign?: HeroContentAlign;
+  readonly overlayStyle?: HeroOverlayStyle;
 }
 
 export const AUTO_ROTATE_INTERVAL = 6000;
@@ -20,6 +25,16 @@ export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
     const slide = createSlideElement(slides[i], i === 0);
     slidesWrapper.appendChild(slide);
   }
+
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'hero-carousel__nav-btn hero-carousel__nav-btn--prev';
+  prevBtn.setAttribute('aria-label', 'Previous slide');
+  prevBtn.type = 'button';
+
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'hero-carousel__nav-btn hero-carousel__nav-btn--next';
+  nextBtn.setAttribute('aria-label', 'Next slide');
+  nextBtn.type = 'button';
 
   const tabs = document.createElement('div');
   tabs.className = 'hero-carousel__tabs';
@@ -37,7 +52,7 @@ export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
     tabs.appendChild(tab);
   }
 
-  container.append(slidesWrapper, tabs);
+  container.append(slidesWrapper, prevBtn, nextBtn, tabs);
 
   initializeCarousel(container, slides.length);
 
@@ -61,8 +76,22 @@ function createSlideElement(slide: HeroSlide, isActive: boolean): HTMLElement {
   const overlay = document.createElement('div');
   overlay.className = 'hero-carousel__overlay';
 
+  const overlayStyle = slide.overlayStyle ?? 'left-heavy';
+  if (overlayStyle === 'right-heavy') {
+    overlay.classList.add('hero-carousel__overlay--right-heavy');
+  } else if (overlayStyle === 'minimal') {
+    overlay.classList.add('hero-carousel__overlay--minimal');
+  }
+
   const contentWrapper = document.createElement('div');
   contentWrapper.className = 'hero-carousel__content';
+
+  const contentAlign = slide.contentAlign ?? 'left';
+  if (contentAlign === 'center') {
+    contentWrapper.classList.add('hero-carousel__content--center');
+  } else if (contentAlign === 'right') {
+    contentWrapper.classList.add('hero-carousel__content--right');
+  }
 
   const headline = document.createElement('h1');
   headline.className = 'hero-carousel__headline';
@@ -101,6 +130,8 @@ function stopTabProgress(tab: HTMLElement): void {
 function initializeCarousel(container: HTMLElement, slideCount: number): void {
   const slides = container.querySelectorAll<HTMLElement>('.hero-carousel__slide');
   const tabs = container.querySelectorAll<HTMLElement>('.hero-carousel__tab');
+  const prevBtn = container.querySelector<HTMLElement>('.hero-carousel__nav-btn--prev');
+  const nextBtn = container.querySelector<HTMLElement>('.hero-carousel__nav-btn--next');
 
   if (slides.length === 0) return;
 
@@ -126,6 +157,16 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
     startTabProgress(tabs[currentIndex]);
   }
 
+  prevBtn?.addEventListener('click', () => {
+    goToSlide((currentIndex - 1 + slideCount) % slideCount);
+    resetAutoRotate();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    goToSlide((currentIndex + 1) % slideCount);
+    resetAutoRotate();
+  });
+
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => {
       if (i !== currentIndex) {
@@ -149,7 +190,6 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
     });
   });
 
-  // Activate first tab and start
   tabs[0].classList.add('hero-carousel__tab--active');
   startTabProgress(tabs[0]);
   resetAutoRotate();

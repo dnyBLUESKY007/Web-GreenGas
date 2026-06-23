@@ -50,6 +50,19 @@
       rgb(0 0 0 / 35%) 50%,
       rgb(0 0 0 / 15%) 100%
     );
+
+    &--right-heavy {
+      background: linear-gradient(
+        to left,
+        rgb(0 0 0 / 55%) 0%,
+        rgb(0 0 0 / 35%) 50%,
+        rgb(0 0 0 / 15%) 100%
+      );
+    }
+
+    &--minimal {
+      background: rgb(0 0 0 / 32%);
+    }
   }
 
   &__content {
@@ -57,6 +70,16 @@
     z-index: 2;
     max-width: 36rem;
     margin-inline-start: clamp(1.5rem, 17.5vw, 14rem);
+
+    &--center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    &--right {
+      margin-inline-start: auto;
+      margin-inline-end: clamp(1.5rem, 17.5vw, 14rem);
+    }
   }
 
   &__headline {
@@ -75,8 +98,69 @@
     max-width: 26rem;
   }
 
+  &__content--center &__subtitle {
+    margin-inline: auto;
+  }
+
   &__cta {
     font-size: 1rem;
+  }
+
+  &__nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    background-color: rgb(0 0 0 / 20%);
+    transition: background-color 220ms ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-top: 2px solid rgb(255 255 255 / 90%);
+      border-right: 2px solid rgb(255 255 255 / 90%);
+      opacity: 0.5;
+      transition: opacity 220ms ease;
+    }
+
+    &:hover {
+      background-color: rgb(0 0 0 / 48%);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
+    }
+
+    &--prev {
+      left: 1.25rem;
+
+      &::after {
+        transform: translate(-30%, -50%) rotate(-135deg);
+      }
+    }
+
+    &--next {
+      right: 1.25rem;
+
+      &::after {
+        transform: translate(-70%, -50%) rotate(45deg);
+      }
+    }
   }
 
   &__tabs {
@@ -86,7 +170,7 @@
     transform: translateX(-50%);
     display: flex;
     gap: 0.75rem;
-    z-index: 3;
+    z-index: 5;
   }
 
   &__tab {

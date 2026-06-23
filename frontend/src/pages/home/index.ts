@@ -23,6 +23,8 @@ function renderHomePage(): void {
       ctaHref: '/contact/',
       imageSrc: '/images/placeholder.svg',
       imageAlt: t('hero.carousel.0.alt'),
+      contentAlign: 'left',
+      overlayStyle: 'left-heavy',
     },
     {
       headline: t('hero.carousel.1.headline'),
@@ -31,6 +33,8 @@ function renderHomePage(): void {
       ctaHref: '/contact/',
       imageSrc: '/images/placeholder.svg',
       imageAlt: t('hero.carousel.1.alt'),
+      contentAlign: 'center',
+      overlayStyle: 'minimal',
     },
     {
       headline: t('hero.carousel.2.headline'),
@@ -39,6 +43,8 @@ function renderHomePage(): void {
       ctaHref: '/contact/',
       imageSrc: '/images/placeholder.svg',
       imageAlt: t('hero.carousel.2.alt'),
+      contentAlign: 'right',
+      overlayStyle: 'right-heavy',
     },
     {
       headline: t('hero.carousel.3.headline'),
@@ -47,6 +53,8 @@ function renderHomePage(): void {
       ctaHref: '/contact/',
       imageSrc: '/images/placeholder.svg',
       imageAlt: t('hero.carousel.3.alt'),
+      contentAlign: 'left',
+      overlayStyle: 'minimal',
     },
   ];
 
