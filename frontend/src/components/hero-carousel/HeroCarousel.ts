@@ -136,10 +136,16 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   if (slides.length === 0) return;
 
   let currentIndex = 0;
+  let hoveredIndex: number | undefined;
   let intervalId: ReturnType<typeof setInterval> | undefined;
+
+  function isHoveringActiveTab(): boolean {
+    return hoveredIndex === currentIndex;
+  }
 
   function resetAutoRotate(): void {
     clearInterval(intervalId);
+    if (isHoveringActiveTab()) return;
     intervalId = setInterval(() => {
       goToSlide((currentIndex + 1) % slideCount);
     }, AUTO_ROTATE_INTERVAL);
@@ -154,7 +160,9 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
 
     slides[currentIndex].classList.add('hero-carousel__slide--active');
     tabs[currentIndex].classList.add('hero-carousel__tab--active');
-    startTabProgress(tabs[currentIndex]);
+    if (!isHoveringActiveTab()) {
+      startTabProgress(tabs[currentIndex]);
+    }
   }
 
   prevBtn?.addEventListener('click', () => {
@@ -176,6 +184,7 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
     });
 
     tab.addEventListener('mouseenter', () => {
+      hoveredIndex = i;
       if (i === currentIndex) {
         clearInterval(intervalId);
         stopTabProgress(tab);
@@ -183,6 +192,7 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
     });
 
     tab.addEventListener('mouseleave', () => {
+      hoveredIndex = undefined;
       if (i === currentIndex) {
         startTabProgress(tab);
         resetAutoRotate();
