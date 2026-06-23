@@ -1,5 +1,4 @@
 const SHOW_THRESHOLD = 400;
-const SCROLL_DURATION = 400;
 
 export function createScrollToTop(): HTMLElement {
   const button = document.createElement('button');
@@ -12,23 +11,7 @@ export function createScrollToTop(): HTMLElement {
   };
 
   const handleClick = (): void => {
-    const startY = window.scrollY;
-    if (startY === 0) return;
-
-    const startTime = performance.now();
-
-    const step = (currentTime: number): void => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / SCROLL_DURATION, 1);
-
-      window.scrollTo(0, startY * (1 - progress));
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
-
-    requestAnimationFrame(step);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   button.addEventListener('click', handleClick);
