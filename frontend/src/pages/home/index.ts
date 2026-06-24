@@ -11,6 +11,7 @@ import { renderSolutions } from '@/pages/home/renderSolutions';
 import { renderContactChannels } from '@/pages/contact/renderContact';
 import { t } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
+import { cdnUrl } from '@/config/assets';
 
 function renderHomePage(): void {
   const main = document.getElementById('page-content');
@@ -25,7 +26,7 @@ function renderHomePage(): void {
       subtitle: t('hero.carousel.0.subtitle'),
       ctaLabel: t('hero.cta'),
       ctaHref: '/contact/',
-      imageSrc: '/images/placeholder.svg',
+      imageSrc: cdnUrl('hero', 'hero-steel-mill.webp'),
       imageAlt: t('hero.carousel.0.alt'),
       contentAlign: 'left',
       overlayStyle: 'left-heavy',
@@ -35,7 +36,7 @@ function renderHomePage(): void {
       subtitle: t('hero.carousel.1.subtitle'),
       ctaLabel: t('hero.cta'),
       ctaHref: '/contact/',
-      imageSrc: '/images/placeholder.svg',
+      imageSrc: cdnUrl('hero', 'hero-rolling-mill.webp'),
       imageAlt: t('hero.carousel.1.alt'),
       contentAlign: 'center',
       overlayStyle: 'minimal',
@@ -45,7 +46,7 @@ function renderHomePage(): void {
       subtitle: t('hero.carousel.2.subtitle'),
       ctaLabel: t('hero.cta'),
       ctaHref: '/contact/',
-      imageSrc: '/images/placeholder.svg',
+      imageSrc: cdnUrl('hero', 'hero-coal-transport.webp'),
       imageAlt: t('hero.carousel.2.alt'),
       contentAlign: 'right',
       overlayStyle: 'right-heavy',
@@ -55,7 +56,7 @@ function renderHomePage(): void {
       subtitle: t('hero.carousel.3.subtitle'),
       ctaLabel: t('hero.cta'),
       ctaHref: '/contact/',
-      imageSrc: '/images/placeholder.svg',
+      imageSrc: cdnUrl('hero', 'hero-industrial-ac-design.webp'),
       imageAlt: t('hero.carousel.3.alt'),
       contentAlign: 'left',
       overlayStyle: 'minimal',

@@ -5,7 +5,7 @@
     "name_zh": "变频螺杆风冷冷水机组",
     "name_ru": "Винтовой чиллер с воздушным охлаждением с частотным регулированием",
     "group": "central",
-    "image": "/images/products/variable-speed-air-cooled-chiller.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/variable-speed-air-cooled-chiller-01.webp"
   },
   {
     "id": "water-cooled-screw-unit",
@@ -13,7 +13,7 @@
     "name_zh": "标准水冷螺杆机组",
     "name_ru": "Винтовой чиллер с водяным охлаждением",
     "group": "central",
-    "image": "/images/products/water-cooled-screw-unit.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/water-cooled-screw-unit.webp"
   },
   {
     "id": "modular-water-cooled-scroll",
@@ -21,7 +21,7 @@
     "name_zh": "模块式水冷涡旋机组",
     "name_ru": "Модульный спиральный чиллер с водяным охлаждением",
     "group": "central",
-    "image": "/images/products/modular-water-cooled-scroll.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/modular-water-cooled-scroll.webp"
   },
   {
     "id": "air-source-heat-pump",
@@ -29,7 +29,7 @@
     "name_zh": "模块式空气源风冷热泵机组",
     "name_ru": "Модульный тепловой насос с воздушным источником",
     "group": "central",
-    "image": "/images/products/air-source-heat-pump.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-source-heat-pump.webp"
   },
   {
     "id": "air-cooled-screw-heat-pump",
@@ -37,7 +37,7 @@
     "name_zh": "高效螺杆风冷热泵机组",
     "name_ru": "Высокоэффективный винтовой тепловой насос с воздушным охлаждением",
     "group": "central",
-    "image": "/images/products/air-cooled-screw-heat-pump.jpg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-cooled-screw-heat-pump.webp"
   },
   {
     "id": "cassette-fan-coil",
@@ -45,7 +45,7 @@
     "name_zh": "卡式风机盘管",
     "name_ru": "Кассетный фанкойл",
     "group": "central",
-    "image": "/images/products/cassette-fan-coil.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/cassette-fan-coil.webp"
   },
   {
     "id": "concealed-fan-coil",
@@ -53,7 +53,7 @@
     "name_zh": "吊顶暗装风机盘管",
     "name_ru": "Скрытый потолочный фанкойл",
     "group": "central",
-    "image": "/images/products/concealed-fan-coil.jpg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/concealed-fan-coil.webp"
   },
   {
     "id": "air-handling-unit",
@@ -61,7 +61,7 @@
     "name_zh": "空气处理机",
     "name_ru": "Центральный кондиционер обработки воздуха",
     "group": "central",
-    "image": "/images/products/air-handling-unit.jpg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-handling-unit-01.webp"
   },
   {
     "id": "magnetic-bearing-chiller",
@@ -69,7 +69,7 @@
     "name_zh": "气悬浮冷水机组",
     "name_ru": "Чиллер с магнитными подшипниками",
     "group": "central",
-    "image": "/images/products/magnetic-bearing-chiller.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/magnetic-bearing-chiller-01.webp"
   },
   {
     "id": "packaged-dx-unit",
@@ -77,7 +77,7 @@
     "name_zh": "整体式直膨机组",
     "name_ru": "Компактный блок прямого расширения",
     "group": "central",
-    "image": "/images/products/packaged-dx-unit.jpg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/packaged-dx-unit.webp"
   },
   {
     "id": "energy-recovery-unit",
@@ -85,7 +85,7 @@
     "name_zh": "能量回收机组",
     "name_ru": "Блок рекуперации энергии",
     "group": "central",
-    "image": "/images/products/energy-recovery-unit.jpg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/energy-recovery-unit-01.webp"
   },
   {
     "id": "industrial-water-cooled-cabinet",
@@ -93,7 +93,7 @@
     "name_zh": "工业空调-水冷柜机",
     "name_ru": "Промышленный шкафной кондиционер с водяным охлаждением",
     "group": "industrial",
-    "image": "/images/products/industrial-water-cooled-cabinet.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/industrial-water-cooled-cabinet.webp"
   },
   {
     "id": "industrial-air-cooled-cabinet",
@@ -101,7 +101,7 @@
     "name_zh": "工业空调-风冷柜机",
     "name_ru": "Промышленный шкафной кондиционер с воздушным охлаждением",
     "group": "industrial",
-    "image": "/images/products/industrial-air-cooled-cabinet.jpg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/industrial-air-cooled-cabinet-indoor.webp"
   },
   {
     "id": "constant-temp-humidity-unit",
@@ -109,7 +109,7 @@
     "name_zh": "风冷恒温恒湿机组",
     "name_ru": "Блок с постоянной температурой и влажностью",
     "group": "industrial",
-    "image": "/images/products/constant-temp-humidity-unit.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/constant-temp-humidity-unit-indoor.webp"
   },
   {
     "id": "high-temperature-ac",
@@ -117,7 +117,7 @@
     "name_zh": "高温空调",
     "name_ru": "Высокотемпературный кондиционер",
     "group": "industrial",
-    "image": "/images/products/high-temperature-ac.jpg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/high-temperature-ac-indoor.webp"
   },
   {
     "id": "grain-storage-ac",
@@ -125,7 +125,7 @@
     "name_zh": "粮仓空调",
     "name_ru": "Кондиционер для зернохранилищ",
     "group": "industrial",
-    "image": "/images/products/grain-storage-ac.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/grain-storage-ac.webp"
   },
   {
     "id": "special-purpose-unit",
@@ -133,7 +133,7 @@
     "name_zh": "特种空调机组",
     "name_ru": "Специальный блок ОВиК",
     "group": "industrial",
-    "image": "/images/products/special-purpose-unit.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/special-purpose-unit.webp"
   },
   {
     "id": "split-ceiling-unit",
@@ -141,6 +141,6 @@
     "name_zh": "分体吊顶式空调机组",
     "name_ru": "Раздельный потолочный кондиционер",
     "group": "industrial",
-    "image": "/images/products/split-ceiling-unit.png"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/split-ceiling-unit.webp"
   }
 ]

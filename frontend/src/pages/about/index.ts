@@ -3,6 +3,7 @@ import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import companyData from '@/data/company.json';
 import { t, td } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
+import { cdnUrl } from '@/config/assets';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
@@ -39,7 +40,7 @@ function renderAboutPage(): void {
     <div class="container">
       <img
         class="about-block__image"
-        src="/images/placeholder.svg"
+        src="${cdnUrl('company', 'facility-exterior.webp')}"
         alt="${t('about.factory.alt')}"
         width="1200"
         height="640"

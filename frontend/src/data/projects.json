@@ -11,7 +11,7 @@
     "summary": "Custom chiller retrofit for a 12,000 m² production facility.",
     "summary_zh": "为 12,000 平方米生产设施定制冷水机组改造。",
     "summary_ru": "Индивидуальная модернизация чиллера для производственного объекта площадью 12 000 м².",
-    "image": "/images/placeholder.svg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-haoda-tools-hvac-01.webp"
   },
   {
     "id": "marine-hvac-shipyard",
@@ -25,7 +25,7 @@
     "summary": "Explosion-safe cooling units for vessel engine room environments.",
     "summary_zh": "适用于船舶机舱环境的防爆冷却机组。",
     "summary_ru": "Взрывобезопасные блоки охлаждения для машинных отделений судов.",
-    "image": "/images/placeholder.svg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-liaoning-port-cooling-01.webp"
   },
   {
     "id": "data-center-cooling",
@@ -39,7 +39,7 @@
     "summary": "Redundant cooling design with 32% energy reduction vs. legacy system.",
     "summary_zh": "冗余冷却设计，较旧系统节能 32%。",
     "summary_ru": "Резервированная система охлаждения с экономией энергии 32% по сравнению с устаревшей системой.",
-    "image": "/images/placeholder.svg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-south-africa-3stage-01.webp"
   },
   {
     "id": "grain-storage-cooling",
@@ -53,7 +53,7 @@
     "summary": "Dedicated HVAC system for large-scale grain storage facilities.",
     "summary_zh": "面向大型粮储设施的专用暖通空调系统。",
     "summary_ru": "Специализированная система ОВиК для крупных зернохранилищ.",
-    "image": "/images/placeholder.svg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/product-grain-storage-ac-01.webp"
   },
   {
     "id": "high-temp-foundry",
@@ -67,7 +67,7 @@
     "summary": "High-temperature rated chillers for continuous foundry operations.",
     "summary_zh": "适用于连续铸造作业的高温额定冷水机组。",
     "summary_ru": "Высокотемпературные чиллеры для непрерывных литейных операций.",
-    "image": "/images/placeholder.svg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-australia-market-01.webp"
   },
   {
     "id": "lab-precision-hvac",
@@ -81,6 +81,6 @@
     "summary": "Constant temperature and humidity control for research laboratory environments.",
     "summary_zh": "面向科研实验室环境的恒温恒湿控制。",
     "summary_ru": "Поддержание постоянной температуры и влажности для исследовательских лабораторий.",
-    "image": "/images/placeholder.svg"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-queensland-medical-01.webp"
   }
 ]

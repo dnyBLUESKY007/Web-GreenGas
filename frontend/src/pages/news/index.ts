@@ -3,8 +3,9 @@ import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { getLocale, t } from '@/i18n';
 import type { Locale } from '@/types';
 import { initPage } from '@/utils/mountLayout';
+import { cdnUrl } from '@/config/assets';
 
-const DEFAULT_NEWS_IMAGE = '/images/placeholder.svg';
+const DEFAULT_NEWS_IMAGE = cdnUrl('company-info', 'team-photo.webp');
 
 const LOCALE_DATE_MAP: Record<Locale, string> = {
   en: 'en-US',

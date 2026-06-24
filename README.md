@@ -39,6 +39,62 @@ web-greengas/
 
 ---
 
+## 图片资源
+
+### OSS 存储
+
+图片统一托管在阿里云 OSS，CDN 基址通过 `frontend/src/config/assets.ts` 集中管理：
+
+```ts
+// frontend/src/config/assets.ts
+export const CDN_BASE = 'https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources';
+export function cdnUrl(category: string, filename: string): string {
+  return `${CDN_BASE}/${category}/${filename}`;
+}
+```
+
+代码中引用图片时统一使用 `cdnUrl(category, filename)`，**不写死 URL 字符串**，便于迁移 CDN 或切换 OSS bucket。
+
+### 目录分类
+
+OSS 上按类别分目录，路径格式为 `{CDN_BASE}/{category}/{filename}.webp`：
+
+| 类别（category） | 文件数 | 用途 |
+|---|---|---|
+| `hero` | 4 | 首页 Hero 轮播背景图 |
+| `products` | 27 | 所有产品图片（中央空调 + 工业空调） |
+| `projects` | 43 | 过往项目照片与案例素材 |
+| `company` | 2 | 公司外观（实拍图 + 渲染图） |
+| `company-info` | 3 | 团队合照、发展历程时间轴图片 |
+| `certifications` | 2 | CE 认证、ISO9001 认证扫描件 |
+
+### 产品图片命名规则
+
+产品图片文件名与该产品在 `products.json` 中的 `id` 字段对齐。多角度图片用 `-01`、`-02` 后缀区分，有室内/室外区分的用 `-indoor` / `-outdoor` 后缀：
+
+| products.json `id` | OSS 文件名 | 说明 |
+|---|---|---|
+| `variable-speed-air-cooled-chiller` | `variable-speed-air-cooled-chiller-01.webp` | 多角度（3张），列表取第一张 |
+| `water-cooled-screw-unit` | `water-cooled-screw-unit.webp` | 单张 |
+| `air-handling-unit` | `air-handling-unit-01.webp` | 多角度（3张），列表取第一张 |
+| `magnetic-bearing-chiller` | `magnetic-bearing-chiller-01.webp` | 多角度（气悬浮1/2） |
+| `energy-recovery-unit` | `energy-recovery-unit-01.webp` | 多角度（能量回收1/2） |
+| `industrial-air-cooled-cabinet` | `industrial-air-cooled-cabinet-indoor.webp` | 室内/室外均有 |
+| `constant-temp-humidity-unit` | `constant-temp-humidity-unit-indoor.webp` | 室内/室外均有 |
+| `high-temperature-ac` | `high-temperature-ac-indoor.webp` | 室内/室外均有 |
+
+### 添加新图片
+
+1. 将新图片放入 `ignored/resources/{category}/`
+2. 更新 `ignored/image-rename-map.json`（完整映射表，77 条）
+3. 运行 `python ignored/rename_images.py` 重命名并复制到新结构
+4. 上传到 OSS `resources/{category}/`
+5. 在代码中通过 `cdnUrl(category, new-filename.webp)` 引用
+
+映射表备份在 `ignored/image-rename-map.json`，具有中英文完整对照。
+
+---
+
 ## 技术栈
 
 **当前阶段（第一阶段）**
