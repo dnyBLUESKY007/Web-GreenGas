@@ -20,6 +20,25 @@
     padding-block: calc($section-padding-y * 2 / 3);
   }
 
+  &--dark {
+    background-color: $color-primary-dark;
+    color: $color-bg;
+
+    .section-title__eyebrow {
+      color: $color-accent;
+    }
+
+    .section-title__heading,
+    .section-title__description {
+      color: $color-bg;
+    }
+  }
+
+  &--bleed {
+    width: 100%;
+    overflow: hidden;
+  }
+
   &--cta {
     background-color: $color-bg-section;
     color: $color-primary-dark;
@@ -35,6 +54,35 @@
       color: $color-primary-dark;
       font-size: clamp(1.5rem, 3vw, 2rem);
     }
+  }
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 2rem;
+
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  &__action {
+    flex-shrink: 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: $color-primary;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .section--dark & &__action {
+    color: $color-accent;
   }
 }
 
@@ -63,6 +111,18 @@
 
     @media (width >= $breakpoint-lg) {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &--4 {
+    grid-template-columns: 1fr;
+
+    @media (width >= $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width >= $breakpoint-lg) {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

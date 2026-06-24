@@ -40,5 +40,47 @@
     "summary_zh": "冗余冷却设计，较旧系统节能 32%。",
     "summary_ru": "Резервированная система охлаждения с экономией энергии 32% по сравнению с устаревшей системой.",
     "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "grain-storage-cooling",
+    "name": "Grain Storage Climate Control",
+    "name_zh": "粮储专用空调项目",
+    "name_ru": "Климат-контроль зернохранилища",
+    "industry": "Agriculture",
+    "industry_zh": "农业",
+    "industry_ru": "Сельское хозяйство",
+    "location": "Henan, China",
+    "summary": "Dedicated HVAC system for large-scale grain storage facilities.",
+    "summary_zh": "面向大型粮储设施的专用暖通空调系统。",
+    "summary_ru": "Специализированная система ОВиК для крупных зернохранилищ.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "high-temp-foundry",
+    "name": "Foundry High-Temperature Cooling",
+    "name_zh": "铸造厂高温冷却",
+    "name_ru": "Высокотемпературное охлаждение литейного цеха",
+    "industry": "Metallurgy",
+    "industry_zh": "冶金",
+    "industry_ru": "Металлургия",
+    "location": "Hebei, China",
+    "summary": "High-temperature rated chillers for continuous foundry operations.",
+    "summary_zh": "适用于连续铸造作业的高温额定冷水机组。",
+    "summary_ru": "Высокотемпературные чиллеры для непрерывных литейных операций.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "id": "lab-precision-hvac",
+    "name": "Laboratory Precision HVAC",
+    "name_zh": "实验室精密暖通",
+    "name_ru": "Прецизионные ОВиК для лаборатории",
+    "industry": "Research",
+    "industry_zh": "科研",
+    "industry_ru": "Исследования",
+    "location": "Shanghai, China",
+    "summary": "Constant temperature and humidity control for research laboratory environments.",
+    "summary_zh": "面向科研实验室环境的恒温恒湿控制。",
+    "summary_ru": "Поддержание постоянной температуры и влажности для исследовательских лабораторий.",
+    "image": "/images/placeholder.svg"
   }
 ]

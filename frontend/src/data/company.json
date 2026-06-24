@@ -82,28 +82,118 @@
   ],
   "stats": [
     {
-      "value": "300+",
+      "value": "20+",
+      "label": "Industries Served",
+      "label_zh": "行业经验",
+      "label_ru": "Отраслей обслуживания"
+    },
+    {
+      "value": "100+",
       "label": "Projects Delivered",
-      "label_zh": "已交付项目",
+      "label_zh": "项目案例",
       "label_ru": "Реализованных проектов"
     },
     {
-      "value": "15+",
-      "label": "Years Experience",
-      "label_zh": "年行业经验",
-      "label_ru": "Лет опыта"
+      "value": "24h",
+      "label": "Response Service",
+      "label_zh": "响应服务",
+      "label_ru": "Сервис отклика"
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "System Design",
+      "title_zh": "方案设计能力",
+      "title_ru": "Проектирование систем",
+      "desc": "Site assessment, load calculation, and engineering design tailored to your facility.",
+      "desc_zh": "现场评估、负荷计算及针对设施的工程方案设计。",
+      "desc_ru": "Оценка площадки, расчёт нагрузки и инженерное проектирование под ваш объект.",
+      "icon": "blueprint"
     },
     {
-      "value": "32%",
-      "label": "Avg. Energy Savings",
-      "label_zh": "平均节能",
-      "label_ru": "Средняя экономия энергии"
+      "title": "Project Delivery",
+      "title_zh": "工程实施能力",
+      "title_ru": "Реализация проектов",
+      "desc": "Manufacturing, installation, and commissioning managed end to end.",
+      "desc_zh": "制造、安装与调试全流程管理交付。",
+      "desc_ru": "Производство, монтаж и пусконаладка под ключ.",
+      "icon": "wrench"
     },
     {
-      "value": "24/7",
-      "label": "Support Available",
-      "label_zh": "全天候支持",
-      "label_ru": "Поддержка 24/7"
+      "title": "Custom Development",
+      "title_zh": "定制开发能力",
+      "title_ru": "Индивидуальная разработка",
+      "desc": "Non-standard units and controls built for unique operating conditions.",
+      "desc_zh": "针对特殊工况定制非标机组与控制系统。",
+      "desc_ru": "Нестандартные блоки и системы управления для уникальных условий эксплуатации.",
+      "icon": "gear"
+    },
+    {
+      "title": "After-Sales Support",
+      "title_zh": "售后保障能力",
+      "title_ru": "Послепродажная поддержка",
+      "desc": "Maintenance, spare parts, and technical support throughout equipment life.",
+      "desc_zh": "设备全生命周期的维护保养、配件供应与技术支持。",
+      "desc_ru": "Обслуживание, запасные части и техническая поддержка на весь срок службы оборудования.",
+      "icon": "support"
+    }
+  ],
+  "services": [
+    {
+      "label": "Consultation",
+      "label_zh": "方案咨询",
+      "label_ru": "Консультация",
+      "icon": "chat"
+    },
+    {
+      "label": "Installation & Commissioning",
+      "label_zh": "安装调试",
+      "label_ru": "Монтаж и пусконаладка",
+      "icon": "install"
+    },
+    {
+      "label": "Maintenance",
+      "label_zh": "运维保养",
+      "label_ru": "Обслуживание",
+      "icon": "maintenance"
+    },
+    {
+      "label": "Spare Parts",
+      "label_zh": "配件供应",
+      "label_ru": "Запасные части",
+      "icon": "parts"
+    },
+    {
+      "label": "Technical Support",
+      "label_zh": "技术支持",
+      "label_ru": "Техническая поддержка",
+      "icon": "headset"
+    }
+  ],
+  "aboutHighlights": [
+    {
+      "label": "Company Profile",
+      "label_zh": "企业介绍",
+      "label_ru": "О компании",
+      "icon": "company"
+    },
+    {
+      "label": "Certifications",
+      "label_zh": "资质证书",
+      "label_ru": "Сертификаты",
+      "icon": "certificate"
+    },
+    {
+      "label": "High-Tech Enterprise",
+      "label_zh": "高新技术企业",
+      "label_ru": "Высокотехнологичное предприятие",
+      "icon": "award"
+    },
+    {
+      "label": "Patents & IP",
+      "label_zh": "专利成果",
+      "label_ru": "Патенты и разработки",
+      "icon": "patent"
     }
   ]
 }

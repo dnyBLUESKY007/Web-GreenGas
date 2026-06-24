@@ -13,6 +13,13 @@
 @use 'components/hero';
 @use 'components/hero-carousel';
 @use 'components/cards';
+@use 'components/scenario-card';
+@use 'components/capability-band';
+@use 'components/case-carousel';
+@use 'components/product-marquee';
+@use 'components/service-strip';
+@use 'components/about-summary';
+@use 'components/home-contact';
 
 body {
   display: flex;

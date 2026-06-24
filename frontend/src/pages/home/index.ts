@@ -1,11 +1,15 @@
 import '@/styles/main.scss';
+import { createAboutSummary } from '@/components/about-summary/AboutSummary';
+import { createCapabilityBand } from '@/components/capability-band/CapabilityBand';
+import { createCaseCarousel } from '@/components/case-carousel/CaseCarousel';
 import { createHeroCarousel } from '@/components/hero-carousel/HeroCarousel';
 import type { HeroSlide } from '@/components/hero-carousel/HeroCarousel';
+import { createProductMarquee } from '@/components/product-marquee/ProductMarquee';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { createServiceStrip } from '@/components/service-strip/ServiceStrip';
+import { renderSolutions } from '@/pages/home/renderSolutions';
+import { renderContactChannels } from '@/pages/contact/renderContact';
 import { t } from '@/i18n';
-import { renderProjects } from '@/pages/projects/renderProjects';
-import { renderProducts } from '@/pages/solutions/renderProducts';
-import { renderStats } from '@/pages/contact/renderContact';
 import { initPage } from '@/utils/mountLayout';
 
 function renderHomePage(): void {
@@ -69,37 +73,25 @@ function renderHomePage(): void {
     'home-solutions',
   );
 
-  const projectsSection = createSectionBlock(
-    createSectionTitle({
-      eyebrow: t('home.projects.eyebrow'),
-      title: t('home.projects.title'),
-      description: t('home.projects.desc'),
-    }),
-    'home-projects',
+  const capabilityBand = createCapabilityBand();
+  const caseCarousel = createCaseCarousel();
+  const productMarquee = createProductMarquee();
+  const serviceStrip = createServiceStrip();
+  const aboutSummary = createAboutSummary();
+  const contactSection = createContactSection();
+
+  main.replaceChildren(
+    hero,
+    solutionsSection,
+    capabilityBand,
+    caseCarousel,
+    productMarquee,
+    serviceStrip,
+    aboutSummary,
+    contactSection,
   );
 
-  const statsSection = createSectionBlock(
-    createSectionTitle({
-      eyebrow: t('home.capabilities.eyebrow'),
-      title: t('home.capabilities.title'),
-    }),
-    'home-stats',
-  );
-
-  const contactSection = document.createElement('section');
-  contactSection.className = 'section section--cta';
-  contactSection.innerHTML = `
-    <div class="container section--cta__inner">
-      <h2 class="section--cta__title">${t('home.cta.title')}</h2>
-      <a class="btn btn--primary" href="/contact/">${t('nav.cta')}</a>
-    </div>
-  `;
-
-  main.replaceChildren(hero, solutionsSection, projectsSection, statsSection, contactSection);
-
-  renderProducts(document.getElementById('home-solutions')!);
-  renderProjects(document.getElementById('home-projects')!);
-  renderStats(document.getElementById('home-stats')!);
+  renderSolutions(document.getElementById('home-solutions')!);
 }
 
 function createSectionBlock(title: HTMLElement, contentId: string): HTMLElement {
@@ -114,6 +106,31 @@ function createSectionBlock(title: HTMLElement, contentId: string): HTMLElement 
 
   container.append(title, content);
   section.appendChild(container);
+
+  return section;
+}
+
+function createContactSection(): HTMLElement {
+  const section = document.createElement('section');
+  section.className = 'section section--dark home-contact';
+
+  const container = document.createElement('div');
+  container.className = 'container home-contact__inner';
+
+  const ctaBlock = document.createElement('div');
+  ctaBlock.className = 'home-contact__cta';
+  ctaBlock.innerHTML = `
+    <h2 class="home-contact__title">${t('home.cta.title')}</h2>
+    <a class="btn btn--primary" href="/contact/">${t('nav.cta')}</a>
+  `;
+
+  const channelsMount = document.createElement('div');
+  channelsMount.id = 'home-contact-channels';
+
+  container.append(ctaBlock, channelsMount);
+  section.appendChild(container);
+
+  renderContactChannels(channelsMount);
 
   return section;
 }

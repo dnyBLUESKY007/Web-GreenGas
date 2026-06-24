@@ -16,29 +16,48 @@ export function renderProducts(container: HTMLElement): void {
 
 function createProductCard(product: Product): HTMLElement {
   const name = td(product, 'name');
-  const category = td(product, 'category');
-  const description = td(product, 'description');
+  const category = product.category ? td(product, 'category') : '';
+  const description = product.description ? td(product, 'description') : '';
 
   const article = document.createElement('article');
   article.className = 'solution-card';
 
-  article.innerHTML = `
-    <div class="solution-card__media">
-      <img
-        class="solution-card__image"
-        src="${product.image}"
-        alt="${name}"
-        width="400"
-        height="280"
-        loading="lazy"
-      />
-    </div>
-    <div class="solution-card__body">
-      <p class="solution-card__category">${category}</p>
-      <h3 class="solution-card__title">${name}</h3>
-      <p class="solution-card__description">${description}</p>
-    </div>
+  const media = document.createElement('div');
+  media.className = 'solution-card__media';
+  media.innerHTML = `
+    <img
+      class="solution-card__image"
+      src="${product.image}"
+      alt="${name}"
+      width="400"
+      height="280"
+      loading="lazy"
+    />
   `;
+
+  const body = document.createElement('div');
+  body.className = 'solution-card__body';
+
+  if (category) {
+    const categoryEl = document.createElement('p');
+    categoryEl.className = 'solution-card__category';
+    categoryEl.textContent = category;
+    body.appendChild(categoryEl);
+  }
+
+  const title = document.createElement('h3');
+  title.className = 'solution-card__title';
+  title.textContent = name;
+  body.appendChild(title);
+
+  if (description) {
+    const descEl = document.createElement('p');
+    descEl.className = 'solution-card__description';
+    descEl.textContent = description;
+    body.appendChild(descEl);
+  }
+
+  article.append(media, body);
 
   return article;
 }

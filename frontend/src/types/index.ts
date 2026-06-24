@@ -1,5 +1,7 @@
 export type Locale = 'en' | 'zh' | 'ru';
 
+export type ProductGroup = 'central' | 'industrial';
+
 export interface Project {
   readonly id: string;
   readonly name: string;
@@ -20,13 +22,50 @@ export interface Product {
   readonly name: string;
   readonly name_zh?: string;
   readonly name_ru?: string;
-  readonly category: string;
+  readonly group: ProductGroup;
+  readonly category?: string;
   readonly category_zh?: string;
   readonly category_ru?: string;
-  readonly description: string;
+  readonly description?: string;
   readonly description_zh?: string;
   readonly description_ru?: string;
   readonly image: string;
+}
+
+export interface Solution {
+  readonly id: string;
+  readonly name: string;
+  readonly name_zh?: string;
+  readonly name_ru?: string;
+  readonly summary: string;
+  readonly summary_zh?: string;
+  readonly summary_ru?: string;
+  readonly icon: string;
+  readonly href: string;
+}
+
+export interface Capability {
+  readonly title: string;
+  readonly title_zh?: string;
+  readonly title_ru?: string;
+  readonly desc: string;
+  readonly desc_zh?: string;
+  readonly desc_ru?: string;
+  readonly icon: string;
+}
+
+export interface ServiceItem {
+  readonly label: string;
+  readonly label_zh?: string;
+  readonly label_ru?: string;
+  readonly icon: string;
+}
+
+export interface AboutHighlight {
+  readonly label: string;
+  readonly label_zh?: string;
+  readonly label_ru?: string;
+  readonly icon: string;
 }
 
 export interface FaqItem {
@@ -67,6 +106,9 @@ export interface CompanyData {
   readonly contact: readonly ContactChannel[];
   readonly faq: readonly FaqItem[];
   readonly stats: readonly CompanyStat[];
+  readonly capabilities: readonly Capability[];
+  readonly services: readonly ServiceItem[];
+  readonly aboutHighlights: readonly AboutHighlight[];
 }
 
 export interface NavItem {

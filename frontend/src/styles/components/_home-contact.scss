@@ -1,0 +1,54 @@
+@use '../base/variables' as *;
+
+.home-contact {
+  &__inner {
+    display: grid;
+    gap: 2.5rem;
+
+    @media (width >= $breakpoint-lg) {
+      grid-template-columns: 1fr 1.2fr;
+      align-items: start;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: $color-bg;
+  }
+
+  .channel-list {
+    @media (width >= $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .channel-card {
+    background-color: rgb(255 255 255 / 8%);
+    border-color: rgb(255 255 255 / 15%);
+
+    &__icon {
+      color: $color-accent;
+    }
+
+    &__label {
+      color: $color-bg;
+    }
+
+    &__value {
+      color: rgb(255 255 255 / 75%);
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}

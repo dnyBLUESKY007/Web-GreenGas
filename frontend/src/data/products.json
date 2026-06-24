@@ -1,54 +1,146 @@
 [
   {
-    "id": "marine",
-    "name": "Marine HVAC",
-    "name_zh": "船用暖通空调",
-    "name_ru": "Морские системы ОВиК",
-    "category": "Marine",
-    "category_zh": "船用",
-    "category_ru": "Морской",
-    "description": "Corrosion-resistant cooling systems for ships, offshore platforms, and shipyards.",
-    "description_zh": "适用于船舶、海上平台及船厂的防腐蚀冷却系统。",
-    "description_ru": "Антикоррозионные системы охлаждения для судов, морских платформ и верфей.",
-    "image": "/images/placeholder.svg"
+    "id": "variable-speed-air-cooled-chiller",
+    "name": "Variable-Speed Air-Cooled Chiller",
+    "name_zh": "变频螺杆风冷冷水机组",
+    "name_ru": "Винтовой чиллер с воздушным охлаждением с частотным регулированием",
+    "group": "central",
+    "image": "/images/products/variable-speed-air-cooled-chiller.png"
   },
   {
-    "id": "industrial-factory",
-    "name": "Industrial Factory Cooling",
-    "name_zh": "工业工厂冷却",
-    "name_ru": "Промышленное охлаждение заводов",
-    "category": "Manufacturing",
-    "category_zh": "制造业",
-    "category_ru": "Производство",
-    "description": "High-capacity chillers and air handling for production lines and warehouses.",
-    "description_zh": "面向生产线与仓储的高容量冷水机组与空气处理系统。",
-    "description_ru": "Высокопроизводительные чиллеры и системы обработки воздуха для производственных линий и складов.",
-    "image": "/images/placeholder.svg"
+    "id": "water-cooled-screw-unit",
+    "name": "Water-Cooled Screw Chiller",
+    "name_zh": "标准水冷螺杆机组",
+    "name_ru": "Винтовой чиллер с водяным охлаждением",
+    "group": "central",
+    "image": "/images/products/water-cooled-screw-unit.png"
   },
   {
-    "id": "high-temperature",
-    "name": "High-Temperature Applications",
-    "name_zh": "高温应用",
-    "name_ru": "Высокотемпературные применения",
-    "category": "Process Cooling",
-    "category_zh": "工艺冷却",
-    "category_ru": "Технологическое охлаждение",
-    "description": "Cooling solutions for furnaces, foundries, and heat-intensive processes.",
-    "description_zh": "适用于熔炉、铸造厂及高热工艺环境的冷却方案。",
-    "description_ru": "Решения охлаждения для печей, литейных цехов и теплоёмких технологических процессов.",
-    "image": "/images/placeholder.svg"
+    "id": "modular-water-cooled-scroll",
+    "name": "Modular Water-Cooled Scroll Unit",
+    "name_zh": "模块式水冷涡旋机组",
+    "name_ru": "Модульный спиральный чиллер с водяным охлаждением",
+    "group": "central",
+    "image": "/images/products/modular-water-cooled-scroll.png"
   },
   {
-    "id": "explosion-proof",
-    "name": "Explosion-Proof HVAC",
-    "name_zh": "防爆暖通空调",
-    "name_ru": "Взрывозащищённые системы ОВиК",
-    "category": "Hazardous Environments",
-    "category_zh": "危险环境",
-    "category_ru": "Опасные среды",
-    "description": "Certified units for chemical plants, oil & gas, and classified areas.",
-    "description_zh": "适用于化工厂、油气及防爆区域的认证机组。",
-    "description_ru": "Сертифицированное оборудование для химических заводов, нефтегазовой отрасли и взрывоопасных зон.",
-    "image": "/images/placeholder.svg"
+    "id": "air-source-heat-pump",
+    "name": "Air-Source Heat Pump Unit",
+    "name_zh": "模块式空气源风冷热泵机组",
+    "name_ru": "Модульный тепловой насос с воздушным источником",
+    "group": "central",
+    "image": "/images/products/air-source-heat-pump.png"
+  },
+  {
+    "id": "air-cooled-screw-heat-pump",
+    "name": "Air-Cooled Screw Heat Pump",
+    "name_zh": "高效螺杆风冷热泵机组",
+    "name_ru": "Высокоэффективный винтовой тепловой насос с воздушным охлаждением",
+    "group": "central",
+    "image": "/images/products/air-cooled-screw-heat-pump.jpg"
+  },
+  {
+    "id": "cassette-fan-coil",
+    "name": "Cassette Fan Coil Unit",
+    "name_zh": "卡式风机盘管",
+    "name_ru": "Кассетный фанкойл",
+    "group": "central",
+    "image": "/images/products/cassette-fan-coil.png"
+  },
+  {
+    "id": "concealed-fan-coil",
+    "name": "Concealed Fan Coil Unit",
+    "name_zh": "吊顶暗装风机盘管",
+    "name_ru": "Скрытый потолочный фанкойл",
+    "group": "central",
+    "image": "/images/products/concealed-fan-coil.jpg"
+  },
+  {
+    "id": "air-handling-unit",
+    "name": "Air Handling Unit",
+    "name_zh": "空气处理机",
+    "name_ru": "Центральный кондиционер обработки воздуха",
+    "group": "central",
+    "image": "/images/products/air-handling-unit.jpg"
+  },
+  {
+    "id": "magnetic-bearing-chiller",
+    "name": "Magnetic Bearing Chiller",
+    "name_zh": "气悬浮冷水机组",
+    "name_ru": "Чиллер с магнитными подшипниками",
+    "group": "central",
+    "image": "/images/products/magnetic-bearing-chiller.png"
+  },
+  {
+    "id": "packaged-dx-unit",
+    "name": "Packaged DX Unit",
+    "name_zh": "整体式直膨机组",
+    "name_ru": "Компактный блок прямого расширения",
+    "group": "central",
+    "image": "/images/products/packaged-dx-unit.jpg"
+  },
+  {
+    "id": "energy-recovery-unit",
+    "name": "Energy Recovery Unit",
+    "name_zh": "能量回收机组",
+    "name_ru": "Блок рекуперации энергии",
+    "group": "central",
+    "image": "/images/products/energy-recovery-unit.jpg"
+  },
+  {
+    "id": "industrial-water-cooled-cabinet",
+    "name": "Industrial Water-Cooled Cabinet AC",
+    "name_zh": "工业空调-水冷柜机",
+    "name_ru": "Промышленный шкафной кондиционер с водяным охлаждением",
+    "group": "industrial",
+    "image": "/images/products/industrial-water-cooled-cabinet.png"
+  },
+  {
+    "id": "industrial-air-cooled-cabinet",
+    "name": "Industrial Air-Cooled Cabinet AC",
+    "name_zh": "工业空调-风冷柜机",
+    "name_ru": "Промышленный шкафной кондиционер с воздушным охлаждением",
+    "group": "industrial",
+    "image": "/images/products/industrial-air-cooled-cabinet.jpg"
+  },
+  {
+    "id": "constant-temp-humidity-unit",
+    "name": "Constant Temperature & Humidity Unit",
+    "name_zh": "风冷恒温恒湿机组",
+    "name_ru": "Блок с постоянной температурой и влажностью",
+    "group": "industrial",
+    "image": "/images/products/constant-temp-humidity-unit.png"
+  },
+  {
+    "id": "high-temperature-ac",
+    "name": "High-Temperature Air Conditioner",
+    "name_zh": "高温空调",
+    "name_ru": "Высокотемпературный кондиционер",
+    "group": "industrial",
+    "image": "/images/products/high-temperature-ac.jpg"
+  },
+  {
+    "id": "grain-storage-ac",
+    "name": "Grain Storage Air Conditioner",
+    "name_zh": "粮仓空调",
+    "name_ru": "Кондиционер для зернохранилищ",
+    "group": "industrial",
+    "image": "/images/products/grain-storage-ac.png"
+  },
+  {
+    "id": "special-purpose-unit",
+    "name": "Special-Purpose HVAC Unit",
+    "name_zh": "特种空调机组",
+    "name_ru": "Специальный блок ОВиК",
+    "group": "industrial",
+    "image": "/images/products/special-purpose-unit.png"
+  },
+  {
+    "id": "split-ceiling-unit",
+    "name": "Split Ceiling Air Conditioning Unit",
+    "name_zh": "分体吊顶式空调机组",
+    "name_ru": "Раздельный потолочный кондиционер",
+    "group": "industrial",
+    "image": "/images/products/split-ceiling-unit.png"
   }
 ]
