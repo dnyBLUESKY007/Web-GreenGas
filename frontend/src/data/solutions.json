@@ -7,8 +7,7 @@
     "summary": "High-capacity cooling for production lines, warehouses, and process facilities.",
     "summary_zh": "面向生产线、仓储及工艺设施的高容量冷却方案。",
     "summary_ru": "Высокопроизводительное охлаждение для производственных линий, складов и технологических объектов.",
-    "icon": "factory",
-    "href": "/solutions/"
+    "icon": "factory"
   },
   {
     "id": "commercial-buildings",
@@ -18,8 +17,7 @@
     "summary": "Central HVAC systems for offices, retail, and institutional facilities.",
     "summary_zh": "面向办公、商业及公共建筑的中央空调系统。",
     "summary_ru": "Центральные системы ОВиК для офисов, торговых и общественных зданий.",
-    "icon": "building",
-    "href": "/solutions/"
+    "icon": "building"
   },
   {
     "id": "data-center",
@@ -29,8 +27,7 @@
     "summary": "Precision cooling with redundancy for mission-critical IT infrastructure.",
     "summary_zh": "面向关键 IT 基础设施的冗余精密冷却方案。",
     "summary_ru": "Прецизионное охлаждение с резервированием для критически важной IT-инфраструктуры.",
-    "icon": "server",
-    "href": "/solutions/"
+    "icon": "server"
   },
   {
     "id": "special-environment",
@@ -40,7 +37,6 @@
     "summary": "Marine, high-temperature, explosion-proof, and custom hazardous-area systems.",
     "summary_zh": "船用、高温、防爆及危险区域定制系统。",
     "summary_ru": "Морские, высокотемпературные, взрывозащищённые и индивидуальные системы для опасных зон.",
-    "icon": "shield",
-    "href": "/solutions/"
+    "icon": "shield"
   }
 ]

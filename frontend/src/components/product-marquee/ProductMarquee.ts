@@ -1,6 +1,7 @@
 import productsData from '@/data/products.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { t, td } from '@/i18n';
+import { basePath } from '@/utils/path';
 import type { Product } from '@/types';
 
 export function createProductMarquee(): HTMLElement {
@@ -21,7 +22,7 @@ export function createProductMarquee(): HTMLElement {
 
   const moreLink = document.createElement('a');
   moreLink.className = 'section-head__action';
-  moreLink.href = '/solutions/';
+  moreLink.href = basePath('/solutions/');
   moreLink.textContent = `${t('home.products.more')} →`;
 
   head.append(title, moreLink);

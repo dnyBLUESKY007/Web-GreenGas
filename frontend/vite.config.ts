@@ -2,6 +2,7 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: process.env.VITE_BASE || '/',
   server: {
     // 前导 `.` 为 Vite 通配符，覆盖该域名下所有子域
     allowedHosts: ['.ngrok-free.app', '.ngrok-free.dev', '.ngrok.app', '.ngrok.io'],

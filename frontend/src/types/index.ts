@@ -41,7 +41,6 @@ export interface Solution {
   readonly summary_zh?: string;
   readonly summary_ru?: string;
   readonly icon: string;
-  readonly href: string;
 }
 
 export interface Capability {

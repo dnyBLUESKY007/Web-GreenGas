@@ -1,6 +1,7 @@
 import { createLangSwitcher } from '@/components/lang-switcher/LangSwitcher';
 import { NAV_ITEMS } from '@/config/navigation';
 import { t } from '@/i18n';
+import { basePath } from '@/utils/path';
 import type { PageId } from '@/types';
 
 export function createNavbar(activePageId: PageId): HTMLElement {
@@ -12,7 +13,7 @@ export function createNavbar(activePageId: PageId): HTMLElement {
 
   const brand = document.createElement('a');
   brand.className = 'navbar__brand';
-  brand.href = '/';
+  brand.href = basePath('/');
   brand.textContent = 'GREENGAS';
 
   const nav = document.createElement('nav');
@@ -40,7 +41,7 @@ export function createNavbar(activePageId: PageId): HTMLElement {
 
   const cta = document.createElement('a');
   cta.className = 'btn btn--primary navbar__cta';
-  cta.href = '/contact/';
+  cta.href = basePath('/contact/');
   cta.textContent = t('nav.cta');
 
   actions.append(langSwitcher, cta);

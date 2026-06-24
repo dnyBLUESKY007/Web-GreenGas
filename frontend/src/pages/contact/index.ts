@@ -4,6 +4,7 @@ import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { t } from '@/i18n';
 import { renderContactChannels } from '@/pages/contact/renderContact';
 import { initPage } from '@/utils/mountLayout';
+import { basePath } from '@/utils/path';
 
 function renderContactPage(): void {
   const main = document.getElementById('page-content');
@@ -40,7 +41,7 @@ function renderContactPage(): void {
 
   const faqLink = document.createElement('a');
   faqLink.className = 'contact-faq-link';
-  faqLink.href = '/faq/';
+  faqLink.href = basePath('/faq/');
   faqLink.textContent = t('contact.faqLink');
 
   contactLayout.append(channelsMount, formMount, faqLink);

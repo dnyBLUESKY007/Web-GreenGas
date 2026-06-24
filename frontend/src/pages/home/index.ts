@@ -11,6 +11,7 @@ import { renderSolutions } from '@/pages/home/renderSolutions';
 import { renderContactChannels } from '@/pages/contact/renderContact';
 import { t } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
+import { basePath } from '@/utils/path';
 import { cdnUrl } from '@/config/assets';
 
 function renderHomePage(): void {
@@ -25,7 +26,7 @@ function renderHomePage(): void {
       headline: t('hero.carousel.0.headline'),
       subtitle: t('hero.carousel.0.subtitle'),
       ctaLabel: t('hero.cta'),
-      ctaHref: '/contact/',
+      ctaHref: basePath('/contact/'),
       imageSrc: cdnUrl('hero', 'hero-steel-mill.webp'),
       imageAlt: t('hero.carousel.0.alt'),
       contentAlign: 'left',
@@ -35,7 +36,7 @@ function renderHomePage(): void {
       headline: t('hero.carousel.1.headline'),
       subtitle: t('hero.carousel.1.subtitle'),
       ctaLabel: t('hero.cta'),
-      ctaHref: '/contact/',
+      ctaHref: basePath('/contact/'),
       imageSrc: cdnUrl('hero', 'hero-rolling-mill.webp'),
       imageAlt: t('hero.carousel.1.alt'),
       contentAlign: 'center',
@@ -45,7 +46,7 @@ function renderHomePage(): void {
       headline: t('hero.carousel.2.headline'),
       subtitle: t('hero.carousel.2.subtitle'),
       ctaLabel: t('hero.cta'),
-      ctaHref: '/contact/',
+      ctaHref: basePath('/contact/'),
       imageSrc: cdnUrl('hero', 'hero-coal-transport.webp'),
       imageAlt: t('hero.carousel.2.alt'),
       contentAlign: 'right',
@@ -55,7 +56,7 @@ function renderHomePage(): void {
       headline: t('hero.carousel.3.headline'),
       subtitle: t('hero.carousel.3.subtitle'),
       ctaLabel: t('hero.cta'),
-      ctaHref: '/contact/',
+      ctaHref: basePath('/contact/'),
       imageSrc: cdnUrl('hero', 'hero-industrial-ac-design.webp'),
       imageAlt: t('hero.carousel.3.alt'),
       contentAlign: 'left',
@@ -122,7 +123,7 @@ function createContactSection(): HTMLElement {
   ctaBlock.className = 'home-contact__cta';
   ctaBlock.innerHTML = `
     <h2 class="home-contact__title">${t('home.cta.title')}</h2>
-    <a class="btn btn--primary" href="/contact/">${t('nav.cta')}</a>
+    <a class="btn btn--primary" href="${basePath('/contact/')}">${t('nav.cta')}</a>
   `;
 
   const channelsMount = document.createElement('div');

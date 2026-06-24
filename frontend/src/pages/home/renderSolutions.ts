@@ -1,6 +1,7 @@
 import solutionsData from '@/data/solutions.json';
 import { td } from '@/i18n';
 import { getIcon } from '@/utils/icons';
+import { basePath } from '@/utils/path';
 import type { Solution } from '@/types';
 
 export function renderSolutions(container: HTMLElement): void {
@@ -21,7 +22,7 @@ function createSolutionCard(solution: Solution): HTMLElement {
 
   const link = document.createElement('a');
   link.className = 'scenario-card';
-  link.href = solution.href;
+  link.href = basePath('/solutions/');
 
   const icon = document.createElement('div');
   icon.className = 'scenario-card__icon';

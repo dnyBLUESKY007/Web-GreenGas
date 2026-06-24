@@ -2,6 +2,7 @@ import companyData from '@/data/company.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { t, td } from '@/i18n';
 import { getIcon } from '@/utils/icons';
+import { basePath } from '@/utils/path';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
@@ -31,7 +32,7 @@ export function createAboutSummary(): HTMLElement {
 
   const moreLink = document.createElement('a');
   moreLink.className = 'about-summary__link';
-  moreLink.href = '/about/';
+  moreLink.href = basePath('/about/');
   moreLink.textContent = `${t('home.about.more')} →`;
 
   textCol.append(desc, moreLink);
@@ -42,7 +43,7 @@ export function createAboutSummary(): HTMLElement {
   for (const highlight of company.aboutHighlights) {
     const badge = document.createElement('a');
     badge.className = 'about-summary__badge';
-    badge.href = '/about/';
+    badge.href = basePath('/about/');
 
     const icon = document.createElement('div');
     icon.className = 'about-summary__badge-icon';
