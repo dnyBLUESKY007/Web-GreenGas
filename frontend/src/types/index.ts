@@ -83,4 +83,4 @@ export interface PageMeta {
   readonly ogImage: string;
 }
 
-export type PageId = 'home' | 'about' | 'solutions' | 'contact' | 'news';
+export type PageId = 'home' | 'about' | 'solutions' | 'contact' | 'news' | 'faq';

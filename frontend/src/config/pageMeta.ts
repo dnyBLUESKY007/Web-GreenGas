@@ -39,6 +39,13 @@ export const PAGE_META: Record<PageId, PageMeta> = {
     ogDescriptionKey: 'meta.news.ogDescription',
     ogImage: DEFAULT_OG_IMAGE,
   },
+  faq: {
+    titleKey: 'meta.faq.title',
+    descriptionKey: 'meta.faq.description',
+    ogTitleKey: 'meta.faq.ogTitle',
+    ogDescriptionKey: 'meta.faq.ogDescription',
+    ogImage: DEFAULT_OG_IMAGE,
+  },
 };
 
 export function applyPageMeta(pageId: PageId): void {

@@ -78,29 +78,71 @@
   }
 }
 
-.contact-channels {
+// [联系方式] Contact channels
+.channel-list {
   display: grid;
-  gap: 1.25rem;
+  gap: 1rem;
+}
 
-  &__item {
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background-color: $color-bg-muted;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    color: $color-primary;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__body {
     display: grid;
     gap: 0.25rem;
+    min-width: 0;
   }
 
   &__label {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    font-size: 1.0625rem;
+    font-weight: 700;
     color: $color-primary;
   }
 
-  &__link {
-    font-size: 1.1875rem;
-    color: $color-text;
+  &__value {
+    font-size: 0.9375rem;
+    color: $color-text-muted;
 
     &:hover {
       color: $color-primary;
+    }
+  }
+}
+
+// [留言板] Message board
+.message-board {
+  padding: 2rem 2.5rem;
+  border-radius: $radius-lg;
+  background-color: #e8f5e9;
+
+  &__title {
+    margin-bottom: 1.5rem;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: $color-primary;
+    transition: opacity 300ms ease;
+
+    &--hidden {
+      opacity: 0;
     }
   }
 }
