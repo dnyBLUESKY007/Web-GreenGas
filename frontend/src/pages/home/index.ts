@@ -2,11 +2,14 @@ import '@/styles/main.scss';
 import { createAboutSummary } from '@/components/about-summary/AboutSummary';
 import { createCapabilityBand } from '@/components/capability-band/CapabilityBand';
 import { createCaseCarousel } from '@/components/case-carousel/CaseCarousel';
+import { createCertifications } from '@/components/certifications/Certifications';
+import { createClientLogos } from '@/components/client-logos/ClientLogos';
 import { createHeroCarousel } from '@/components/hero-carousel/HeroCarousel';
 import type { HeroSlide } from '@/components/hero-carousel/HeroCarousel';
 import { createProductMarquee } from '@/components/product-marquee/ProductMarquee';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { createServiceStrip } from '@/components/service-strip/ServiceStrip';
+import { createStatsBand } from '@/components/stats-band/StatsBand';
 import { renderSolutions } from '@/pages/home/renderSolutions';
 import { renderContactChannels } from '@/pages/contact/renderContact';
 import { t } from '@/i18n';
@@ -66,6 +69,8 @@ function renderHomePage(): void {
 
   const hero = createHeroCarousel(heroSlides);
 
+  const statsBand = createStatsBand();
+
   const solutionsSection = createSectionBlock(
     createSectionTitle({
       eyebrow: t('home.solutions.eyebrow'),
@@ -81,12 +86,17 @@ function renderHomePage(): void {
   const serviceStrip = createServiceStrip();
   const aboutSummary = createAboutSummary();
   const contactSection = createContactSection();
+  const certifications = createCertifications();
+  const clientLogos = createClientLogos();
 
   main.replaceChildren(
     hero,
+    statsBand,
     solutionsSection,
     capabilityBand,
     caseCarousel,
+    certifications,
+    clientLogos,
     productMarquee,
     serviceStrip,
     aboutSummary,

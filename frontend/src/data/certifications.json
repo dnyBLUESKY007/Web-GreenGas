@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ce",
+    "name": "CE Certification",
+    "name_zh": "CE 认证",
+    "name_ru": "Сертификация CE",
+    "image": "cert-ce.webp"
+  },
+  {
+    "id": "iso9001",
+    "name": "ISO 9001 Quality Management",
+    "name_zh": "ISO 9001 质量管理体系",
+    "name_ru": "ISO 9001 Менеджмент качества",
+    "image": "cert-iso9001.webp"
+  }
+]
