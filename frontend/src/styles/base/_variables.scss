@@ -1,7 +1,31 @@
-// Brand colors
-$color-primary: #163b31;
-$color-primary-dark: #0f2e25;
-$color-accent: #a8ff60;
+// ── Runtime theme variables (CSS custom properties) ──
+// Three schemes share the same primary tones; accent color is the differentiator.
+// Set via document.documentElement.dataset.theme by theme/index.ts.
+
+:root,
+:root[data-theme='emerald-lime'] {
+  --color-primary: #163b31;
+  --color-primary-dark: #0f2e25;
+  --color-accent: #a8ff60;
+  --color-accent-contrast: #0f2e25; // dark text on bright lime
+}
+
+:root[data-theme='emerald-steel'] {
+  --color-accent: #8a949a;
+  --color-accent-contrast: #ffffff;
+}
+
+:root[data-theme='emerald-gold'] {
+  --color-accent: #c9a449;
+  --color-accent-contrast: #0f2e25;
+}
+
+// ── SCSS variables (point to CSS custom properties for brand colors) ──
+$color-primary: var(--color-primary);
+$color-primary-dark: var(--color-primary-dark);
+$color-accent: var(--color-accent);
+
+// Static colors (not part of theme switching)
 $color-text: #1a1a1a;
 $color-text-muted: #5a5a5a;
 $color-bg: #ffffff;

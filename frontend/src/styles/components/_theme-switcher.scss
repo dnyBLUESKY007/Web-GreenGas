@@ -1,0 +1,45 @@
+@use '../base/variables' as *;
+
+.theme-switcher {
+  display: flex;
+  gap: 0.25rem;
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.625rem;
+    height: 1.625rem;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    transition: border-color $transition-base, transform $transition-base;
+
+    &[data-theme='emerald-lime'] {
+      background-color: #a8ff60;
+    }
+
+    &[data-theme='emerald-steel'] {
+      background-color: #8a949a;
+    }
+
+    &[data-theme='emerald-gold'] {
+      background-color: #c9a449;
+    }
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
+    }
+
+    &--active {
+      border-color: $color-primary-dark;
+    }
+  }
+}

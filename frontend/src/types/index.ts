@@ -1,5 +1,7 @@
 export type Locale = 'en' | 'zh' | 'ru';
 
+export type Theme = 'emerald-lime' | 'emerald-steel' | 'emerald-gold';
+
 export type ProductGroup = 'central' | 'industrial';
 
 export interface Project {
