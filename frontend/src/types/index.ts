@@ -1,5 +1,22 @@
 export type Locale = 'en' | 'zh' | 'ru';
 
+export type Theme = 'emerald-lime' | 'emerald-steel' | 'emerald-gold';
+
+export interface Certification {
+  readonly id: string;
+  readonly name: string;
+  readonly name_zh?: string;
+  readonly name_ru?: string;
+  readonly image: string;
+}
+
+export interface ClientIndustry {
+  readonly id: string;
+  readonly name: string;
+  readonly name_en?: string;
+  readonly name_ru?: string;
+}
+
 export type ProductGroup = 'central' | 'industrial';
 
 export interface Project {

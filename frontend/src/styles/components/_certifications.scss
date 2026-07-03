@@ -1,0 +1,43 @@
+@use '../base/variables' as *;
+
+.certifications {
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__track {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    width: 8rem;
+    height: 11rem;
+    object-fit: contain;
+    border-radius: $radius-sm;
+    background-color: $color-bg;
+    box-shadow: $shadow-sm;
+    padding: 0.5rem;
+
+    @media (width < $breakpoint-md) {
+      width: 6rem;
+      height: 8.5rem;
+    }
+  }
+
+  &__name {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: $color-text-muted;
+    text-align: center;
+  }
+}

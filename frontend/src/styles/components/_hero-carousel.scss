@@ -9,8 +9,8 @@
   &__slides {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 4;
-    min-height: 17rem;
+    aspect-ratio: 16 / 5;
+    min-height: 20rem;
 
     @media (width < $breakpoint-md) {
       aspect-ratio: 4 / 3;
@@ -84,18 +84,18 @@
 
   &__headline {
     margin-bottom: 0.75rem;
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.12;
     color: $color-bg;
   }
 
   &__subtitle {
     margin-bottom: 1.25rem;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.125rem;
+    line-height: 1.65;
     color: rgb(255 255 255 / 85%);
-    max-width: 26rem;
+    max-width: 30rem;
   }
 
   &__content--center &__subtitle {

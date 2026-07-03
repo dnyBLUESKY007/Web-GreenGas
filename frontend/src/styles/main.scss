@@ -8,6 +8,7 @@
 @use 'components/button';
 @use 'components/navbar';
 @use 'components/lang-switcher';
+@use 'components/theme-switcher';
 @use 'components/footer';
 @use 'components/section-title';
 @use 'components/hero';
@@ -15,6 +16,9 @@
 @use 'components/cards';
 @use 'components/scenario-card';
 @use 'components/capability-band';
+@use 'components/certifications';
+@use 'components/client-logos';
+@use 'components/stats-band';
 @use 'components/case-carousel';
 @use 'components/product-marquee';
 @use 'components/service-strip';

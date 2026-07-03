@@ -1,0 +1,38 @@
+[
+  {
+    "id": "steel",
+    "name": "Steel Manufacturing",
+    "name_zh": "钢铁冶炼",
+    "name_ru": "Сталелитейное производство"
+  },
+  {
+    "id": "marine",
+    "name": "Marine & Offshore",
+    "name_zh": "船舶海工",
+    "name_ru": "Морская отрасль"
+  },
+  {
+    "id": "chemical",
+    "name": "Chemical & Energy",
+    "name_zh": "化工能源",
+    "name_ru": "Химическая и энергетическая"
+  },
+  {
+    "id": "food",
+    "name": "Food Processing",
+    "name_zh": "食品加工",
+    "name_ru": "Пищевая промышленность"
+  },
+  {
+    "id": "datacenter",
+    "name": "Data Centers",
+    "name_zh": "数据中心",
+    "name_ru": "Дата-центры"
+  },
+  {
+    "id": "gov",
+    "name": "Government Projects",
+    "name_zh": "政府项目",
+    "name_ru": "Государственные проекты"
+  }
+]
