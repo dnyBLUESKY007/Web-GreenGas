@@ -32,7 +32,7 @@ function resolveInitialLocale(): Locale {
     return 'ru';
   }
 
-  return 'en';
+  return 'zh';
 }
 
 function applyDocumentLocale(locale: Locale): void {

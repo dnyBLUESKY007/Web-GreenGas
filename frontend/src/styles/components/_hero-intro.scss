@@ -1,0 +1,26 @@
+@use '../base/variables' as *;
+
+.hero-intro {
+  display: flex;
+  align-items: center;
+  background-color: $color-bg-muted;
+  border-bottom: 1px solid $color-border;
+  padding-block: 2.5rem;
+
+  @media (width >= $breakpoint-md) {
+    height: calc((100dvh - #{$navbar-height}) * 0.3);
+    padding-block: 0;
+  }
+
+  &__inner {
+    width: min(100% - 2rem, 52rem);
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    line-height: 1.75;
+    color: $color-text-muted;
+  }
+}

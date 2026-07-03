@@ -1,3 +1,5 @@
+import { t } from '@/i18n';
+
 export type HeroContentAlign = 'left' | 'center' | 'right';
 export type HeroOverlayStyle = 'left-heavy' | 'right-heavy' | 'minimal';
 
@@ -14,6 +16,14 @@ export interface HeroSlide {
 
 export const AUTO_ROTATE_INTERVAL = 6000;
 
+const SWIPE_THRESHOLD = 50;
+
+const SWIPE_HINT_SVG = `
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="16" viewBox="0 0 28 16" fill="none" aria-hidden="true">
+  <path d="M2 8h20M2 8l4-4M2 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 8H6M26 8l-4-4M26 8l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
 export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
   const container = document.createElement('section');
   container.className = 'hero-carousel';
@@ -28,13 +38,29 @@ export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
 
   const prevBtn = document.createElement('button');
   prevBtn.className = 'hero-carousel__nav-btn hero-carousel__nav-btn--prev';
-  prevBtn.setAttribute('aria-label', 'Previous slide');
+  prevBtn.setAttribute('aria-label', t('hero.carousel.prev'));
   prevBtn.type = 'button';
 
   const nextBtn = document.createElement('button');
   nextBtn.className = 'hero-carousel__nav-btn hero-carousel__nav-btn--next';
-  nextBtn.setAttribute('aria-label', 'Next slide');
+  nextBtn.setAttribute('aria-label', t('hero.carousel.next'));
   nextBtn.type = 'button';
+
+  const controls = document.createElement('div');
+  controls.className = 'hero-carousel__controls';
+
+  const swipeHint = document.createElement('div');
+  swipeHint.className = 'hero-carousel__swipe-hint';
+  swipeHint.setAttribute('aria-hidden', 'true');
+  swipeHint.innerHTML = SWIPE_HINT_SVG;
+
+  const tabRow = document.createElement('div');
+  tabRow.className = 'hero-carousel__tab-row';
+
+  const tabPrevBtn = document.createElement('button');
+  tabPrevBtn.className = 'hero-carousel__tab-nav hero-carousel__tab-nav--prev';
+  tabPrevBtn.setAttribute('aria-label', t('hero.carousel.prev'));
+  tabPrevBtn.type = 'button';
 
   const tabs = document.createElement('div');
   tabs.className = 'hero-carousel__tabs';
@@ -52,7 +78,14 @@ export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
     tabs.appendChild(tab);
   }
 
-  container.append(slidesWrapper, prevBtn, nextBtn, tabs);
+  const tabNextBtn = document.createElement('button');
+  tabNextBtn.className = 'hero-carousel__tab-nav hero-carousel__tab-nav--next';
+  tabNextBtn.setAttribute('aria-label', t('hero.carousel.next'));
+  tabNextBtn.type = 'button';
+
+  tabRow.append(tabPrevBtn, tabs, tabNextBtn);
+  controls.append(swipeHint, tabRow);
+  container.append(slidesWrapper, prevBtn, nextBtn, controls);
 
   initializeCarousel(container, slides.length);
 
@@ -67,11 +100,22 @@ function createSlideElement(slide: HeroSlide, isActive: boolean): HTMLElement {
     el.classList.add('hero-carousel__slide--active');
   }
 
-  const img = document.createElement('img');
-  img.className = 'hero-carousel__image';
-  img.src = slide.imageSrc;
-  img.alt = slide.imageAlt;
-  img.loading = 'lazy';
+  const media = document.createElement('div');
+  media.className = 'hero-carousel__media';
+
+  const imgBg = document.createElement('img');
+  imgBg.className = 'hero-carousel__image hero-carousel__image--bg';
+  imgBg.src = slide.imageSrc;
+  imgBg.alt = '';
+  imgBg.setAttribute('aria-hidden', 'true');
+
+  const imgFg = document.createElement('img');
+  imgFg.className = 'hero-carousel__image hero-carousel__image--fg';
+  imgFg.src = slide.imageSrc;
+  imgFg.alt = slide.imageAlt;
+  imgFg.loading = isActive ? 'eager' : 'lazy';
+
+  media.append(imgBg, imgFg);
 
   const overlay = document.createElement('div');
   overlay.className = 'hero-carousel__overlay';
@@ -108,7 +152,7 @@ function createSlideElement(slide: HeroSlide, isActive: boolean): HTMLElement {
 
   contentWrapper.append(headline, subtitle, cta);
   overlay.appendChild(contentWrapper);
-  el.append(img, overlay);
+  el.append(media, overlay);
 
   return el;
 }
@@ -128,10 +172,13 @@ function stopTabProgress(tab: HTMLElement): void {
 }
 
 function initializeCarousel(container: HTMLElement, slideCount: number): void {
+  const slidesWrapper = container.querySelector<HTMLElement>('.hero-carousel__slides');
   const slides = container.querySelectorAll<HTMLElement>('.hero-carousel__slide');
   const tabs = container.querySelectorAll<HTMLElement>('.hero-carousel__tab');
   const prevBtn = container.querySelector<HTMLElement>('.hero-carousel__nav-btn--prev');
   const nextBtn = container.querySelector<HTMLElement>('.hero-carousel__nav-btn--next');
+  const tabPrevBtn = container.querySelector<HTMLElement>('.hero-carousel__tab-nav--prev');
+  const tabNextBtn = container.querySelector<HTMLElement>('.hero-carousel__tab-nav--next');
 
   if (slides.length === 0) return;
 
@@ -165,15 +212,20 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
     }
   }
 
-  prevBtn?.addEventListener('click', () => {
+  function goToPrev(): void {
     goToSlide((currentIndex - 1 + slideCount) % slideCount);
     resetAutoRotate();
-  });
+  }
 
-  nextBtn?.addEventListener('click', () => {
+  function goToNext(): void {
     goToSlide((currentIndex + 1) % slideCount);
     resetAutoRotate();
-  });
+  }
+
+  prevBtn?.addEventListener('click', goToPrev);
+  nextBtn?.addEventListener('click', goToNext);
+  tabPrevBtn?.addEventListener('click', goToPrev);
+  tabNextBtn?.addEventListener('click', goToNext);
 
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => {
@@ -200,7 +252,73 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
     });
   });
 
+  if (slidesWrapper) {
+    initSwipeDrag(slidesWrapper, goToPrev, goToNext);
+  }
+
   tabs[0].classList.add('hero-carousel__tab--active');
   startTabProgress(tabs[0]);
   resetAutoRotate();
+}
+
+function initSwipeDrag(
+  slidesWrapper: HTMLElement,
+  goToPrev: () => void,
+  goToNext: () => void,
+): void {
+  let startX = 0;
+  let isDragging = false;
+  let activePointerId: number | null = null;
+
+  slidesWrapper.style.touchAction = 'pan-y';
+
+  const handlePointerDown = (event: PointerEvent): void => {
+    if (event.button !== 0 && event.pointerType === 'mouse') {
+      return;
+    }
+
+    isDragging = true;
+    startX = event.clientX;
+    activePointerId = event.pointerId;
+    slidesWrapper.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event: PointerEvent): void => {
+    if (!isDragging || activePointerId !== event.pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - startX;
+    if (Math.abs(deltaX) > 10) {
+      event.preventDefault();
+    }
+  };
+
+  const handlePointerEnd = (event: PointerEvent): void => {
+    if (!isDragging || activePointerId !== event.pointerId) {
+      return;
+    }
+
+    isDragging = false;
+    const deltaX = event.clientX - startX;
+
+    if (slidesWrapper.hasPointerCapture(event.pointerId)) {
+      slidesWrapper.releasePointerCapture(event.pointerId);
+    }
+
+    activePointerId = null;
+
+    if (Math.abs(deltaX) >= SWIPE_THRESHOLD) {
+      if (deltaX < 0) {
+        goToNext();
+      } else {
+        goToPrev();
+      }
+    }
+  };
+
+  slidesWrapper.addEventListener('pointerdown', handlePointerDown);
+  slidesWrapper.addEventListener('pointermove', handlePointerMove);
+  slidesWrapper.addEventListener('pointerup', handlePointerEnd);
+  slidesWrapper.addEventListener('pointercancel', handlePointerEnd);
 }

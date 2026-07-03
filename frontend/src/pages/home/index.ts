@@ -6,6 +6,7 @@ import { createCertifications } from '@/components/certifications/Certifications
 import { createClientLogos } from '@/components/client-logos/ClientLogos';
 import { createHeroCarousel } from '@/components/hero-carousel/HeroCarousel';
 import type { HeroSlide } from '@/components/hero-carousel/HeroCarousel';
+import { createHeroIntro } from '@/components/hero-intro/HeroIntro';
 import { createProductMarquee } from '@/components/product-marquee/ProductMarquee';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { createServiceStrip } from '@/components/service-strip/ServiceStrip';
@@ -68,6 +69,7 @@ function renderHomePage(): void {
   ];
 
   const hero = createHeroCarousel(heroSlides);
+  const heroIntro = createHeroIntro();
 
   const statsBand = createStatsBand();
 
@@ -91,6 +93,7 @@ function renderHomePage(): void {
 
   main.replaceChildren(
     hero,
+    heroIntro,
     statsBand,
     solutionsSection,
     capabilityBand,
