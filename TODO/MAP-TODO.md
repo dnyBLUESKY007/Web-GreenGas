@@ -1,5 +1,7 @@
 # TODO（AI 协作用）
 
+> **冷钱包迁移**：Contact 页高德地图需求已迁入 [`.cursor/issues/issue-0001-contact-amap-map.md`](../.cursor/issues/issue-0001-contact-amap-map.md)。详细方案保留于下文供参考，**新开发以 issue 为准**。
+
 > **用途：** 本文件仅供 AI / 协作者阅读，记录待办需求、已达成共识的方案与实现细节。  
 > **维护：** 完成任务后更新状态；新增需求时追加章节，勿删除历史决策记录。
 
@@ -255,7 +257,7 @@ VITE_AMAP_SECURITY_CODE=xxxxxxxx
 | `README.md` | 项目概述，第一阶段静态站定位 |
 | `docs/AI开发指导.md` | 架构约束：MPA、JSON 驱动、勿自建后端 |
 | `docs/用户画像-北美工业客户.md` | 地图选型需兼顾海外访客 |
-| `.cursor/rules/website-design.mdc` | Contact 页应显著展示联系方式与地址 |
+| `.cursor/rules/project-related/website-design.mdc` | Contact 页应显著展示联系方式与地址 |
 | `frontend/src/pages/contact/index.ts` | Contact 页入口，需挂载地图 |
 | `frontend/src/pages/contact/renderContact.ts` | 现有渠道卡片渲染 |
 | `frontend/src/data/company.json` | 需扩展地址与坐标 |

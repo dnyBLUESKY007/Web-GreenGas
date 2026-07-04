@@ -143,7 +143,7 @@ npm run preview   # 预览构建结果
 - **文案：** 面向北美工业买家的 Plain Business English；Show, don't claim
 - **目标：** 10 秒内回答「做什么 / 能否解决我的问题 / 如何联系」
 
-完整设计规范见 [`.cursor/rules/website-design.mdc`](./.cursor/rules/website-design.mdc) 与 [`docs/`](./docs/) 目录。
+完整设计规范见 [`.cursor/rules/project-related/website-design.mdc`](./.cursor/rules/project-related/website-design.mdc) 与 [`docs/`](./docs/) 目录。
 
 ---
 

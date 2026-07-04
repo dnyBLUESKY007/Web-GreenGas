@@ -5,7 +5,7 @@
 > **用途：** 供 Cursor、Claude Code、Copilot 等 AI 助手在维护本项目时阅读。  
 > **当前阶段：** 第一阶段（开始阶段）— 优先完成框架搭建与基础内容实现。  
 > **工作目录：** 网站源码在 `frontend/`；本文档与协作文档在 `docs/`。  
-> **相关文档：** [交流文档](./交流文档.md) · [用户画像-北美工业客户](./用户画像-北美工业客户.md) · `.cursor/rules/website-design.mdc`
+> **相关文档：** [交流文档](./交流文档.md) · [用户画像-北美工业客户](./用户画像-北美工业客户.md) · `.cursor/rules/project-related/website-design.mdc`
 
 ---
 
@@ -55,7 +55,7 @@ GREENGAS 是一家面向企业 / 政府客户的**工业制冷 / HVAC 定制解�
 
 **不是**复杂交互系统。不要引入不必要的框架、状态管理或过度工程化。
 
-站点目标：建立信任、展示工程能力、引导潜在客户发起联系。设计原则见 `.cursor/rules/website-design.mdc`（Modern Industrial Professional，克制、白底、专业）。
+站点目标：建立信任、展示工程能力、引导潜在客户发起联系。设计原则见 `.cursor/rules/project-related/website-design.mdc`（Modern Industrial Professional，克制、白底、专业）。
 
 ---
 
@@ -249,7 +249,7 @@ Contact Form → Cloudflare Worker → Resend → 企业邮箱
 <meta property="og:image" content="..." />
 ```
 
-目标关键词方向：`industrial cooling solutions`、`custom HVAC` 等。文案遵循 `.cursor/rules/website-design.mdc` 中的 Plain NA Business English 规范。
+目标关键词方向：`industrial cooling solutions`、`custom HVAC` 等。文案遵循 `.cursor/rules/project-related/website-design.mdc` 中的 Plain NA Business English 规范。
 
 ---
 
@@ -297,7 +297,7 @@ AI 助手在本阶段应**优先**完成以下事项（均在 `frontend/` 内）
 | `docs/交流文档.md` | 甲方沟通、立项背景、实时需求变更 |
 | `docs/AI开发指导.md` | 本文件 — 技术栈、架构、阶段约束 |
 | `docs/用户画像-北美工业客户.md` | 目标用户与信任模型 |
-| `.cursor/rules/website-design.mdc` | 视觉、文案、信息架构设计原则（自动生效） |
+| `.cursor/rules/project-related/website-design.mdc` | 视觉、文案、信息架构设计原则（自动生效） |
 
 未来可补充：`design-principles.md`、`brand-guidelines.md`、`website-structure.md`、`content-strategy.md`（内容可与上述文件合并或拆分，以不重复、易维护为准）。
 
