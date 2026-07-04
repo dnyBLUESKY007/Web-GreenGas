@@ -4,25 +4,43 @@
 
 ## 技术栈
 
-- **语言 / 运行时**：<...>
-- **框架 / 主要库**：<...>
-- **数据库 / 存储**：<...>
-- **构建 / 包管理**：<...>
+- **语言 / 运行时**：TypeScript 5.8、浏览器原生 DOM（无 UI 框架）
+- **构建**：Vite 6 + SCSS（sass）
+- **数据**：JSON 文件（`frontend/src/data/`）
+- **部署（预留）**：Cloudflare Pages
 
 ## 本地开发
 
 ```bash
-# 安装依赖 / 启动 / 测试的关键命令
+cd frontend
+npm install
+npm run dev       # 开发服务器
+npm run build     # 生产构建 → frontend/dist/
+npm run preview   # 预览构建结果
+npx tsc --noEmit  # 类型检查
 ```
 
 ## 环境与配置
 
-- <环境变量、配置文件位置、密钥获取方式（不写具体密钥）>
+| 变量 | 用途 | 默认 |
+|------|------|------|
+| `VITE_BASE` | 子路径部署前缀 | `/` |
+| `VITE_AMAP_KEY` | 高德地图 Web Key（预留） | — |
+| `VITE_AMAP_SECURITY_CODE` | 高德 securityJsCode（预留） | — |
+
+- 环境变量文件在 `frontend/.env`（不提交）；参考 `frontend/.env.example`
+- 图片 CDN 基址：`frontend/src/config/assets.ts` → `CDN_BASE`
+- 设计规范：`.cursor/rules/project-related/website-design.mdc`
 
 ## 技术约束
 
-- <版本锁定、平台限制、性能/合规约束等>
+- **Phase 1 当前**：Vite + TypeScript + SCSS MPA，勿引入 React/Vue/Next/Astro
+- **三阶段演进**：Phase 1 静态站 → Phase 2 Astro（内容扩展）→ Phase 3 Next.js（业务系统）
+- 动效仅允许 Navbar 吸顶、Scroll Reveal、Counter；禁止 Three.js / 粒子 / WebGL
+- 子路径构建：`$env:VITE_BASE="/v2/"; npm run build`（PowerShell）
 
 ## 外部依赖 / 集成
 
-- <第三方服务、SDK、API 及其用途>
+- **阿里云 OSS**：图片 CDN（`web-greengas.oss-cn-qingdao.aliyuncs.com`）
+- **EmailJS**（预留）：无服务器联系表单
+- **高德地图 JS API 2.0**（待做，见 issue-0001）：Contact 页地址展示
