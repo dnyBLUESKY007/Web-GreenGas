@@ -39,6 +39,24 @@ npx tsc --noEmit  # 类型检查
 - 动效仅允许 Navbar 吸顶、Scroll Reveal、Counter；禁止 Three.js / 粒子 / WebGL
 - 子路径构建：`$env:VITE_BASE="/v2/"; npm run build`（PowerShell）
 
+## Nginx 多版本对比预览（本地）
+
+通过 Nginx 同时挂载 v1/v2/v3 构建版本，便于对比不同迭代效果：
+
+- `http://localhost:8080/v1/` → `ignored/nginx/v1/`
+- `http://localhost:8080/v2/` → `ignored/nginx/v2/`
+- `http://localhost:8080/v3/` → `ignored/nginx/v3/`
+
+构建与复制（PowerShell 示例）：
+
+```powershell
+$env:VITE_BASE="/v2/"; npm run build
+Copy-Item -Recurse frontend/dist/* ignored/nginx/v2/
+nginx -s reload   # 配置变更后 reload
+```
+
+关键 nginx 配置（`ignored/nginx/conf/nginx.conf` 8080 端口）：每个版本一个 `location`，使用 `alias` + `try_files $uri $uri/ /vN/index.html`。详见 ADR-0004。
+
 ## 外部依赖 / 集成
 
 - **阿里云 OSS**：图片 CDN（`web-greengas.oss-cn-qingdao.aliyuncs.com`）

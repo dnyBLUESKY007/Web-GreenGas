@@ -1,6 +1,6 @@
 # Changelog 写入模板
 
-写入 [`docs/changelog.md`](../../../docs/changelog.md) 时，在文件**顶部**插入以下结构（保留下方历史记录）：
+写入 `.cursor/tasks/YYYY-MM-DD-git-reorganize.md` 时，使用以下结构：
 
 ```markdown
 ## Reorganize YYYY-MM-DD
@@ -74,4 +74,4 @@ EOF
 
 ```
 
-若 `docs/changelog.md` 不存在，创建文件并加上一级标题 `# Changelog`。
+若 `.cursor/tasks/` 下对应 Plan 不存在，按 [`TEMPLATE.md`](../../../tasks/TEMPLATE.md) 新建并写入重组记录。

@@ -21,20 +21,19 @@ GREENGAS 企业官方网站源码仓库。GREENGAS 面向企业 / 政府客户�
 
 ## 仓库结构
 
-本仓库采用**核心应用 + 文档**双层布局：
+本仓库采用**核心应用 + 数字大脑**双层布局：
 
 ```text
 web-greengas/
 ├── frontend/       # 网站源码（Vite + TypeScript + SCSS）
-├── docs/           # 项目文档、需求记录、AI 开发指导
 ├── templates/      # 第三方静态模板，仅作设计参考，不参与构建
-└── .cursor/        # IDE 协作规则
+└── .cursor/        # IDE 协作规则、记忆库、任务与 issue
 ```
 
 | 目录 | 说明 |
 |------|------|
 | [`frontend/`](./frontend/) | 所有页面、组件、样式、数据与构建配置 |
-| [`docs/`](./docs/) | [交流文档](./docs/交流文档.md)、[AI 开发指导](./docs/AI开发指导.md)、[用户画像](./docs/用户画像-北美工业客户.md) |
+| [`.cursor/memories/`](./.cursor/memories/) | 项目记忆库（架构、进展、甲方需求、参考站点等） |
 | [`templates/`](./templates/) | 开源 HTML 模板集合，供布局参考 |
 
 ---
@@ -143,15 +142,17 @@ npm run preview   # 预览构建结果
 - **文案：** 面向北美工业买家的 Plain Business English；Show, don't claim
 - **目标：** 10 秒内回答「做什么 / 能否解决我的问题 / 如何联系」
 
-完整设计规范见 [`.cursor/rules/project-related/website-design.mdc`](./.cursor/rules/project-related/website-design.mdc) 与 [`docs/`](./docs/) 目录。
+完整设计规范见 [`.cursor/rules/project-related/website-design.mdc`](./.cursor/rules/project-related/website-design.mdc)。
 
 ---
 
-## 文档索引
+## 文档索引（`.cursor/memories/`）
 
-- [交流文档](./docs/交流文档.md) — 立项背景、甲方需求与变更记录
-- [AI 开发指导](./docs/AI开发指导.md) — 技术架构、目录约定与阶段约束（供 AI / 协作者阅读）
-- [用户画像：北美工业客户](./docs/用户画像-北美工业客户.md) — 目标用户与信任模型
+- [activeContext.md](./.cursor/memories/activeContext.md) — 当前焦点与下一步
+- [stakeholder-comms.md](./.cursor/memories/stakeholder-comms.md) — 立项背景、甲方需求与变更记录
+- [productContext.md](./.cursor/memories/productContext.md) — 目标用户与信任模型
+- [techContext.md](./.cursor/memories/techContext.md) — 技术栈、环境变量与本地开发
+- [systemPatterns.md](./.cursor/memories/systemPatterns.md) — 架构模式与 ADR 索引
 
 ---
 

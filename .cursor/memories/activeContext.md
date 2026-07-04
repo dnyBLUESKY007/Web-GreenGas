@@ -9,6 +9,7 @@
 
 ## 近期变更
 
+- 2026-07-04 文档整理：`docs/`、`TODO/`、`README-TMP.md` 迁入 `.cursor/memories/` 与 issue，冗余文件已删除
 - 2026-07-04 workflow 脚手架与 rules/skills 重组（`.cursor/bakup` 归档旧版）
 - 2026-07-03 Hero viewport 重建 + 轮播交互优化；v3 modern fusion 皮肤合并为生产基线
 - 2026-07-02 运行时主题切换（emerald-lime / emerald-steel / emerald-gold）

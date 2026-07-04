@@ -29,4 +29,4 @@ GREENGAS 工业制冷 / HVAC 定制方案供应商的静态企业官网——展
 
 - **甲方**（2026-06-18 ~ 06-21）：白底克制、主页图为主字少、按场景分产品、公司简介独立页、多渠道联系 + FAQ/News
 - **目标用户**：北美工业买家为主（Facility/Plant/Engineering Manager），兼顾国内企业与政府项目的资质展示需求
-- **需求记录**：[`docs/交流文档.md`](../../docs/交流文档.md)、[`docs/用户画像-北美工业客户.md`](../../docs/用户画像-北美工业客户.md)
+- **需求记录**：[stakeholder-comms.md](./stakeholder-comms.md)、[productContext.md](./productContext.md)
