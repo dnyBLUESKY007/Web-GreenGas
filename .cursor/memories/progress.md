@@ -15,6 +15,7 @@
 - AI workflow 脚手架（rules / skills / memories 目录结构）
 - 数字大脑（Memory Bank）初始化填实
 - **首页信息架构改版**（Solutions 交互面板、环形 Capability、ProductGrid、About 收束；Cert/Clients 子页）
+- Solutions 四场景图接入 OSS CDN（`scene/` 类别）+ `image-resources.json` 资源说明表（85 条）
 
 ## 进行中
 
@@ -46,3 +47,4 @@
 | 2026-07-03 | 皮肤合并 | v3 fusion 为生产基线 + 主题切换 |
 | 2026-07-04 | Workflow | rules/skills 重组 + 数字大脑初始化 |
 | 2026-07-05 | 首页 IA 改版 | 5 屏信息流、Solutions 面板、环形能力、ProductGrid、About 子页 |
+| 2026-07-05 | 场景图 + 资源表 | Solutions 四场景图 OSS 接入；`image-resources.json` 溯源表 |

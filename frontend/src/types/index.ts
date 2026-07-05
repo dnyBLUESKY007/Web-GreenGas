@@ -165,3 +165,8 @@ export interface PageMeta {
 }
 
 export type PageId = 'home' | 'about' | 'solutions' | 'contact' | 'news' | 'faq';
+
+export interface ImageResourceEntry {
+  readonly originalPath: string;
+  readonly description: string;
+}

@@ -16,7 +16,7 @@
     "response": "We design industrial air-handling and process cooling systems sized to your layout, load profile, and operating schedule.",
     "response_zh": "我们根据厂房布局、负荷特性与运行工况，定制工业空调与工艺冷却系统，实现稳定降温与可靠运行。",
     "response_ru": "Мы проектируем промышленные системы кондиционирования и технологического охлаждения с учётом планировки, нагрузки и режима эксплуатации.",
-    "image": "/images/placeholder.svg",
+    "image": "gemini-scene-industrial-manufacturing.webp",
     "icon": "factory"
   },
   {
@@ -36,7 +36,7 @@
     "response": "We provide modular chillers, air-handling units, and retrofit strategies tailored to building type and budget.",
     "response_zh": "我们提供模块化冷水机组、空气处理机及改造方案，按建筑类型与预算定制设计与交付。",
     "response_ru": "Мы поставляем модульные чиллеры, центральные кондиционеры и решения по модернизации с учётом типа здания и бюджета.",
-    "image": "/images/placeholder.svg",
+    "image": "gemini-scene-commercial-buildings.webp",
     "icon": "building"
   },
   {
@@ -56,7 +56,7 @@
     "response": "We engineer precision air-conditioning, chilled-water systems, and monitoring aligned to your IT load and redundancy tier.",
     "response_zh": "我们按 IT 负荷与冗余等级，设计精密空调、冷冻水系统及配套监控，保障稳定散热。",
     "response_ru": "Мы проектируем прецизионные системы, чиллерные контуры и мониторинг в соответствии с IT-нагрузкой и уровнем резервирования.",
-    "image": "/images/placeholder.svg",
+    "image": "gemini-scene-data-centers.webp",
     "icon": "server"
   },
   {
@@ -76,7 +76,7 @@
     "response": "We develop marine HVAC, high-temperature chillers, and explosion-proof systems certified for your operating environment.",
     "response_zh": "我们研制船用暖通、高温冷水机组及防爆空调，按运行环境认证与设计交付。",
     "response_ru": "Мы разрабатываем морские системы ОВиК, высокотемпературные чиллеры и взрывозащищённые установки под вашу среду эксплуатации.",
-    "image": "/images/placeholder.svg",
+    "image": "gemini-scene-specialized-environments.webp",
     "icon": "shield"
   }
 ]

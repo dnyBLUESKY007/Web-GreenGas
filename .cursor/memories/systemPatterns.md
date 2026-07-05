@@ -35,6 +35,8 @@ Hero → HeroIntro → Solutions → CapabilityRing → CaseCarousel → Product
 
 - 列表型内容（案例、产品、FAQ）**必须**来自 JSON，禁止写死在 HTML
 - 图片统一通过 `cdnUrl(category, filename)` 引用，不写死 OSS URL
+- CDN 图片溯源表：`frontend/src/data/image-resources.json`（URL → originalPath + description），由 `ignored/generate_image_catalog.py` 从 `image-rename-map.json` 生成
+- OSS 图片类别：`hero`(4) · `scene`(4) · `products`(27) · `projects`(43) · `company`(2) · `company-info`(3) · `certifications`(2)
 - 站内链接统一通过 `basePath('/xxx/')` 生成，支持子路径部署
 - UI 文案在 `i18n/locales/*.json`；结构化内容多语言字段用 `_zh` / `_ru` 后缀，缺省回退英文
 - 组件按功能分目录（`navbar/`、`hero-carousel/` 等），页面逻辑在 `pages/*/`

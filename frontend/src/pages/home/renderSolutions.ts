@@ -1,3 +1,4 @@
+import { cdnUrl } from '@/config/assets';
 import solutionsData from '@/data/solutions.json';
 import { t, td } from '@/i18n';
 import { getIcon } from '@/utils/icons';
@@ -105,7 +106,7 @@ function renderDetail(container: HTMLElement, solution: Solution): void {
   const response = td(solution, 'response');
   const imageSrc = solution.image.startsWith('/')
     ? basePath(solution.image)
-    : solution.image;
+    : cdnUrl('scene', solution.image);
 
   container.innerHTML = `
     <div class="solutions-panel__media">

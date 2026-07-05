@@ -1,0 +1,342 @@
+{
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-ce.webp": {
+    "originalPath": "previous-images/CE认证_00_CE.webp",
+    "description": "资质认证 — CE认证_00_CE"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-iso9001.webp": {
+    "originalPath": "previous-images/ISO9001认证_00_zhiliangguanlitixi-yingwen.webp",
+    "description": "资质认证 — ISO9001认证_00_zhiliangguanlitixi-yingwen"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/company-info/history-timeline-01.webp": {
+    "originalPath": "previous-images/发展历程_00_weixintupian_20251116103732_800_54.webp",
+    "description": "公司信息 — 发展历程_00_weixintupian_20251116103732_800"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/company-info/history-timeline-02.webp": {
+    "originalPath": "previous-images/发展历程_01_222.webp",
+    "description": "公司信息 — 发展历程"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/company-info/team-photo.webp": {
+    "originalPath": "previous-images/公司团队_00_company-team.webp",
+    "description": "公司信息 — 公司团队_00_company-team"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/company/facility-exterior.webp": {
+    "originalPath": "company/公司楼实拍修图.webp",
+    "description": "公司外观 — 公司楼实拍修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/company/facility-render.webp": {
+    "originalPath": "company/公司楼渲染.webp",
+    "description": "公司外观 — 公司楼渲染"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/hero/hero-coal-transport.webp": {
+    "originalPath": "hero/场景图-运煤车.webp",
+    "description": "Hero 轮播 — 场景图-运煤车"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/hero/hero-industrial-ac-design.webp": {
+    "originalPath": "hero/概念图-工业空调设计.webp",
+    "description": "Hero 轮播 — 概念图-工业空调设计"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/hero/hero-rolling-mill.webp": {
+    "originalPath": "hero/场景图-轧钢厂.webp",
+    "description": "Hero 轮播 — 场景图-轧钢厂"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/hero/hero-steel-mill.webp": {
+    "originalPath": "hero/场景图-炼钢厂.webp",
+    "description": "Hero 轮播 — 场景图-炼钢厂"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-cooled-screw-heat-pump.webp": {
+    "originalPath": "products/中央空调/高效螺杆风冷热泵机组.webp",
+    "description": "产品 — 高效螺杆风冷热泵机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-handling-unit-01.webp": {
+    "originalPath": "products/中央空调/空气处理机1.webp",
+    "description": "产品 — 空气处理机1"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-handling-unit-02.webp": {
+    "originalPath": "products/中央空调/空气处理机2.webp",
+    "description": "产品 — 空气处理机2"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-handling-unit-03.webp": {
+    "originalPath": "products/中央空调/空气处理机3.webp",
+    "description": "产品 — 空气处理机3"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-source-heat-pump.webp": {
+    "originalPath": "products/中央空调/模块式空气源风冷热泵机组.webp",
+    "description": "产品 — 模块式空气源风冷热泵机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/cassette-fan-coil.webp": {
+    "originalPath": "products/中央空调/卡式风机盘管.webp",
+    "description": "产品 — 卡式风机盘管"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/concealed-fan-coil.webp": {
+    "originalPath": "products/中央空调/吊顶暗装风机盘管.webp",
+    "description": "产品 — 吊顶暗装风机盘管"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/constant-temp-humidity-unit-indoor.webp": {
+    "originalPath": "products/工业空调/风冷恒温恒湿机组-内机.webp",
+    "description": "产品 — 风冷恒温恒湿机组-内机"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/constant-temp-humidity-unit-outdoor.webp": {
+    "originalPath": "products/工业空调/风冷恒温恒湿机组-外机.webp",
+    "description": "产品 — 风冷恒温恒湿机组-外机"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/energy-recovery-unit-01.webp": {
+    "originalPath": "products/中央空调/19能量回收1.webp",
+    "description": "产品 — 19能量回收1"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/energy-recovery-unit-02.webp": {
+    "originalPath": "products/中央空调/19能量回收2.webp",
+    "description": "产品 — 19能量回收2"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/grain-storage-ac.webp": {
+    "originalPath": "products/工业空调/粮仓空调.webp",
+    "description": "产品 — 粮仓空调"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/high-temperature-ac-indoor.webp": {
+    "originalPath": "products/工业空调/高温空调内机 -1.webp",
+    "description": "产品 — 高温空调内机"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/high-temperature-ac-outdoor.webp": {
+    "originalPath": "products/工业空调/高温空调外机 -2.webp",
+    "description": "产品 — 高温空调外机"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/industrial-air-cooled-cabinet-indoor.webp": {
+    "originalPath": "products/工业空调/工业空调-风冷柜机内机.webp",
+    "description": "产品 — 工业空调-风冷柜机内机"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/industrial-air-cooled-cabinet-outdoor.webp": {
+    "originalPath": "products/工业空调/工业空调-风冷柜机外机.webp",
+    "description": "产品 — 工业空调-风冷柜机外机"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/industrial-water-cooled-cabinet.webp": {
+    "originalPath": "products/工业空调/工业空调-水冷柜机.webp",
+    "description": "产品 — 工业空调-水冷柜机"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/magnetic-bearing-chiller-01.webp": {
+    "originalPath": "products/中央空调/气悬浮1.webp",
+    "description": "产品 — 气悬浮1"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/magnetic-bearing-chiller-02.webp": {
+    "originalPath": "products/中央空调/气悬浮2.webp",
+    "description": "产品 — 气悬浮2"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/modular-water-cooled-scroll.webp": {
+    "originalPath": "products/中央空调/模块式水冷涡旋机组.webp",
+    "description": "产品 — 模块式水冷涡旋机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/packaged-dx-unit.webp": {
+    "originalPath": "products/中央空调/整体式直膨机组.webp",
+    "description": "产品 — 整体式直膨机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/special-purpose-unit.webp": {
+    "originalPath": "products/工业空调/特种空调机组.webp",
+    "description": "产品 — 特种空调机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/split-ceiling-unit.webp": {
+    "originalPath": "products/工业空调/分体吊顶式空调机组.webp",
+    "description": "产品 — 分体吊顶式空调机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/variable-speed-air-cooled-chiller-01.webp": {
+    "originalPath": "products/中央空调/变频螺杆风冷冷水机组 (1).webp",
+    "description": "产品 — 变频螺杆风冷冷水机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/variable-speed-air-cooled-chiller-02.webp": {
+    "originalPath": "products/中央空调/变频螺杆风冷冷水机组 (2).webp",
+    "description": "产品 — 变频螺杆风冷冷水机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/variable-speed-air-cooled-chiller-03.webp": {
+    "originalPath": "products/中央空调/变频螺杆风冷冷水机组 (3).webp",
+    "description": "产品 — 变频螺杆风冷冷水机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/water-cooled-screw-unit.webp": {
+    "originalPath": "products/中央空调/标准水冷螺杆机组.webp",
+    "description": "产品 — 标准水冷螺杆机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/expo-shanghai-2019-01.webp": {
+    "originalPath": "previous-images/2019上海制冷展_00_1.webp",
+    "description": "项目案例 — 2019上海制冷展"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/expo-shanghai-2019-02.webp": {
+    "originalPath": "previous-images/2019上海制冷展_01_2.webp",
+    "description": "项目案例 — 2019上海制冷展"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/expo-shanghai-2019-03.webp": {
+    "originalPath": "previous-images/2019上海制冷展_02_3.webp",
+    "description": "项目案例 — 2019上海制冷展"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/expo-shanghai-2019-04.webp": {
+    "originalPath": "previous-images/2019上海制冷展_03_5.webp",
+    "description": "项目案例 — 2019上海制冷展"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/expo-shanghai-2019-05.webp": {
+    "originalPath": "previous-images/2019上海制冷展_04_4.webp",
+    "description": "项目案例 — 2019上海制冷展"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/industrial-ac-features.webp": {
+    "originalPath": "previous-images/工业空调的特点_00_gongyekongdiao.webp",
+    "description": "项目案例 — 工业空调的特点"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/product-grain-storage-ac-01.webp": {
+    "originalPath": "previous-images/粮储专用整体式空调机组_00_weixintupian_20201013093447.webp",
+    "description": "项目案例 — 粮储专用整体式空调机组_00_weixintupian_20201013093447"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/product-grain-storage-ac-02.webp": {
+    "originalPath": "previous-images/粮储专用整体式空调机组_01_weixintupian_20201013101011.webp",
+    "description": "项目案例 — 粮储专用整体式空调机组_01_weixintupian_20201013101011"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/product-grain-storage-ac-03.webp": {
+    "originalPath": "previous-images/粮储专用整体式空调机组_02_weixintupian_20201013093447.webp",
+    "description": "项目案例 — 粮储专用整体式空调机组_02_weixintupian_20201013093447"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/product-grain-storage-ac-04.webp": {
+    "originalPath": "previous-images/粮储专用整体式空调机组_03_weixintupian_20201013094001.webp",
+    "description": "项目案例 — 粮储专用整体式空调机组_03_weixintupian_20201013094001"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/product-heat-pump-packaged-01.webp": {
+    "originalPath": "previous-images/热泵型一体式空调机_00_weixintupian_20200922160704.webp",
+    "description": "项目案例 — 热泵型一体式空调机_00_weixintupian_20200922160704"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/product-heat-pump-packaged-02.webp": {
+    "originalPath": "previous-images/热泵型一体式空调机_01_weixintupian_20200922160651.webp",
+    "description": "项目案例 — 热泵型一体式空调机_01_weixintupian_20200922160651"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-australia-market-01.webp": {
+    "originalPath": "previous-images/国际形势见好澳洲市场回暖_00_1.webp",
+    "description": "项目案例 — 国际形势见好澳洲市场回暖"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-australia-market-02.webp": {
+    "originalPath": "previous-images/国际形势见好澳洲市场回暖_01_4.webp",
+    "description": "项目案例 — 国际形势见好澳洲市场回暖"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-australia-market-03.webp": {
+    "originalPath": "previous-images/国际形势见好澳洲市场回暖_02_2.webp",
+    "description": "项目案例 — 国际形势见好澳洲市场回暖"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-australia-market-04.webp": {
+    "originalPath": "previous-images/国际形势见好澳洲市场回暖_03_3.webp",
+    "description": "项目案例 — 国际形势见好澳洲市场回暖"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-australia-market-05.webp": {
+    "originalPath": "previous-images/国际形势见好澳洲市场回暖_04_5.webp",
+    "description": "项目案例 — 国际形势见好澳洲市场回暖"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-australia-market-06.webp": {
+    "originalPath": "previous-images/国际形势见好澳洲市场回暖_05_6.webp",
+    "description": "项目案例 — 国际形势见好澳洲市场回暖"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-covid-prevention-01.webp": {
+    "originalPath": "previous-images/格灵空调新冠疫情防控_00_3.webp",
+    "description": "项目案例 — 格灵空调新冠疫情防控"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-covid-prevention-02.webp": {
+    "originalPath": "previous-images/格灵空调新冠疫情防控_01_5.webp",
+    "description": "项目案例 — 格灵空调新冠疫情防控"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-covid-prevention-03.webp": {
+    "originalPath": "previous-images/格灵空调新冠疫情防控_02_4.webp",
+    "description": "项目案例 — 格灵空调新冠疫情防控"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-covid-prevention-04.webp": {
+    "originalPath": "previous-images/格灵空调新冠疫情防控_03_1.webp",
+    "description": "项目案例 — 格灵空调新冠疫情防控"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-haoda-tools-hvac-01.webp": {
+    "originalPath": "previous-images/浩达工具恒温恒湿空调_00_case5.webp",
+    "description": "项目案例 — 浩达工具恒温恒湿空调"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-haoda-tools-hvac-02.webp": {
+    "originalPath": "previous-images/浩达工具恒温恒湿空调_01_case2.webp",
+    "description": "项目案例 — 浩达工具恒温恒湿空调"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-haoda-tools-hvac-03.webp": {
+    "originalPath": "previous-images/浩达工具恒温恒湿空调_02_case4.webp",
+    "description": "项目案例 — 浩达工具恒温恒湿空调"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-haoda-tools-hvac-04.webp": {
+    "originalPath": "previous-images/浩达工具恒温恒湿空调_03_case3.webp",
+    "description": "项目案例 — 浩达工具恒温恒湿空调"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-liaoning-port-cooling-01.webp": {
+    "originalPath": "previous-images/辽宁港口控股电气室制冷系统升级_00_u-3170814598-3048991078-fm-253-fmt-auto-app-138-f-JPEG-webp.webp",
+    "description": "项目案例 — 辽宁港口控股电气室制冷系统升级_00_u-3170814598-3048991078-fm-253-fmt-auto-app-138-f-JPEG-webp"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-liaoning-port-cooling-02.webp": {
+    "originalPath": "previous-images/辽宁港口控股电气室制冷系统升级_01_weixintupian_20251128135058_356_61.webp",
+    "description": "项目案例 — 辽宁港口控股电气室制冷系统升级_01_weixintupian_20251128135058_356"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-liaoning-port-cooling-03.webp": {
+    "originalPath": "previous-images/辽宁港口控股电气室制冷系统升级_02_weixintupian_20251128135101_357_61.webp",
+    "description": "项目案例 — 辽宁港口控股电气室制冷系统升级_02_weixintupian_20251128135101_357"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-liaoning-port-cooling-04.webp": {
+    "originalPath": "previous-images/辽宁港口控股电气室制冷系统升级_03_weixintupian_20251201173318_491_147.webp",
+    "description": "项目案例 — 辽宁港口控股电气室制冷系统升级_03_weixintupian_20251201173318_491_147"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-liaoning-port-cooling-05.webp": {
+    "originalPath": "previous-images/辽宁港口控股电气室制冷系统升级_04_weixintupian_20251204103743_381_61.webp",
+    "description": "项目案例 — 辽宁港口控股电气室制冷系统升级_04_weixintupian_20251204103743_381"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-milestone-group-photo.webp": {
+    "originalPath": "previous-images/格灵空调捷报频传_00_hezhao.webp",
+    "description": "项目案例 — 格灵空调捷报频传"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-queensland-medical-01.webp": {
+    "originalPath": "previous-images/澳大利亚昆士兰医疗研究学院_00_1.webp",
+    "description": "项目案例 — 澳大利亚昆士兰医疗研究学院"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-queensland-medical-02.webp": {
+    "originalPath": "previous-images/澳大利亚昆士兰医疗研究学院_01_2.webp",
+    "description": "项目案例 — 澳大利亚昆士兰医疗研究学院"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-queensland-medical-03.webp": {
+    "originalPath": "previous-images/澳大利亚昆士兰医疗研究学院_02_3.webp",
+    "description": "项目案例 — 澳大利亚昆士兰医疗研究学院"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-queensland-medical-04.webp": {
+    "originalPath": "previous-images/澳大利亚昆士兰医疗研究学院_03_6.webp",
+    "description": "项目案例 — 澳大利亚昆士兰医疗研究学院"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-queensland-medical-05.webp": {
+    "originalPath": "previous-images/澳大利亚昆士兰医疗研究学院_04_5.webp",
+    "description": "项目案例 — 澳大利亚昆士兰医疗研究学院"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-queensland-medical-06.webp": {
+    "originalPath": "previous-images/澳大利亚昆士兰医疗研究学院_05_4.webp",
+    "description": "项目案例 — 澳大利亚昆士兰医疗研究学院"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-south-africa-3stage-01.webp": {
+    "originalPath": "previous-images/格灵空调与南非客户共同研制3级制冷蒸发冷机组_00_1jizhileng.webp",
+    "description": "项目案例 — 格灵空调与南非客户共同研制3级制冷蒸发冷机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-south-africa-3stage-02.webp": {
+    "originalPath": "previous-images/格灵空调与南非客户共同研制3级制冷蒸发冷机组_01_2jizhileng.webp",
+    "description": "项目案例 — 格灵空调与南非客户共同研制3级制冷蒸发冷机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-south-africa-3stage-03.webp": {
+    "originalPath": "previous-images/格灵空调与南非客户共同研制3级制冷蒸发冷机组_02_3jizhileng.webp",
+    "description": "项目案例 — 格灵空调与南非客户共同研制3级制冷蒸发冷机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-south-africa-3stage-04.webp": {
+    "originalPath": "previous-images/格灵空调与南非客户共同研制3级制冷蒸发冷机组_03_1.webp",
+    "description": "项目案例 — 格灵空调与南非客户共同研制3级制冷蒸发冷机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/project-south-africa-3stage-05.webp": {
+    "originalPath": "previous-images/格灵空调与南非客户共同研制3级制冷蒸发冷机组_04_2.webp",
+    "description": "项目案例 — 格灵空调与南非客户共同研制3级制冷蒸发冷机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/scene/gemini-scene-commercial-buildings.webp": {
+    "originalPath": "",
+    "description": "Solutions 场景 — 商业建筑（办公、商业及公共建筑）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/scene/gemini-scene-data-centers.webp": {
+    "originalPath": "",
+    "description": "Solutions 场景 — 数据中心（机房与数据大厅）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/scene/gemini-scene-industrial-manufacturing.webp": {
+    "originalPath": "",
+    "description": "Solutions 场景 — 工业制造（生产车间、仓储与工艺区域）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/scene/gemini-scene-specialized-environments.webp": {
+    "originalPath": "",
+    "description": "Solutions 场景 — 特种环境（船用、高温、防爆等极端工况）"
+  }
+}
