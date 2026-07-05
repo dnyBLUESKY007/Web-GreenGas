@@ -17,15 +17,15 @@
 @use 'components/hero-intro';
 @use 'components/cards';
 @use 'components/scenario-card';
+@use 'components/solutions-panel';
 @use 'components/capability-band';
 @use 'components/certifications';
 @use 'components/client-logos';
-@use 'components/stats-band';
 @use 'components/case-carousel';
+@use 'components/product-grid';
 @use 'components/product-marquee';
 @use 'components/service-strip';
 @use 'components/about-summary';
-@use 'components/home-contact';
 
 body {
   display: flex;

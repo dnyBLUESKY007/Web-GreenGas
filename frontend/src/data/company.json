@@ -176,25 +176,76 @@
       "label": "Company Profile",
       "label_zh": "企业介绍",
       "label_ru": "О компании",
-      "icon": "company"
+      "icon": "company",
+      "href": "/about/"
     },
     {
       "label": "Certifications",
       "label_zh": "资质证书",
       "label_ru": "Сертификаты",
-      "icon": "certificate"
+      "icon": "certificate",
+      "href": "/about/certifications/"
     },
     {
       "label": "High-Tech Enterprise",
       "label_zh": "高新技术企业",
       "label_ru": "Высокотехнологичное предприятие",
-      "icon": "award"
+      "icon": "award",
+      "href": "/about/"
     },
     {
       "label": "Patents & IP",
       "label_zh": "专利成果",
       "label_ru": "Патенты и разработки",
-      "icon": "patent"
+      "icon": "patent",
+      "href": "/about/"
+    }
+  ],
+  "workflow": [
+    {
+      "title": "Requirements Analysis",
+      "title_zh": "需求分析",
+      "title_ru": "Анализ требований",
+      "desc": "Site survey, load assessment, and operating condition review.",
+      "desc_zh": "现场勘察、负荷评估与运行工况分析。",
+      "desc_ru": "Обследование площадки, оценка нагрузки и условий эксплуатации.",
+      "icon": "clipboard"
+    },
+    {
+      "title": "System Design",
+      "title_zh": "方案设计",
+      "title_ru": "Проектирование",
+      "desc": "Engineering design tailored to facility layout and process needs.",
+      "desc_zh": "结合厂房布局与工艺需求进行工程设计。",
+      "desc_ru": "Инженерное проектирование с учётом планировки и технологии.",
+      "icon": "blueprint"
+    },
+    {
+      "title": "Equipment Manufacturing",
+      "title_zh": "设备制造",
+      "title_ru": "Производство оборудования",
+      "desc": "Custom units built and tested to project specifications.",
+      "desc_zh": "按项目规格定制制造并完成检验测试。",
+      "desc_ru": "Изготовление и испытание оборудования по спецификации проекта.",
+      "icon": "factory"
+    },
+    {
+      "title": "Installation & Commissioning",
+      "title_zh": "安装调试",
+      "title_ru": "Монтаж и пусконаладка",
+      "desc": "On-site installation, startup, and performance verification.",
+      "desc_zh": "现场安装、启动调试与性能验证。",
+      "desc_ru": "Монтаж, пусконаладка и проверка рабочих параметров на объекте.",
+      "icon": "wrench"
+    },
+    {
+      "title": "After-Sales Support",
+      "title_zh": "售后维护",
+      "title_ru": "Послепродажное обслуживание",
+      "desc": "Maintenance, spare parts, and ongoing technical support.",
+      "desc_zh": "维护保养、配件供应与持续技术支持。",
+      "desc_ru": "Обслуживание, запасные части и техническая поддержка.",
+      "icon": "support"
     }
   ]
 }

@@ -57,6 +57,26 @@ export interface Solution {
   readonly summary: string;
   readonly summary_zh?: string;
   readonly summary_ru?: string;
+  readonly detail: string;
+  readonly detail_zh?: string;
+  readonly detail_ru?: string;
+  readonly challenge: string;
+  readonly challenge_zh?: string;
+  readonly challenge_ru?: string;
+  readonly response: string;
+  readonly response_zh?: string;
+  readonly response_ru?: string;
+  readonly image: string;
+  readonly icon: string;
+}
+
+export interface WorkflowStep {
+  readonly title: string;
+  readonly title_zh?: string;
+  readonly title_ru?: string;
+  readonly desc: string;
+  readonly desc_zh?: string;
+  readonly desc_ru?: string;
   readonly icon: string;
 }
 
@@ -82,6 +102,7 @@ export interface AboutHighlight {
   readonly label_zh?: string;
   readonly label_ru?: string;
   readonly icon: string;
+  readonly href: string;
 }
 
 export interface FaqItem {
@@ -126,6 +147,7 @@ export interface CompanyData {
   readonly capabilities: readonly Capability[];
   readonly services: readonly ServiceItem[];
   readonly aboutHighlights: readonly AboutHighlight[];
+  readonly workflow: readonly WorkflowStep[];
 }
 
 export interface NavItem {

@@ -17,6 +17,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about/index.html'),
+        aboutCertifications: resolve(__dirname, 'about/certifications/index.html'),
+        aboutClients: resolve(__dirname, 'about/clients/index.html'),
         solutions: resolve(__dirname, 'solutions/index.html'),
         contact: resolve(__dirname, 'contact/index.html'),
         news: resolve(__dirname, 'news/index.html'),

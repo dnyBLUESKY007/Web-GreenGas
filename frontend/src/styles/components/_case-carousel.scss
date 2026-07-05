@@ -2,6 +2,7 @@
 
 .case-carousel-section {
   overflow: hidden;
+  padding-block: calc(#{$section-padding-y} * 0.65);
 }
 
 .case-carousel {
@@ -58,7 +59,7 @@
 }
 
 .case-card {
-  flex: 0 0 min(85vw, 22rem);
+  flex: 0 0 min(80vw, 20rem);
   scroll-snap-align: start;
   border: 1px solid $color-border;
   border-radius: $radius-md;

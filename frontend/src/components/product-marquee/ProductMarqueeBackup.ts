@@ -4,7 +4,8 @@ import { t, td } from '@/i18n';
 import { basePath } from '@/utils/path';
 import type { Product } from '@/types';
 
-export function createProductMarquee(): HTMLElement {
+/** @deprecated Backup component — not used on homepage. */
+export function createProductMarqueeBackup(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section section--muted section--bleed product-marquee-section';
 

@@ -14,7 +14,11 @@ flowchart LR
     Components --> BasePath["basePath() → VITE_BASE"]
 ```
 
-每个页面有独立 `index.html` 入口，由对应 `pages/*/index.ts` 在浏览器端渲染；全局布局（Navbar、Footer、ScrollToTop）通过 `mountLayout` / `initPage` 挂载。
+每个页面有独立 `index.html` 入口，由对应 `pages/*/index.ts` 在浏览器端渲染；全局布局（Navbar、Footer、ScrollToTop）通过 `mountLayout` / `initPage` 挂载。About 下可有子页（如 `/about/certifications/`、`/about/clients/`），在 `vite.config.ts` 的 `rollupOptions.input` 注册。
+
+## 首页信息流（2026-07-05）
+
+Hero → HeroIntro → Solutions（交互面板）→ CapabilityRing → CaseCarousel → ProductGrid（6 卡）→ ServiceStrip → About（含联系渠道）。资质认证与客户行业不在首页，迁至 About 子页。
 
 ## 关键技术决策
 

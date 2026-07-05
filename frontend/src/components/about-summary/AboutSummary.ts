@@ -1,5 +1,6 @@
 import companyData from '@/data/company.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { renderContactChannels } from '@/pages/contact/renderContact';
 import { t, td } from '@/i18n';
 import { getIcon } from '@/utils/icons';
 import { basePath } from '@/utils/path';
@@ -30,12 +31,15 @@ export function createAboutSummary(): HTMLElement {
   desc.className = 'about-summary__description';
   desc.textContent = td(company, 'description');
 
-  const moreLink = document.createElement('a');
-  moreLink.className = 'about-summary__link';
-  moreLink.href = basePath('/about/');
-  moreLink.textContent = `${t('home.about.more')} →`;
+  const contactHeading = document.createElement('h3');
+  contactHeading.className = 'about-summary__contact-title';
+  contactHeading.textContent = t('home.about.contactTitle');
 
-  textCol.append(desc, moreLink);
+  const contactMount = document.createElement('div');
+  contactMount.className = 'about-summary__contact';
+  renderContactChannels(contactMount);
+
+  textCol.append(desc, contactHeading, contactMount);
 
   const badgesCol = document.createElement('div');
   badgesCol.className = 'about-summary__badges';
@@ -43,7 +47,7 @@ export function createAboutSummary(): HTMLElement {
   for (const highlight of company.aboutHighlights) {
     const badge = document.createElement('a');
     badge.className = 'about-summary__badge';
-    badge.href = basePath('/about/');
+    badge.href = basePath(highlight.href);
 
     const icon = document.createElement('div');
     icon.className = 'about-summary__badge-icon';

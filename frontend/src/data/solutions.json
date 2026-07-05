@@ -7,6 +7,16 @@
     "summary": "High-capacity cooling for production lines, warehouses, and process facilities.",
     "summary_zh": "面向生产线、仓储及工艺设施的高容量冷却方案。",
     "summary_ru": "Высокопроизводительное охлаждение для производственных линий, складов и технологических объектов.",
+    "detail": "Production floors, warehouses, and process areas need stable temperature and airflow under heavy heat loads and continuous operation.",
+    "detail_zh": "生产车间、仓储与工艺区域在高温负荷与连续运行条件下，需要稳定的温度控制与气流组织。",
+    "detail_ru": "Производственные цеха, склады и технологические зоны требуют стабильного температурного режима и воздухораспределения при высоких тепловых нагрузках.",
+    "challenge": "Summer heat, equipment heat gain, and uneven airflow can push shop-floor temperatures above comfort and process limits.",
+    "challenge_zh": "夏季高温、设备散热与气流不均，容易使车间温度超出人员舒适与工艺要求。",
+    "challenge_ru": "Летняя жара, тепловыделение оборудования и неравномерный воздухообмен повышают температуру в цехах выше допустимых значений.",
+    "response": "We design industrial air-handling and process cooling systems sized to your layout, load profile, and operating schedule.",
+    "response_zh": "我们根据厂房布局、负荷特性与运行工况，定制工业空调与工艺冷却系统，实现稳定降温与可靠运行。",
+    "response_ru": "Мы проектируем промышленные системы кондиционирования и технологического охлаждения с учётом планировки, нагрузки и режима эксплуатации.",
+    "image": "/images/placeholder.svg",
     "icon": "factory"
   },
   {
@@ -17,6 +27,16 @@
     "summary": "Central HVAC systems for offices, retail, and institutional facilities.",
     "summary_zh": "面向办公、商业及公共建筑的中央空调系统。",
     "summary_ru": "Центральные системы ОВиК для офисов, торговых и общественных зданий.",
+    "detail": "Offices, retail, hotels, and public buildings require efficient central HVAC with predictable comfort and energy performance.",
+    "detail_zh": "办公、商业、酒店及公共建筑需要高效中央空调系统，兼顾舒适体验与能耗表现。",
+    "detail_ru": "Офисы, торговые, гостиничные и общественные здания требуют эффективных центральных систем ОВиК с предсказуемым комфортом и энергопотреблением.",
+    "challenge": "Large floor plates, mixed occupancy, and aging equipment often lead to uneven cooling and rising operating costs.",
+    "challenge_zh": "大面积空间、复合使用功能与老旧设备，容易造成冷热不均与运行成本上升。",
+    "challenge_ru": "Большие площади, смешанное использование и устаревшее оборудование приводят к неравномерному охлаждению и росту эксплуатационных затрат.",
+    "response": "We provide modular chillers, air-handling units, and retrofit strategies tailored to building type and budget.",
+    "response_zh": "我们提供模块化冷水机组、空气处理机及改造方案，按建筑类型与预算定制设计与交付。",
+    "response_ru": "Мы поставляем модульные чиллеры, центральные кондиционеры и решения по модернизации с учётом типа здания и бюджета.",
+    "image": "/images/placeholder.svg",
     "icon": "building"
   },
   {
@@ -27,6 +47,16 @@
     "summary": "Precision cooling with redundancy for mission-critical IT infrastructure.",
     "summary_zh": "面向关键 IT 基础设施的冗余精密冷却方案。",
     "summary_ru": "Прецизионное охлаждение с резервированием для критически важной IT-инфраструктуры.",
+    "detail": "Server rooms and data halls demand 24/7 precision cooling with redundancy and efficient part-load operation.",
+    "detail_zh": "机房与数据大厅需要 7×24 精密冷却、冗余保障与高效部分负荷运行能力。",
+    "detail_ru": "Серверные и машинные залы требуют круглосуточного прецизионного охлаждения с резервированием и эффективной работой при частичной нагрузке.",
+    "challenge": "Rising rack density, hot spots, and strict uptime requirements make generic comfort cooling inadequate.",
+    "challenge_zh": "机柜热密度提升、局部热点与严格在线率要求，使常规舒适性空调难以满足需求。",
+    "challenge_ru": "Рост плотности стоек, локальные перегревы и жёсткие требования к доступности делают обычное кондиционирование недостаточным.",
+    "response": "We engineer precision air-conditioning, chilled-water systems, and monitoring aligned to your IT load and redundancy tier.",
+    "response_zh": "我们按 IT 负荷与冗余等级，设计精密空调、冷冻水系统及配套监控，保障稳定散热。",
+    "response_ru": "Мы проектируем прецизионные системы, чиллерные контуры и мониторинг в соответствии с IT-нагрузкой и уровнем резервирования.",
+    "image": "/images/placeholder.svg",
     "icon": "server"
   },
   {
@@ -37,6 +67,16 @@
     "summary": "Marine, high-temperature, explosion-proof, and custom hazardous-area systems.",
     "summary_zh": "船用、高温、防爆及危险区域定制系统。",
     "summary_ru": "Морские, высокотемпературные, взрывозащищённые и индивидуальные системы для опасных зон.",
+    "detail": "Marine, high-temperature, explosion-proof, and corrosive environments need equipment built for extreme duty.",
+    "detail_zh": "船用、高温、防爆及腐蚀环境需要针对极端工况定制的专用空调设备。",
+    "detail_ru": "Морские, высокотемпературные, взрывозащищённые и коррозионные среды требуют оборудования для экстремальных условий.",
+    "challenge": "Standard units fail under salt spray, extreme heat, dust, gas, or hazardous-area classification requirements.",
+    "challenge_zh": "标准机组难以适应盐雾、极端高温、粉尘、气体或防爆分区等严苛环境。",
+    "challenge_ru": "Стандартные блоки не выдерживают солевой туман, экстремальный жар, пыль, газ или требования взрывозащиты.",
+    "response": "We develop marine HVAC, high-temperature chillers, and explosion-proof systems certified for your operating environment.",
+    "response_zh": "我们研制船用暖通、高温冷水机组及防爆空调，按运行环境认证与设计交付。",
+    "response_ru": "Мы разрабатываем морские системы ОВиК, высокотемпературные чиллеры и взрывозащищённые установки под вашу среду эксплуатации.",
+    "image": "/images/placeholder.svg",
     "icon": "shield"
   }
 ]

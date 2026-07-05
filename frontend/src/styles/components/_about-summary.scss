@@ -28,6 +28,30 @@
     }
   }
 
+  &__contact-title {
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $color-primary;
+  }
+
+  &__contact {
+    .channel-list {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 1fr;
+
+      @media (width >= $breakpoint-md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .channel-card {
+      padding: 0.875rem 1rem;
+    }
+  }
+
   &__badges {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -6,6 +6,14 @@ import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
 
+const WORKFLOW_POSITIONS = [
+  'capability-ring__step--top',
+  'capability-ring__step--right',
+  'capability-ring__step--bottom-right',
+  'capability-ring__step--bottom-left',
+  'capability-ring__step--left',
+] as const;
+
 export function createCapabilityBand(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section section--dark capability-band';
@@ -20,51 +28,52 @@ export function createCapabilityBand(): HTMLElement {
   });
   header.classList.add('capability-band__header');
 
-  const content = document.createElement('div');
-  content.className = 'capability-band__content';
+  const ring = document.createElement('div');
+  ring.className = 'capability-ring';
 
-  const statsCol = document.createElement('div');
-  statsCol.className = 'capability-band__stats';
+  const center = document.createElement('div');
+  center.className = 'capability-ring__center';
 
   for (const stat of company.stats) {
     const item = document.createElement('div');
-    item.className = 'capability-band__stat';
+    item.className = 'capability-ring__stat';
     item.innerHTML = `
-      <p class="capability-band__stat-value">${stat.value}</p>
-      <p class="capability-band__stat-label">${td(stat, 'label')}</p>
+      <p class="capability-ring__stat-value">${stat.value}</p>
+      <p class="capability-ring__stat-label">${td(stat, 'label')}</p>
     `;
-    statsCol.appendChild(item);
+    center.appendChild(item);
   }
 
-  const listCol = document.createElement('div');
-  listCol.className = 'capability-band__list';
+  const stepsWrap = document.createElement('div');
+  stepsWrap.className = 'capability-ring__steps';
 
-  for (const cap of company.capabilities) {
-    const item = document.createElement('article');
-    item.className = 'capability-band__item';
+  company.workflow.forEach((step, index) => {
+    const positionClass = WORKFLOW_POSITIONS[index] ?? WORKFLOW_POSITIONS[0];
+    const article = document.createElement('article');
+    article.className = `capability-ring__step ${positionClass}`;
 
     const icon = document.createElement('div');
-    icon.className = 'capability-band__item-icon';
-    icon.innerHTML = getIcon(cap.icon);
+    icon.className = 'capability-ring__step-icon';
+    icon.innerHTML = getIcon(step.icon);
 
     const body = document.createElement('div');
-    body.className = 'capability-band__item-body';
+    body.className = 'capability-ring__step-body';
 
     const title = document.createElement('h3');
-    title.className = 'capability-band__item-title';
-    title.textContent = td(cap, 'title');
+    title.className = 'capability-ring__step-title';
+    title.textContent = td(step, 'title');
 
     const desc = document.createElement('p');
-    desc.className = 'capability-band__item-desc';
-    desc.textContent = td(cap, 'desc');
+    desc.className = 'capability-ring__step-desc';
+    desc.textContent = td(step, 'desc');
 
     body.append(title, desc);
-    item.append(icon, body);
-    listCol.appendChild(item);
-  }
+    article.append(icon, body);
+    stepsWrap.appendChild(article);
+  });
 
-  content.append(statsCol, listCol);
-  container.append(header, content);
+  ring.append(center, stepsWrap);
+  container.append(header, ring);
   section.appendChild(container);
 
   return section;

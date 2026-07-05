@@ -5,6 +5,9 @@
     "name_zh": "变频螺杆风冷冷水机组",
     "name_ru": "Винтовой чиллер с воздушным охлаждением с частотным регулированием",
     "group": "central",
+    "description": "Variable-speed screw chiller for stable part-load efficiency in commercial and industrial plants.",
+    "description_zh": "变频螺杆冷水机组，适合商业与工业项目稳定部分负荷运行。",
+    "description_ru": "Винтовой чиллер с частотным регулированием для стабильной работы при частичной нагрузке.",
     "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/variable-speed-air-cooled-chiller-01.webp"
   },
   {
@@ -13,6 +16,9 @@
     "name_zh": "标准水冷螺杆机组",
     "name_ru": "Винтовой чиллер с водяным охлаждением",
     "group": "central",
+    "description": "Standard water-cooled screw chiller for medium to large central cooling applications.",
+    "description_zh": "标准水冷螺杆机组，适用于中大型中央空调系统。",
+    "description_ru": "Стандартный винтовой чиллер с водяным охлаждением для средних и крупных центральных систем.",
     "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/water-cooled-screw-unit.webp"
   },
   {
@@ -21,6 +27,9 @@
     "name_zh": "模块式水冷涡旋机组",
     "name_ru": "Модульный спиральный чиллер с водяным охлаждением",
     "group": "central",
+    "description": "Modular scroll chiller for flexible capacity expansion and staged deployment.",
+    "description_zh": "模块式水冷涡旋机组，便于分期建设与容量扩展。",
+    "description_ru": "Модульный спиральный чиллер для поэтапного расширения мощности.",
     "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/modular-water-cooled-scroll.webp"
   },
   {
@@ -29,6 +38,9 @@
     "name_zh": "模块式空气源风冷热泵机组",
     "name_ru": "Модульный тепловой насос с воздушным источником",
     "group": "central",
+    "description": "Modular air-source heat pump for heating and cooling in commercial buildings.",
+    "description_zh": "模块式空气源热泵机组，满足商业建筑冷暖一体化需求。",
+    "description_ru": "Модульный тепловой насос с воздушным источником для отопления и охлаждения.",
     "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-source-heat-pump.webp"
   },
   {
@@ -37,6 +49,9 @@
     "name_zh": "高效螺杆风冷热泵机组",
     "name_ru": "Высокоэффективный винтовой тепловой насос с воздушным охлаждением",
     "group": "central",
+    "description": "High-efficiency air-cooled screw heat pump for year-round HVAC operation.",
+    "description_zh": "高效螺杆风冷热泵机组，支持全年冷暖运行。",
+    "description_ru": "Высокоэффективный винтовой тепловой насос с воздушным охлаждением для круглогодичной работы.",
     "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-cooled-screw-heat-pump.webp"
   },
   {
@@ -45,6 +60,9 @@
     "name_zh": "卡式风机盘管",
     "name_ru": "Кассетный фанкойл",
     "group": "central",
+    "description": "Cassette fan coil for even airflow distribution in commercial interiors.",
+    "description_zh": "卡式风机盘管，适用于商业室内均匀送风。",
+    "description_ru": "Кассетный фанкойл для равномерного распределения воздуха в помещениях.",
     "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/cassette-fan-coil.webp"
   },
   {

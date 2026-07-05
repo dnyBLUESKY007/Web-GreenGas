@@ -2,17 +2,13 @@ import '@/styles/main.scss';
 import { createAboutSummary } from '@/components/about-summary/AboutSummary';
 import { createCapabilityBand } from '@/components/capability-band/CapabilityBand';
 import { createCaseCarousel } from '@/components/case-carousel/CaseCarousel';
-import { createCertifications } from '@/components/certifications/Certifications';
-import { createClientLogos } from '@/components/client-logos/ClientLogos';
 import { createHeroCarousel } from '@/components/hero-carousel/HeroCarousel';
 import type { HeroSlide } from '@/components/hero-carousel/HeroCarousel';
 import { createHeroIntro } from '@/components/hero-intro/HeroIntro';
-import { createProductMarquee } from '@/components/product-marquee/ProductMarquee';
+import { createProductGrid } from '@/components/product-grid/ProductGrid';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { createServiceStrip } from '@/components/service-strip/ServiceStrip';
-import { createStatsBand } from '@/components/stats-band/StatsBand';
 import { renderSolutions } from '@/pages/home/renderSolutions';
-import { renderContactChannels } from '@/pages/contact/renderContact';
 import { t } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
@@ -71,8 +67,6 @@ function renderHomePage(): void {
   const hero = createHeroCarousel(heroSlides);
   const heroIntro = createHeroIntro();
 
-  const statsBand = createStatsBand();
-
   const solutionsSection = createSectionBlock(
     createSectionTitle({
       eyebrow: t('home.solutions.eyebrow'),
@@ -84,26 +78,19 @@ function renderHomePage(): void {
 
   const capabilityBand = createCapabilityBand();
   const caseCarousel = createCaseCarousel();
-  const productMarquee = createProductMarquee();
+  const productGrid = createProductGrid();
   const serviceStrip = createServiceStrip();
   const aboutSummary = createAboutSummary();
-  const contactSection = createContactSection();
-  const certifications = createCertifications();
-  const clientLogos = createClientLogos();
 
   main.replaceChildren(
     hero,
     heroIntro,
-    statsBand,
     solutionsSection,
     capabilityBand,
     caseCarousel,
-    certifications,
-    clientLogos,
-    productMarquee,
+    productGrid,
     serviceStrip,
     aboutSummary,
-    contactSection,
   );
 
   renderSolutions(document.getElementById('home-solutions')!);
@@ -121,31 +108,6 @@ function createSectionBlock(title: HTMLElement, contentId: string): HTMLElement 
 
   container.append(title, content);
   section.appendChild(container);
-
-  return section;
-}
-
-function createContactSection(): HTMLElement {
-  const section = document.createElement('section');
-  section.className = 'section section--dark home-contact';
-
-  const container = document.createElement('div');
-  container.className = 'container home-contact__inner';
-
-  const ctaBlock = document.createElement('div');
-  ctaBlock.className = 'home-contact__cta';
-  ctaBlock.innerHTML = `
-    <h2 class="home-contact__title">${t('home.cta.title')}</h2>
-    <a class="btn btn--primary" href="${basePath('/contact/')}">${t('nav.cta')}</a>
-  `;
-
-  const channelsMount = document.createElement('div');
-  channelsMount.id = 'home-contact-channels';
-
-  container.append(ctaBlock, channelsMount);
-  section.appendChild(container);
-
-  renderContactChannels(channelsMount);
 
   return section;
 }
