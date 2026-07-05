@@ -13,6 +13,8 @@
     min-height: 20rem;
     touch-action: pan-y;
     cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
 
     &:active {
       cursor: grabbing;
@@ -24,7 +26,7 @@
     }
 
     @media (width >= $breakpoint-md) {
-      height: calc((100dvh - #{$navbar-height}) * 0.7);
+      height: calc((100dvh - #{$navbar-height}) * 0.75);
       aspect-ratio: unset;
       min-height: unset;
     }
@@ -50,6 +52,9 @@
   }
 
   &__image {
+    -webkit-user-drag: none;
+    user-select: none;
+
     &--bg {
       position: absolute;
       inset: 0;
@@ -83,23 +88,23 @@
     align-items: center;
     background: linear-gradient(
       to right,
-      rgb(0 0 0 / 55%) 0%,
-      rgb(0 0 0 / 35%) 50%,
-      rgb(0 0 0 / 15%) 100%
+      rgb(0 0 0 / 40%) 0%,
+      rgb(0 0 0 / 25%) 50%,
+      rgb(0 0 0 / 10%) 100%
     );
     pointer-events: none;
 
     &--right-heavy {
       background: linear-gradient(
         to left,
-        rgb(0 0 0 / 55%) 0%,
-        rgb(0 0 0 / 35%) 50%,
-        rgb(0 0 0 / 15%) 100%
+        rgb(0 0 0 / 40%) 0%,
+        rgb(0 0 0 / 25%) 50%,
+        rgb(0 0 0 / 10%) 100%
       );
     }
 
     &--minimal {
-      background: rgb(0 0 0 / 32%);
+      background: rgb(0 0 0 / 24%);
     }
   }
 
@@ -108,6 +113,13 @@
     z-index: 2;
     max-width: 36rem;
     margin-inline-start: clamp(1.5rem, 17.5vw, 14rem);
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    border-radius: $radius-lg;
+    background: rgb(15 46 37 / 35%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 12%);
+    box-shadow: 0 8px 32px rgb(0 0 0 / 18%);
     pointer-events: auto;
 
     &--center {

@@ -108,12 +108,14 @@ function createSlideElement(slide: HeroSlide, isActive: boolean): HTMLElement {
   imgBg.src = slide.imageSrc;
   imgBg.alt = '';
   imgBg.setAttribute('aria-hidden', 'true');
+  imgBg.draggable = false;
 
   const imgFg = document.createElement('img');
   imgFg.className = 'hero-carousel__image hero-carousel__image--fg';
   imgFg.src = slide.imageSrc;
   imgFg.alt = slide.imageAlt;
   imgFg.loading = isActive ? 'eager' : 'lazy';
+  imgFg.draggable = false;
 
   media.append(imgBg, imgFg);
 
@@ -277,6 +279,10 @@ function initSwipeDrag(
       return;
     }
 
+    if (event.pointerType === 'mouse') {
+      event.preventDefault();
+    }
+
     isDragging = true;
     startX = event.clientX;
     activePointerId = event.pointerId;
@@ -316,6 +322,10 @@ function initSwipeDrag(
       }
     }
   };
+
+  slidesWrapper.addEventListener('dragstart', (event) => {
+    event.preventDefault();
+  });
 
   slidesWrapper.addEventListener('pointerdown', handlePointerDown);
   slidesWrapper.addEventListener('pointermove', handlePointerMove);

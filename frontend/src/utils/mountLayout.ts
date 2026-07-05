@@ -5,6 +5,7 @@ import { initNavbarScroll } from '@/components/navbar/initNavbarScroll';
 import { createScrollToTop } from '@/components/scroll-to-top/ScrollToTop';
 import { initI18n, onLocaleChange } from '@/i18n';
 import { initTheme, onThemeChange } from '@/theme';
+import { initScrollReveal } from '@/utils/initScrollReveal';
 import type { PageId } from '@/types';
 
 export function mountLayout(pageId: PageId): void {
@@ -46,6 +47,7 @@ export function initPage(pageId: PageId, renderContent: () => void): void {
   const render = (): void => {
     mountLayout(pageId);
     renderContent();
+    initScrollReveal();
   };
 
   onLocaleChange(render);
