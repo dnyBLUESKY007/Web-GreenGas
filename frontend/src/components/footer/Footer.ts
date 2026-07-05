@@ -63,12 +63,16 @@ export function createFooter(): HTMLElement {
 
   linksBlock.appendChild(linksList);
 
+  const bar = document.createElement('div');
+  bar.className = 'footer__bar';
+
   const copy = document.createElement('p');
   copy.className = 'footer__copy';
-  copy.textContent = `© ${new Date().getFullYear()} ${company.name}. ${t('footer.copy')}`;
+  copy.textContent = t('footer.copy');
 
+  bar.appendChild(copy);
   inner.append(brandBlock, contactBlock, linksBlock);
-  footer.append(inner, copy);
+  footer.append(inner, bar);
 
   return footer;
 }

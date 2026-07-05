@@ -1,9 +1,12 @@
 import { createLangSwitcher } from '@/components/lang-switcher/LangSwitcher';
 import { createThemeSwitcher } from '@/components/theme-switcher/ThemeSwitcher';
 import { NAV_ITEMS } from '@/config/navigation';
+import companyData from '@/data/company.json';
 import { t } from '@/i18n';
 import { basePath } from '@/utils/path';
-import type { PageId } from '@/types';
+import type { CompanyData, PageId } from '@/types';
+
+const company = companyData as CompanyData;
 
 export function createNavbar(activePageId: PageId): HTMLElement {
   const header = document.createElement('header');
@@ -15,7 +18,16 @@ export function createNavbar(activePageId: PageId): HTMLElement {
   const brand = document.createElement('a');
   brand.className = 'navbar__brand';
   brand.href = basePath('/');
-  brand.textContent = 'GREENGAS';
+
+  const brandEn = document.createElement('span');
+  brandEn.className = 'navbar__brand-en';
+  brandEn.textContent = company.name;
+
+  const brandZh = document.createElement('span');
+  brandZh.className = 'navbar__brand-zh';
+  brandZh.textContent = company.name_zh ?? '';
+
+  brand.append(brandEn, brandZh);
 
   const nav = document.createElement('nav');
   nav.className = 'navbar__nav';

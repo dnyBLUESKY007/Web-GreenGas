@@ -110,6 +110,7 @@ export interface CompanyStat {
 
 export interface CompanyData {
   readonly name: string;
+  readonly name_zh?: string;
   readonly tagline: string;
   readonly tagline_zh?: string;
   readonly tagline_ru?: string;
