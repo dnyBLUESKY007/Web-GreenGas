@@ -1,12 +1,44 @@
 @use '../base/variables' as *;
 
+.about-summary-section {
+  @media (width >= $breakpoint-md) {
+    padding-block: clamp(1.25rem, 2.5vh, 2rem);
+  }
+}
+
 .about-summary {
   display: grid;
   gap: 2.5rem;
 
-  @media (width >= $breakpoint-lg) {
+  @media (width >= $breakpoint-md) {
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: stretch;
+    gap: 2rem;
+    min-height: 0;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+
+    @media (width >= $breakpoint-md) {
+      padding-right: 1rem;
+      border-right: 1px solid $color-border;
+    }
+  }
+
+  &__badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-content: center;
+    min-height: 0;
+
+    @media (width >= $breakpoint-md) {
+      padding-left: 1rem;
+    }
   }
 
   &__description {
@@ -50,12 +82,6 @@
     .channel-card {
       padding: 0.875rem 1rem;
     }
-  }
-
-  &__badges {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
   }
 
   &__badge {

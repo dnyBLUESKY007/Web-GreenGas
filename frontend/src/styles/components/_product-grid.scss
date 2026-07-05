@@ -2,6 +2,10 @@
 
 .product-grid-section {
   padding-block: $section-padding-y;
+
+  @media (width >= $breakpoint-md) {
+    padding-block: clamp(1rem, 2vh, 1.5rem);
+  }
 }
 
 .product-grid {

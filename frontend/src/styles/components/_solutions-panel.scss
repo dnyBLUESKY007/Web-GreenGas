@@ -6,9 +6,11 @@
   border: 1px solid $color-border;
   background-color: $color-bg;
 
-  @media (width >= $breakpoint-lg) {
-    grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
-    min-height: min(60vh, 28rem);
+  @media (width >= $breakpoint-md) {
+    grid-template-columns: minmax(0, 7fr) minmax(10rem, 3fr);
+    flex: 1;
+    min-height: 0;
+    height: 100%;
   }
 
   &__detail {
@@ -16,11 +18,12 @@
     gap: 1.5rem;
     padding: 1.5rem;
     border-bottom: 1px solid $color-border;
+    overflow: auto;
 
-    @media (width >= $breakpoint-lg) {
-      grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
+    @media (width >= $breakpoint-md) {
+      grid-template-columns: minmax(8rem, 12rem) minmax(0, 1fr);
       align-items: start;
-      padding: 2rem;
+      padding: 1.5rem;
       border-bottom: none;
       border-right: 1px solid $color-border;
     }
@@ -75,9 +78,10 @@
   &__nav {
     display: grid;
     grid-template-columns: 1fr;
+    overflow: auto;
 
-    @media (width >= $breakpoint-md) and (width < $breakpoint-lg) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (width >= $breakpoint-md) {
+      grid-template-rows: repeat(4, 1fr);
     }
   }
 
@@ -95,17 +99,7 @@
     cursor: pointer;
     transition: background-color $transition-base, color $transition-base;
 
-    @media (width >= $breakpoint-md) and (width < $breakpoint-lg) {
-      &:nth-child(odd) {
-        border-right: 1px solid $color-border;
-      }
-
-      &:nth-child(-n + 2) {
-        border-top: none;
-      }
-    }
-
-    @media (width >= $breakpoint-lg) {
+    @media (width >= $breakpoint-md) {
       border-top: 1px solid $color-border;
       border-left: none;
 

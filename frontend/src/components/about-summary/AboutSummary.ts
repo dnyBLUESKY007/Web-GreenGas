@@ -10,7 +10,7 @@ const company = companyData as CompanyData;
 
 export function createAboutSummary(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--muted about-summary-section';
+  section.className = 'section section--muted about-summary-section home-screen home-screen--about';
 
   const container = document.createElement('div');
   container.className = 'container';

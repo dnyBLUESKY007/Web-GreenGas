@@ -18,7 +18,7 @@ flowchart LR
 
 ## 首页信息流（2026-07-05）
 
-Hero → HeroIntro → Solutions（交互面板）→ CapabilityRing → CaseCarousel → ProductGrid（6 卡）→ ServiceStrip → About（含联系渠道）。资质认证与客户行业不在首页，迁至 About 子页。
+Hero → HeroIntro → Solutions → CapabilityRing → CaseCarousel → ProductGrid → ServiceStrip → About。桌面端各屏高度按 `100dvh - navbar` 比例约束（见 `--home-screen-*` CSS 变量与 `home-screen--*` class）。
 
 ## 关键技术决策
 

@@ -3,6 +3,10 @@
 .case-carousel-section {
   overflow: hidden;
   padding-block: calc(#{$section-padding-y} * 0.65);
+
+  @media (width >= $breakpoint-md) {
+    padding-block: clamp(1rem, 2vh, 1.5rem);
+  }
 }
 
 .case-carousel {
@@ -60,6 +64,8 @@
 
 .case-card {
   flex: 0 0 min(80vw, 20rem);
+  display: flex;
+  flex-direction: column;
   scroll-snap-align: start;
   border: 1px solid $color-border;
   border-radius: $radius-md;
@@ -73,8 +79,15 @@
 
   &__media {
     aspect-ratio: 16 / 9;
+    flex-shrink: 0;
     overflow: hidden;
     background-color: $color-bg-muted;
+
+    @media (width >= $breakpoint-md) {
+      aspect-ratio: auto;
+      flex: 1;
+      min-height: 0;
+    }
   }
 
   &__image {

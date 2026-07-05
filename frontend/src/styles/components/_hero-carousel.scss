@@ -26,7 +26,7 @@
     }
 
     @media (width >= $breakpoint-md) {
-      height: calc((100dvh - #{$navbar-height}) * 0.75);
+      height: var(--home-screen-1-hero);
       aspect-ratio: unset;
       min-height: unset;
     }

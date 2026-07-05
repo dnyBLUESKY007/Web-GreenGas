@@ -98,7 +98,7 @@ function renderHomePage(): void {
 
 function createSectionBlock(title: HTMLElement, contentId: string): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--compact';
+  section.className = 'section section--compact home-screen home-screen--solutions';
 
   const container = document.createElement('div');
   container.className = 'container';

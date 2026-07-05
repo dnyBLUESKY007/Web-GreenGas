@@ -5,7 +5,7 @@ import type { Project } from '@/types';
 
 export function createCaseCarousel(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section case-carousel-section';
+  section.className = 'section case-carousel-section home-screen home-screen--cases';
 
   const container = document.createElement('div');
   container.className = 'container';

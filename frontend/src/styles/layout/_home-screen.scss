@@ -1,0 +1,119 @@
+@use '../base/variables' as *;
+
+// Shared home-screen layout: viewport-proportional sections on desktop only.
+@media (width >= $breakpoint-md) {
+  .home-screen {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-block: clamp(1.25rem, 2.5vh, 2rem);
+    min-height: var(--home-screen-min-height, auto);
+
+    > .container {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      min-height: 0;
+      width: min(100% - 2rem, $container-max-width);
+    }
+
+    &--solutions {
+      --home-screen-min-height: var(--home-screen-2);
+
+      .section-title {
+        flex-shrink: 0;
+        margin-bottom: 1.25rem;
+      }
+
+      #home-solutions {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-height: 0;
+      }
+    }
+
+    &--capability {
+      --home-screen-min-height: var(--home-screen-3-cap);
+
+      .capability-band__inner {
+        flex: 1;
+        min-height: 0;
+      }
+
+      .capability-band__header {
+        flex-shrink: 0;
+        margin-bottom: 1.25rem;
+      }
+
+      .capability-ring {
+        flex: 1;
+        min-height: 0;
+      }
+    }
+
+    &--cases {
+      --home-screen-min-height: var(--home-screen-3-case);
+
+      .section-head {
+        flex-shrink: 0;
+        margin-bottom: 1rem;
+      }
+
+      .case-carousel__wrapper {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .case-carousel__track {
+        align-items: stretch;
+      }
+    }
+
+    &--products {
+      --home-screen-min-height: var(--home-screen-4-products);
+
+      .section-head {
+        flex-shrink: 0;
+        margin-bottom: 1rem;
+      }
+
+      .product-grid {
+        flex: 1;
+        align-content: center;
+        min-height: 0;
+      }
+    }
+
+    &--services {
+      --home-screen-min-height: var(--home-screen-4-services);
+
+      .section-title {
+        flex-shrink: 0;
+        margin-bottom: 1rem;
+      }
+
+      .service-strip {
+        flex: 1;
+        align-content: center;
+      }
+    }
+
+    &--about {
+      --home-screen-min-height: var(--home-screen-5);
+
+      .section-title {
+        flex-shrink: 0;
+        margin-bottom: 1.25rem;
+      }
+
+      .about-summary {
+        flex: 1;
+        min-height: 0;
+        align-items: stretch;
+      }
+    }
+  }
+}

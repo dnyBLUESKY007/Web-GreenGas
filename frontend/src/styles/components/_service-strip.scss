@@ -1,5 +1,11 @@
 @use '../base/variables' as *;
 
+.service-strip-section {
+  @media (width >= $breakpoint-md) {
+    padding-block: clamp(1rem, 2vh, 1.5rem);
+  }
+}
+
 .service-strip {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -11,11 +11,11 @@
   position: relative;
   display: grid;
   gap: 2rem;
-  min-height: 28rem;
+  min-height: 20rem;
   padding: 1rem 0;
 
-  @media (width >= $breakpoint-lg) {
-    min-height: 34rem;
+  @media (width >= $breakpoint-md) {
+    min-height: 0;
     place-items: center;
   }
 
@@ -26,7 +26,7 @@
     margin-inline: auto;
     z-index: 2;
 
-    @media (width >= $breakpoint-lg) {
+    @media (width >= $breakpoint-md) {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -59,10 +59,11 @@
     display: grid;
     gap: 1rem;
 
-    @media (width >= $breakpoint-lg) {
+    @media (width >= $breakpoint-md) {
       position: relative;
       width: min(100%, 52rem);
-      min-height: 30rem;
+      height: 100%;
+      min-height: 18rem;
       margin-inline: auto;
     }
   }
@@ -75,13 +76,13 @@
     border-radius: 0;
     background-color: rgb(255 255 255 / 5%);
 
-    @media (width >= $breakpoint-lg) {
+    @media (width >= $breakpoint-md) {
       position: absolute;
       width: min(14rem, 28vw);
     }
 
     &--top {
-      @media (width >= $breakpoint-lg) {
+      @media (width >= $breakpoint-md) {
         top: 0;
         left: 50%;
         transform: translateX(-50%);
@@ -89,28 +90,28 @@
     }
 
     &--right {
-      @media (width >= $breakpoint-lg) {
+      @media (width >= $breakpoint-md) {
         top: 22%;
         right: 0;
       }
     }
 
     &--bottom-right {
-      @media (width >= $breakpoint-lg) {
+      @media (width >= $breakpoint-md) {
         bottom: 8%;
         right: 8%;
       }
     }
 
     &--bottom-left {
-      @media (width >= $breakpoint-lg) {
+      @media (width >= $breakpoint-md) {
         bottom: 8%;
         left: 8%;
       }
     }
 
     &--left {
-      @media (width >= $breakpoint-lg) {
+      @media (width >= $breakpoint-md) {
         top: 22%;
         left: 0;
       }
@@ -144,7 +145,7 @@
   }
 }
 
-@media (width >= $breakpoint-lg) {
+@media (width >= $breakpoint-md) {
   .capability-ring__steps::before {
     content: '';
     position: absolute;

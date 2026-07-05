@@ -8,7 +8,7 @@ const company = companyData as CompanyData;
 
 export function createServiceStrip(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--compact service-strip-section';
+  section.className = 'section section--compact service-strip-section home-screen home-screen--services';
 
   const container = document.createElement('div');
   container.className = 'container';

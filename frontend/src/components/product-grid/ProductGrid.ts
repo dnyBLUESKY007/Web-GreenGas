@@ -8,7 +8,7 @@ const HOME_PRODUCT_COUNT = 6;
 
 export function createProductGrid(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--muted product-grid-section';
+  section.className = 'section section--muted product-grid-section home-screen home-screen--products';
 
   const container = document.createElement('div');
   container.className = 'container';

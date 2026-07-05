@@ -16,7 +16,7 @@ const WORKFLOW_POSITIONS = [
 
 export function createCapabilityBand(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--dark capability-band';
+  section.className = 'section section--dark capability-band home-screen home-screen--capability';
 
   const container = document.createElement('div');
   container.className = 'container capability-band__inner';
