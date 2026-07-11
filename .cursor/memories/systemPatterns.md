@@ -29,6 +29,7 @@ Hero → HeroIntro → Solutions → CapabilityRing → CaseCarousel → Product
 | 国际化 | 自研轻量 i18n + `_zh`/`_ru` 后缀 | 零依赖，JSON 字段回退英文 | `decisions/0003-self-built-i18n.md` |
 | 子路径部署 | `basePath()` + `VITE_BASE` | Nginx 多版本对比预览 | `decisions/0004-basepath-subpath-deploy.md` |
 | 主题 | 运行时 CSS 变量切换（3 accent） | v2/v3 皮肤实验合并为运行时方案 | `decisions/0005-runtime-theme-switching.md` |
+| 生产部署 | 阿里云 ECS + Nginx 路径 `/` | 与同机 `/insoles`、`/api` 隔离 | `decisions/0006-aliyun-ecs-nginx-deploy.md` |
 | 列表内容 | JSON 驱动渲染 | 增内容不改页面结构 | — |
 
 ## 核心设计模式 / 约定

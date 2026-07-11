@@ -1,14 +1,15 @@
 # Active Context（当前焦点）
 
 > 更新最频繁的文件。每次里程碑或换方向时刷新，保证“下一步一目了然”。
-> 最近更新：2026-07-05
+> 最近更新：2026-07-10
 
 ## 当前焦点
 
-首页信息架构改版已完成（TALK-0002 落地）：5 屏紧凑信息流、Solutions 交互面板（四场景图已上 OSS）、环形工程能力区、2×3 产品网格、About 收束含联系方式。待用户审阅视觉细节并替换其余占位素材。
+首页信息架构改版已完成；生产环境已部署至阿里云 ECS（`http://47.76.112.33/`），本地一键发布脚本就绪。待用户审阅视觉细节并替换其余占位素材。
 
 ## 近期变更
 
+- 2026-07-10 生产部署：站点发布至 ECS `47.76.112.33`（Nginx `/` → `/var/www/corp/dist`）；新增 `scripts/deploy.ps1` / `deploy.sh`；ADR-0006
 - 2026-07-05 Solutions 场景图：四张 scene 图上传 OSS，`solutions.json` + `cdnUrl('scene')` 接入；新增 `image-resources.json` 图片资源说明表（85 条）
 - 2026-07-05 首页视口高度节奏：统一 `--home-screen-*` 变量，桌面端按 TALK-0002 比例约束各屏（75/25、60、60/40、70/30、100% About）
 - 2026-07-05 首页改版：重排模块顺序；Solutions 交互面板；CapabilityBand 环形流程；ProductGrid；About 整合联系渠道
@@ -22,7 +23,7 @@
 - [ ] 替换占位文案/图片为甲方真实素材
 - [ ] Contact 页高德地图（[issue-0001](../issues/issue-0001-contact-amap-map.md)）
 - [ ] EmailJS 表单接入
-- [ ] Cloudflare Pages 部署
+- [ ] （可选）Cloudflare Pages 或 CI 自动发布
 
 ## 进行中的任务 Plan
 

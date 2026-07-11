@@ -7,7 +7,8 @@
 - **语言 / 运行时**：TypeScript 5.8、浏览器原生 DOM（无 UI 框架）
 - **构建**：Vite 6 + SCSS（sass）
 - **数据**：JSON 文件（`frontend/src/data/`）
-- **部署（预留）**：Cloudflare Pages
+- **生产部署**：阿里云 ECS + Nginx（`scripts/deploy.ps1` / `scripts/deploy.sh`）
+- **备选部署**：Cloudflare Pages
 
 ## 本地开发
 
@@ -56,6 +57,41 @@ nginx -s reload   # 配置变更后 reload
 ```
 
 关键 nginx 配置（`ignored/nginx/conf/nginx.conf` 8080 端口）：每个版本一个 `location`，使用 `alias` + `try_files $uri $uri/ /vN/index.html`。详见 ADR-0004。
+
+## 生产部署（阿里云 ECS）
+
+| 项 | 值 |
+|----|-----|
+| SSH | `ssh root@47.76.112.33` |
+| 站点 URL | `http://47.76.112.33/` |
+| 静态根目录 | `/var/www/corp/dist` |
+| 备份目录 | `/var/www/backups/corp-dist-*` |
+| Nginx 配置 | `/etc/nginx/conf.d/magic-insoles.conf` |
+
+**一键发布**（仓库根目录）：
+
+```powershell
+# Windows
+.\scripts\deploy.ps1
+.\scripts\deploy.ps1 -SkipBuild    # 仅上传已有 dist
+.\scripts\deploy.ps1 -DryRun       # 预览步骤
+```
+
+```bash
+# Linux / macOS / WSL
+chmod +x scripts/deploy.sh
+./scripts/deploy.sh
+./scripts/deploy.sh --skip-build
+./scripts/deploy.sh --dry-run
+```
+
+环境变量可覆盖默认值：`DEPLOY_HOST`、`DEPLOY_USER`、`DEPLOY_REMOTE_DIR`、`DEPLOY_BACKUP_DIR`。
+
+脚本流程：build → 远程备份 → `scp` 上传 → `chown/chmod` → `nginx -t && reload` → 本机 `curl` 健康检查。
+
+**回滚**：恢复 `/var/www/backups/` 下最新 `corp-dist-*` 到 `/var/www/corp/dist`，再 reload nginx。
+
+同机隔离：`/` 为本站；`/insoles/`、`/api/` 为其他项目，发布脚本不修改其配置。详见 ADR-0006。
 
 ## 外部依赖 / 集成
 

@@ -1,7 +1,7 @@
 # Progress（进展与里程碑）
 
 > 项目的“状态快照”：已完成、待办、已知问题。细节可随时间模糊化，只保留结论。
-> 最近更新：2026-07-05
+> 最近更新：2026-07-10
 
 ## 已完成
 
@@ -16,6 +16,7 @@
 - 数字大脑（Memory Bank）初始化填实
 - **首页信息架构改版**（Solutions 交互面板、环形 Capability、ProductGrid、About 收束；Cert/Clients 子页）
 - Solutions 四场景图接入 OSS CDN（`scene/` 类别）+ `image-resources.json` 资源说明表（85 条）
+- **生产部署**：阿里云 ECS + Nginx；`scripts/deploy.ps1` / `deploy.sh` 一键发布
 
 ## 进行中
 
@@ -25,14 +26,14 @@
 
 - [ ] Contact 页高德地图（issue-0001）
 - [ ] EmailJS 联系表单
-- [ ] Cloudflare Pages 部署
+- [ ] （可选）Cloudflare Pages / CI 自动发布
 - [ ] SEO meta 完善
 
 ## 已知问题 / 技术债
 
 - 部分联系方式与公司信息仍为占位数据
 - EmailJS 尚未接入
-- 部署流程未配置
+- 无自动化 CI 发布（当前为本地脚本 + SSH）
 
 ## 里程碑记录
 
@@ -48,3 +49,4 @@
 | 2026-07-04 | Workflow | rules/skills 重组 + 数字大脑初始化 |
 | 2026-07-05 | 首页 IA 改版 | 5 屏信息流、Solutions 面板、环形能力、ProductGrid、About 子页 |
 | 2026-07-05 | 场景图 + 资源表 | Solutions 四场景图 OSS 接入；`image-resources.json` 溯源表 |
+| 2026-07-10 | ECS 生产部署 | 站点上线 `47.76.112.33`；deploy 脚本 + ADR-0006 |
