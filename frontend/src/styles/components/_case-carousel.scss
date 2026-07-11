@@ -2,10 +2,9 @@
 
 .case-carousel-section {
   overflow: hidden;
-  padding-block: calc(#{$section-padding-y} * 0.65);
 
-  @media (width >= $breakpoint-md) {
-    padding-block: clamp(1rem, 2vh, 1.5rem);
+  @media (width < $breakpoint-md) {
+    padding-block: calc(#{$section-padding-y} * 0.65);
   }
 }
 

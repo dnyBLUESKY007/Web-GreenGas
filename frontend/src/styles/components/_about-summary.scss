@@ -1,11 +1,5 @@
 @use '../base/variables' as *;
 
-.about-summary-section {
-  @media (width >= $breakpoint-md) {
-    padding-block: clamp(1.25rem, 2.5vh, 2rem);
-  }
-}
-
 .about-summary {
   display: grid;
   gap: 2.5rem;

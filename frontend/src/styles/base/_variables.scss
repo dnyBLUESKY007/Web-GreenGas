@@ -40,7 +40,7 @@ $line-height-base: 1.6;
 
 // Layout
 $container-max-width: 72rem;
-$section-padding-y: 13.5rem;
+$section-padding-y: 3rem;
 $navbar-height: 4rem;
 
 // Homepage viewport rhythm (desktop only; applied via _home-screen.scss)
@@ -55,6 +55,7 @@ $navbar-height: 4rem;
   --home-screen-4-products: calc(var(--home-usable-vh) * 0.7);
   --home-screen-4-services: calc(var(--home-usable-vh) * 0.3);
   --home-screen-5: var(--home-usable-vh * 0.4);
+  --home-screen-padding-block: clamp(2.25rem, calc(2.5vh + 1rem), 3rem);
 }
 
 // Breakpoints

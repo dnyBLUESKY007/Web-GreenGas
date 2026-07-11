@@ -6,8 +6,12 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding-block: clamp(1.25rem, 2.5vh, 2rem);
+    padding-block: var(--home-screen-padding-block);
     min-height: var(--home-screen-min-height, auto);
+
+    &.section--compact {
+      padding-block: var(--home-screen-padding-block);
+    }
 
     > .container {
       display: flex;
