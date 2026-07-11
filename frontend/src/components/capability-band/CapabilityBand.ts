@@ -1,5 +1,6 @@
 import companyData from '@/data/company.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { cdnUrl } from '@/config/assets';
 import { t, td } from '@/i18n';
 import { getIcon } from '@/utils/icons';
 import type { CompanyData } from '@/types';
@@ -10,6 +11,10 @@ const STAT_ICONS = ['factory', 'award', 'headset'] as const;
 export function createCapabilityBand(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section capability-band home-screen home-screen--capability';
+  section.style.setProperty(
+    '--capability-band-bg',
+    `url("${cdnUrl('capacity', 'background.webp')}")`,
+  );
 
   const container = document.createElement('div');
   container.className = 'container capability-band__inner';
@@ -66,9 +71,11 @@ export function createCapabilityBand(): HTMLElement {
     icon.className = 'capability-process__icon';
     icon.innerHTML = getIcon(step.icon);
 
+    const stepTitle = td(step, 'title');
+
     const title = document.createElement('h3');
     title.className = 'capability-process__title';
-    title.textContent = td(step, 'title');
+    title.textContent = stepTitle;
 
     const desc = document.createElement('p');
     desc.className = 'capability-process__desc';
@@ -76,14 +83,15 @@ export function createCapabilityBand(): HTMLElement {
 
     const media = document.createElement('div');
     media.className = 'capability-process__media';
-    media.setAttribute('role', 'img');
-    media.setAttribute('aria-label', `${td(step, 'title')} image placeholder`);
 
-    const mediaLabel = document.createElement('span');
-    mediaLabel.className = 'capability-process__media-label';
-    mediaLabel.textContent = 'Project image';
+    const img = document.createElement('img');
+    img.className = 'capability-process__image';
+    img.src = cdnUrl('capacity', `${index + 1}.webp`);
+    img.alt = stepTitle;
+    img.loading = 'lazy';
+    img.decoding = 'async';
 
-    media.appendChild(mediaLabel);
+    media.appendChild(img);
     body.append(number, icon, title, desc);
     article.append(body, media);
     process.appendChild(article);
