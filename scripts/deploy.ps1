@@ -55,6 +55,28 @@ function Invoke-Remote {
     }
 }
 
+function Invoke-RemoteScript {
+    param([string]$Script)
+    $unixScript = $Script -replace "`r`n", "`n" -replace "`r", "`n"
+    if ($DryRun) {
+        Write-Host "[dry-run] ssh $SshTarget bash -s"
+        Write-Host $unixScript
+        return ''
+    }
+    $prevErrorAction = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        $output = $unixScript | ssh $SshTarget 'bash -s' 2>&1 | Out-String
+    }
+    finally {
+        $ErrorActionPreference = $prevErrorAction
+    }
+    if ($LASTEXITCODE -ne 0) {
+        throw "Remote script failed (exit $LASTEXITCODE)"
+    }
+    return $output
+}
+
 function Invoke-Scp {
     param(
         [string]$Source,
@@ -118,9 +140,7 @@ $backupOutput = if ($DryRun) {
     'backup:(dry-run)'
 }
 else {
-    $output = ssh $SshTarget $backupScript 2>&1 | Out-String
-    if ($LASTEXITCODE -ne 0) { throw 'Remote backup failed' }
-    $output
+    Invoke-RemoteScript -Script $backupScript
 }
 if ($backupOutput -match 'backup:(.+)') {
     Write-Host "Backup: $($Matches[1].Trim())"
@@ -146,8 +166,7 @@ if ($DryRun) {
     Write-Host '[dry-run] chown/chmod + nginx reload + curl'
 }
 else {
-    $healthOutput = ssh $SshTarget $postDeployScript
-    if ($LASTEXITCODE -ne 0) { throw 'Post-deploy steps failed' }
+    $healthOutput = Invoke-RemoteScript -Script $postDeployScript
     if ($healthOutput -match 'health:(\d+)') {
         $code = $Matches[1]
         if ($code -ne '200') {
