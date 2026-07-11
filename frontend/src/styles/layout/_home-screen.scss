@@ -46,7 +46,11 @@
         margin-bottom: 1.25rem;
       }
 
-      .capability-ring {
+      .capability-stats {
+        flex-shrink: 0;
+      }
+
+      .capability-process {
         flex: 1;
         min-height: 0;
       }

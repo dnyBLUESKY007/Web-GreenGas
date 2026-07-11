@@ -5,18 +5,11 @@ import { getIcon } from '@/utils/icons';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
-
-const WORKFLOW_POSITIONS = [
-  'capability-ring__step--top',
-  'capability-ring__step--right',
-  'capability-ring__step--bottom-right',
-  'capability-ring__step--bottom-left',
-  'capability-ring__step--left',
-] as const;
+const STAT_ICONS = ['factory', 'award', 'headset'] as const;
 
 export function createCapabilityBand(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--dark capability-band home-screen home-screen--capability';
+  section.className = 'section capability-band home-screen home-screen--capability';
 
   const container = document.createElement('div');
   container.className = 'container capability-band__inner';
@@ -28,52 +21,75 @@ export function createCapabilityBand(): HTMLElement {
   });
   header.classList.add('capability-band__header');
 
-  const ring = document.createElement('div');
-  ring.className = 'capability-ring';
-
-  const center = document.createElement('div');
-  center.className = 'capability-ring__center';
+  const stats = document.createElement('div');
+  stats.className = 'capability-stats';
 
   for (const stat of company.stats) {
     const item = document.createElement('div');
-    item.className = 'capability-ring__stat';
-    item.innerHTML = `
-      <p class="capability-ring__stat-value">${stat.value}</p>
-      <p class="capability-ring__stat-label">${td(stat, 'label')}</p>
-    `;
-    center.appendChild(item);
-  }
-
-  const stepsWrap = document.createElement('div');
-  stepsWrap.className = 'capability-ring__steps';
-
-  company.workflow.forEach((step, index) => {
-    const positionClass = WORKFLOW_POSITIONS[index] ?? WORKFLOW_POSITIONS[0];
-    const article = document.createElement('article');
-    article.className = `capability-ring__step ${positionClass}`;
+    item.className = 'capability-stats__item';
 
     const icon = document.createElement('div');
-    icon.className = 'capability-ring__step-icon';
-    icon.innerHTML = getIcon(step.icon);
+    icon.className = 'capability-stats__icon';
+    icon.innerHTML = getIcon(STAT_ICONS[company.stats.indexOf(stat)] ?? 'factory');
+
+    const content = document.createElement('div');
+    content.className = 'capability-stats__content';
+
+    const value = document.createElement('p');
+    value.className = 'capability-stats__value';
+    value.textContent = stat.value;
+
+    const label = document.createElement('p');
+    label.className = 'capability-stats__label';
+    label.textContent = td(stat, 'label');
+
+    content.append(value, label);
+    item.append(icon, content);
+    stats.appendChild(item);
+  }
+
+  const process = document.createElement('div');
+  process.className = 'capability-process';
+
+  company.workflow.forEach((step, index) => {
+    const article = document.createElement('article');
+    article.className = 'capability-process__card';
 
     const body = document.createElement('div');
-    body.className = 'capability-ring__step-body';
+    body.className = 'capability-process__card-body';
+
+    const number = document.createElement('p');
+    number.className = 'capability-process__number';
+    number.textContent = String(index + 1).padStart(2, '0');
+
+    const icon = document.createElement('div');
+    icon.className = 'capability-process__icon';
+    icon.innerHTML = getIcon(step.icon);
 
     const title = document.createElement('h3');
-    title.className = 'capability-ring__step-title';
+    title.className = 'capability-process__title';
     title.textContent = td(step, 'title');
 
     const desc = document.createElement('p');
-    desc.className = 'capability-ring__step-desc';
+    desc.className = 'capability-process__desc';
     desc.textContent = td(step, 'desc');
 
-    body.append(title, desc);
-    article.append(icon, body);
-    stepsWrap.appendChild(article);
+    const media = document.createElement('div');
+    media.className = 'capability-process__media';
+    media.setAttribute('role', 'img');
+    media.setAttribute('aria-label', `${td(step, 'title')} image placeholder`);
+
+    const mediaLabel = document.createElement('span');
+    mediaLabel.className = 'capability-process__media-label';
+    mediaLabel.textContent = 'Project image';
+
+    media.appendChild(mediaLabel);
+    body.append(number, icon, title, desc);
+    article.append(body, media);
+    process.appendChild(article);
   });
 
-  ring.append(center, stepsWrap);
-  container.append(header, ring);
+  container.append(header, stats, process);
   section.appendChild(container);
 
   return section;
