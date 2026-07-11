@@ -87,13 +87,44 @@
 }
 
 .page-header {
+  position: relative;
   padding-block: 3rem 2rem;
   background-color: $color-bg-muted;
   border-bottom: 1px solid $color-border;
+  overflow: hidden;
 
   .section-title {
+    position: relative;
+    z-index: 1;
     width: min(100% - 2rem, $container-max-width);
     margin-inline: auto;
+  }
+
+  &--has-bg {
+    padding-block: 3.5rem 2.75rem;
+    border-bottom: none;
+    background:
+      linear-gradient(
+        105deg,
+        rgb(15 46 37 / 88%) 0%,
+        rgb(15 46 37 / 74%) 36%,
+        rgb(15 46 37 / 42%) 68%,
+        rgb(15 46 37 / 28%) 100%
+      ),
+      var(--page-header-bg) center / cover no-repeat,
+      $color-primary-dark;
+
+    .section-title__eyebrow {
+      color: $color-accent;
+    }
+
+    .section-title__heading {
+      color: #fff;
+    }
+
+    .section-title__description {
+      color: rgb(255 255 255 / 82%);
+    }
   }
 }
 

@@ -1,5 +1,6 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { setPageHeaderBackground } from '@/config/assets';
 import { t } from '@/i18n';
 import { renderProducts } from '@/pages/solutions/renderProducts';
 import { initPage } from '@/utils/mountLayout';
@@ -13,6 +14,7 @@ function renderSolutionsPage(): void {
 
   const header = document.createElement('section');
   header.className = 'page-header';
+  setPageHeaderBackground(header, '01_solutions.webp');
   header.appendChild(
     createSectionTitle({
       eyebrow: t('solutions.eyebrow'),

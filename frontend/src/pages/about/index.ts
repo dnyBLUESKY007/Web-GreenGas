@@ -3,7 +3,7 @@ import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import companyData from '@/data/company.json';
 import { t, td } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
-import { cdnUrl } from '@/config/assets';
+import { cdnUrl, setPageHeaderBackground } from '@/config/assets';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
@@ -17,6 +17,7 @@ function renderAboutPage(): void {
 
   const header = document.createElement('section');
   header.className = 'page-header';
+  setPageHeaderBackground(header, '02_about.webp');
   header.appendChild(
     createSectionTitle({
       eyebrow: t('about.eyebrow'),

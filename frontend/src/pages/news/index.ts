@@ -3,7 +3,7 @@ import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { getLocale, t } from '@/i18n';
 import type { Locale } from '@/types';
 import { initPage } from '@/utils/mountLayout';
-import { cdnUrl } from '@/config/assets';
+import { cdnUrl, setPageHeaderBackground } from '@/config/assets';
 
 const DEFAULT_NEWS_IMAGE = cdnUrl('company-info', 'team-photo.webp');
 
@@ -57,6 +57,7 @@ function renderNewsPage(): void {
 
   const header = document.createElement('section');
   header.className = 'page-header';
+  setPageHeaderBackground(header, '03_news.webp');
   header.appendChild(
     createSectionTitle({
       eyebrow: t('news.eyebrow'),

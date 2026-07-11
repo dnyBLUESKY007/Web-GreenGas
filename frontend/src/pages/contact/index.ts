@@ -1,6 +1,7 @@
 import '@/styles/main.scss';
 import { createContactForm } from '@/components/contact-form/ContactForm';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { setPageHeaderBackground } from '@/config/assets';
 import { t } from '@/i18n';
 import { renderContactChannels } from '@/pages/contact/renderContact';
 import { initPage } from '@/utils/mountLayout';
@@ -15,6 +16,7 @@ function renderContactPage(): void {
 
   const header = document.createElement('section');
   header.className = 'page-header';
+  setPageHeaderBackground(header, '05_contact.webp');
   header.appendChild(
     createSectionTitle({
       eyebrow: t('contact.eyebrow'),

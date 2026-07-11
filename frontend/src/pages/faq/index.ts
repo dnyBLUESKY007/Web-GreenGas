@@ -1,5 +1,6 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { setPageHeaderBackground } from '@/config/assets';
 import { t } from '@/i18n';
 import { renderFaq } from '@/pages/contact/renderContact';
 import { initPage } from '@/utils/mountLayout';
@@ -13,6 +14,7 @@ function renderFaqPage(): void {
 
   const header = document.createElement('section');
   header.className = 'page-header';
+  setPageHeaderBackground(header, '04_faq.webp');
   header.appendChild(
     createSectionTitle({
       eyebrow: t('faq.eyebrow'),

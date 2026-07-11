@@ -410,5 +410,25 @@
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/scene/gemini-scene-specialized-environments.webp": {
     "originalPath": "scene/gemini-scene-specialized-environments.webp",
     "description": "Solutions 场景 — 特种环境（船用、高温、防爆等极端工况）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/01_solutions.webp": {
+    "originalPath": "page-headers/01_solutions.webp",
+    "description": "内页页眉背景 — Solutions：屋顶工业冷却机组阵列（左侧留白叠字）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/02_about.webp": {
+    "originalPath": "page-headers/02_about.webp",
+    "description": "内页页眉背景 — About：厂房内定制机组产线与天车（左侧暗区叠字）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/03_news.webp": {
+    "originalPath": "page-headers/03_news.webp",
+    "description": "内页页眉背景 — News：明亮办公走廊与技术图纸区"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/04_faq.webp": {
+    "originalPath": "page-headers/04_faq.webp",
+    "description": "内页页眉背景 — FAQ：电控柜与工程图纸工作台"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/05_contact.webp": {
+    "originalPath": "page-headers/05_contact.webp",
+    "description": "内页页眉背景 — Contact：洁净机房走廊与绝缘管道设施"
   }
 }
