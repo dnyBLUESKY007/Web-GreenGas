@@ -21,7 +21,7 @@ function renderAboutPage(): void {
   header.appendChild(
     createSectionTitle({
       eyebrow: t('about.eyebrow'),
-      title: company.name,
+      title: `${company.name} ${company.name_zh ?? ''}`.trim(),
       description: td(company, 'description'),
     }),
   );

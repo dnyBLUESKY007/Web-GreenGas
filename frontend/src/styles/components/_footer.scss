@@ -17,9 +17,22 @@
   }
 
   &__name {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
     font-size: 1.25rem;
-    font-weight: 700;
     color: #fff;
+  }
+
+  &__name-en {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  &__name-zh {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(255 255 255 / 85%);
   }
 
   &__tagline {
