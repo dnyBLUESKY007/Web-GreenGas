@@ -18,13 +18,13 @@ export function renderSolutions(container: HTMLElement): void {
   const nav = document.createElement('div');
   nav.className = 'solutions-panel__nav';
   nav.setAttribute('role', 'tablist');
-  nav.setAttribute('aria-orientation', 'vertical');
+  nav.setAttribute('aria-orientation', 'horizontal');
 
   for (const [index, solution] of solutions.entries()) {
     nav.appendChild(createNavCard(solution, index === 0, detail));
   }
 
-  panel.append(detail, nav);
+  panel.append(nav, detail);
   container.replaceChildren(panel);
 
   if (solutions.length > 0) {
@@ -54,9 +54,6 @@ function createNavCard(
   icon.className = 'solutions-panel__card-icon';
   icon.innerHTML = getIcon(solution.icon);
 
-  const body = document.createElement('div');
-  body.className = 'solutions-panel__card-body';
-
   const title = document.createElement('h3');
   title.className = 'solutions-panel__card-title';
   title.textContent = name;
@@ -65,8 +62,7 @@ function createNavCard(
   desc.className = 'solutions-panel__card-summary';
   desc.textContent = summary;
 
-  body.append(title, desc);
-  link.append(icon, body);
+  link.append(icon, title, desc);
 
   link.addEventListener('mouseenter', () => {
     setActiveCard(link, detailEl, solution);

@@ -40,7 +40,7 @@ $line-height-base: 1.6;
 
 // Layout
 $container-max-width: 72rem;
-$section-padding-y: 3.5rem;
+$section-padding-y: 13.5rem;
 $navbar-height: 4rem;
 
 // Homepage viewport rhythm (desktop only; applied via _home-screen.scss)
@@ -49,12 +49,12 @@ $navbar-height: 4rem;
   --home-usable-vh: calc(100dvh - var(--home-navbar-height));
   --home-screen-1-hero: calc(var(--home-usable-vh) * 0.75);
   --home-screen-1-intro: calc(var(--home-usable-vh) * 0.25);
-  --home-screen-2: calc(var(--home-usable-vh) * 0.6);
+  --home-screen-2: calc(var(--home-usable-vh) * 0.8);
   --home-screen-3-cap: calc(var(--home-usable-vh) * 0.6);
   --home-screen-3-case: calc(var(--home-usable-vh) * 0.4);
   --home-screen-4-products: calc(var(--home-usable-vh) * 0.7);
   --home-screen-4-services: calc(var(--home-usable-vh) * 0.3);
-  --home-screen-5: var(--home-usable-vh);
+  --home-screen-5: var(--home-usable-vh * 0.4);
 }
 
 // Breakpoints
