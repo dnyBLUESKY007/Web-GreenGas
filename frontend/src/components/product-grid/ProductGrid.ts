@@ -52,15 +52,17 @@ function createProductCard(product: Product): HTMLElement {
   article.className = 'product-grid-card';
 
   article.innerHTML = `
-    <div class="product-grid-card__media">
-      <img
-        class="product-grid-card__image"
-        src="${product.image}"
-        alt="${name}"
-        width="320"
-        height="240"
-        loading="lazy"
-      />
+    <div class="product-grid-card__media card-media">
+      <div class="card-media__frame">
+        <img
+          class="card-media__image"
+          src="${product.image}"
+          alt="${name}"
+          width="320"
+          height="240"
+          loading="lazy"
+        />
+      </div>
     </div>
     <div class="product-grid-card__body">
       <h3 class="product-grid-card__name">${name}</h3>

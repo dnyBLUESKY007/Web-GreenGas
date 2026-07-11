@@ -109,15 +109,17 @@ function renderDetail(container: HTMLElement, solution: Solution): void {
     : cdnUrl('scene', solution.image);
 
   container.innerHTML = `
-    <div class="solutions-panel__media">
-      <img
-        class="solutions-panel__image"
-        src="${imageSrc}"
-        alt="${name}"
-        width="480"
-        height="480"
-        loading="lazy"
-      />
+    <div class="solutions-panel__media card-media">
+      <div class="card-media__frame">
+        <img
+          class="card-media__image"
+          src="${imageSrc}"
+          alt="${name}"
+          width="480"
+          height="480"
+          loading="lazy"
+        />
+      </div>
     </div>
     <div class="solutions-panel__copy">
       <h3 class="solutions-panel__title">${name}</h3>

@@ -23,16 +23,18 @@ function createProductCard(product: Product): HTMLElement {
   article.className = 'solution-card';
 
   const media = document.createElement('div');
-  media.className = 'solution-card__media';
+  media.className = 'solution-card__media card-media';
   media.innerHTML = `
-    <img
-      class="solution-card__image"
-      src="${product.image}"
-      alt="${name}"
-      width="400"
-      height="280"
-      loading="lazy"
-    />
+    <div class="card-media__frame">
+      <img
+        class="card-media__image"
+        src="${product.image}"
+        alt="${name}"
+        width="400"
+        height="280"
+        loading="lazy"
+      />
+    </div>
   `;
 
   const body = document.createElement('div');
