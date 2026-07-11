@@ -1,5 +1,4 @@
 import { createLangSwitcher } from '@/components/lang-switcher/LangSwitcher';
-import { createThemeSwitcher } from '@/components/theme-switcher/ThemeSwitcher';
 import { NAV_ITEMS } from '@/config/navigation';
 import companyData from '@/data/company.json';
 import { t } from '@/i18n';
@@ -51,14 +50,13 @@ export function createNavbar(activePageId: PageId): HTMLElement {
   actions.className = 'navbar__actions';
 
   const langSwitcher = createLangSwitcher();
-  const themeSwitcher = createThemeSwitcher();
 
   const cta = document.createElement('a');
   cta.className = 'btn btn--primary navbar__cta';
   cta.href = basePath('/contact/');
   cta.textContent = t('nav.cta');
 
-  actions.append(langSwitcher, themeSwitcher, cta);
+  actions.append(langSwitcher, cta);
   inner.append(brand, nav, actions);
   header.appendChild(inner);
 

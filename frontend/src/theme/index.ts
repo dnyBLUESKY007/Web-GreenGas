@@ -1,20 +1,11 @@
 import type { Theme } from '@/types';
 
-const THEME_STORAGE_KEY = 'gg_theme';
+/** Canonical brand theme (emerald primary + lime accent). UI switcher removed — see issue-0002. */
+const CANONICAL_THEME: Theme = 'emerald-lime';
 
 const themeListeners = new Set<() => void>();
 
-let currentTheme: Theme = resolveInitialTheme();
-
-function resolveInitialTheme(): Theme {
-  const stored = localStorage.getItem(THEME_STORAGE_KEY);
-
-  if (stored === 'emerald-lime' || stored === 'emerald-steel' || stored === 'emerald-gold') {
-    return stored;
-  }
-
-  return 'emerald-lime';
-}
+let currentTheme: Theme = CANONICAL_THEME;
 
 function applyDocumentTheme(theme: Theme): void {
   document.documentElement.dataset.theme = theme;
@@ -43,7 +34,6 @@ export function setTheme(theme: Theme): void {
   }
 
   currentTheme = theme;
-  localStorage.setItem(THEME_STORAGE_KEY, theme);
   applyDocumentTheme(theme);
 
   for (const listener of themeListeners) {
