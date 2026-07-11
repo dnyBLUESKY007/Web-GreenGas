@@ -71,10 +71,11 @@
   border-radius: $radius-md;
   overflow: hidden;
   background-color: $color-bg;
-  transition: box-shadow $transition-base;
+  transition: box-shadow $transition-base, transform $transition-base;
 
   &:hover {
     box-shadow: $shadow-md;
+    transform: translateY(-2px);
   }
 
   &__media {
