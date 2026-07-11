@@ -93,6 +93,19 @@ chmod +x scripts/deploy.sh
 
 同机隔离：`/` 为本站；`/insoles/`、`/api/` 为其他项目，发布脚本不修改其配置。详见 ADR-0006。
 
+## 图片资源工作流
+
+素材与 WebP 产物均在 `ignored/`（不进 git）；线上走阿里云 OSS。
+
+| 步骤 | 路径 / 工具 | 说明 |
+|------|-------------|------|
+| 1. 原图 | `ignored/resources_png/` | 实拍与 AI 生成图都放这里，按类别子目录（`hero/`、`capacity/` 等） |
+| 2. 转 WebP | `ignored/libwebp/convert_to_webp.py`（及 `trim_images.py`） | 输出到 `ignored/resources/`，目录结构与原图对齐 |
+| 3. 上传 | 手动上传 OSS bucket | `web-greengas.oss-cn-qingdao.aliyuncs.com/resources/...` |
+| 4. 登记 | `frontend/src/data/image-resources.json` | **有文件增删改时必须更新**：CDN URL → `originalPath` + `description` |
+
+代码侧通过 `frontend/src/config/assets.ts` 的 `cdnUrl()` 引用；溯源与说明以 `image-resources.json` 为准。详见 ADR-0002、`systemPatterns.md`。
+
 ## 外部依赖 / 集成
 
 - **阿里云 OSS**：图片 CDN（`web-greengas.oss-cn-qingdao.aliyuncs.com`）

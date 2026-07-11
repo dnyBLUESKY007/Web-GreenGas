@@ -36,8 +36,12 @@ Hero → HeroIntro → Solutions → CapabilityRing → CaseCarousel → Product
 
 - 列表型内容（案例、产品、FAQ）**必须**来自 JSON，禁止写死在 HTML
 - 图片统一通过 `cdnUrl(category, filename)` 引用，不写死 OSS URL
-- CDN 图片溯源表：`frontend/src/data/image-resources.json`（URL → originalPath + description），由 `ignored/generate_image_catalog.py` 从 `image-rename-map.json` 生成
-- OSS 图片类别：`hero`(4) · `scene`(4) · `products`(27) · `projects`(43) · `company`(2) · `company-info`(3) · `certifications`(2)
+- **图片资源工作流**（素材不进 repo，仅 `ignored/` + OSS）：
+  1. 原图放入 `ignored/resources_png/`（含甲方实拍与 AI 生成图，按类别子目录）
+  2. 用 `ignored/libwebp/` 脚本（`convert_to_webp.py` / `trim_images.py`）生成 WebP → `ignored/resources/`
+  3. 将 `ignored/resources/` 上传至阿里云 OSS（`resources/` 前缀）
+  4. 有增删改时，同步更新 `frontend/src/data/image-resources.json`（CDN URL → originalPath + description）
+- OSS 图片类别（随素材增减）：`hero` · `scene` · `products` · `projects` · `company` · `company-info` · `certifications` · `capacity`
 - 站内链接统一通过 `basePath('/xxx/')` 生成，支持子路径部署
 - UI 文案在 `i18n/locales/*.json`；结构化内容多语言字段用 `_zh` / `_ru` 后缀，缺省回退英文
 - 组件按功能分目录（`navbar/`、`hero-carousel/` 等），页面逻辑在 `pages/*/`

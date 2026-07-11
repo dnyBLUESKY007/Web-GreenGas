@@ -20,5 +20,10 @@
 ## 影响
 
 - **正面**：repo 轻量、CDN 加速、素材与代码解耦
-- **负面**：需单独维护上传流程（`ignored/rename_images.py` + 手动上传 OSS）
+- **负面**：需单独维护本地转换 + 上传流程；换图后要同步 `image-resources.json`
+- **现行工作流**（2026-07-11 固化）：
+  1. 原图 → `ignored/resources_png/`（含 AI 图）
+  2. `ignored/libwebp/` 脚本 → `ignored/resources/`（WebP）
+  3. 上传 OSS `resources/`
+  4. 更新 `frontend/src/data/image-resources.json`
 - **后续**：换 bucket 或 CDN 只需改 `assets.ts` 一处

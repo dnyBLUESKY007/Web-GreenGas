@@ -9,6 +9,7 @@
 
 ## 近期变更
 
+- 2026-07-11 图片资源工作流固化：`resources_png`（原图/AI）→ `libwebp` → `resources` → OSS 上传；有改动须同步 `image-resources.json`（见 techContext / systemPatterns / ADR-0002）
 - 2026-07-11 首页工程核心能力：由深色环形流程改为浅色统计栏 + 五步工程卡片，卡片媒体区保留 CSS 图片占位符；桌面横向、移动端纵向布局。
 - 2026-07-10 生产部署：站点发布至 ECS `47.76.112.33`（Nginx `/` → `/var/www/corp/dist`）；新增 `scripts/deploy.ps1` / `deploy.sh`；ADR-0006
 - 2026-07-05 Solutions 场景图：四张 scene 图上传 OSS，`solutions.json` + `cdnUrl('scene')` 接入；新增 `image-resources.json` 图片资源说明表（85 条）
