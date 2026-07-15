@@ -17,7 +17,11 @@ export interface ClientIndustry {
   readonly name_ru?: string;
 }
 
-export type ProductGroup = 'central' | 'industrial';
+export type ProductGroup =
+  | 'custom'
+  | 'industrial'
+  | 'commercial-terminal'
+  | 'central-host';
 
 export interface Project {
   readonly id: string;
@@ -47,6 +51,19 @@ export interface Product {
   readonly description_zh?: string;
   readonly description_ru?: string;
   readonly image: string;
+}
+
+export interface ProductSeries {
+  readonly id: ProductGroup;
+  readonly name: string;
+  readonly name_zh?: string;
+  readonly name_ru?: string;
+  readonly description: string;
+  readonly description_zh?: string;
+  readonly description_ru?: string;
+  readonly applications: string;
+  readonly applications_zh?: string;
+  readonly applications_ru?: string;
 }
 
 export interface Solution {

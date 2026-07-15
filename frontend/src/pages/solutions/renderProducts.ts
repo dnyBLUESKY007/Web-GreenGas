@@ -1,65 +1,119 @@
 import productsData from '@/data/products.json';
+import seriesData from '@/data/product-series.json';
 import { td } from '@/i18n';
-import type { Product } from '@/types';
+import type { Product, ProductSeries } from '@/types';
 
 export function renderProducts(container: HTMLElement): void {
   const products = productsData as readonly Product[];
-  const grid = document.createElement('div');
-  grid.className = 'grid grid--solutions';
+  const series = seriesData as readonly ProductSeries[];
+  const tabList = document.createElement('div');
+  tabList.className = 'product-series__tabs';
+  tabList.setAttribute('role', 'tablist');
+  tabList.setAttribute('aria-label', 'Product series');
 
-  for (const product of products) {
+  const panel = document.createElement('div');
+  panel.className = 'product-series__panel';
+  panel.setAttribute('role', 'tabpanel');
+
+  for (const [index, item] of series.entries()) {
+    tabList.appendChild(createSeriesTab(item, index === 0, panel, products));
+  }
+
+  container.replaceChildren(tabList, panel);
+  const firstSeries = series[0];
+  if (firstSeries) {
+    renderSeries(panel, firstSeries, products);
+  }
+}
+
+function createSeriesTab(
+  series: ProductSeries,
+  isSelected: boolean,
+  panel: HTMLElement,
+  products: readonly Product[],
+): HTMLButtonElement {
+  const tab = document.createElement('button');
+  tab.className = 'product-series__tab';
+  tab.type = 'button';
+  tab.setAttribute('role', 'tab');
+  tab.setAttribute('aria-selected', String(isSelected));
+  tab.textContent = td(series, 'name');
+
+  if (isSelected) {
+    tab.classList.add('product-series__tab--active');
+  }
+
+  tab.addEventListener('click', () => {
+    const tabList = tab.parentElement;
+    if (!tabList) {
+      return;
+    }
+
+    for (const item of tabList.querySelectorAll<HTMLButtonElement>('[role="tab"]')) {
+      item.classList.toggle('product-series__tab--active', item === tab);
+      item.setAttribute('aria-selected', String(item === tab));
+    }
+
+    renderSeries(panel, series, products);
+  });
+
+  return tab;
+}
+
+function renderSeries(
+  container: HTMLElement,
+  series: ProductSeries,
+  products: readonly Product[],
+): void {
+  const seriesProducts = products.filter((product) => product.group === series.id);
+  const heading = document.createElement('div');
+  heading.className = 'product-series__heading';
+
+  const title = document.createElement('h3');
+  title.className = 'product-series__title';
+  title.textContent = td(series, 'name');
+
+  const description = document.createElement('p');
+  description.className = 'product-series__description';
+  description.textContent = td(series, 'description');
+
+  const applications = document.createElement('p');
+  applications.className = 'product-series__applications';
+  applications.textContent = td(series, 'applications');
+
+  heading.append(title, description, applications);
+
+  const grid = document.createElement('div');
+  grid.className = 'product-series__grid';
+  for (const product of seriesProducts) {
     grid.appendChild(createProductCard(product));
   }
 
-  container.replaceChildren(grid);
+  container.replaceChildren(heading, grid);
 }
 
 function createProductCard(product: Product): HTMLElement {
   const name = td(product, 'name');
-  const category = product.category ? td(product, 'category') : '';
   const description = product.description ? td(product, 'description') : '';
-
   const article = document.createElement('article');
-  article.className = 'solution-card';
+  article.className = 'product-series__card';
 
-  const media = document.createElement('div');
-  media.className = 'solution-card__media card-media';
-  media.innerHTML = `
-    <div class="card-media__frame">
+  article.innerHTML = `
+    <div class="product-series__media">
       <img
-        class="card-media__image"
+        class="product-series__image"
         src="${product.image}"
         alt="${name}"
-        width="400"
-        height="280"
+        width="640"
+        height="480"
         loading="lazy"
       />
     </div>
+    <div class="product-series__card-body">
+      <h4 class="product-series__card-title">${name}</h4>
+      ${description ? `<p class="product-series__card-description">${description}</p>` : ''}
+    </div>
   `;
-
-  const body = document.createElement('div');
-  body.className = 'solution-card__body';
-
-  if (category) {
-    const categoryEl = document.createElement('p');
-    categoryEl.className = 'solution-card__category';
-    categoryEl.textContent = category;
-    body.appendChild(categoryEl);
-  }
-
-  const title = document.createElement('h3');
-  title.className = 'solution-card__title';
-  title.textContent = name;
-  body.appendChild(title);
-
-  if (description) {
-    const descEl = document.createElement('p');
-    descEl.className = 'solution-card__description';
-    descEl.textContent = description;
-    body.appendChild(descEl);
-  }
-
-  article.append(media, body);
 
   return article;
 }

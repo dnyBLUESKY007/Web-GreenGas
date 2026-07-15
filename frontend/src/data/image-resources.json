@@ -19,30 +19,6 @@
     "originalPath": "capacity/5.webp",
     "description": "工程核心能力 — 售后维护：GREENGAS 技术人员电控柜检修与运维支持"
   },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/1.webp": {
-    "originalPath": "capacity/org/1.webp",
-    "description": " 原始低像素图片：工程核心能力 — 需求分析：工程师现场勘察与工况评估"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/2.webp": {
-    "originalPath": "capacity/org/2.webp",
-    "description": "原始低像素图片：工程核心能力 — 方案设计：图纸会审与工程方案协作"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/3.webp": {
-    "originalPath": "capacity/org/3.webp",
-    "description": "原始低像素图片：工程核心能力 — 设备制造：厂房内定制机组生产与检验"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/4.webp": {
-    "originalPath": "capacity/org/4.webp",
-    "description": "原始低像素图片：工程核心能力 — 安装调试：现场安装、启动与性能验证"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/5.webp": {
-    "originalPath": "capacity/org/5.webp",
-    "description": "原始低像素图片：工程核心能力 — 售后维护：GREENGAS 技术人员电控柜检修与运维支持"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/background.webp": {
-    "originalPath": "capacity/background.webp",
-    "description": "工程核心能力 — 区段背景：屋顶工业冷却机组与管道设施"
-  },
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/ai/GPT-20260711-11_58_02.webp": {
     "originalPath": "capacity/ai/GPT-20260711-11_58_02.webp",
     "description": "工程核心能力 — AI 合成整版示意（ChatGPT）：含三项数据与五步流程卡片的完整布局参考图"
@@ -70,6 +46,30 @@
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/ai/jimeng-2026-07-11-8857.webp": {
     "originalPath": "capacity/ai/jimeng-2026-07-11-8857.webp",
     "description": "工程核心能力 — AI 备选（即梦）：方案设计 — 双手图纸会审近景"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/background.webp": {
+    "originalPath": "capacity/background.webp",
+    "description": "工程核心能力 — 区段背景：屋顶工业冷却机组与管道设施"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/1.webp": {
+    "originalPath": "capacity/org/1.webp",
+    "description": " 原始低像素图片：工程核心能力 — 需求分析：工程师现场勘察与工况评估"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/2.webp": {
+    "originalPath": "capacity/org/2.webp",
+    "description": "原始低像素图片：工程核心能力 — 方案设计：图纸会审与工程方案协作"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/3.webp": {
+    "originalPath": "capacity/org/3.webp",
+    "description": "原始低像素图片：工程核心能力 — 设备制造：厂房内定制机组生产与检验"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/4.webp": {
+    "originalPath": "capacity/org/4.webp",
+    "description": "原始低像素图片：工程核心能力 — 安装调试：现场安装、启动与性能验证"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/capacity/org/5.webp": {
+    "originalPath": "capacity/org/5.webp",
+    "description": "原始低像素图片：工程核心能力 — 售后维护：GREENGAS 技术人员电控柜检修与运维支持"
   },
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-ce.webp": {
     "originalPath": "previous-images/CE认证_00_CE.webp",
@@ -114,6 +114,26 @@
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/hero/hero-steel-mill.webp": {
     "originalPath": "hero/场景图-炼钢厂.webp",
     "description": "Hero 轮播 — 炼钢厂工业制冷应用场景"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/01_solutions.webp": {
+    "originalPath": "page-headers/01_solutions.webp",
+    "description": "内页页眉背景 — Solutions：屋顶工业冷却机组阵列（左侧留白叠字）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/02_about.webp": {
+    "originalPath": "page-headers/02_about.webp",
+    "description": "内页页眉背景 — About：厂房内定制机组产线与天车（左侧暗区叠字）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/03_news.webp": {
+    "originalPath": "page-headers/03_news.webp",
+    "description": "内页页眉背景 — News：明亮办公走廊与技术图纸区"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/04_faq.webp": {
+    "originalPath": "page-headers/04_faq.webp",
+    "description": "内页页眉背景 — FAQ：电控柜与工程图纸工作台"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/05_contact.webp": {
+    "originalPath": "page-headers/05_contact.webp",
+    "description": "内页页眉背景 — Contact：洁净机房走廊与绝缘管道设施"
   },
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/air-cooled-screw-heat-pump.webp": {
     "originalPath": "products/中央空调/高效螺杆风冷热泵机组.webp",
@@ -222,6 +242,350 @@
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products/water-cooled-screw-unit.webp": {
     "originalPath": "products/中央空调/标准水冷螺杆机组.webp",
     "description": "产品 — 标准水冷螺杆机组"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_air-cooled-screw-heat-pump_raw_1.webp": {
+    "originalPath": "products_v2/central-host_air-cooled-screw-heat-pump_raw_1.webp",
+    "description": "风冷螺杆热泵机组产品实拍（中央空调主机系列）；文件名暗示：高效螺杆风冷热泵机组；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_air-cooled-screw-heat-pump_retouched_1.webp": {
+    "originalPath": "products_v2/central-host_air-cooled-screw-heat-pump_retouched_1.webp",
+    "description": "风冷螺杆热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_modular-air-source-heat-pump_retouched_1.webp": {
+    "originalPath": "products_v2/central-host_modular-air-source-heat-pump_retouched_1.webp",
+    "description": "模块式空气源风冷热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_modular-air-source-heat-pump_retouched_2.webp": {
+    "originalPath": "products_v2/central-host_modular-air-source-heat-pump_retouched_2.webp",
+    "description": "模块式空气源风冷热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_modular-air-source-heat-pump_retouched_3.webp": {
+    "originalPath": "products_v2/central-host_modular-air-source-heat-pump_retouched_3.webp",
+    "description": "模块式空气源风冷热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_modular-air-source-heat-pump_retouched_4.webp": {
+    "originalPath": "products_v2/central-host_modular-air-source-heat-pump_retouched_4.webp",
+    "description": "模块式空气源风冷热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_raw_1.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_raw_1.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_raw_2.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_raw_2.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；文件名暗示：Splitductedwatercooledunit；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_raw_3.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_raw_3.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；文件名暗示：WPRvertical；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_raw_4.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_raw_4.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；文件名暗示：整体吊顶式水源热泵；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_raw_5.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_raw_5.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；文件名暗示：整体式水源热泵空调机；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_retouched_1.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_retouched_1.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_retouched_2.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_retouched_2.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_retouched_3.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_retouched_3.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_retouched_4.webp": {
+    "originalPath": "products_v2/central-host_water-source-heat-pump_retouched_4.webp",
+    "description": "水源热泵机组产品实拍（中央空调主机系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_raw_1.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_raw_1.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；文件名暗示：air；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_raw_2.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_raw_2.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_raw_3.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_raw_3.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；文件名暗示：机组照片；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_raw_4.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_raw_4.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；文件名暗示：空气处理机；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_raw_5.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_raw_5.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；文件名暗示：空气处理机4；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_raw_6.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_raw_6.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；文件名暗示：空气处理机5；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_1.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1to1_1.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_1to1_1.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；位于「1比1」子目录，疑为1:1比例/裁切候选；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1to1_2.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_1to1_2.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；位于「1比1」子目录，疑为1:1比例/裁切候选；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1to1_3.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_1to1_3.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；位于「1比1」子目录，疑为1:1比例/裁切候选；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1to1_4.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_1to1_4.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；位于「1比1」子目录，疑为1:1比例/裁切候选；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1to1_5.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_1to1_5.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；位于「1比1」子目录，疑为1:1比例/裁切候选；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_2.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_2.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_3.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_3.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_4.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_4.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_5.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_5.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_6.webp": {
+    "originalPath": "products_v2/commercial-terminal_air-handling-unit_retouched_6.webp",
+    "description": "空气处理机组产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_raw_1.webp": {
+    "originalPath": "products_v2/commercial-terminal_fresh-air-ventilator_raw_1.webp",
+    "description": "新风换气机产品实拍（商用空调末端系列）；文件名暗示：能量回收1；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_raw_2.webp": {
+    "originalPath": "products_v2/commercial-terminal_fresh-air-ventilator_raw_2.webp",
+    "description": "新风换气机产品实拍（商用空调末端系列）；文件名暗示：能量回收2；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_raw_3.webp": {
+    "originalPath": "products_v2/commercial-terminal_fresh-air-ventilator_raw_3.webp",
+    "description": "新风换气机产品实拍（商用空调末端系列）；文件名暗示：能量回收2；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_retouched_1.webp": {
+    "originalPath": "products_v2/commercial-terminal_fresh-air-ventilator_retouched_1.webp",
+    "description": "新风换气机产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_retouched_2.webp": {
+    "originalPath": "products_v2/commercial-terminal_fresh-air-ventilator_retouched_2.webp",
+    "description": "新风换气机产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_retouched_3.webp": {
+    "originalPath": "products_v2/commercial-terminal_fresh-air-ventilator_retouched_3.webp",
+    "description": "新风换气机产品实拍（商用空调末端系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_raw_1.webp": {
+    "originalPath": "products_v2/custom_data-center-ac_raw_1.webp",
+    "description": "算力中心，数据中心空调机组产品实拍（非标定制系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_raw_2.webp": {
+    "originalPath": "products_v2/custom_data-center-ac_raw_2.webp",
+    "description": "算力中心，数据中心空调机组产品实拍（非标定制系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_raw_3.webp": {
+    "originalPath": "products_v2/custom_data-center-ac_raw_3.webp",
+    "description": "算力中心，数据中心空调机组产品实拍（非标定制系列）；文件名暗示：机房专用空调机；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_retouched_1.webp": {
+    "originalPath": "products_v2/custom_data-center-ac_retouched_1.webp",
+    "description": "算力中心，数据中心空调机组产品实拍（非标定制系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_retouched_2.webp": {
+    "originalPath": "products_v2/custom_data-center-ac_retouched_2.webp",
+    "description": "算力中心，数据中心空调机组产品实拍（非标定制系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_retouched_3.webp": {
+    "originalPath": "products_v2/custom_data-center-ac_retouched_3.webp",
+    "description": "算力中心，数据中心空调机组产品实拍（非标定制系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_raw_1.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_raw_1.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_raw_2.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_raw_2.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_raw_3.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_raw_3.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_raw_4.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_raw_4.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_raw_5.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_raw_5.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；文件名暗示：屋顶机(2)；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_raw_6.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_raw_6.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；文件名暗示：屋顶机(3)；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_retouched_1.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_retouched_1.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_retouched_2.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_retouched_2.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_retouched_3.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_retouched_3.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；文件名暗示：整体式；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_retouched_keep_1.webp": {
+    "originalPath": "products_v2/custom_packaged-dx-evap-cond_retouched_keep_1.webp",
+    "description": "整体式直膨机组（蒸发冷凝直膨机组）产品实拍（非标定制系列）；位于「留」子目录，疑为待保留选用；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_rotary-dehumidifier_raw_1.webp": {
+    "originalPath": "products_v2/custom_rotary-dehumidifier_raw_1.webp",
+    "description": "组合式转轮除湿机组产品实拍（非标定制系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_rotary-dehumidifier_retouched_1.webp": {
+    "originalPath": "products_v2/custom_rotary-dehumidifier_retouched_1.webp",
+    "description": "组合式转轮除湿机组产品实拍（非标定制系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_raw_1.webp": {
+    "originalPath": "products_v2/industrial_air-cooled-temp-humidity_raw_1.webp",
+    "description": "风冷恒温恒湿机组产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_raw_2.webp": {
+    "originalPath": "products_v2/industrial_air-cooled-temp-humidity_raw_2.webp",
+    "description": "风冷恒温恒湿机组产品实拍（工业空调系列）；文件名暗示：风冷恒温恒湿机组-内机；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_raw_3.webp": {
+    "originalPath": "products_v2/industrial_air-cooled-temp-humidity_raw_3.webp",
+    "description": "风冷恒温恒湿机组产品实拍（工业空调系列）；文件名暗示：风冷恒温恒湿机组-外机；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_retouched_1.webp": {
+    "originalPath": "products_v2/industrial_air-cooled-temp-humidity_retouched_1.webp",
+    "description": "风冷恒温恒湿机组产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_retouched_2.webp": {
+    "originalPath": "products_v2/industrial_air-cooled-temp-humidity_retouched_2.webp",
+    "description": "风冷恒温恒湿机组产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_retouched_3.webp": {
+    "originalPath": "products_v2/industrial_air-cooled-temp-humidity_retouched_3.webp",
+    "description": "风冷恒温恒湿机组产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_fresh-air-workstation-cooler_raw_1.webp": {
+    "originalPath": "products_v2/industrial_fresh-air-workstation-cooler_raw_1.webp",
+    "description": "全新风岗位冷风机产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_fresh-air-workstation-cooler_retouched_1.webp": {
+    "originalPath": "products_v2/industrial_fresh-air-workstation-cooler_retouched_1.webp",
+    "description": "全新风岗位冷风机产品实拍（工业空调系列）；文件名暗示：全新风岗位冷风机；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_overhead-crane-high-temp-ac_raw_1.webp": {
+    "originalPath": "products_v2/industrial_overhead-crane-high-temp-ac_raw_1.webp",
+    "description": "顶置式行车高温空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_overhead-crane-high-temp-ac_retouched_1.webp": {
+    "originalPath": "products_v2/industrial_overhead-crane-high-temp-ac_retouched_1.webp",
+    "description": "顶置式行车高温空调产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_packaged-air-cooled-cabinet_raw_1.webp": {
+    "originalPath": "products_v2/industrial_packaged-air-cooled-cabinet_raw_1.webp",
+    "description": "单元风冷柜机产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_packaged-air-cooled-cabinet_raw_2.webp": {
+    "originalPath": "products_v2/industrial_packaged-air-cooled-cabinet_raw_2.webp",
+    "description": "单元风冷柜机产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_packaged-air-cooled-cabinet_raw_3.webp": {
+    "originalPath": "products_v2/industrial_packaged-air-cooled-cabinet_raw_3.webp",
+    "description": "单元风冷柜机产品实拍（工业空调系列）；文件名暗示：工业空调-风冷柜机内机；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_packaged-air-cooled-cabinet_retouched_1.webp": {
+    "originalPath": "products_v2/industrial_packaged-air-cooled-cabinet_retouched_1.webp",
+    "description": "单元风冷柜机产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_packaged-air-cooled-cabinet_retouched_2.webp": {
+    "originalPath": "products_v2/industrial_packaged-air-cooled-cabinet_retouched_2.webp",
+    "description": "单元风冷柜机产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_split-dx-unit_raw_1.webp": {
+    "originalPath": "products_v2/industrial_split-dx-unit_raw_1.webp",
+    "description": "分体式直膨机组产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_split-dx-unit_raw_2.webp": {
+    "originalPath": "products_v2/industrial_split-dx-unit_raw_2.webp",
+    "description": "分体式直膨机组产品实拍（工业空调系列）；文件名暗示：分体吊顶式空调机组；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_split-dx-unit_retouched_1.webp": {
+    "originalPath": "products_v2/industrial_split-dx-unit_retouched_1.webp",
+    "description": "分体式直膨机组产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_split-dx-unit_retouched_2.webp": {
+    "originalPath": "products_v2/industrial_split-dx-unit_retouched_2.webp",
+    "description": "分体式直膨机组产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_raw_1.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_raw_1.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_raw_2.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_raw_2.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_raw_3.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_raw_3.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_raw_4.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_raw_4.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_raw_5.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_raw_5.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_raw_6.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_raw_6.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_raw_7.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_raw_7.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；尚未修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_retouched_1.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_retouched_1.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_retouched_2.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_retouched_2.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_retouched_3.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_retouched_3.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；已修图"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_retouched_4.webp": {
+    "originalPath": "products_v2/industrial_water-cooled-evaporative-ac_retouched_4.webp",
+    "description": "水冷蒸发式节能空调产品实拍（工业空调系列）；已修图"
   },
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/expo-shanghai-2019-01.webp": {
     "originalPath": "previous-images/2019上海制冷展_00_1.webp",
@@ -410,25 +774,5 @@
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/scene/gemini-scene-specialized-environments.webp": {
     "originalPath": "scene/gemini-scene-specialized-environments.webp",
     "description": "Solutions 场景 — 特种环境（船用、高温、防爆等极端工况）"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/01_solutions.webp": {
-    "originalPath": "page-headers/01_solutions.webp",
-    "description": "内页页眉背景 — Solutions：屋顶工业冷却机组阵列（左侧留白叠字）"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/02_about.webp": {
-    "originalPath": "page-headers/02_about.webp",
-    "description": "内页页眉背景 — About：厂房内定制机组产线与天车（左侧暗区叠字）"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/03_news.webp": {
-    "originalPath": "page-headers/03_news.webp",
-    "description": "内页页眉背景 — News：明亮办公走廊与技术图纸区"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/04_faq.webp": {
-    "originalPath": "page-headers/04_faq.webp",
-    "description": "内页页眉背景 — FAQ：电控柜与工程图纸工作台"
-  },
-  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/page-headers/05_contact.webp": {
-    "originalPath": "page-headers/05_contact.webp",
-    "description": "内页页眉背景 — Contact：洁净机房走廊与绝缘管道设施"
   }
 }

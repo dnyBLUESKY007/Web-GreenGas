@@ -1,0 +1,50 @@
+[
+  {
+    "id": "custom",
+    "name": "Custom-Engineered Series",
+    "name_zh": "非标定制系列",
+    "name_ru": "Серия индивидуальных решений",
+    "description": "Equipment developed around your load profile, layout, installation constraints, and operating conditions.",
+    "description_zh": "围绕负荷特性、现场布局、安装限制与运行工况开发的非标设备。",
+    "description_ru": "Оборудование, разработанное с учётом нагрузки, планировки, ограничений монтажа и условий эксплуатации.",
+    "applications": "Data centers, process cooling, humidity-sensitive production",
+    "applications_zh": "数据中心、工艺冷却、湿度敏感生产环境",
+    "applications_ru": "Дата-центры, технологическое охлаждение, производства с контролем влажности"
+  },
+  {
+    "id": "industrial",
+    "name": "Industrial Air Conditioning Series",
+    "name_zh": "工业空调系列",
+    "name_ru": "Серия промышленного кондиционирования",
+    "description": "Reliable cooling and air treatment for workshops, electrical rooms, high-heat operations, and industrial personnel areas.",
+    "description_zh": "服务车间、电气室、高温作业区及人员岗位的可靠冷却与空气处理设备。",
+    "description_ru": "Надёжное охлаждение и обработка воздуха для цехов, электрощитовых, горячих производств и рабочих зон.",
+    "applications": "Manufacturing, metallurgy, warehouses, equipment rooms",
+    "applications_zh": "制造业、冶金、仓储、设备间",
+    "applications_ru": "Производство, металлургия, склады, аппаратные"
+  },
+  {
+    "id": "commercial-terminal",
+    "name": "Commercial Air Terminal Series",
+    "name_zh": "商用空调末端系列",
+    "name_ru": "Серия коммерческих конечных устройств",
+    "description": "Air-side equipment that delivers ventilation, filtration, heat recovery, and controlled indoor conditions.",
+    "description_zh": "提供通风、过滤、热回收与室内环境控制的空气侧末端设备。",
+    "description_ru": "Оборудование воздушной стороны для вентиляции, фильтрации, рекуперации и контроля микроклимата.",
+    "applications": "Commercial buildings, public facilities, clean environments",
+    "applications_zh": "商业建筑、公共设施、洁净环境",
+    "applications_ru": "Коммерческие здания, общественные объекты, чистые помещения"
+  },
+  {
+    "id": "central-host",
+    "name": "Central HVAC Host Series",
+    "name_zh": "中央空调主机系列",
+    "name_ru": "Серия центральных HVAC-агрегатов",
+    "description": "Core cooling and heating capacity for central HVAC systems, selected around capacity, energy source, and project phasing.",
+    "description_zh": "按容量、能源条件及项目分期配置的中央空调核心冷热源设备。",
+    "description_ru": "Основное оборудование охлаждения и отопления для центральных систем, выбираемое по мощности, источнику энергии и этапам проекта.",
+    "applications": "Commercial complexes, plants, public buildings, retrofit projects",
+    "applications_zh": "商业综合体、厂区、公共建筑、改造项目",
+    "applications_ru": "Коммерческие комплексы, предприятия, общественные здания, проекты модернизации"
+  }
+]

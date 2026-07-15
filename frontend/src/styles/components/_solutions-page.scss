@@ -1,0 +1,271 @@
+@use '../base/variables' as *;
+
+.solutions-jump {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid $color-border;
+  background-color: $color-bg;
+
+  a {
+    padding: 0.625rem 1rem;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    color: $color-primary;
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $color-primary;
+      background-color: $color-bg-muted;
+    }
+  }
+}
+
+.scenario-path {
+  &__tabs,
+  .product-series__tabs {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+  }
+
+  &__tab,
+  .product-series__tab {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background: $color-bg;
+    color: $color-primary;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &--active {
+      border-color: $color-primary;
+      background-color: $color-primary;
+      color: #fff;
+    }
+  }
+
+  &__detail {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    @media (width >= $breakpoint-md) {
+      grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+      align-items: stretch;
+    }
+  }
+
+  &__media {
+    min-height: 16rem;
+    overflow: hidden;
+    border-radius: $radius-md;
+    background-color: $color-bg-muted;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__copy {
+    display: grid;
+    align-content: start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    background-color: $color-bg;
+  }
+
+  &__summary {
+    margin: 0;
+    color: $color-primary;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  &__item {
+    h3 {
+      margin-bottom: 0.375rem;
+      color: $color-primary;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    p {
+      margin: 0;
+      color: $color-text-muted;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+.solutions-cases__grid {
+  display: grid;
+  gap: 1rem;
+
+  @media (width >= $breakpoint-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (width >= $breakpoint-lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.product-series {
+  &__tabs {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+  }
+
+  &__tab {
+    flex: 0 0 auto;
+    padding: 0.75rem 1rem;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background: $color-bg;
+    color: $color-primary;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible,
+    &--active {
+      border-color: $color-primary;
+      background-color: $color-primary;
+      color: #fff;
+    }
+  }
+
+  &__panel {
+    margin-top: 1.5rem;
+  }
+
+  &__heading {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 48rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    color: $color-primary;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+  }
+
+  &__description {
+    color: $color-text-muted;
+    line-height: 1.6;
+  }
+
+  &__applications {
+    color: $color-primary;
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    &::before {
+      content: '• ';
+      color: $color-accent;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1rem;
+
+    @media (width >= $breakpoint-md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (width >= $breakpoint-lg) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    background-color: $color-bg;
+    transition: box-shadow $transition-base, transform $transition-base;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__media {
+    aspect-ratio: 4 / 3;
+    background-color: #f6f7f5;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__card-body {
+    padding: 1rem 1.125rem 1.25rem;
+  }
+
+  &__card-title {
+    margin-bottom: 0.5rem;
+    color: $color-primary;
+    font-size: 1rem;
+  }
+
+  &__card-description {
+    color: $color-text-muted;
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+}
+
+.solutions-cta {
+  background-color: $color-bg-section;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  &__title {
+    color: $color-primary-dark;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+}
