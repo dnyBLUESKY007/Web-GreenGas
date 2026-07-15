@@ -10,6 +10,68 @@
   "mission": "Deliver reliable, energy-efficient cooling solutions tailored to each client's operational requirements.",
   "mission_zh": "为每位客户的运营需求提供可靠、节能的定制冷却解决方案。",
   "mission_ru": "Поставлять надёжные и энергоэффективные решения охлаждения, адаптированные под эксплуатационные требования каждого клиента.",
+  "profile": {
+    "title": "Industrial cooling, engineered around the application",
+    "title_zh": "面向工业应用的制冷工程服务",
+    "title_ru": "Промышленное охлаждение с учётом условий применения",
+    "paragraphs": [
+      "Ningbo Gelin Air Conditioning Technology Co., Ltd. integrates system design, manufacturing, inspection, installation, and after-sales support for industrial refrigeration and HVAC projects.",
+      "Our product range covers industrial cabinet units, high-temperature crane air conditioners, precision cooling, constant temperature and humidity units, ceiling-mounted units, rotary dehumidification, and packaged special-purpose equipment."
+    ],
+    "paragraphs_zh": [
+      "宁波格灵空调科技有限公司集系统设计开发、制造、检验、安装及售后服务于一体，面向工业制冷与暖通项目提供工程化支持。",
+      "产品覆盖单元式风冷柜机、水冷柜机、行车高温空调、机房精密空调、恒温恒湿机组、吊顶式机组、转轮除湿机组及整体式特种空调设备等系列。"
+    ],
+    "paragraphs_ru": [
+      "Ningbo Gelin Air Conditioning Technology Co., Ltd. объединяет проектирование, производство, контроль, монтаж и сервисное сопровождение промышленных холодильных систем и ОВиК.",
+      "Линейка включает промышленные шкафные установки, высокотемпературные кондиционеры для кранов, прецизионное охлаждение, системы постоянной температуры и влажности, потолочные установки, роторное осушение и специальное моноблочное оборудование."
+    ]
+  },
+  "industries": ["Steel", "Chemical processing", "Power", "Pharmaceutical", "Defence and specialized facilities"],
+  "industries_zh": ["钢铁", "化工", "电力", "制药", "军工及特种设施"],
+  "industries_ru": ["Металлургия", "Химическая промышленность", "Энергетика", "Фармацевтика", "Оборонные и специализированные объекты"],
+  "teamValues": [
+    {
+      "title": "Technical foundation",
+      "title_zh": "专业积累",
+      "title_ru": "Техническая база",
+      "description": "Our team brings hands-on technical experience from central air-conditioning manufacturing.",
+      "description_zh": "团队成员拥有中央空调制造领域的专业技术背景。",
+      "description_ru": "Команда обладает практическим техническим опытом в производстве центральных кондиционеров."
+    },
+    {
+      "title": "Practical collaboration",
+      "title_zh": "协同协作",
+      "title_ru": "Практическое взаимодействие",
+      "description": "Different engineering and production skills work together around a shared delivery goal.",
+      "description_zh": "不同工程与制造能力围绕共同的项目交付目标协同工作。",
+      "description_ru": "Разные инженерные и производственные компетенции работают вместе ради общей цели поставки."
+    },
+    {
+      "title": "Focus on fit",
+      "title_zh": "专注适配",
+      "title_ru": "Ориентация на задачу",
+      "description": "We focus on selecting and delivering equipment that fits the operating requirement.",
+      "description_zh": "专注于为具体工况配置合适的设备与方案。",
+      "description_ru": "Мы подбираем и поставляем оборудование, соответствующее конкретным условиям эксплуатации."
+    }
+  ],
+  "historyImages": [
+    {
+      "category": "company-info",
+      "filename": "history-timeline-01.webp",
+      "alt": "GREENGAS company development reference",
+      "alt_zh": "GREENGAS 格灵空调发展资料图",
+      "alt_ru": "Справочный материал о развитии GREENGAS"
+    },
+    {
+      "category": "company-info",
+      "filename": "history-timeline-02.webp",
+      "alt": "GREENGAS company development reference",
+      "alt_zh": "GREENGAS 格灵空调发展资料图",
+      "alt_ru": "Справочный материал о развитии GREENGAS"
+    }
+  ],
   "contact": [
     {
       "label": "Email",

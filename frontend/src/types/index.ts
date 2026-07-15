@@ -146,6 +146,32 @@ export interface CompanyStat {
   readonly label_ru?: string;
 }
 
+export interface CompanyProfile {
+  readonly title: string;
+  readonly title_zh?: string;
+  readonly title_ru?: string;
+  readonly paragraphs: readonly string[];
+  readonly paragraphs_zh?: readonly string[];
+  readonly paragraphs_ru?: readonly string[];
+}
+
+export interface CompanyValue {
+  readonly title: string;
+  readonly title_zh?: string;
+  readonly title_ru?: string;
+  readonly description: string;
+  readonly description_zh?: string;
+  readonly description_ru?: string;
+}
+
+export interface CompanyImage {
+  readonly category: string;
+  readonly filename: string;
+  readonly alt: string;
+  readonly alt_zh?: string;
+  readonly alt_ru?: string;
+}
+
 export interface CompanyData {
   readonly name: string;
   readonly name_zh?: string;
@@ -165,6 +191,12 @@ export interface CompanyData {
   readonly services: readonly ServiceItem[];
   readonly aboutHighlights: readonly AboutHighlight[];
   readonly workflow: readonly WorkflowStep[];
+  readonly profile?: CompanyProfile;
+  readonly industries?: readonly string[];
+  readonly industries_zh?: readonly string[];
+  readonly industries_ru?: readonly string[];
+  readonly teamValues?: readonly CompanyValue[];
+  readonly historyImages?: readonly CompanyImage[];
 }
 
 export interface NavItem {
@@ -186,4 +218,30 @@ export type PageId = 'home' | 'about' | 'solutions' | 'contact' | 'news' | 'faq'
 export interface ImageResourceEntry {
   readonly originalPath: string;
   readonly description: string;
+}
+
+export type NewsCategory = 'company' | 'industry';
+
+export interface NewsImage {
+  readonly category: string;
+  readonly filename: string;
+  readonly alt: string;
+  readonly alt_zh?: string;
+  readonly alt_ru?: string;
+}
+
+export interface NewsArticle {
+  readonly id: string;
+  readonly category: NewsCategory;
+  readonly date: string;
+  readonly title: string;
+  readonly title_zh?: string;
+  readonly title_ru?: string;
+  readonly excerpt: string;
+  readonly excerpt_zh?: string;
+  readonly excerpt_ru?: string;
+  readonly paragraphs: readonly string[];
+  readonly paragraphs_zh?: readonly string[];
+  readonly paragraphs_ru?: readonly string[];
+  readonly images: readonly NewsImage[];
 }
