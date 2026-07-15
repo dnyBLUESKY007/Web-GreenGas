@@ -1,14 +1,15 @@
 # Active Context（当前焦点）
 
 > 更新最频繁的文件。每次里程碑或换方向时刷新，保证“下一步一目了然”。
-> 最近更新：2026-07-11
+> 最近更新：2026-07-15
 
 ## 当前焦点
 
-首页信息架构改版已完成；生产环境已部署至阿里云 ECS（`http://47.76.112.33/`），本地一键发布脚本就绪。工程核心能力区五步卡片与区段背景已接入 OSS 实图。
+Solutions 双路径改版已完成：场景与案例路径、四大产品系列及 14 个代表产品图均已接入。生产环境已部署至阿里云 ECS（`http://47.76.112.33/`），本地一键发布脚本就绪。
 
 ## 近期变更
 
+- 2026-07-15 Solutions 产品中心：接入 `products_v2` 86 张 OSS WebP 溯源记录；页面按“场景 + 经典案例”与“四大系列 + 具体产品”双路径重构，14 个产品使用已修代表图
 - 2026-07-11 五页 page-header 背景：接入 `page-headers/01–05.webp`（Solutions/About/News/FAQ/Contact），`image-resources.json` 已登记；需上传 OSS 后线上可见
 - 2026-07-11 工程核心能力：接入 `capacity/1–5.webp` 与 `capacity/background.webp`，替换卡片媒体占位符与区段背景
 - 2026-07-11 图片资源工作流固化：`resources_png`（原图/AI）→ `libwebp` → `resources` → OSS 上传；有改动须同步 `image-resources.json`（见 techContext / systemPatterns / ADR-0002）

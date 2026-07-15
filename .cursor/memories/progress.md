@@ -1,7 +1,7 @@
 # Progress（进展与里程碑）
 
 > 项目的“状态快照”：已完成、待办、已知问题。细节可随时间模糊化，只保留结论。
-> 最近更新：2026-07-10
+> 最近更新：2026-07-15
 
 ## 已完成
 
@@ -17,6 +17,7 @@
 - **首页信息架构改版**（Solutions 交互面板、环形 Capability、ProductGrid、About 收束；Cert/Clients 子页）
 - Solutions 四场景图接入 OSS CDN（`scene/` 类别）+ `image-resources.json` 资源说明表（85 条）
 - **生产部署**：阿里云 ECS + Nginx；`scripts/deploy.ps1` / `deploy.sh` 一键发布
+- **Solutions 双路径改版**：四类应用场景及经典案例路径、四大产品系列及 14 个代表设备；`products_v2` 86 张 OSS WebP 已登记溯源
 
 ## 进行中
 
@@ -50,3 +51,4 @@
 | 2026-07-05 | 首页 IA 改版 | 5 屏信息流、Solutions 面板、环形能力、ProductGrid、About 子页 |
 | 2026-07-05 | 场景图 + 资源表 | Solutions 四场景图 OSS 接入；`image-resources.json` 溯源表 |
 | 2026-07-10 | ECS 生产部署 | 站点上线 `47.76.112.33`；deploy 脚本 + ADR-0006 |
+| 2026-07-15 | Solutions 双路径 | 场景/案例与系列/产品双入口；86 张产品图资源登记、14 张代表图接入 |
