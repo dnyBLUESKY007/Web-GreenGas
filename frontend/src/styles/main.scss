@@ -29,6 +29,8 @@
 @use 'components/product-marquee';
 @use 'components/service-strip';
 @use 'components/about-summary';
+@use 'components/about-page';
+@use 'components/news-page';
 
 body {
   display: flex;

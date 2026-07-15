@@ -1,11 +1,13 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
-import { getLocale, t } from '@/i18n';
-import type { Locale } from '@/types';
+import newsData from '@/data/news.json';
+import { getLocale, t, td } from '@/i18n';
+import type { Locale, NewsArticle, NewsCategory } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 import { cdnUrl, setPageHeaderBackground } from '@/config/assets';
+import { basePath } from '@/utils/path';
 
-const DEFAULT_NEWS_IMAGE = cdnUrl('company-info', 'team-photo.webp');
+const newsArticles = newsData as readonly NewsArticle[];
 
 const LOCALE_DATE_MAP: Record<Locale, string> = {
   en: 'en-US',
@@ -13,30 +15,7 @@ const LOCALE_DATE_MAP: Record<Locale, string> = {
   ru: 'ru-RU',
 };
 
-interface NewsItem {
-  readonly id: string;
-  readonly date: string;
-  readonly titleKey: string;
-  readonly excerptKey: string;
-  readonly image: string;
-}
-
-const PLACEHOLDER_NEWS: readonly NewsItem[] = [
-  {
-    id: 'product-line-update',
-    date: '2026-05-12',
-    titleKey: 'news.item1.title',
-    excerptKey: 'news.item1.excerpt',
-    image: DEFAULT_NEWS_IMAGE,
-  },
-  {
-    id: 'team-building',
-    date: '2026-04-03',
-    titleKey: 'news.item2.title',
-    excerptKey: 'news.item2.excerpt',
-    image: DEFAULT_NEWS_IMAGE,
-  },
-] as const;
+let activeCategory: NewsCategory | 'all' = 'all';
 
 function formatNewsDate(isoDate: string): string {
   const date = new Date(`${isoDate}T00:00:00`);
@@ -71,28 +50,65 @@ function renderNewsPage(): void {
   const container = document.createElement('div');
   container.className = 'container container--narrow news-list';
 
-  for (const item of PLACEHOLDER_NEWS) {
-    container.appendChild(createNewsCard(item));
+  container.appendChild(createCategoryFilter());
+
+  const articles = document.createElement('div');
+  articles.className = 'news-list__items';
+  const filteredArticles = activeCategory === 'all'
+    ? newsArticles
+    : newsArticles.filter((article) => article.category === activeCategory);
+
+  for (const item of filteredArticles) {
+    articles.appendChild(createNewsCard(item));
   }
 
+  container.appendChild(articles);
   listSection.appendChild(container);
   main.replaceChildren(header, listSection);
 }
 
-function createNewsCard(item: NewsItem): HTMLElement {
-  const title = t(item.titleKey);
+function createCategoryFilter(): HTMLElement {
+  const filter = document.createElement('div');
+  filter.className = 'news-filter';
+  const categories: readonly (NewsCategory | 'all')[] = ['all', 'company', 'industry'];
+
+  for (const category of categories) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'news-filter__button';
+    button.textContent = t(`news.category.${category}`);
+    button.setAttribute('aria-pressed', String(activeCategory === category));
+    button.addEventListener('click', () => {
+      activeCategory = category;
+      renderNewsPage();
+    });
+    filter.appendChild(button);
+  }
+
+  return filter;
+}
+
+function createNewsCard(item: NewsArticle): HTMLElement {
   const article = document.createElement('article');
   article.className = 'news-card';
-  article.innerHTML = `
+  const image = item.images[0];
+  const link = document.createElement('a');
+  link.className = 'news-card__link';
+  link.href = `${basePath('/news/detail/')}?id=${encodeURIComponent(item.id)}`;
+  link.innerHTML = `
     <div class="news-card__media">
-      <img class="news-card__image" src="${item.image}" alt="${title}" loading="lazy" />
+      <img class="news-card__image" src="${cdnUrl(image.category, image.filename)}" alt="${td(image, 'alt')}" loading="lazy" />
     </div>
     <div class="news-card__body">
       <time class="news-card__date" datetime="${item.date}">${formatNewsDate(item.date)}</time>
-      <h3 class="news-card__title">${title}</h3>
-      <p class="news-card__excerpt">${t(item.excerptKey)}</p>
+      <p class="news-card__category">${t(`news.category.${item.category}`)}</p>
+      <h3 class="news-card__title">${td(item, 'title')}</h3>
+      <p class="news-card__excerpt">${td(item, 'excerpt')}</p>
+      <span class="news-card__more">${t('news.readMore')}</span>
     </div>
   `;
+  article.appendChild(link);
+
   return article;
 }
 
