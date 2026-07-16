@@ -77,36 +77,33 @@
       "label": "Email",
       "label_zh": "邮箱",
       "label_ru": "Email",
-      "value": "info@greengas.com",
-      "href": "mailto:info@greengas.com"
+      "value": "15058821688@163.com",
+      "href": "mailto:15058821688@163.com",
+      "locales": ["zh"]
     },
     {
       "label": "Phone",
       "label_zh": "电话",
       "label_ru": "Телефон",
-      "value": "+1 (000) 000-0000",
-      "href": "tel:+10000000000"
+      "value": "15058821688",
+      "href": "tel:15058821688",
+      "locales": ["zh"]
+    },
+    {
+      "label": "Email",
+      "label_zh": "邮箱",
+      "label_ru": "Email",
+      "value": "zhouminlu9@gmail.com",
+      "href": "mailto:zhouminlu9@gmail.com",
+      "locales": ["en", "ru"]
     },
     {
       "label": "WhatsApp",
       "label_zh": "WhatsApp",
       "label_ru": "WhatsApp",
-      "value": "+1 (000) 000-0000",
-      "href": "https://wa.me/10000000000"
-    },
-    {
-      "label": "WeChat",
-      "label_zh": "微信",
-      "label_ru": "WeChat",
-      "value": "greengas-official",
-      "href": "#"
-    },
-    {
-      "label": "QQ",
-      "label_zh": "QQ",
-      "label_ru": "QQ",
-      "value": "000000000",
-      "href": "#"
+      "value": "+86 18958330001",
+      "href": "https://wa.me/8618958330001",
+      "locales": ["en", "ru"]
     }
   ],
   "faq": [

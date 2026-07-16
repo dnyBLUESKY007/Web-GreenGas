@@ -1,4 +1,5 @@
 import companyData from '@/data/company.json';
+import { getContactChannels } from '@/config/contact';
 import { NAV_ITEMS } from '@/config/navigation';
 import { t, td } from '@/i18n';
 import type { CompanyData } from '@/types';
@@ -33,7 +34,7 @@ export function createFooter(): HTMLElement {
   const contactList = document.createElement('ul');
   contactList.className = 'footer__list';
 
-  for (const channel of company.contact.slice(0, 3)) {
+  for (const channel of getContactChannels()) {
     const item = document.createElement('li');
     const link = document.createElement('a');
     link.href = channel.href;

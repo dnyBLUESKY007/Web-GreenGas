@@ -137,6 +137,8 @@ export interface ContactChannel {
   readonly label_ru?: string;
   readonly value: string;
   readonly href: string;
+  /** When set, channel is only shown for these locales. */
+  readonly locales?: readonly Locale[];
 }
 
 export interface CompanyStat {

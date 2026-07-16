@@ -1,4 +1,5 @@
 import companyData from '@/data/company.json';
+import { getContactChannels } from '@/config/contact';
 import { td } from '@/i18n';
 import type { CompanyData } from '@/types';
 
@@ -57,7 +58,7 @@ export function renderContactChannels(container: HTMLElement): void {
   const list = document.createElement('div');
   list.className = 'channel-list';
 
-  for (const channel of company.contact) {
+  for (const channel of getContactChannels()) {
     const card = document.createElement('article');
     card.className = 'channel-card';
 
