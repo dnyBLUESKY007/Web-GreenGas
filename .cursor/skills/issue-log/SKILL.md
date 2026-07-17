@@ -1,7 +1,7 @@
 ---
 name: issue-log
 description: >-
-  Capture a lightweight local issue into .cursor/issues/ without fixing anything.
+  Capture a lightweight local issue into ai-memories/issues/ without fixing anything.
   Turn a one-line bug/idea into issue-NNNN-<slug>.md from the template, auto-assign
   the next NNNN. Use ONLY when the user wants to stash/defer: 记个 issue, 先记下来,
   以后再修, 暂存这个, log an issue, stash this, file an issue. Never triggers a fix,
@@ -11,18 +11,18 @@ disable-model-invocation: true
 
 # Issue Log（需求冷钱包 · 捕获）
 
-把一个想法/bug 极轻量地锁进 `.cursor/issues/`，**只登记、不修复**——保护当下开发主线不被打断。理念见 [`.cursor/issues/README.md`](../../issues/README.md)。
+把一个想法/bug 极轻量地锁进 `ai-memories/issues/`，**只登记、不修复**——保护当下开发主线不被打断。理念见 [`ai-memories/issues/README.md`](../../../ai-memories/issues/README.md)。
 
 ## 关键约束
 1. **只建文件**：绝不改业务代码、不 commit、不启动修复。
 2. 若用户其实想"现在就修"，提示改走正常流程或 `task-plan`，不要建 issue。
-3. 编号：扫描 `.cursor/issues/issue-*.md` 取现有最大 `id` + 1，四位零填充（0001 起）。
+3. 编号：扫描 `ai-memories/issues/issue-*.md` 取现有最大 `id` + 1，四位零填充（0001 起）。
 
 ## Workflow
 ```
 - [ ] Step 1: 一句话提炼标题 + 现象/期待
 - [ ] Step 2: 分配下一个 NNNN
-- [ ] Step 3: 依模板生成 .cursor/issues/issue-NNNN-<slug>.md
+- [ ] Step 3: 依模板生成 ai-memories/issues/issue-NNNN-<slug>.md
 - [ ] Step 4: 汇报路径与编号，结束（不修复）
 ```
 
@@ -55,7 +55,7 @@ disable-model-invocation: true
 ## 回复结构
 ```markdown
 已登记 issue #NNNN：<标题>
-- 路径：.cursor/issues/issue-NNNN-<slug>.md
+- 路径：ai-memories/issues/issue-NNNN-<slug>.md
 - 状态：open / 优先级：<low|medium|high> / tags: [...]
 （未做任何代码改动。攒够了用 issue-sweep 批量处理。）
 ```

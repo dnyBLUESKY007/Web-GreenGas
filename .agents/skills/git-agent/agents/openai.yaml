@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Agent"
+  short_description: "Prepare safe, focused Git workflow actions"
+  default_prompt: "Use $git-agent to prepare a focused commit from the working tree."

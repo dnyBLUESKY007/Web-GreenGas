@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue Sweep"
+  short_description: "Plan and resolve a batch of local issues"
+  default_prompt: "Use $issue-sweep to assess and resolve open local issues."

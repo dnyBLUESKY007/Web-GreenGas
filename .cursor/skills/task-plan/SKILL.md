@@ -2,7 +2,7 @@
 name: task-plan
 description: >-
   Scaffold a task plan document before starting a large task. Read the Memory Bank for
-  context, then create .cursor/tasks/YYYY-MM-DD-<slug>.md from the template with Problem,
+  context, then create ai-memories/tasks/YYYY-MM-DD-<slug>.md from the template with Problem,
   approach, affected files, and a step-by-step plan, and wait for user confirmation before
   coding. Use when the user starts a big/multi-file task or asks to plan a task, 立 plan,
   任务计划, 开工前建计划, task plan, plan this task, 建任务文档. Not for generating commit
@@ -12,9 +12,9 @@ disable-model-invocation: true
 
 # Task Plan
 
-大型任务开工前的脚手架：先读 Memory Bank 建立上下文，再依模板在 `.cursor/tasks/` 生成 Plan 文档，输出分步计划**待用户确认后再写代码**。
+大型任务开工前的脚手架：先读 Memory Bank 建立上下文，再依模板在 `ai-memories/tasks/` 生成 Plan 文档，输出分步计划**待用户确认后再写代码**。
 
-配套约定见 [`.cursor/rules/workflow/ai-workflow.mdc`](../../rules/workflow/ai-workflow.mdc)；文档结构见 [`.cursor/tasks/TEMPLATE.md`](../../tasks/TEMPLATE.md)。
+配套约定见 [`.cursor/rules/workflow/ai-workflow.mdc`](../../rules/workflow/ai-workflow.mdc)；文档结构见 [`ai-memories/tasks/TEMPLATE.md`](../../../ai-memories/tasks/TEMPLATE.md)。
 
 ## 关键约束
 
@@ -35,13 +35,13 @@ disable-model-invocation: true
 
 ### Step 1 — 读取 Memory Bank（只读）
 
-至少读 `.cursor/memories/activeContext.md`；涉及架构/新模块再读 `projectbrief.md`、`systemPatterns.md`、`techContext.md`。
-提炼：与本任务相关的现有约束、模式、进行中工作、待决问题。若 `.cursor/memories/` 不存在，提示用户是否先初始化（参考 memories/README.md），可继续但记忆上下文缺失。
+至少读 `ai-memories/memories/activeContext.md`；涉及架构/新模块再读 `projectbrief.md`、`systemPatterns.md`、`techContext.md`。
+提炼：与本任务相关的现有约束、模式、进行中工作、待决问题。若 `ai-memories/memories/` 不存在，提示用户是否先初始化（参考 `ai-memories/memories/README.md`），可继续但记忆上下文缺失。
 
 ### Step 2 — 确认范围与命名
 
 - 归纳任务的 Problem 与目标（1～2 句）。
-- 生成文件名 `.cursor/tasks/YYYY-MM-DD-<slug>.md`：日期取当天，slug 用简短英文短横线（如 `auth-oauth-flow`）。
+- 生成文件名 `ai-memories/tasks/YYYY-MM-DD-<slug>.md`：日期取当天，slug 用简短英文短横线（如 `auth-oauth-flow`）。
 - 若同名已存在，slug 追加序号或改用更具体描述。
 
 ### Step 3 — 生成 Plan 文档
@@ -65,7 +65,7 @@ disable-model-invocation: true
 - 来自 Memory Bank 的相关约束 / 进行中工作
 
 ## 已创建 Plan 文档
-- 路径：.cursor/tasks/YYYY-MM-DD-<slug>.md
+- 路径：ai-memories/tasks/YYYY-MM-DD-<slug>.md
 
 ## 分步计划
 - Step 1 / Step 2 / ...

@@ -26,7 +26,7 @@ type(scope): subject
 
 Why: context or motivation
 How: core implementation change
-Refs: .cursor/tasks/<plan>.md
+Refs: ai-memories/tasks/<plan>.md
 ```
 
 - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.

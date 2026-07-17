@@ -2,7 +2,7 @@
 name: memory-update
 description: >-
   Refresh the project Memory Bank at a milestone. Scan recent changes, task plans and
-  commits, then incrementally update .cursor/memories/activeContext.md and progress.md
+  commits, then incrementally update ai-memories/memories/activeContext.md and progress.md
   (and systemPatterns.md / decisions when architecture changed), archiving stale detail
   and keeping only conclusions. Use when the user says update memory bank, refresh context,
   刷新记忆, 更新数字大脑, 更新 memory bank, 里程碑总结, sync memory, or after finishing a
@@ -13,15 +13,15 @@ disable-model-invocation: true
 
 # Memory Update
 
-里程碑/重大节点时增量刷新 Memory Bank，让 `.cursor/memories/` 始终反映项目当前真实状态，同时把过时细节归档、只留结论，避免记忆膨胀。
+里程碑/重大节点时增量刷新 Memory Bank，让 `ai-memories/memories/` 始终反映项目当前真实状态，同时把过时细节归档、只留结论，避免记忆膨胀。
 
-记忆系统层级与维护原则见 [`.cursor/memories/README.md`](../../memories/README.md)；触发时机见 [`.cursor/rules/workflow/ai-workflow.mdc`](../../rules/workflow/ai-workflow.mdc)。
+记忆系统层级与维护原则见 [`ai-memories/memories/README.md`](../../../ai-memories/memories/README.md)；触发时机见 [`.cursor/rules/workflow/ai-workflow.mdc`](../../rules/workflow/ai-workflow.mdc)。
 
 ## 关键约束
 
 1. **增量更新，不推倒重写。** 保留仍成立的内容，只改动确有变化处。
 2. **写 rationale，不抄代码。** 能从代码读到的事实不重复；重点是“为什么”“下一步”。
-3. **不执行 git 写操作**，不改业务代码。仅编辑 `.cursor/memories/` 下文档。
+3. **不执行 git 写操作**，不改业务代码。仅编辑 `ai-memories/memories/` 下文档。
 4. **改动前先展示 diff 计划**，重大删改经用户确认后再写。
 
 ## Workflow
@@ -38,8 +38,8 @@ disable-model-invocation: true
 ### Step 1 — 收集近期信号（只读）
 
 - `git log --oneline -n 20` 与（如有）`git diff --stat`，了解近期变更主题。
-- 读 `.cursor/tasks/` 最近的 Plan 文档，尤其 `Debug Notes` 与 `Lessons Learned`。
-- 读现有 `.cursor/memories/activeContext.md`、`progress.md`（必要时 `systemPatterns.md`）。
+- 读 `ai-memories/tasks/` 最近的 Plan 文档，尤其 `Debug Notes` 与 `Lessons Learned`。
+- 读现有 `ai-memories/memories/activeContext.md`、`progress.md`（必要时 `systemPatterns.md`）。
 
 ### Step 2 — 找差异
 
@@ -77,5 +77,5 @@ disable-model-invocation: true
 - 逐文件：加 / 改 / 删（重大删改标注需确认）
 
 ---
-（确认后写入；仅修改 .cursor/memories/ 文档，不动代码与 git 历史）
+（确认后写入；仅修改 ai-memories/memories/ 文档，不动代码与 git 历史）
 ```

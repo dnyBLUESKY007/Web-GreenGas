@@ -52,7 +52,7 @@ git diff --cached
 .\.cursor\skills\git-agent\scripts\summarize-working-tree.ps1 [-Paths <path1>,<path2>]
 ```
 
-同时读取最近的 `.cursor/tasks/` Plan 文档（如有），提取 `Problem`、`核心思路`、`Lessons Learned`，作为 `Why`/`How`/`Refs` 来源。
+同时读取最近的 `ai-memories/tasks/` Plan 文档（如有），提取 `Problem`、`核心思路`、`Lessons Learned`，作为 `Why`/`How`/`Refs` 来源。
 
 ### Step 2 — 分组
 
@@ -70,7 +70,7 @@ type(scope): subject
 
 Why: ...
 How: ...
-Refs: .cursor/tasks/<plan>.md
+Refs: ai-memories/tasks/<plan>.md
 Fixes: #0001, #0002      # 若本次提交关闭了 issue
 ```
 
@@ -88,7 +88,7 @@ type(scope): subject
 
 Why: ...
 How: ...
-Refs: .cursor/tasks/<plan>.md
+Refs: ai-memories/tasks/<plan>.md
 Fixes: #0001, #0002      # 若本次提交关闭了 issue
 EOF
 )"
@@ -106,10 +106,10 @@ EOF
 
 流程：
 
-1. 只读分析 `git log` / `git show` / 相关 `.cursor/tasks/` / `.cursor/memories/progress.md`。
+1. 只读分析 `git log` / `git show` / 相关 `ai-memories/tasks/` / `ai-memories/memories/progress.md`。
 2. 输出目标 commit 列表、message、基线、操作表、风险、完整命令。
 3. 用 `AskQuestion` 确认是否执行。确认前不得运行 `rebase`、`reset`、`commit --amend`。
-4. 执行后在 `.cursor/tasks/` 写入重组留痕（模板见 `changelog-template.md`）；若是里程碑，同步更新 `.cursor/memories/progress.md`。
+4. 执行后更新 `docs/changelog.md`（模板见 `changelog-template.md`）；若是里程碑，同步引用 `ai-memories/memories/progress.md`。
 5. 若分支已 push，只提示 `push --force-with-lease` 需要单独确认；禁止 `push --force`。
 
 ## Mode: branch（确认）

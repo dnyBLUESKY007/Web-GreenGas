@@ -1,0 +1,4 @@
+interface:
+  display_name: "Memory Update"
+  short_description: "Refresh the project memory bank incrementally"
+  default_prompt: "Use $memory-update to refresh the project memory bank."

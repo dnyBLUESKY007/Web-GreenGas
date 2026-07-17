@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue Log"
+  short_description: "Capture a deferred local issue without fixing it"
+  default_prompt: "Use $issue-log to capture this as a local issue."

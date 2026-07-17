@@ -1,6 +1,6 @@
 # Changelog 写入模板
 
-写入 `.cursor/tasks/YYYY-MM-DD-git-reorganize.md` 时，使用以下结构：
+写入 [`docs/changelog.md`](../../../docs/changelog.md) 时，在文件**顶部**插入以下结构（保留下方历史记录）：
 
 ```markdown
 ## Reorganize YYYY-MM-DD
@@ -36,7 +36,7 @@ type(scope): subject
 
 Why: ...
 How: ...
-Refs: .cursor/tasks/<plan>.md
+Refs: ai-memories/tasks/<plan>.md
 ```
 
 ### 重组方案
@@ -56,7 +56,7 @@ type(scope): subject
 
 Why: ...
 How: ...
-Refs: .cursor/tasks/<plan>.md
+Refs: ai-memories/tasks/<plan>.md
 EOF
 )"
 ```
@@ -68,10 +68,10 @@ EOF
 - [ ] 用户已确认重组方案
 - [ ] 重组执行完成
 - [ ] 最终 git log 已对照预期
-- [ ] 如为里程碑，已同步 `.cursor/memories/progress.md`
+- [ ] 如为里程碑，已同步 `ai-memories/memories/progress.md`
 
 ---
 
 ```
 
-若 `.cursor/tasks/` 下对应 Plan 不存在，按 [`TEMPLATE.md`](../../../tasks/TEMPLATE.md) 新建并写入重组记录。
+若 `docs/changelog.md` 不存在，创建文件并加上一级标题 `# Changelog`。
