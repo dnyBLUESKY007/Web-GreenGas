@@ -64,7 +64,7 @@ function createProfileSection(): HTMLElement {
         ${paragraphs}
       </div>
       <figure class="about-page__facility">
-        <img src="${cdnUrl('company', 'facility-exterior.webp')}" alt="${t('about.factory.alt')}" width="1200" height="640" loading="lazy" />
+        <img src="${cdnUrl('company', 'company-exterior-photo-beautify.webp')}" alt="${t('about.factory.alt')}" width="1200" height="640" loading="lazy" />
       </figure>
     </div>
   `;
@@ -115,7 +115,7 @@ function createTeamSection(): HTMLElement {
         <h2>${t('about.team.title')}</h2>
       </div>
       <div class="about-page__team-grid">
-        <img src="${cdnUrl('company-info', 'team-photo.webp')}" alt="${t('about.team.alt')}" loading="lazy" />
+        <img src="${cdnUrl('company', 'company-team-photo.webp')}" alt="${t('about.team.alt')}" loading="lazy" />
         <div class="about-page__values">${teamValues}</div>
       </div>
     </div>

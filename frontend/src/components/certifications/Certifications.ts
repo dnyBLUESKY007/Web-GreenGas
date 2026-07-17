@@ -29,7 +29,7 @@ export function createCertifications(): HTMLElement {
 
     const img = document.createElement('img');
     img.className = 'certifications__image';
-    img.src = cdnUrl('certifications', cert.image);
+    img.src = cdnUrl('company', cert.image);
     img.alt = td(cert, 'name');
     img.loading = 'lazy';
 

@@ -81,7 +81,7 @@ function renderScenarioDetail(container: HTMLElement, solution: Solution): void 
 
   const image = document.createElement('img');
   image.className = 'scenario-path__image';
-  image.src = cdnUrl('scene', solution.image);
+  image.src = cdnUrl('web', solution.image);
   image.alt = name;
   image.width = 720;
   image.height = 520;

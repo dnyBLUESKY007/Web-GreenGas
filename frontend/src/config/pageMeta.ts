@@ -2,7 +2,7 @@ import { t } from '@/i18n';
 import type { PageId, PageMeta } from '@/types';
 import { cdnUrl } from '@/config/assets';
 
-const DEFAULT_OG_IMAGE = cdnUrl('company', 'facility-exterior.webp');
+const DEFAULT_OG_IMAGE = cdnUrl('company', 'company-exterior-photo-beautify.webp');
 
 export const PAGE_META: Record<PageId, PageMeta> = {
   home: {

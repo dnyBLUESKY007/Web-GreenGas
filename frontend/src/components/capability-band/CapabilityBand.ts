@@ -13,7 +13,7 @@ export function createCapabilityBand(): HTMLElement {
   section.className = 'section capability-band home-screen home-screen--capability';
   section.style.setProperty(
     '--capability-band-bg',
-    `url("${cdnUrl('capacity', 'background.webp')}")`,
+    `url("${cdnUrl('web', 'homepage-capacity-background.webp')}")`,
   );
 
   const container = document.createElement('div');
@@ -85,7 +85,7 @@ export function createCapabilityBand(): HTMLElement {
 
     const img = document.createElement('img');
     img.className = 'capability-process__image';
-    img.src = cdnUrl('capacity', `${index + 1}.webp`);
+    img.src = cdnUrl('web', `homepage-capacity-${index + 1}.webp`);
     img.alt = stepTitle;
     img.loading = 'lazy';
     img.decoding = 'async';

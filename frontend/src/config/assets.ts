@@ -7,5 +7,5 @@ export function cdnUrl(category: string, filename: string): string {
 /** Apply CDN background image to an inner-page `.page-header`. */
 export function setPageHeaderBackground(header: HTMLElement, filename: string): void {
   header.classList.add('page-header--has-bg');
-  header.style.setProperty('--page-header-bg', `url("${cdnUrl('page-headers', filename)}")`);
+  header.style.setProperty('--page-header-bg', `url("${cdnUrl('web', `page-header-${filename.replace(/^\d+_/, '').replace('.webp', '.webp')}`)}")`);
 }

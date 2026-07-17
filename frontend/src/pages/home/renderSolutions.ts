@@ -106,7 +106,7 @@ function renderDetail(container: HTMLElement, solution: Solution): void {
   const response = td(solution, 'response');
   const imageSrc = solution.image.startsWith('/')
     ? basePath(solution.image)
-    : cdnUrl('scene', solution.image);
+    : cdnUrl('web', solution.image);
 
   container.innerHTML = `
     <div class="solutions-panel__media card-media">
