@@ -250,53 +250,6 @@
     gap: 0.75rem;
   }
 
-  &__tab-nav {
-    position: relative;
-    flex-shrink: 0;
-    width: 1.75rem;
-    height: 1.75rem;
-    border: none;
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    background-color: rgb(22 59 49 / 35%);
-    transition: background-color 220ms ease;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0.45rem;
-      height: 0.45rem;
-      border-top: 2px solid rgb(255 255 255 / 85%);
-      border-right: 2px solid rgb(255 255 255 / 85%);
-      opacity: 0.7;
-      transition: opacity 220ms ease;
-    }
-
-    &:hover {
-      background-color: rgb(22 59 49 / 60%);
-
-      &::after {
-        opacity: 1;
-      }
-    }
-
-    &:focus-visible {
-      outline: 2px solid $color-accent;
-      outline-offset: 2px;
-    }
-
-    &--prev::after {
-      transform: translate(-30%, -50%) rotate(-135deg);
-    }
-
-    &--next::after {
-      transform: translate(-70%, -50%) rotate(45deg);
-    }
-  }
-
   &__tab {
     position: relative;
     overflow: hidden;
@@ -366,6 +319,7 @@
     }
 
     &__nav-btn {
+      display: none;
       width: 2.75rem;
       height: 2.75rem;
 
@@ -395,7 +349,6 @@
       gap: 0.125rem;
     }
 
-    &__tab-nav,
     &__tab {
       width: 2.75rem;
       height: 2.75rem;

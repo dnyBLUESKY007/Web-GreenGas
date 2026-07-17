@@ -57,11 +57,6 @@ export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
   const tabRow = document.createElement('div');
   tabRow.className = 'hero-carousel__tab-row';
 
-  const tabPrevBtn = document.createElement('button');
-  tabPrevBtn.className = 'hero-carousel__tab-nav hero-carousel__tab-nav--prev';
-  tabPrevBtn.setAttribute('aria-label', t('hero.carousel.prev'));
-  tabPrevBtn.type = 'button';
-
   const tabs = document.createElement('div');
   tabs.className = 'hero-carousel__tabs';
 
@@ -78,12 +73,7 @@ export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
     tabs.appendChild(tab);
   }
 
-  const tabNextBtn = document.createElement('button');
-  tabNextBtn.className = 'hero-carousel__tab-nav hero-carousel__tab-nav--next';
-  tabNextBtn.setAttribute('aria-label', t('hero.carousel.next'));
-  tabNextBtn.type = 'button';
-
-  tabRow.append(tabPrevBtn, tabs, tabNextBtn);
+  tabRow.appendChild(tabs);
   controls.append(swipeHint, tabRow);
   container.append(slidesWrapper, prevBtn, nextBtn, controls);
 
@@ -179,8 +169,6 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   const tabs = container.querySelectorAll<HTMLElement>('.hero-carousel__tab');
   const prevBtn = container.querySelector<HTMLElement>('.hero-carousel__nav-btn--prev');
   const nextBtn = container.querySelector<HTMLElement>('.hero-carousel__nav-btn--next');
-  const tabPrevBtn = container.querySelector<HTMLElement>('.hero-carousel__tab-nav--prev');
-  const tabNextBtn = container.querySelector<HTMLElement>('.hero-carousel__tab-nav--next');
 
   if (slides.length === 0) return;
 
@@ -226,8 +214,6 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
 
   prevBtn?.addEventListener('click', goToPrev);
   nextBtn?.addEventListener('click', goToNext);
-  tabPrevBtn?.addEventListener('click', goToPrev);
-  tabNextBtn?.addEventListener('click', goToNext);
 
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => {
