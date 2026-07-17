@@ -17,7 +17,6 @@ export function createProductGrid(): HTMLElement {
   head.className = 'section-head';
 
   const title = createSectionTitle({
-    eyebrow: t('home.products.eyebrow'),
     title: t('home.products.title'),
     description: t('home.products.desc'),
   });

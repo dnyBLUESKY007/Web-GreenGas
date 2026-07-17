@@ -40,14 +40,14 @@ function createNavCard(
   const name = td(solution, 'name');
   const summary = td(solution, 'summary');
 
-  const link = document.createElement('a');
-  link.className = 'solutions-panel__card';
-  link.href = basePath('/solutions/');
-  link.setAttribute('role', 'tab');
-  link.setAttribute('aria-selected', String(isActive));
+  const card = document.createElement('button');
+  card.className = 'solutions-panel__card';
+  card.type = 'button';
+  card.setAttribute('role', 'tab');
+  card.setAttribute('aria-selected', String(isActive));
 
   if (isActive) {
-    link.classList.add('solutions-panel__card--active');
+    card.classList.add('solutions-panel__card--active');
   }
 
   const icon = document.createElement('div');
@@ -62,17 +62,21 @@ function createNavCard(
   desc.className = 'solutions-panel__card-summary';
   desc.textContent = summary;
 
-  link.append(icon, title, desc);
+  card.append(icon, title, desc);
 
-  link.addEventListener('mouseenter', () => {
-    setActiveCard(link, detailEl, solution);
+  card.addEventListener('mouseenter', () => {
+    setActiveCard(card, detailEl, solution);
   });
 
-  link.addEventListener('focus', () => {
-    setActiveCard(link, detailEl, solution);
+  card.addEventListener('focus', () => {
+    setActiveCard(card, detailEl, solution);
   });
 
-  return link;
+  card.addEventListener('click', () => {
+    setActiveCard(card, detailEl, solution);
+  });
+
+  return card;
 }
 
 function setActiveCard(

@@ -69,7 +69,6 @@ function renderHomePage(): void {
 
   const solutionsSection = createSectionBlock(
     createSectionTitle({
-      eyebrow: t('home.solutions.eyebrow'),
       title: t('home.solutions.title'),
       description: t('home.solutions.desc'),
     }),

@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
+
 > 更新最频繁的文件。每次里程碑或换方向时刷新，保证“下一步一目了然”。
 > 最近更新：2026-07-17
 

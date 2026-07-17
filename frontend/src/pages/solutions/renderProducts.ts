@@ -3,9 +3,20 @@ import seriesData from '@/data/product-series.json';
 import { td } from '@/i18n';
 import type { Product, ProductSeries } from '@/types';
 
+const SERIES_ORDER: readonly ProductSeries['id'][] = [
+  'industrial',
+  'central-host',
+  'commercial-terminal',
+  'custom',
+];
+
 export function renderProducts(container: HTMLElement): void {
   const products = productsData as readonly Product[];
-  const series = seriesData as readonly ProductSeries[];
+  const seriesById = new Map((seriesData as readonly ProductSeries[]).map((item) => [item.id, item]));
+  const series = SERIES_ORDER.flatMap((id) => {
+    const item = seriesById.get(id);
+    return item ? [item] : [];
+  });
   const tabList = document.createElement('div');
   tabList.className = 'product-series__tabs';
   tabList.setAttribute('role', 'tablist');

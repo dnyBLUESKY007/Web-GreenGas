@@ -2,7 +2,7 @@
   {
     "id": "custom",
     "name": "Custom-Engineered Series",
-    "name_zh": "非标定制系列",
+    "name_zh": "非标定制",
     "name_ru": "Серия индивидуальных решений",
     "description": "Equipment developed around your load profile, layout, installation constraints, and operating conditions.",
     "description_zh": "围绕负荷特性、现场布局、安装限制与运行工况开发的非标设备。",
@@ -26,7 +26,7 @@
   {
     "id": "commercial-terminal",
     "name": "Commercial Air Terminal Series",
-    "name_zh": "商用空调末端系列",
+    "name_zh": "中央空调末端",
     "name_ru": "Серия коммерческих конечных устройств",
     "description": "Air-side equipment that delivers ventilation, filtration, heat recovery, and controlled indoor conditions.",
     "description_zh": "提供通风、过滤、热回收与室内环境控制的空气侧末端设备。",
@@ -38,7 +38,7 @@
   {
     "id": "central-host",
     "name": "Central HVAC Host Series",
-    "name_zh": "中央空调主机系列",
+    "name_zh": "中央空调主机",
     "name_ru": "Серия центральных HVAC-агрегатов",
     "description": "Core cooling and heating capacity for central HVAC systems, selected around capacity, energy source, and project phasing.",
     "description_zh": "按容量、能源条件及项目分期配置的中央空调核心冷热源设备。",

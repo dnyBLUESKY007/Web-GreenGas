@@ -14,7 +14,6 @@ export function createCaseCarousel(): HTMLElement {
   head.className = 'section-head';
 
   const title = createSectionTitle({
-    eyebrow: t('home.cases.eyebrow'),
     title: t('home.cases.title'),
     description: t('home.cases.desc'),
   });

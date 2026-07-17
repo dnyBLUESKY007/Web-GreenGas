@@ -14,7 +14,6 @@ export function createServiceStrip(): HTMLElement {
   container.className = 'container';
 
   const title = createSectionTitle({
-    eyebrow: t('home.services.eyebrow'),
     title: t('home.services.title'),
     description: t('home.services.desc'),
   });

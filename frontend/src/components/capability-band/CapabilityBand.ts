@@ -6,7 +6,7 @@ import { getIcon } from '@/utils/icons';
 import type { CompanyData } from '@/types';
 
 const company = companyData as CompanyData;
-const STAT_ICONS = ['factory', 'award', 'headset'] as const;
+const STAT_ICONS = ['factory', 'award', 'headset', 'building'] as const;
 
 export function createCapabilityBand(): HTMLElement {
   const section = document.createElement('section');
@@ -20,7 +20,6 @@ export function createCapabilityBand(): HTMLElement {
   container.className = 'container capability-band__inner';
 
   const header = createSectionTitle({
-    eyebrow: t('home.capabilities.eyebrow'),
     title: t('home.capabilities.title'),
     description: t('home.capabilities.desc'),
   });

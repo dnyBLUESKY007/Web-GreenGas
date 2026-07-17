@@ -16,7 +16,6 @@ export function createAboutSummary(): HTMLElement {
   container.className = 'container';
 
   const title = createSectionTitle({
-    eyebrow: t('home.about.eyebrow'),
     title: t('home.about.title'),
     description: t('home.about.desc'),
   });

@@ -158,6 +158,12 @@
       "label": "Response Service",
       "label_zh": "响应服务",
       "label_ru": "Сервис отклика"
+    },
+    {
+      "value": "10+",
+      "label": "International Partnerships",
+      "label_zh": "跨国合作经验",
+      "label_ru": "Международное сотрудничество"
     }
   ],
   "capabilities": [

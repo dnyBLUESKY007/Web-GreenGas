@@ -73,8 +73,9 @@ $news-card-text-offset: 34%;
   @media (width >= $breakpoint-md) {
     &__category {
       position: absolute;
-      top: 1.5rem;
+      top: 3rem;
       inset-inline-start: $news-card-text-offset;
+      margin: 0;
     }
 
     &__title {
