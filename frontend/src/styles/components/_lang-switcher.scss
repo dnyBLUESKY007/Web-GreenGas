@@ -1,14 +1,17 @@
 @use '../base/variables' as *;
 
 .lang-switcher {
-  display: flex;
-  align-items: center;
+  display: grid;
   gap: 0.25rem;
 
   &__btn {
-    min-height: 2.25rem;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 1rem;
     font-weight: 500;
     color: $color-text-muted;
     background: transparent;
@@ -26,6 +29,10 @@
       font-weight: 700;
       border-color: $color-border;
       background-color: $color-bg-muted;
+
+      &::after {
+        content: '✓';
+      }
     }
   }
 }

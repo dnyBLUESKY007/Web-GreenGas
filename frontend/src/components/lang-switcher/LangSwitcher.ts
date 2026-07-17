@@ -1,13 +1,13 @@
-import { getLocale, setLocale, t } from '@/i18n';
+import { getLocale, setLocale } from '@/i18n';
 import type { Locale } from '@/types';
 
-const LOCALE_OPTIONS: readonly { readonly locale: Locale; readonly labelKey: string }[] = [
-  { locale: 'en', labelKey: 'lang.en' },
-  { locale: 'zh', labelKey: 'lang.zh' },
-  { locale: 'ru', labelKey: 'lang.ru' },
+const LOCALE_OPTIONS: readonly { readonly locale: Locale; readonly label: string }[] = [
+  { locale: 'en', label: 'English' },
+  { locale: 'zh', label: '中文' },
+  { locale: 'ru', label: 'Русский' },
 ] as const;
 
-export function createLangSwitcher(): HTMLElement {
+export function createLangSwitcher(onLocaleSelect?: () => void): HTMLElement {
   const wrapper = document.createElement('div');
   wrapper.className = 'lang-switcher';
   wrapper.setAttribute('role', 'group');
@@ -19,7 +19,7 @@ export function createLangSwitcher(): HTMLElement {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'lang-switcher__btn';
-    button.textContent = t(option.labelKey);
+    button.textContent = option.label;
     button.setAttribute('data-locale', option.locale);
     button.setAttribute('aria-pressed', String(option.locale === currentLocale));
 
@@ -29,6 +29,7 @@ export function createLangSwitcher(): HTMLElement {
 
     button.addEventListener('click', () => {
       setLocale(option.locale);
+      onLocaleSelect?.();
     });
 
     wrapper.appendChild(button);

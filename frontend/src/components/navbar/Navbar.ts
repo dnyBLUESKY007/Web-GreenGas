@@ -39,28 +39,15 @@ export function createNavbar(activePageId: PageId): HTMLElement {
   const actions = document.createElement('div');
   actions.className = 'navbar__actions';
 
-  const langSwitcher = createLangSwitcher();
-
-  const menuToggle = document.createElement('button');
-  menuToggle.className = 'navbar__menu-toggle';
-  menuToggle.type = 'button';
-  menuToggle.setAttribute('aria-controls', 'navbar-mobile-menu');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.setAttribute('aria-label', t('nav.menu.open'));
-  menuToggle.innerHTML = `
-    <span class="navbar__menu-toggle-icon" aria-hidden="true"></span>
-    <span class="navbar__menu-toggle-label">${t('nav.menu.label')}</span>
-  `;
-
   const cta = document.createElement('a');
   cta.className = 'btn btn--primary navbar__cta';
   cta.href = basePath('/contact/');
   cta.textContent = t('nav.cta');
 
-  actions.append(langSwitcher, menuToggle, cta);
+  actions.appendChild(cta);
   inner.append(brand, nav, actions);
   header.appendChild(inner);
-  document.body.appendChild(createMobileMenu(activePageId, menuToggle, header));
+  document.body.appendChild(createMobileActionDock(activePageId));
 
   return header;
 }
@@ -83,88 +70,100 @@ function createNavLink(
   return link;
 }
 
-function createMobileMenu(
-  activePageId: PageId,
-  menuToggle: HTMLButtonElement,
-  header: HTMLElement,
-): HTMLElement {
-  const mobileMenu = document.createElement('div');
-  mobileMenu.className = 'navbar__mobile-menu';
-  mobileMenu.id = 'navbar-mobile-menu';
-  mobileMenu.hidden = true;
+function createMobileActionDock(activePageId: PageId): HTMLElement {
+  const dock = document.createElement('aside');
+  dock.className = 'navbar__mobile-actions';
+  dock.id = 'navbar-mobile-actions';
+  dock.setAttribute('aria-label', t('nav.mobileActions.label'));
 
-  const backdrop = document.createElement('button');
-  backdrop.className = 'navbar__backdrop';
-  backdrop.type = 'button';
-  backdrop.tabIndex = -1;
-  backdrop.setAttribute('aria-label', t('nav.menu.close'));
+  const panel = document.createElement('div');
+  panel.className = 'navbar__action-panel';
+  panel.hidden = true;
 
-  const drawer = document.createElement('nav');
-  drawer.className = 'navbar__drawer';
-  drawer.setAttribute('aria-label', 'Main navigation');
+  const buttons = document.createElement('div');
+  buttons.className = 'navbar__action-buttons';
 
-  for (const item of NAV_ITEMS) {
-    drawer.appendChild(createNavLink(item, activePageId, 'navbar__drawer-link'));
-  }
+  const topButton = createActionButton('navbar__action-button--top', t('nav.top.label'), topIcon());
+  topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  const contactCta = document.createElement('a');
-  contactCta.className = 'btn btn--primary navbar__drawer-cta';
-  contactCta.href = basePath('/contact/');
-  contactCta.textContent = t('nav.cta');
-  drawer.appendChild(contactCta);
-  mobileMenu.append(backdrop, drawer);
+  const languageButton = createActionButton('navbar__action-button--language', t('nav.language.label'), languageIcon());
+  const menuButton = createActionButton('navbar__action-button--menu', t('nav.menu.open'), menuIcon());
+  languageButton.setAttribute('aria-controls', 'navbar-mobile-action-panel');
+  menuButton.setAttribute('aria-controls', 'navbar-mobile-action-panel');
+  languageButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-expanded', 'false');
 
-  let isOpen = false;
+  panel.id = 'navbar-mobile-action-panel';
+  buttons.append(topButton, languageButton, menuButton);
+  dock.append(panel, buttons);
 
-  const setOpen = (nextOpen: boolean, restoreFocus = false): void => {
-    isOpen = nextOpen;
-    header.classList.toggle('navbar--menu-open', nextOpen);
-    header.classList.remove('navbar--hidden');
-    document.body.classList.toggle('navbar-menu-open', nextOpen);
-    menuToggle.setAttribute('aria-expanded', String(nextOpen));
-    menuToggle.setAttribute('aria-label', t(nextOpen ? 'nav.menu.close' : 'nav.menu.open'));
-    mobileMenu.hidden = !nextOpen;
-
-    if (nextOpen) {
-      drawer.querySelector<HTMLElement>('a')?.focus();
-    } else if (restoreFocus) {
-      menuToggle.focus();
-    }
+  let activePanel: 'language' | 'menu' | null = null;
+  const closePanel = (): void => {
+    activePanel = null;
+    panel.hidden = true;
+    panel.replaceChildren();
+    languageButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-expanded', 'false');
   };
 
-  menuToggle.addEventListener('click', () => setOpen(!isOpen));
-  backdrop.addEventListener('click', () => setOpen(false, true));
-  drawer.addEventListener('click', (event) => {
-    if ((event.target as HTMLElement).closest('a')) {
-      setOpen(false);
-    }
-  });
-  mobileMenu.addEventListener('keydown', (event) => {
-    if (!isOpen) return;
-
-    if (event.key === 'Escape') {
-      event.preventDefault();
-      setOpen(false, true);
+  const openPanel = (nextPanel: 'language' | 'menu'): void => {
+    if (activePanel === nextPanel) {
+      closePanel();
       return;
     }
 
-    if (event.key !== 'Tab') return;
+    activePanel = nextPanel;
+    panel.replaceChildren();
+    panel.hidden = false;
+    languageButton.setAttribute('aria-expanded', String(nextPanel === 'language'));
+    menuButton.setAttribute('aria-expanded', String(nextPanel === 'menu'));
 
-    const focusable = Array.from(
-      drawer.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
-    );
-    const first = focusable[0];
-    const last = focusable.at(-1);
-    if (!first || !last) return;
+    if (nextPanel === 'language') {
+      panel.appendChild(createLangSwitcher(closePanel));
+      return;
+    }
 
-    if (event.shiftKey && document.activeElement === first) {
+    const menu = document.createElement('nav');
+    menu.className = 'navbar__action-menu';
+    menu.setAttribute('aria-label', 'Main navigation');
+    for (const item of NAV_ITEMS) {
+      menu.appendChild(createNavLink(item, activePageId, 'navbar__action-menu-link'));
+    }
+    menu.addEventListener('click', (event) => {
+      if ((event.target as HTMLElement).closest('a')) closePanel();
+    });
+    panel.appendChild(menu);
+  };
+
+  languageButton.addEventListener('click', () => openPanel('language'));
+  menuButton.addEventListener('click', () => openPanel('menu'));
+  dock.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && activePanel) {
       event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
+      closePanel();
     }
   });
 
-  return mobileMenu;
+  return dock;
+}
+
+function createActionButton(className: string, label: string, icon: string): HTMLButtonElement {
+  const button = document.createElement('button');
+  button.className = `navbar__action-button ${className}`;
+  button.type = 'button';
+  button.setAttribute('aria-label', label);
+  button.innerHTML = icon;
+  return button;
+}
+
+function topIcon(): string {
+  return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/><path d="M12 9v10"/></svg>';
+}
+
+function languageIcon(): string {
+  return '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.2 2.5 3.3 5.5 3.3 9S14.2 18.5 12 21c-2.2-2.5-3.3-5.5-3.3-9S9.8 5.5 12 3Z"/></svg>';
+}
+
+function menuIcon(): string {
+  return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
 }

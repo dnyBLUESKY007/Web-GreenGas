@@ -88,152 +88,99 @@
   }
 
   &__cta {
-    display: none;
-
-    @media (width >= $breakpoint-lg) {
-      display: inline-flex;
-    }
-  }
-
-  &__menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.375rem;
-    min-width: 2.75rem;
-    min-height: 2.75rem;
-    padding: 0.5rem;
-    border: 1px solid $color-border;
-    border-radius: $radius-sm;
-    color: $color-primary;
-
-    &:focus-visible {
-      outline: 2px solid $color-primary;
-      outline-offset: 2px;
-    }
-
-    @media (width >= $breakpoint-lg) {
-      display: none;
-    }
-  }
-
-  &__menu-toggle-icon,
-  &__menu-toggle-icon::before,
-  &__menu-toggle-icon::after {
-    display: block;
-    width: 1.125rem;
-    height: 2px;
-    border-radius: 999px;
-    background-color: currentcolor;
-    transition: transform $transition-base, opacity $transition-base;
-  }
-
-  &__menu-toggle-icon {
-    position: relative;
-
-    &::before,
-    &::after {
-      position: absolute;
-      left: 0;
-      content: '';
-    }
-
-    &::before {
-      top: -0.375rem;
-    }
-
-    &::after {
-      top: 0.375rem;
-    }
-  }
-
-  &--menu-open &__menu-toggle-icon {
-    background-color: transparent;
-
-    &::before {
-      transform: translateY(0.375rem) rotate(45deg);
-    }
-
-    &::after {
-      transform: translateY(-0.375rem) rotate(-45deg);
-    }
-  }
-
-  &__menu-toggle-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-
-    @media (width < 23rem) {
-      display: none;
-    }
-  }
-
-  &__mobile-menu {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    display: block;
-    visibility: visible;
-
-    &[hidden] {
-      display: none;
-    }
-
-    @media (width >= $breakpoint-lg) {
-      display: none;
-    }
-  }
-
-  &__backdrop {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(0 0 0 / 36%);
-  }
-
-  &__drawer {
-    position: absolute;
-    top: $navbar-height;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    width: min(22rem, 88vw);
-    padding: max(1rem, env(safe-area-inset-top)) 1rem calc(1rem + env(safe-area-inset-bottom));
-    overflow-y: auto;
-    background-color: $color-bg;
-    box-shadow: -0.75rem 0 2rem rgb(15 46 37 / 14%);
-  }
-
-  &__drawer-link {
-    display: flex;
-    align-items: center;
-    min-height: 2.75rem;
-    padding: 0.625rem 0.75rem;
-    border-radius: $radius-sm;
-    color: $color-text;
-    font-size: 1rem;
-    font-weight: 600;
-
-    &:hover,
-    &:focus-visible,
-    &--active {
-      background-color: $color-bg-muted;
-      color: $color-primary;
-    }
-  }
-
-  &__drawer-cta {
-    width: 100%;
-    min-height: 2.75rem;
-    margin-top: 1rem;
   }
 }
 
-body.navbar-menu-open {
-  overflow: hidden;
+.navbar__mobile-actions {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 120;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+
+  @media (width >= $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.navbar__action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.navbar__action-button {
+  display: grid;
+  width: 2.875rem;
+  height: 2.875rem;
+  padding: 0;
+  place-items: center;
+  border: 1px solid $color-border;
+  border-radius: 50%;
+  background-color: $color-bg;
+  color: $color-primary;
+  box-shadow: $shadow-sm;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentcolor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  &:hover,
+  &[aria-expanded='true'] {
+    border-color: $color-primary;
+    background-color: $color-primary;
+    color: $color-bg;
+    box-shadow: $shadow-md;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.navbar__action-panel {
+  width: min(17rem, calc(100vw - 5.5rem));
+  max-height: min(28rem, calc(100dvh - 2rem));
+  padding: 0.5rem;
+  overflow-y: auto;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background-color: $color-bg;
+  box-shadow: $shadow-md;
+}
+
+.navbar__action-menu {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.navbar__action-menu-link {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: $radius-sm;
+  color: $color-text;
+  font-weight: 600;
+
+  &:hover,
+  &:focus-visible,
+  &--active {
+    background-color: $color-bg-muted;
+    color: $color-primary;
+  }
 }
 
 @media (width < 23rem) {
