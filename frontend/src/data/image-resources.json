@@ -774,5 +774,109 @@
   "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/scene/gemini-scene-specialized-environments.webp": {
     "originalPath": "scene/gemini-scene-specialized-environments.webp",
     "description": "Solutions 场景 — 特种环境（船用、高温、防爆等极端工况）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/contact/contact-wechat-qrcard.webp": {
+    "originalPath": "contact/contact-wechat-qrcard.jpg",
+    "description": "联系方式 — 微信二维码名片"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-1.webp": {
+    "originalPath": "certifications/cert (1).png",
+    "description": "资质认证 — 认证证书（一）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-2.webp": {
+    "originalPath": "certifications/cert (2).png",
+    "description": "资质认证 — 认证证书（二）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-3.webp": {
+    "originalPath": "certifications/cert (3).png",
+    "description": "资质认证 — 认证证书（三）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-4.webp": {
+    "originalPath": "certifications/cert (4).png",
+    "description": "资质认证 — 认证证书（四）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-5.webp": {
+    "originalPath": "certifications/cert (5).png",
+    "description": "资质认证 — 认证证书（五）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/cert-6.webp": {
+    "originalPath": "certifications/cert (6).png",
+    "description": "资质认证 — 认证证书（六）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/honor-1.webp": {
+    "originalPath": "certifications/honor (1).png",
+    "description": "资质认证 — 荣誉证书（一）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/honor-2.webp": {
+    "originalPath": "certifications/honor (2).png",
+    "description": "资质认证 — 荣誉证书（二）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/honor-3.webp": {
+    "originalPath": "certifications/honor (3).png",
+    "description": "资质认证 — 荣誉证书（三）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/patent-1.webp": {
+    "originalPath": "certifications/patent (1).png",
+    "description": "资质认证 — 专利证书（一）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/patent-2.webp": {
+    "originalPath": "certifications/patent (2).png",
+    "description": "资质认证 — 专利证书（二）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/certifications/patent-3.webp": {
+    "originalPath": "certifications/patent (3).png",
+    "description": "资质认证 — 专利证书（三）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/hero/hero-steel-mill_org.webp": {
+    "originalPath": "hero/hero-steel-mill_org.png",
+    "description": "Hero 轮播 — 炼钢厂工业制冷应用场景原始图（未降饱和度）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-1-baogang.webp": {
+    "originalPath": "projects/proj-1-baogang.png",
+    "description": "项目案例 — 包头钢铁集团（包头 / Baotou）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-2-vanguard.webp": {
+    "originalPath": "projects/proj-2-vanguard.png",
+    "description": "项目案例 — 华润万家（全国 / Nationwide）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-3-oasis.webp": {
+    "originalPath": "projects/proj-3-oasis.png",
+    "description": "项目案例 — OASIS（澳洲 / Australia）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-4-emperors-palace.webp": {
+    "originalPath": "projects/proj-4-emperors-palace.jpg",
+    "description": "项目案例 — Emperors Palace（南非 / South Africa）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-5-qingdao-special-steel.webp": {
+    "originalPath": "projects/proj-5-qingdao-special-steel.png",
+    "description": "项目案例 — 青岛特殊钢铁有限公司（青岛 / Qingdao）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-6-netcare-pinehaven.webp": {
+    "originalPath": "projects/proj-6-netcare-pinehaven.png",
+    "description": "项目案例 — Netcare Pinehaven（南非 / South Africa）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-7-faw-volkswagen-data-center.webp": {
+    "originalPath": "projects/proj-7-faw-volkswagen-data-center.png",
+    "description": "项目案例 — 一汽大众数据中心（长春 / Changchun）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-9-soshangue-crossing.webp": {
+    "originalPath": "projects/proj-9-soshangue-crossing.png",
+    "description": "项目案例 — Soshangue Crossing（南非 / South Africa）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-10-qimr.webp": {
+    "originalPath": "projects/proj-10-qimr.png",
+    "description": "项目案例 — QIMR（澳洲 / Australia）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-11-excemon-yuyao-hemudu-hotel.webp": {
+    "originalPath": "projects/proj-11-excemon-yuyao-hemudu-hotel.png",
+    "description": "项目案例 — 余姚辰茂河姆渡大酒店（余姚 / Yuyao）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-12-nationa-university-of-defense-technology.webp": {
+    "originalPath": "projects/proj-12-nationa-university-of-defense-technology.png",
+    "description": "项目案例 — 国防科技大学（长沙 / Changsha）"
+  },
+  "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/projects/proj-15-baoye-construction.webp": {
+    "originalPath": "projects/proj-15-baoye-construction.png",
+    "description": "项目案例 — 上海宝冶集团有限公司（上海 / Shanghai）"
   }
 }
