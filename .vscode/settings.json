@@ -2,6 +2,8 @@
   // 光标设置为粗方块，并平滑移动
   "editor.cursorStyle": "block",
   "editor.cursorSmoothCaretAnimation": "on",
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80, // 可选：指定固定列数换行
   // 设置字体，并打开字体连字
   "editor.fontFamily": "'Fira Code', 'MesloLGS NF', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
