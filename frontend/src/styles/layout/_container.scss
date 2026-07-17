@@ -161,7 +161,7 @@
 .contact-layout {
   display: grid;
   gap: 2.5rem;
-  width: 70%;
+  width: min(100%, 52rem);
   margin-inline: auto;
 }
 
@@ -173,5 +173,20 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+@media (width < $breakpoint-md) {
+  .section {
+    padding-block: 2.5rem;
+  }
+
+  .page-header,
+  .page-header--has-bg {
+    padding-block: 2.75rem 2rem;
+  }
+
+  .contact-layout {
+    gap: 2rem;
   }
 }

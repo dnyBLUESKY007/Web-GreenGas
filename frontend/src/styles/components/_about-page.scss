@@ -151,3 +151,15 @@
     color: $color-primary;
   }
 }
+
+@media (width < $breakpoint-sm) {
+  .about-page {
+    &__industries ul {
+      grid-template-columns: 1fr;
+    }
+
+    &__trust-links a {
+      padding: 1.25rem;
+    }
+  }
+}

@@ -63,6 +63,11 @@ function createScenarioTab(
       item.setAttribute('aria-selected', String(item === tab));
     }
     renderScenarioDetail(detail, solution);
+    tab.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    });
   });
 
   return tab;

@@ -222,3 +222,26 @@
     }
   }
 }
+
+@media (width < $breakpoint-sm) {
+  .capability-stats {
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    &__item {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0.875rem 0;
+      text-align: start;
+
+      &:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid rgb(22 59 49 / 18%);
+      }
+    }
+
+    &__label {
+      font-size: 0.75rem;
+    }
+  }
+}

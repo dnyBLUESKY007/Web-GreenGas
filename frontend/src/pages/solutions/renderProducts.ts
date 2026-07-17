@@ -55,6 +55,11 @@ function createSeriesTab(
     }
 
     renderSeries(panel, series, products);
+    tab.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    });
   });
 
   return tab;

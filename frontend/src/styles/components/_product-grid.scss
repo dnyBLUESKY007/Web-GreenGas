@@ -43,11 +43,32 @@
     font-weight: 700;
     line-height: 1.35;
     color: $color-text;
+    overflow-wrap: anywhere;
   }
 
   &__desc {
     font-size: 0.8125rem;
     line-height: 1.45;
     color: $color-text-muted;
+  }
+}
+
+@media (width < $breakpoint-sm) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid-card {
+    &__body {
+      padding: 1rem 1.125rem 1.125rem;
+    }
+
+    &__name {
+      font-size: 1rem;
+    }
+
+    &__desc {
+      font-size: 0.875rem;
+    }
   }
 }

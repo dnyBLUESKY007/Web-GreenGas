@@ -9,6 +9,7 @@ $news-card-text-offset: 34%;
   margin-bottom: 1.5rem;
 
   &__button {
+    min-height: 2.75rem;
     padding: 0.5rem 0.875rem;
     border: 1px solid $color-border;
     border-radius: 999px;

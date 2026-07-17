@@ -31,7 +31,10 @@
     gap: 0.75rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+    padding-inline-end: 20%;
     scrollbar-width: thin;
+    scroll-padding-inline: 1rem;
+    scroll-snap-type: x proximity;
   }
 
   &__tab,
@@ -49,6 +52,7 @@
     font-size: 0.875rem;
     font-weight: 700;
     cursor: pointer;
+    scroll-snap-align: start;
 
     svg {
       width: 1.25rem;
@@ -143,7 +147,10 @@
     gap: 0.75rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+    padding-inline-end: 20%;
     scrollbar-width: thin;
+    scroll-padding-inline: 1rem;
+    scroll-snap-type: x proximity;
   }
 
   &__tab {
@@ -157,6 +164,7 @@
     font-size: 0.875rem;
     font-weight: 700;
     cursor: pointer;
+    scroll-snap-align: start;
 
     &:hover,
     &:focus-visible,

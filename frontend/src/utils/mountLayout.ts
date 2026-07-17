@@ -10,6 +10,7 @@ import type { PageId } from '@/types';
 
 export function mountLayout(pageId: PageId): void {
   applyPageMeta(pageId);
+  document.body.classList.remove('navbar-menu-open');
 
   const navbarMount = document.getElementById('site-navbar');
   const footerMount = document.getElementById('site-footer');

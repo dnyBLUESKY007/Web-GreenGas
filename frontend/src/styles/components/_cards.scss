@@ -156,6 +156,7 @@
   &__value {
     font-size: 0.9375rem;
     color: $color-text-muted;
+    overflow-wrap: anywhere;
 
     &:hover {
       color: $color-primary;
@@ -227,7 +228,7 @@
 }
 
 .faq-section-content {
-  width: 80%;
+  width: min(100%, 52rem);
   margin-inline: auto;
 }
 
@@ -252,6 +253,20 @@
   &__answer {
     margin-top: 0.75rem;
     font-size: 0.9375rem;
+  }
+}
+
+@media (width < $breakpoint-md) {
+  .channel-card {
+    padding: 1rem;
+  }
+
+  .message-board {
+    padding: 1.5rem 1rem;
+  }
+
+  .faq-item {
+    padding: 1rem;
   }
 }
 

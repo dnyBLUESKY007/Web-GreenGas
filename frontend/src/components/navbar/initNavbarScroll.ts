@@ -27,6 +27,12 @@ export function initNavbarScroll(): void {
 
     currentNavbar.classList.toggle('navbar--scrolled', isScrolled);
 
+    if (currentNavbar.classList.contains('navbar--menu-open')) {
+      currentNavbar.classList.remove('navbar--hidden');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
     if (currentScrollY <= 0) {
       currentNavbar.classList.remove('navbar--hidden');
     } else if (currentScrollY > lastScrollY && currentScrollY > HIDE_THRESHOLD) {
@@ -51,5 +57,8 @@ function resetNavbarState(): void {
   lastScrollY = currentScrollY;
 
   navbar.classList.toggle('navbar--scrolled', currentScrollY > 8);
-  navbar.classList.toggle('navbar--hidden', currentScrollY > HIDE_THRESHOLD);
+  navbar.classList.toggle(
+    'navbar--hidden',
+    !navbar.classList.contains('navbar--menu-open') && currentScrollY > HIDE_THRESHOLD,
+  );
 }
