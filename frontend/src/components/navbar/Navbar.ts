@@ -59,7 +59,8 @@ export function createNavbar(activePageId: PageId): HTMLElement {
 
   actions.append(langSwitcher, menuToggle, cta);
   inner.append(brand, nav, actions);
-  header.append(inner, createMobileMenu(activePageId, menuToggle, header));
+  header.appendChild(inner);
+  document.body.appendChild(createMobileMenu(activePageId, menuToggle, header));
 
   return header;
 }
@@ -138,7 +139,7 @@ function createMobileMenu(
       setOpen(false);
     }
   });
-  header.addEventListener('keydown', (event) => {
+  mobileMenu.addEventListener('keydown', (event) => {
     if (!isOpen) return;
 
     if (event.key === 'Escape') {

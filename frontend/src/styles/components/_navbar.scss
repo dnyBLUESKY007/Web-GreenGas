@@ -5,12 +5,11 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 110;
   background-color: rgb(255 255 255 / 97%);
   backdrop-filter: blur(4px);
   border-bottom: 1px solid transparent;
   transition: border-color $transition-base, box-shadow $transition-base, transform 300ms ease;
-  will-change: transform;
 
   &--scrolled {
     border-bottom-color: $color-border;
@@ -21,11 +20,9 @@
     transform: translateY(-100%);
   }
 
-  &--menu-open {
-    transform: translateY(0);
-  }
-
   &__inner {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -173,10 +170,9 @@
 
   &__mobile-menu {
     position: fixed;
-    inset: $navbar-height 0 0;
-    z-index: -1;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) min(22rem, 88vw);
+    inset: 0;
+    z-index: 100;
+    display: block;
     visibility: visible;
 
     &[hidden] {
@@ -189,18 +185,22 @@
   }
 
   &__backdrop {
-    grid-column: 1;
-    min-height: 100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     background: rgb(0 0 0 / 36%);
   }
 
   &__drawer {
-    grid-column: 2;
+    position: absolute;
+    top: $navbar-height;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    min-width: 0;
-    min-height: 100%;
+    width: min(22rem, 88vw);
     padding: max(1rem, env(safe-area-inset-top)) 1rem calc(1rem + env(safe-area-inset-bottom));
     overflow-y: auto;
     background-color: $color-bg;
