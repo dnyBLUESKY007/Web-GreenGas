@@ -17,17 +17,17 @@
 ## 命名
 
 ```
-.cursor/issues/issue-NNNN-<slug>.md
+ai-memories/issues/issue-NNNN-<slug>.md
 ```
 
-例：`.cursor/issues/issue-0001-login-dark-mode.md`。使用四位零填充编号（从 0001 开始），同批可不同 slug。
+例：`ai-memories/issues/issue-0001-login-dark-mode.md`。使用四位零填充编号（从 0001 开始），同批可不同 slug。
 
 ## 生命周期
 
-1. **捕获**：使用 `issue-log` skill 生成文件，填 frontmatter（id/status/priority/tags/created/related）和现象/期待/背景。**只登记、不写代码、不 commit**。
+1. **捕获**：生成文件，填 frontmatter（id/status/priority/tags/created/related）和现象/期待/背景。**只登记、不写代码、不 commit**。
 2. **暂存期**：可追加讨论或上下文到 issue 文件（可选）。
-3. **批量消灭**：用户显式触发（清理/批量修 issue 等），调用 `issue-sweep` skill。skill 会评估关联性、分组，然后委托 `task-plan` 生成批量修复 Plan；实现后将对应 issue 设为 `closed`，并写 `resolved-by`。
-4. **提交**：经 `git-agent` 提交，message 包含 `Fixes: #0001, #0002`（自动关联）。
+3. **批量处理**：仅在用户显式触发后，评估关联性、分组并创建批量修复 Plan；实现后将对应 issue 设为 `closed`，并写 `resolved-by`。
+4. **提交**：相关提交的 message 包含 `Fixes: #0001, #0002`（自动关联）。
 
 ## 状态
 
@@ -38,12 +38,12 @@
 
 ## 归档
 
-issue 完成（或明确 wontfix）后可保留作为历史检索；无需删除。数量过多时可移入 `.cursor/issues/archive/`。
+issue 完成（或明确 wontfix）后可保留作为历史检索；无需删除。数量过多时可移入 `ai-memories/issues/archive/`。
 
 ## 关联
 
-- issue 可在 `.cursor/tasks/` Plan 文档的「关联」字段引用。
-- commit / git-agent 会自动在 message 引用 `Fixes: #NNNN`。
-- 必要时在 `.cursor/memories/` 中记录可复用的教训（通过 `memory-update` skill）。
+- issue 可在 `ai-memories/tasks/` Plan 文档的「关联」字段引用。
+- 相关 commit 在 message 中引用 `Fixes: #NNNN`。
+- 必要时在 `ai-memories/memories/` 中记录可复用的教训。
 
-配套规则见 [`.cursor/rules/workflow/ai-workflow.mdc`](../rules/workflow/ai-workflow.mdc)；捕获用 `issue-log` skill，批量处理用 `issue-sweep` skill；模板见 [`TEMPLATE.md`](TEMPLATE.md)。
+模板见 [`TEMPLATE.md`](TEMPLATE.md)。

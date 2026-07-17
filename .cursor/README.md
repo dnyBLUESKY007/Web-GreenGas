@@ -24,7 +24,7 @@
 | `.cursor/rules/` | 常驻规则（见下） |
 | `.cursor/skills/` | 可调用技能（见下） |
 
-这些目录里的文件目前多为**模板/占位骨架**（如 `memories/projectbrief.md` 中的 `<...>` 占位符），设计上是让新项目 clone 本模板后，随开发进度逐步填实，而不是一开始就有具体项目内容。
+工具配置保留可复用的工作流约束；`ai-memories/` 则保存本项目已沉淀的上下文、计划与决策。新项目应按实际进展初始化自己的记录，不应把本项目内容当作通用模板。
 
 ## Rules 简述（`.cursor/rules/`，常驻规则）
 
@@ -33,7 +33,7 @@
 - **`safety/git-permissions.mdc`**（`alwaysApply: true`）：Git 权限分层——`add`/`commit` 可自主执行；普通 `push`/分支操作需 `AskQuestion` 确认；改历史类操作（rebase/amend/reset/force）需先出方案再确认；统一 commit message 格式（`type(scope): subject` + `Why`/`How`/`Refs`）。
 - **`safety/code-security.mdc`**（按语言文件类型触发）：输入校验、参数化查询、密钥不硬编码、错误信息不泄露内部细节、鉴权必须服务端校验。
 - **`coding-guidelines/`**（按语言文件类型触发）：`code-quality.mdc`（函数聚焦、早返回、控制复杂度）、`documentation.mdc`（公共 API 注释规范，按语言区分 JSDoc/Docstring/Doxygen/Javadoc）、`naming-conventions.mdc`（命名风格）、`dependency-management.mdc`（依赖引入前的复用与健康度检查）、以及 `python.mdc`/`typescript.mdc`/`java.mdc`/`cpp.mdc` 等各语言专项规范。
-- **`project-related/`**：当前为占位目录（含 `.gitkeep`），预留给具体项目落地时补充的专属规则（如 `website-design.mdc` 一类）。
+- **`project-related/`**：项目专属规则；当前包含工业官网的信息与视觉原则。
 
 ## Skills 简述（`.cursor/skills/`，按需调用）
 

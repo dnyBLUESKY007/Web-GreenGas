@@ -1,6 +1,6 @@
 # Changelog 写入模板
 
-写入 [`docs/changelog.md`](../../../docs/changelog.md) 时，在文件**顶部**插入以下结构（保留下方历史记录）：
+写入 `docs/changelog.md` 时，在文件**顶部**插入以下结构（保留下方历史记录）：
 
 ```markdown
 ## Reorganize YYYY-MM-DD

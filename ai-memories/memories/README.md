@@ -20,9 +20,9 @@ decisions/           ← ADR：单条重大决策的“为什么”，含被否�
 
 ## 读写时机
 
-- **任务开始**：至少读 `activeContext.md`；涉及架构/新模块再读 `projectbrief.md`、`systemPatterns.md`。
+- **任务开始**：至少读 `activeContext.md`；涉及架构/新模块再读 `projectbrief.md`、`systemPatterns.md`、`techContext.md`。
 - **过程中**：重大决策 → 新增一条 `decisions/NNNN-*.md`；架构变化 → 更新 `systemPatterns.md`。
-- **里程碑/收尾**：用 `memory-update` skill 增量刷新 `activeContext.md` 与 `progress.md`，把过时细节归档、只留结论。
+- **里程碑/收尾**：增量刷新 `activeContext.md` 与 `progress.md`，把过时细节归档、只留结论。
 
 ## 维护原则
 

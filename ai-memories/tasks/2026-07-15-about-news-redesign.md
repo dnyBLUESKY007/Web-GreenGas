@@ -2,7 +2,7 @@
 
 - **日期**：2026-07-15
 - **状态**：已完成
-- **关联**：`.cursor/memories/activeContext.md`、`.cursor/memories/systemPatterns.md`
+- **关联**：`ai-memories/memories/activeContext.md`、`ai-memories/memories/systemPatterns.md`
 
 ## Problem / 目标
 

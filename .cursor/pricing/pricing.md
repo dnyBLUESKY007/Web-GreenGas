@@ -34,17 +34,17 @@ Tier 4  Opus 4.8 ↔ GPT-5.5
 
 **Tier 3 分工：** Composer 2.5 负责 Cursor 内多文件 Apply 与报错循环；Grok Build 0.1 负责 CI/自动化等 IDE 外场景。两者 Agent 指数接近（215 vs 189），成本差异不大。
 
-**Tier 4 不建议常备 Fable 5。** Fable 5 相对成本 4085，比 Opus 4.8 贵约 54%，且不在 `MODEL.md` Tier 4 名单；除非实测明显更强，否则 Opus 4.8 + GPT-5.5 已足够。
+**Tier 4 不建议常备 Fable 5。** Fable 5 相对成本 4085，比 Opus 4.8 贵约 54%，且未列入本文件的 Tier 4 建议；除非实测明显更强，否则 Opus 4.8 + GPT-5.5 已足够。
 
 **Tier 2 不宜单点。** Grok 4.3 省钱但复杂框架一致性弱于 Sonnet；建议至少保留 Sonnet 4.5 或 Kimi K2.5 作备选，不必日常常驻。
 
 ---
 
-本文档说明 `cursor-models.csv` 中各收费指数的计算方式、权重设计依据，以及任务级别（Tier）的选型逻辑。
+本文档说明 `pricing.csv` 中各收费指数的计算方式、权重设计依据，以及任务级别（Tier）的选型逻辑。
 
-- **原始单价来源**：[`cursor-pricing.md`](cursor-pricing.md)（Cursor 官方定价，单位：$/1M tokens）
-- **模型清单与预计算指数**：[`cursor-models.csv`](cursor-models.csv)（Excel 排序用）
-- **任务分级与选型逻辑**：[`MODEL.md`](MODEL.md)
+- **原始定价摘录**：[`bak.md`](bak.md)（Cursor 官方定价，单位：$/1M tokens）
+- **模型清单与预计算指数**：[`pricing.csv`](pricing.csv)（Excel 排序用）
+- **任务分级与选型逻辑**：本文件的「四、任务级别（Tier）说明」。
 
 ---
 
@@ -167,7 +167,7 @@ Tier 4 模型可在 Agent 指数结果上再乘 `1.3`。
 
 ## 四、任务级别（Tier）说明
 
-Tier 定义来自 [`MODEL.md`](MODEL.md)，与收费指数的关系如下：
+Tier 定义见本节，与收费指数的关系如下：
 
 | Tier | 名称 | 核心业务场景 | 推荐排序列 | 代表模型 |
 |------|------|-------------|-----------|---------|
@@ -199,7 +199,7 @@ Tier 定义来自 [`MODEL.md`](MODEL.md)，与收费指数的关系如下：
 
 ## 五、Agent 重度下的性价比参考
 
-以 GPT-5.4 Nano 相对成本 = 100 为基准（数据见 `cursor-models.csv`）：
+以 GPT-5.4 Nano 相对成本 = 100 为基准（数据见 `pricing.csv`）：
 
 | 相对成本 | 模型 | 结论 |
 |--------:|------|------|
@@ -229,7 +229,6 @@ Tier 定义来自 [`MODEL.md`](MODEL.md)，与收费指数的关系如下：
 
 | 文件 | 内容 |
 |------|------|
-| `cursor-pricing.md` | Cursor 官方原始定价表 |
-| `cursor-models.csv` | 全模型数字列 + 预计算指数（Excel 用） |
-| `MODEL.md` | 任务 Tier 定义与模型归属 |
+| `bak.md` | Cursor 官方原始定价表摘录 |
+| `pricing.csv` | 全模型数字列 + 预计算指数（Excel 用） |
 | `pricing.md` | 本文档：指数公式与 Tier 说明 |

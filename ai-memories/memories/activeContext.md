@@ -1,7 +1,7 @@
 # Active Context（当前焦点）
 
 > 更新最频繁的文件。每次里程碑或换方向时刷新，保证“下一步一目了然”。
-> 最近更新：2026-07-15
+> 最近更新：2026-07-17
 
 ## 当前焦点
 
@@ -9,6 +9,7 @@ About 与 News 已按旧站归档重建：About 采用公司、团队、发展�
 
 ## 近期变更
 
+- 2026-07-17 协作记录审计：修复迁移后残留路径与失效文档链接；数字记忆已改为自包含的工具无关记录，网站验收原则已沉淀到 `projectbrief.md`。人工输入中的历史记录保持原样，仅标注其旧路径已过时。
 - 2026-07-15 About / News：迁移旧站公司介绍、团队和 6 篇新闻；新增 JSON 驱动新闻分类、`/news/detail/?id=` 统一详情、中文校订及英俄默认翻译，复用已登记 OSS 图片
 - 2026-07-15 Solutions 产品中心：接入 `products_v2` 86 张 OSS WebP 溯源记录；页面按“场景 + 经典案例”与“四大系列 + 具体产品”双路径重构，14 个产品使用已修代表图
 - 2026-07-11 五页 page-header 背景：接入 `page-headers/01–05.webp`（Solutions/About/News/FAQ/Contact），`image-resources.json` 已登记；需上传 OSS 后线上可见
@@ -19,8 +20,8 @@ About 与 News 已按旧站归档重建：About 采用公司、团队、发展�
 - 2026-07-05 Solutions 场景图：四张 scene 图上传 OSS，`solutions.json` + `cdnUrl('scene')` 接入；新增 `image-resources.json` 图片资源说明表（85 条）
 - 2026-07-05 首页视口高度节奏：统一 `--home-screen-*` 变量，桌面端按 TALK-0002 比例约束各屏（75/25、60、60/40、70/30、100% About）
 - 2026-07-05 首页改版：重排模块顺序；Solutions 交互面板；CapabilityBand 环形流程；ProductGrid；About 整合联系渠道
-- 2026-07-04 文档整理：`docs/`、`TODO/`、`README-TMP.md` 迁入 `.cursor/memories/` 与 issue，冗余文件已删除
-- 2026-07-04 workflow 脚手架与 rules/skills 重组（`.cursor/bakup` 归档旧版）
+- 2026-07-04 文档整理：`docs/`、`TODO/`、`README-TMP.md` 的有效内容已迁入项目记忆与待办记录，冗余文件已删除
+- 2026-07-04 协作记录结构完成重组并初始化
 - 2026-07-03 Hero viewport 重建 + 轮播交互优化；v3 modern fusion 皮肤合并为生产基线
 
 ## 下一步

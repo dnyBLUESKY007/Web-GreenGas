@@ -15,18 +15,18 @@
 ## 命名
 
 ```
-.cursor/tasks/YYYY-MM-DD-<slug>.md
+ai-memories/tasks/YYYY-MM-DD-<slug>.md
 ```
 
-例：`.cursor/tasks/2026-07-01-auth-oauth-flow.md`。同日多任务用不同 slug。
+例：`ai-memories/tasks/2026-07-01-auth-oauth-flow.md`。同日多任务用不同 slug。
 
 ## 生命周期
 
-1. **开工**：复制 [`TEMPLATE.md`](TEMPLATE.md) 生成文档，填 Problem / 思路 / 受影响文件 / 分步计划，经用户确认后动手（可用 `task-plan` skill 自动生成）。
+1. **开工**：复制 [`TEMPLATE.md`](TEMPLATE.md) 生成文档，填 Problem / 思路 / 受影响文件 / 分步计划，经用户确认后动手。
 2. **过程**：卡点或设计变更时，追加到 `## Debug Notes`。
-3. **收尾**：填写 `## Lessons Learned`，并回写 `.cursor/memories/activeContext.md`（下一步）与 `progress.md`（进展）。
-4. **提交**：commit 时在 message 的 `Refs:` 引用本文件路径（见 `rules/safety/git-permissions.mdc`，或调用 `git-agent`）。
+3. **收尾**：填写 `## Lessons Learned`，并回写 `ai-memories/memories/activeContext.md`（下一步）与 `progress.md`（进展）。
+4. **提交**：如提交与本任务有关，在提交说明的 `Refs:` 中引用本文件路径。
 
 ## 归档
 
-任务完成且经验已沉淀进 Memory Bank 后，Plan 文档可保留作为历史检索；无需删除。数量过多时可移入 `.cursor/tasks/archive/`。
+任务完成且经验已沉淀进 Memory Bank 后，Plan 文档可保留作为历史检索；无需删除。数量过多时可移入 `ai-memories/tasks/archive/`。

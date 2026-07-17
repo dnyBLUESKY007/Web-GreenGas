@@ -32,14 +32,14 @@ disable-model-invocation: true
 - 相关联的已有 issue / task / ADR 可填 `related`。
 
 ### Step 2 — 分配编号
-- 只读扫描 `cursor/issues/` 下 `issue-*.md` 的 frontmatter `id`。
+- 只读扫描 `ai-memories/issues/` 下 `issue-*.md` 的 frontmatter `id`。
 - 取最大值 +1，格式化为四位零填充（如 0001、0012）。
 - 生成 slug：标题转 kebab-case 短语（如 `login-button-dark-mode`）。
 - 若同日/同名冲突，slug 追加序号或更具体描述。
 - 文件名：`issue-NNNN-<slug>.md`
 
 ### Step 3 — 生成文件
-- 复制 [`TEMPLATE.md`](../../issues/TEMPLATE.md) 内容写入新文件并填充：
+- 复制 [`TEMPLATE.md`](../../../ai-memories/issues/TEMPLATE.md) 内容写入新文件并填充：
   - frontmatter：`id`、`status: open`、`priority`、`tags`、`created: <今日>`、`related`
   - `# <标题>`
   - `- **现象**：...`

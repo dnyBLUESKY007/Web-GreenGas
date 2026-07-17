@@ -4,7 +4,7 @@ status: open          # open / in-progress / closed / wontfix
 priority: medium       # low / medium / high
 tags: []               # 如 [ui, auth, perf]
 created: <YYYY-MM-DD>
-related: []            # 关联 issue / .cursor/tasks 文档 / ADR
+related: []            # 关联 issue / ai-memories/tasks 文档 / ADR
 ---
 # <一句话标题>
 
@@ -14,5 +14,5 @@ related: []            # 关联 issue / .cursor/tasks 文档 / ADR
 
 <!-- 关闭时追加以下 frontmatter 字段（issue-sweep 自动处理）：
 closed: <YYYY-MM-DD>
-resolved-by: .cursor/tasks/<plan>.md   # 或 commit hash
+resolved-by: ai-memories/tasks/<plan>.md   # 或 commit hash
 -->

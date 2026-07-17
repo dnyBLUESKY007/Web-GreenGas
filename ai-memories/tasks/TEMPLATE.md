@@ -30,6 +30,6 @@
 
 ## Lessons Learned
 
-> 任务收尾时填写，供后续任务参考；重要结论应同步回 `.cursor/memories/`。
+> 任务收尾时填写，供后续任务参考；重要结论应同步回 `ai-memories/memories/`。
 
 - <吸取的经验、可复用的模式、要避免的坑>

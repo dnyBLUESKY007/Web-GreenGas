@@ -31,7 +31,7 @@ npx tsc --noEmit  # 类型检查
 
 - 环境变量文件在 `frontend/.env`（不提交）；参考 `frontend/.env.example`
 - 图片 CDN 基址：`frontend/src/config/assets.ts` → `CDN_BASE`
-- 设计规范：`.cursor/rules/project-related/website-design.mdc`
+- 体验与信息验收原则见 `projectbrief.md`。
 
 ## 技术约束
 

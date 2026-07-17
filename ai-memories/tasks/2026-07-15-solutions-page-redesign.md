@@ -2,7 +2,7 @@
 
 - **日期**：2026-07-15
 - **状态**：已完成
-- **关联**：`.cursor/memories/activeContext.md`、`.cursor/memories/systemPatterns.md`
+- **关联**：`ai-memories/memories/activeContext.md`、`ai-memories/memories/systemPatterns.md`
 
 ## Problem / 目标
 
@@ -20,7 +20,7 @@
 - `frontend/src/pages/solutions/` — 重构页面及渲染模块
 - `frontend/src/styles/components/_solutions-page.scss` — Solutions 专属响应式样式
 - `frontend/src/i18n/locales/*.json` — 三语页面文案
-- `.cursor/memories/activeContext.md`、`.cursor/memories/progress.md` — 里程碑回写
+- `ai-memories/memories/activeContext.md`、`ai-memories/memories/progress.md` — 里程碑回写
 
 ## 分步计划
 
@@ -36,7 +36,7 @@
 
 ## Lessons Learned
 
-> 任务收尾时填写，供后续任务参考；重要结论同步回 `.cursor/memories/`。
+> 任务收尾时填写，供后续任务参考；重要结论同步回 `ai-memories/memories/`。
 
 - `image-resources.json` 是资源溯源登记表而非运行时索引；每个 OSS 产品图 URL 仍须由内容 JSON 明确引用。
 - 产品系列与具体产品分离为两个 JSON 数据源：系列承载定位与应用说明，产品承载多语言名称、说明与代表图，后续扩展无需修改页面结构。

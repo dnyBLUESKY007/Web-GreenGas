@@ -2,7 +2,7 @@
 
 - **日期**：2026-07-11
 - **状态**：已完成
-- **关联**：`.cursor/memories/activeContext.md`、`.cursor/memories/systemPatterns.md`
+- **关联**：`ai-memories/memories/activeContext.md`、`ai-memories/memories/systemPatterns.md`
 
 ## Problem / 目标
 
@@ -19,7 +19,7 @@
 - `frontend/src/components/capability-band/CapabilityBand.ts` — 重建能力区的结构和流程卡片。
 - `frontend/src/styles/components/_capability-band.scss` — 实现浅色背景、统计栏、流程卡片、连接器及响应式布局。
 - `frontend/src/styles/layout/_home-screen.scss` — 如实际内容高度需要，调整能力区的视口高度约束。
-- `.cursor/memories/activeContext.md` — 完成后更新当前视觉审阅进度。
+- `ai-memories/memories/activeContext.md` — 完成后更新当前视觉审阅进度。
 
 ## 分步计划
 
@@ -38,6 +38,6 @@
 
 ## Lessons Learned
 
-> 任务收尾时填写，供后续任务参考；重要结论应同步回 `.cursor/memories/`。
+> 任务收尾时填写，供后续任务参考；重要结论应同步回 `ai-memories/memories/`。
 
 - 图片占位区应保持在组件结构中，真实工程图片到位后仅需替换媒体区内容，不影响流程卡片和响应式布局。

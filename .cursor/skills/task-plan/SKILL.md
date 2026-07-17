@@ -46,7 +46,7 @@ disable-model-invocation: true
 
 ### Step 3 — 生成 Plan 文档
 
-复制 [`TEMPLATE.md`](../../tasks/TEMPLATE.md) 内容写入新文件并填充：
+复制 [`TEMPLATE.md`](../../../ai-memories/tasks/TEMPLATE.md) 内容写入新文件并填充：
 
 - **Problem / 目标**：结合 Memory Bank 给足背景。
 - **核心思路**：方案与关键取舍，说明为什么这么做。
