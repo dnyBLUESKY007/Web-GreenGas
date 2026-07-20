@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build frontend and deploy static site to Aliyun ECS (Nginx).
+# Build frontend and deploy static site to the Ubuntu Nginx host.
 #
 # Usage:
 #   ./scripts/deploy.sh
@@ -7,7 +7,7 @@
 #   ./scripts/deploy.sh --dry-run
 #
 # Override via environment variables:
-#   DEPLOY_HOST, DEPLOY_USER, DEPLOY_REMOTE_DIR, DEPLOY_BACKUP_DIR
+#   DEPLOY_HOST, DEPLOY_USER, DEPLOY_REMOTE_DIR
 
 set -euo pipefail
 
@@ -34,10 +34,9 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 FRONTEND_DIR="$REPO_ROOT/frontend"
 DIST_DIR="$FRONTEND_DIR/dist"
 
-DEPLOY_HOST="${DEPLOY_HOST:-47.76.112.33}"
+DEPLOY_HOST="${DEPLOY_HOST:-web-server}"
 DEPLOY_USER="${DEPLOY_USER:-root}"
 REMOTE_DIR="${DEPLOY_REMOTE_DIR:-/var/www/corp/dist}"
-BACKUP_DIR="${DEPLOY_BACKUP_DIR:-/var/www/backups}"
 REMOTE_PARENT="$(dirname "$REMOTE_DIR")"
 SSH_TARGET="${DEPLOY_USER}@${DEPLOY_HOST}"
 
@@ -77,24 +76,16 @@ if [[ "$DRY_RUN" -eq 0 && ! -f "$DIST_DIR/index.html" ]]; then
   exit 1
 fi
 
-step 'Backing up remote dist and preparing target directory'
-BACKUP_OUTPUT="$(
+step 'Replacing remote dist and preparing target directory'
+PREPARE_OUTPUT="$(
   remote "set -e
-TS=\$(date +%Y%m%d-%H%M%S)
-mkdir -p '$BACKUP_DIR'
-if [ -d '$REMOTE_DIR' ] && [ \"\$(ls -A '$REMOTE_DIR' 2>/dev/null || true)\" ]; then
-  BACKUP_PATH='$BACKUP_DIR/corp-dist-'\$TS
-  cp -a '$REMOTE_DIR' \"\$BACKUP_PATH\"
-  echo backup:\$BACKUP_PATH
-else
-  echo backup:none
-fi
 rm -rf '$REMOTE_DIR'
-mkdir -p '$REMOTE_DIR'"
+mkdir -p '$REMOTE_DIR'
+echo prepare:ready"
 )"
 
-if [[ "$BACKUP_OUTPUT" =~ backup:(.*) ]]; then
-  echo "Backup: ${BASH_REMATCH[1]}"
+if [[ "$PREPARE_OUTPUT" =~ prepare:(.*) ]]; then
+  echo "Remote directory: ${BASH_REMATCH[1]}"
 fi
 
 step 'Uploading dist to server'
@@ -124,4 +115,4 @@ if [[ "$DRY_RUN" -eq 0 ]]; then
 fi
 
 printf '\nDeploy complete: http://%s/\n' "$DEPLOY_HOST"
-echo 'Rollback: restore latest backup under /var/www/backups/ then reload nginx.'
+echo 'Rollback: deploy a previously built artifact again, then reload nginx.'

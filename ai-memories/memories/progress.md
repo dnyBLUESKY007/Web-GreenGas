@@ -1,9 +1,11 @@
 # Progress（进展与里程碑）
 
+> 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
+
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
 
 > 项目的“状态快照”：已完成、待办、已知问题。细节可随时间模糊化，只保留结论。
-> 最近更新：2026-07-17
+> 最近更新：2026-07-20
 
 ## 已完成
 

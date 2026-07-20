@@ -1,5 +1,9 @@
 # System Patterns（架构与关键决策）
 
+## Production deployment update (2026-07-20)
+
+Production is now an Ubuntu 24.04 host accessed through the local SSH alias `web-server`. Nginx serves the Vite build from `/var/www/corp/dist` at `/`, using `try_files $uri $uri/ /index.html`. The local `scripts/deploy.ps1` and `scripts/deploy.sh` build, replace that directory, upload the new `dist`, normalize `www-data` permissions, validate/reload Nginx, and check local HTTP. Server-side backups are temporarily disabled; rollback requires redeploying a retained local or CI build artifact. See ADR-0007.
+
 > 系统怎么搭起来的、为什么这么搭。重点是模式与决策，而非逐行实现。
 
 ## 架构总览

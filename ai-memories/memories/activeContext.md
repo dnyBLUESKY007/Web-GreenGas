@@ -1,13 +1,15 @@
 # Active Context（当前焦点）
 
+> 2026-07-20: Production moved to the new Ubuntu 24.04 server reached with `ssh web-server`. Nginx serves `/var/www/corp/dist`; both deployment scripts now target this SSH alias and replace the remote dist without creating server-side backups. The current site was built and deployed successfully; the server-side HTTP health check returned 200.
+
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
 
 > 更新最频繁的文件。每次里程碑或换方向时刷新，保证“下一步一目了然”。
-> 最近更新：2026-07-17
+> 最近更新：2026-07-20
 
 ## 当前焦点
 
-About 与 News 已按旧站归档重建：About 采用公司、团队、发展资料与可信入口；News 已迁移 6 篇真实内容，提供分类列表与统一详情页。生产环境已部署至阿里云 ECS（`http://47.76.112.33/`），本地一键发布脚本就绪。
+About 与 News 已按旧站归档重建：About 采用公司、团队、发展资料与可信入口；News 已迁移 6 篇真实内容，提供分类列表与统一详情页。生产环境已迁移至通过 `ssh web-server` 访问的 Ubuntu 24.04 主机，本地一键发布脚本就绪。
 
 ## 近期变更
 
@@ -20,7 +22,8 @@ About 与 News 已按旧站归档重建：About 采用公司、团队、发展�
 - 2026-07-11 工程核心能力：接入 `capacity/1–5.webp` 与 `capacity/background.webp`，替换卡片媒体占位符与区段背景
 - 2026-07-11 图片资源工作流固化：`resources_png`（原图/AI）→ `libwebp` → `resources` → OSS 上传；有改动须同步 `image-resources.json`（见 techContext / systemPatterns / ADR-0002）
 - 2026-07-11 首页工程核心能力：由深色环形流程改为浅色统计栏 + 五步工程卡片；桌面横向、移动端纵向布局。
-- 2026-07-10 生产部署：站点发布至 ECS `47.76.112.33`（Nginx `/` → `/var/www/corp/dist`）；新增 `scripts/deploy.ps1` / `deploy.sh`；ADR-0006
+- 2026-07-10 生产部署（历史）：站点曾发布至 ECS `47.76.112.33`；该目标已于 2026-07-20 更换
+- 2026-07-20 生产迁移：新 Ubuntu 24.04 主机通过 `ssh web-server` 访问，Nginx `/` → `/var/www/corp/dist`；`scripts/deploy.ps1` / `deploy.sh` 默认使用该别名且暂不做服务器端备份；ADR-0007
 - 2026-07-05 Solutions 场景图：四张 scene 图上传 OSS，`solutions.json` + `cdnUrl('scene')` 接入；新增 `image-resources.json` 图片资源说明表（85 条）
 - 2026-07-05 首页视口高度节奏：统一 `--home-screen-*` 变量，桌面端按 TALK-0002 比例约束各屏（75/25、60、60/40、70/30、100% About）
 - 2026-07-05 首页改版：重排模块顺序；Solutions 交互面板；CapabilityBand 环形流程；ProductGrid；About 整合联系渠道

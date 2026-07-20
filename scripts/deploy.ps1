@@ -1,22 +1,23 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-  Build frontend and deploy static site to Aliyun ECS (Nginx).
+  Build frontend and deploy static site to the Ubuntu Nginx host.
 
 .DESCRIPTION
   1. npm run build (frontend/dist)
-  2. Backup remote /var/www/corp/dist
+  2. Replace remote /var/www/corp/dist
   3. scp dist to server
   4. Fix permissions + reload nginx
   5. Health check via SSH curl
 
   Override via environment variables:
-    DEPLOY_HOST, DEPLOY_USER, DEPLOY_REMOTE_DIR, DEPLOY_BACKUP_DIR
+    DEPLOY_HOST, DEPLOY_USER, DEPLOY_REMOTE_DIR
 
 .EXAMPLE
   .\scripts\deploy.ps1
   .\scripts\deploy.ps1 -SkipBuild
   .\scripts\deploy.ps1 -DryRun
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1
 #>
 [CmdletBinding()]
 param(
@@ -32,10 +33,9 @@ $RepoRoot = Resolve-Path (Join-Path $PSScriptRoot '..')
 $FrontendDir = Join-Path $RepoRoot 'frontend'
 $DistDir = Join-Path $FrontendDir 'dist'
 
-$DeployHost = if ($env:DEPLOY_HOST) { $env:DEPLOY_HOST } else { '47.76.112.33' }
+$DeployHost = if ($env:DEPLOY_HOST) { $env:DEPLOY_HOST } else { 'web-server' }
 $DeployUser = if ($env:DEPLOY_USER) { $env:DEPLOY_USER } else { 'root' }
 $RemoteDir = if ($env:DEPLOY_REMOTE_DIR) { $env:DEPLOY_REMOTE_DIR } else { '/var/www/corp/dist' }
-$BackupDir = if ($env:DEPLOY_BACKUP_DIR) { $env:DEPLOY_BACKUP_DIR } else { '/var/www/backups' }
 $RemoteParent = Split-Path $RemoteDir -Parent
 $SshTarget = "${DeployUser}@${DeployHost}"
 
@@ -181,43 +181,27 @@ if (-not $DryRun -and -not (Test-Path (Join-Path $DistDir 'index.html'))) {
     throw "Missing $DistDir\index.html - run build first or remove -SkipBuild"
 }
 
-$backupScript = @'
+$prepareRemoteScript = @'
 set -e
-echo 'backup:start'
-TS=$(date +%Y%m%d-%H%M%S)
 REMOTE_DIR='__REMOTE_DIR__'
-BACKUP_DIR='__BACKUP_DIR__'
-echo "backup:ts=$TS"
-mkdir -p "$BACKUP_DIR"
-if [ -d "$REMOTE_DIR" ] && [ "$(ls -A "$REMOTE_DIR" 2>/dev/null || true)" ]; then
-  BACKUP_PATH="$BACKUP_DIR/corp-dist-$TS"
-  echo "backup:copying -> $BACKUP_PATH"
-  cp -a "$REMOTE_DIR" "$BACKUP_PATH"
-  echo "backup:$BACKUP_PATH"
-else
-  echo "backup:none"
-fi
-echo 'backup:removing old dist'
+echo 'prepare:removing current dist'
 rm -rf "$REMOTE_DIR"
 mkdir -p "$REMOTE_DIR"
-echo 'backup:ready'
-'@ -replace '__REMOTE_DIR__', $RemoteDir -replace '__BACKUP_DIR__', $BackupDir
+echo 'prepare:ready'
+'@ -replace '__REMOTE_DIR__', $RemoteDir
 
-Write-Step 'Backing up remote dist and preparing target directory'
-$backupOutput = if ($DryRun) {
-    Write-Host '[dry-run] backup + prepare remote dir'
-    'backup:(dry-run)'
+Write-Step 'Replacing remote dist and preparing target directory'
+$prepareOutput = if ($DryRun) {
+    Write-Host '[dry-run] remove + prepare remote dir'
+    'prepare:(dry-run)'
 }
 else {
-    Invoke-RemoteScript -Script $backupScript -Label 'backup' -WaitSec $TimeoutSec
+    Invoke-RemoteScript -Script $prepareRemoteScript -Label 'prepare remote directory' -WaitSec $TimeoutSec
 }
-if ($backupOutput) {
-    ($backupOutput.TrimEnd() -split "`r?`n") | ForEach-Object {
+if ($prepareOutput) {
+    ($prepareOutput.TrimEnd() -split "`r?`n") | ForEach-Object {
         if ($_) { Write-Host "    $_" }
     }
-}
-if ($backupOutput -match 'backup:(.+)') {
-    Write-Host "Backup: $($Matches[1].Trim())"
 }
 
 Write-Step 'Uploading dist to server'
@@ -260,4 +244,4 @@ else {
 }
 
 Write-Host "`nDeploy complete: http://${DeployHost}/" -ForegroundColor Green
-Write-Host 'Rollback: restore latest backup under /var/www/backups/ then reload nginx.'
+Write-Host 'Rollback: deploy a previously built artifact again, then reload nginx.'

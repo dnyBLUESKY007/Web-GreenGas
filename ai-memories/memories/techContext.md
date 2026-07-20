@@ -1,5 +1,18 @@
 # Tech Context（技术栈与环境）
 
+## Current production deployment (2026-07-20)
+
+| Item | Value |
+|------|-------|
+| SSH target | `ssh web-server` (root login configured in the local SSH alias) |
+| Operating system | Ubuntu 24.04.4 LTS |
+| Web server | Nginx, enabled with systemd |
+| Static root | `/var/www/corp/dist` |
+| Nginx site | `/etc/nginx/sites-available/corp` → `/etc/nginx/sites-enabled/corp` |
+| Firewall | UFW installed but inactive; no rules were added or changed |
+
+`scripts/deploy.ps1` and `scripts/deploy.sh` default to `web-server`. They remove and recreate the remote static directory before upload, then apply `www-data:www-data` ownership, `755` directory permissions and `644` file permissions. Per-deployment server backups are temporarily disabled. To roll back, deploy a retained prior build artifact. See ADR-0007.
+
 > 让 AI/新成员能快速把项目跑起来、并了解技术约束。
 
 ## 技术栈
@@ -62,11 +75,11 @@ nginx -s reload   # 配置变更后 reload
 
 | 项 | 值 |
 |----|-----|
-| SSH | `ssh root@47.76.112.33` |
-| 站点 URL | `http://47.76.112.33/` |
+| SSH | `ssh web-server` |
+| 站点 URL | 由 `web-server` SSH 别名对应的生产入口提供；尚未登记域名 |
 | 静态根目录 | `/var/www/corp/dist` |
-| 备份目录 | `/var/www/backups/corp-dist-*` |
-| Nginx 配置 | `/etc/nginx/conf.d/magic-insoles.conf` |
+| 备份 | 暂时关闭服务器端逐次发布备份 |
+| Nginx 配置 | `/etc/nginx/sites-available/corp`（启用链接位于 `sites-enabled/corp`） |
 
 **一键发布**（仓库根目录）：
 
@@ -85,13 +98,13 @@ chmod +x scripts/deploy.sh
 ./scripts/deploy.sh --dry-run
 ```
 
-环境变量可覆盖默认值：`DEPLOY_HOST`、`DEPLOY_USER`、`DEPLOY_REMOTE_DIR`、`DEPLOY_BACKUP_DIR`。
+环境变量可覆盖默认值：`DEPLOY_HOST`、`DEPLOY_USER`、`DEPLOY_REMOTE_DIR`。
 
-脚本流程：build → 远程备份 → `scp` 上传 → `chown/chmod` → `nginx -t && reload` → 本机 `curl` 健康检查。
+脚本流程：build → 清理并创建远程目录 → `scp` 上传 → `chown/chmod` → `nginx -t && reload` → 本机 `curl` 健康检查。
 
-**回滚**：恢复 `/var/www/backups/` 下最新 `corp-dist-*` 到 `/var/www/corp/dist`，再 reload nginx。
+**回滚**：重新部署保留的已知可用构建产物到 `/var/www/corp/dist`，再 reload nginx。
 
-同机隔离：`/` 为本站；`/insoles/`、`/api/` 为其他项目，发布脚本不修改其配置。详见 ADR-0006。
+当前新主机仅配置本站根路径 `/`；部署脚本不修改站点配置。详见 ADR-0007。
 
 ## 图片资源工作流
 
