@@ -3,9 +3,8 @@ import { createContactForm } from '@/components/contact-form/ContactForm';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { setPageHeaderBackground } from '@/config/assets';
 import { t } from '@/i18n';
-import { renderContactChannels } from '@/pages/contact/renderContact';
+import { renderContactChannels, renderFaq } from '@/pages/contact/renderContact';
 import { initPage } from '@/utils/mountLayout';
-import { basePath } from '@/utils/path';
 
 function renderContactPage(): void {
   const main = document.getElementById('page-content');
@@ -33,6 +32,22 @@ function renderContactPage(): void {
   const contactLayout = document.createElement('div');
   contactLayout.className = 'contact-layout';
 
+  const faqSection = document.createElement('section');
+  faqSection.id = 'faq';
+  faqSection.className = 'section section--muted contact-faq';
+  const faqContainer = document.createElement('div');
+  faqContainer.className = 'container faq-section-content';
+  faqContainer.appendChild(
+    createSectionTitle({
+      eyebrow: t('faq.eyebrow'),
+      title: t('faq.title'),
+      description: t('faq.desc'),
+    }),
+  );
+  const faqMount = document.createElement('div');
+  faqContainer.appendChild(faqMount);
+  faqSection.appendChild(faqContainer);
+
   // [联系方式] Contact channels
   const channelsMount = document.createElement('div');
   channelsMount.id = 'contact-channels';
@@ -41,17 +56,13 @@ function renderContactPage(): void {
   const formMount = document.createElement('div');
   formMount.appendChild(createContactForm());
 
-  const faqLink = document.createElement('a');
-  faqLink.className = 'contact-faq-link';
-  faqLink.href = basePath('/faq/');
-  faqLink.textContent = t('contact.faqLink');
-
-  contactLayout.append(channelsMount, formMount, faqLink);
+  contactLayout.append(channelsMount, formMount);
   contactContainer.appendChild(contactLayout);
   contactSection.appendChild(contactContainer);
 
-  main.replaceChildren(header, contactSection);
+  main.replaceChildren(header, faqSection, contactSection);
 
+  renderFaq(faqMount);
   renderContactChannels(channelsMount);
 }
 

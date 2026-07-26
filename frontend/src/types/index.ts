@@ -204,7 +204,7 @@ export interface CompanyData {
 export interface NavItem {
   readonly labelKey: string;
   readonly href: string;
-  readonly id: string;
+  readonly id: PageId;
 }
 
 export interface PageMeta {
@@ -215,7 +215,15 @@ export interface PageMeta {
   readonly ogImage: string;
 }
 
-export type PageId = 'home' | 'about' | 'solutions' | 'contact' | 'news' | 'faq';
+export type PageId =
+  | 'home'
+  | 'about'
+  | 'products'
+  | 'industries'
+  | 'support'
+  | 'cases'
+  | 'news'
+  | 'contact';
 
 export interface ImageResourceEntry {
   readonly originalPath: string;

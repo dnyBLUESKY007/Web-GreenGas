@@ -36,16 +36,7 @@ export function createNavbar(activePageId: PageId): HTMLElement {
     nav.appendChild(createNavLink(item, activePageId, 'navbar__link'));
   }
 
-  const actions = document.createElement('div');
-  actions.className = 'navbar__actions';
-
-  const cta = document.createElement('a');
-  cta.className = 'btn btn--primary navbar__cta';
-  cta.href = basePath('/contact/');
-  cta.textContent = t('nav.cta');
-
-  actions.appendChild(cta);
-  inner.append(brand, nav, actions);
+  inner.append(brand, nav);
   header.appendChild(inner);
   document.body.appendChild(createMobileActionDock(activePageId));
 
@@ -98,12 +89,14 @@ function createMobileActionDock(activePageId: PageId): HTMLElement {
   dock.append(panel, buttons);
 
   let activePanel: 'language' | 'menu' | null = null;
-  const closePanel = (): void => {
+  const closePanel = (restoreFocus = false): void => {
+    const trigger = activePanel === 'language' ? languageButton : menuButton;
     activePanel = null;
     panel.hidden = true;
     panel.replaceChildren();
     languageButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) trigger.focus();
   };
 
   const openPanel = (nextPanel: 'language' | 'menu'): void => {
@@ -120,6 +113,7 @@ function createMobileActionDock(activePageId: PageId): HTMLElement {
 
     if (nextPanel === 'language') {
       panel.appendChild(createLangSwitcher(closePanel));
+      panel.querySelector<HTMLElement>('button')?.focus();
       return;
     }
 
@@ -133,6 +127,7 @@ function createMobileActionDock(activePageId: PageId): HTMLElement {
       if ((event.target as HTMLElement).closest('a')) closePanel();
     });
     panel.appendChild(menu);
+    menu.querySelector<HTMLAnchorElement>('a')?.focus();
   };
 
   languageButton.addEventListener('click', () => openPanel('language'));
@@ -140,7 +135,7 @@ function createMobileActionDock(activePageId: PageId): HTMLElement {
   dock.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && activePanel) {
       event.preventDefault();
-      closePanel();
+      closePanel(true);
     }
   });
 
