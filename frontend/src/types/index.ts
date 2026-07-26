@@ -243,6 +243,8 @@ export interface NewsArticle {
   readonly id: string;
   readonly category: NewsCategory;
   readonly date: string;
+  readonly sourceUrl: string;
+  readonly featured: boolean;
   readonly title: string;
   readonly title_zh?: string;
   readonly title_ru?: string;
