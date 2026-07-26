@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Integrated Sandcastle issue #13 by fast-forward. The homepage recomposition retains all previously completed shared content and route contracts. Typecheck and the complete 17-test suite pass; GitHub #13 is closed.
+
 > 2026-07-26: Completed GitHub #13. Homepage now follows the approved nine-part flow, reusing structured product, industry, case, partner, featured-news, support, service, and company/contact content after the four-slide hero and exact approved first profile paragraph. Visible source statuses, typecheck, 17 tests, and root/subpath builds pass.
 
 > 2026-07-26: Integrated Sandcastle issue #8. Technical Support retains all newer page, data, locale, style, type, and route contracts. Typecheck and the complete 15-test suite pass; GitHub #8 is closed.

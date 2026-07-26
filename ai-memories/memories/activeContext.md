@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Integrated Sandcastle issue #13. The approved homepage sequence now coexists with all previously completed content and route contracts; the branch fast-forwarded without conflicts. Typecheck and all 17 combined tests pass, and GitHub #13 is closed.
+
 > 2026-07-26: Completed GitHub #13 homepage recomposition. The four-slide hero now leads into the approved first company paragraph, then structured product, industry, case, partner, featured-news, technical-support/service, and company/contact previews. Placeholder and unavailable states remain visible; typecheck, all 17 tests, and root/subpath builds pass.
 
 > 2026-07-26: Integrated Sandcastle issue #8. The trilingual technical-support library now coexists with all previously completed pages; shared memory, locale, style, type, and route conflicts preserve current contracts. Typecheck and all 15 combined tests pass, and GitHub #8 is closed.
@@ -106,6 +108,7 @@
 
 ## 近期任务 Plan
 
+- `ai-memories/tasks/2026-07-26-merge-sandcastle-homepage.md`（#13 已合并并通过 17 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-26-homepage-recomposition.md`（GitHub #13 已完成；17 项测试及根/子路径构建通过）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-support.md`（#8 已合并并通过 15 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-map-industries.md`（#10、#7 已合并并通过 14 项组合测试）
