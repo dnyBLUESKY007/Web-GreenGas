@@ -1,20 +1,18 @@
 import '@/styles/main.scss';
 import { createProjectCard } from '@/components/project-card/ProjectCard';
 import { cdnUrl } from '@/config/assets';
-import projectsData from '@/data/projects.json';
+import { getProjectById } from '@/data/projects';
 import { t, td } from '@/i18n';
 import type { Project } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
-
-const projects = projectsData as readonly Project[];
 
 function renderCaseDetail(): void {
   const main = document.getElementById('page-content');
   if (!main) return;
 
   const id = new URLSearchParams(window.location.search).get('id');
-  const project = projects.find((item) => item.id === id);
+  const project = getProjectById(id);
   main.replaceChildren(project ? createCaseDetail(project) : createNotFound());
 }
 
@@ -23,7 +21,7 @@ function createCaseDetail(project: Project): HTMLElement {
   article.className = 'case-detail';
   const result = td(project, 'result');
   const relatedCases = project.relatedCaseIds
-    .map((id) => projects.find((item) => item.id === id))
+    .map(getProjectById)
     .filter((item): item is Project => item !== undefined);
 
   article.innerHTML = `

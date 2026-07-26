@@ -1,8 +1,8 @@
-import projectsData from '@/data/projects.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { cdnUrl } from '@/config/assets';
+import { getPrimaryProjectImage, projects } from '@/data/projects';
 import { t, td } from '@/i18n';
 import type { Project } from '@/types';
-import { cdnUrl } from '@/config/assets';
 import { basePath } from '@/utils/path';
 
 export function createCaseCarousel(): HTMLElement {
@@ -44,8 +44,6 @@ export function createCaseCarousel(): HTMLElement {
   const track = document.createElement('div');
   track.className = 'case-carousel__track';
 
-  const projects = projectsData as readonly Project[];
-
   for (const project of projects) {
     track.appendChild(createCaseCard(project));
   }
@@ -64,7 +62,7 @@ function createCaseCard(project: Project): HTMLElement {
   const industry = td(project, 'industry');
   const summary = td(project, 'summary');
   const location = td(project, 'location');
-  const image = project.images[0];
+  const image = getPrimaryProjectImage(project);
 
   const article = document.createElement('article');
   article.className = 'case-card';

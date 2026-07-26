@@ -1,6 +1,7 @@
 import type { Project } from '@/types';
 import { t, td } from '@/i18n';
 import { cdnUrl } from '@/config/assets';
+import { getPrimaryProjectImage } from '@/data/projects';
 import { basePath } from '@/utils/path';
 
 export function createProjectCard(project: Project): HTMLElement {
@@ -9,7 +10,7 @@ export function createProjectCard(project: Project): HTMLElement {
   const summary = td(project, 'summary');
   const location = td(project, 'location');
   const equipment = td(project, 'equipment');
-  const image = project.images[0];
+  const image = getPrimaryProjectImage(project);
 
   const article = document.createElement('article');
   article.className = 'project-card';

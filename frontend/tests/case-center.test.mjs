@@ -10,8 +10,9 @@ async function read(relativePath) {
 
 test('case center provides sourced filterable cases and a recoverable generic detail', async () => {
   const projects = JSON.parse(await read('src/data/projects.json'));
+  const projectIds = new Set(projects.map(({ id }) => id));
   assert.deepEqual(
-    projects.map(({ id }) => id),
+    [...projectIds],
     [
       'haoda-tools-hvac',
       'liaoning-port-cooling',
@@ -19,19 +20,44 @@ test('case center provides sourced filterable cases and a recoverable generic de
       'queensland-medical-research',
     ],
   );
+  assert.equal(projectIds.size, projects.length, 'project IDs must be unique');
+
+  const localizedFields = [
+    'name',
+    'industry',
+    'location',
+    'equipment',
+    'summary',
+    'context',
+    'challenge',
+    'response',
+  ];
 
   for (const project of projects) {
     assert.equal(project.status, 'verified');
-    assert.match(project.sourceUrl, /^https:\/\/cn\.greennb\.com\//);
+    const sourceUrl = new URL(project.sourceUrl);
+    assert.equal(sourceUrl.protocol, 'https:');
+    assert.equal(sourceUrl.hostname, 'cn.greennb.com');
     assert.ok(project.industryKey);
     assert.ok(project.regionKey);
     assert.ok(['country', 'province', 'unspecified'].includes(project.geography.precision));
-    assert.ok(project.equipment);
-    assert.ok(project.context);
-    assert.ok(project.challenge);
-    assert.ok(project.response);
     assert.ok(Array.isArray(project.images) && project.images.length > 0);
     assert.ok(Array.isArray(project.relatedCaseIds));
+    for (const field of localizedFields) {
+      assert.ok(project[field], `${project.id}: ${field}`);
+      assert.ok(project[`${field}_zh`], `${project.id}: ${field}_zh`);
+      assert.ok(project[`${field}_ru`], `${project.id}: ${field}_ru`);
+    }
+    for (const image of project.images) {
+      assert.match(image.filename, /\.webp$/);
+      assert.ok(image.alt);
+      assert.ok(image.alt_zh);
+      assert.ok(image.alt_ru);
+    }
+    for (const relatedCaseId of project.relatedCaseIds) {
+      assert.notEqual(relatedCaseId, project.id);
+      assert.ok(projectIds.has(relatedCaseId), `${project.id}: unknown related case ${relatedCaseId}`);
+    }
     assert.doesNotMatch(JSON.stringify(project), /12,000|32%|Shenzhen|Shanghai|Guangzhou/);
   }
 

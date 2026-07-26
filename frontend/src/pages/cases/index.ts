@@ -1,12 +1,10 @@
 import '@/styles/main.scss';
 import { createProjectCard } from '@/components/project-card/ProjectCard';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
-import projectsData from '@/data/projects.json';
+import { projects } from '@/data/projects';
 import { t, td } from '@/i18n';
-import type { Project } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 
-const projects = projectsData as readonly Project[];
 let activeIndustry = 'all';
 let activeRegion = 'all';
 
