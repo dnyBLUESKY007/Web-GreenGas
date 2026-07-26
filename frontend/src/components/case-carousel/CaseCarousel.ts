@@ -2,6 +2,8 @@ import projectsData from '@/data/projects.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { t, td } from '@/i18n';
 import type { Project } from '@/types';
+import { cdnUrl } from '@/config/assets';
+import { basePath } from '@/utils/path';
 
 export function createCaseCarousel(): HTMLElement {
   const section = document.createElement('section');
@@ -61,27 +63,33 @@ function createCaseCard(project: Project): HTMLElement {
   const name = td(project, 'name');
   const industry = td(project, 'industry');
   const summary = td(project, 'summary');
+  const location = td(project, 'location');
+  const image = project.images[0];
 
   const article = document.createElement('article');
   article.className = 'case-card';
 
-  article.innerHTML = `
+  const link = document.createElement('a');
+  link.className = 'case-card__link';
+  link.href = `${basePath('/cases/detail/')}?id=${encodeURIComponent(project.id)}`;
+  link.innerHTML = `
     <div class="case-card__media">
       <img
         class="case-card__image"
-        src="${project.image}"
-        alt="${name}"
+        src="${cdnUrl('projects', image.filename)}"
+        alt="${td(image, 'alt')}"
         width="360"
         height="200"
         loading="lazy"
       />
     </div>
     <div class="case-card__body">
-      <p class="case-card__meta">${industry} · ${project.location}</p>
+      <p class="case-card__meta">${industry} · ${location}</p>
       <h3 class="case-card__title">${name}</h3>
       <p class="case-card__summary">${summary}</p>
     </div>
   `;
+  article.appendChild(link);
 
   return article;
 }

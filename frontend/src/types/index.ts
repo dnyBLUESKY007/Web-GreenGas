@@ -25,17 +25,51 @@ export type ProductGroup =
 
 export interface Project {
   readonly id: string;
+  readonly status: 'verified' | 'example';
+  readonly sourceUrl: string;
   readonly name: string;
   readonly name_zh?: string;
   readonly name_ru?: string;
+  readonly industryKey: string;
   readonly industry: string;
   readonly industry_zh?: string;
   readonly industry_ru?: string;
+  readonly regionKey: string;
   readonly location: string;
+  readonly location_zh?: string;
+  readonly location_ru?: string;
+  readonly geography: {
+    readonly countryCode?: string;
+    readonly region?: string;
+    readonly precision: 'country' | 'province' | 'unspecified';
+  };
+  readonly equipment: string;
+  readonly equipment_zh?: string;
+  readonly equipment_ru?: string;
   readonly summary: string;
   readonly summary_zh?: string;
   readonly summary_ru?: string;
-  readonly image: string;
+  readonly context: string;
+  readonly context_zh?: string;
+  readonly context_ru?: string;
+  readonly challenge: string;
+  readonly challenge_zh?: string;
+  readonly challenge_ru?: string;
+  readonly response: string;
+  readonly response_zh?: string;
+  readonly response_ru?: string;
+  readonly result?: string;
+  readonly result_zh?: string;
+  readonly result_ru?: string;
+  readonly images: readonly CaseImage[];
+  readonly relatedCaseIds: readonly string[];
+}
+
+export interface CaseImage {
+  readonly filename: string;
+  readonly alt: string;
+  readonly alt_zh?: string;
+  readonly alt_ru?: string;
 }
 
 export interface Product {
