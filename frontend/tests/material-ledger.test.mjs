@@ -102,3 +102,25 @@ test("material ledger satisfies its tracking contract", async () => {
     assert.ok(!record.source_path.includes("\\"), `non-portable source path on row ${rowNumber}`);
   }
 });
+
+test("material ledger represents the complete local archive inventory", async () => {
+  const rows = parseCsv(await readFile(ledgerUrl, "utf8"));
+  const [headers, ...entries] = rows;
+  const records = entries.map((entry) =>
+    Object.fromEntries(headers.map((header, column) => [header, entry[column]])),
+  );
+  const archiveFiles = records.filter((record) => record.source_path.startsWith("全资料/案例/"));
+  const archive = records.find((record) => record.id === "archive-full-materials");
+  const archivePaths = new Set(archiveFiles.map((record) => record.source_path));
+  const archiveHashes = new Set(
+    archiveFiles.map((record) => record.notes.match(/SHA-256 ([a-f0-9]{64})$/)?.[1]),
+  );
+
+  assert.equal(archiveFiles.length, 35, "all 35 extracted archive files must be represented");
+  assert.equal(archivePaths.size, 35, "archive source paths must be unique");
+  assert.ok(!archiveHashes.has(undefined), "each archive file must record its SHA-256");
+  assert.equal(archiveHashes.size, 35, "archive SHA-256 values must be unique");
+  assert.ok(archive, "archive metadata record must exist");
+  assert.notEqual(archive.publication_status, "unavailable", "local archive is no longer unavailable");
+  assert.match(archive.notes, /35 extracted files matched the archive listing/);
+});

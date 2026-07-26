@@ -1,6 +1,6 @@
 # Progress（进展与里程碑）
 
-> 2026-07-26: Established the issue #2 repository-source material ledger, daily gap report, and automated contract test. Archive-level completion is blocked because `全资料.rar` is unavailable; no current OSS or legacy source was implicitly approved for publication.
+> 2026-07-26: Completed issue #2's local archive inventory: validated the 391916405-byte RAR v5 and indexed all 35 files in six case groups. No damaged or exact duplicate files were found; all archive materials still require human publication approval.
 
 > 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Blocking is represented by GitHub-native dependencies; #2-#15 are agent-owned, #1/#16/#17 are human-owned, and #2/#3 are currently unblocked. Sandcastle now queries the correct repository and native dependency state.
 
@@ -29,10 +29,11 @@
 - **About / News 重设计**：About 迁移公司、团队与发展资料；News 迁移 6 篇旧站新闻，支持分类筛选与统一详情页，复用已登记 OSS 图片并补齐三语内容
 - **移动端适配**：1024px 以下抽屉导航、320px 单列产品、Hero/触控热区、Contact/FAQ 全宽、Solutions 横向 Tab 提示与三语窄屏验证
 - **下一阶段需求固化**：八项导航与七个主要内容改造方向已形成 PRD、4 份分域规格、术语表和 16 个纵向执行 Issue
+- **素材包本地盘点**：验证完整 RAR 与六组 35 个文件，完成逐文件哈希、可读性、分类、歧义与敏感内容审查；未发现损坏或精确重复
 
 ## 进行中
 
-- GitHub #2：仓库来源台账及自动化契约测试已建立；等待完整 `全资料.rar` 后继续逐文件盘点
+- GitHub #2：本地素材盘点已完成；等待责任人逐项确认公开许可后生成最终 OSS 上传清单
 - GitHub #3：全站导航、标签标题与旧路由（ready-for-agent）
 - 占位内容 → 甲方真实素材替换
 
@@ -46,7 +47,7 @@
 ## 已知问题 / 技术债
 
 - 部分联系方式与公司信息仍为占位数据
-- `全资料.rar` 未提供给当前工作区，素材盘点无法完成压缩包下载、解压、损坏检测和哈希去重
+- `全资料.rar` 内全部素材仍未获得公开许可；部分涉及人员肖像、车牌、客户/政府场地、第三方图片、技术参数和来源歧义
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
 
@@ -71,3 +72,4 @@
 | 2026-07-17 | 移动端适配 | 完成导航断点重构与主要页面小屏布局优化；生产构建和多宽度浏览器检查通过 |
 | 2026-07-26 | 改版需求固化 | 完成术语表、PRD、4 份规格和 GitHub #1-#17；#2、#3 可直接领取 |
 | 2026-07-26 | 素材台账基线 | 登记 25 条仓库来源/缺口和 OSS 审查规则；等待完整素材包继续 #2 |
+| 2026-07-26 | 素材包本地盘点 | 验证 RAR 与六组 35 文件；无损坏或精确重复，全部等待人工公开审批 |
