@@ -165,15 +165,8 @@
   margin-inline: auto;
 }
 
-.contact-faq-link {
-  display: inline-block;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: $color-primary;
-
-  &:hover {
-    text-decoration: underline;
-  }
+.contact-faq {
+  scroll-margin-top: $navbar-height;
 }
 
 @media (width < $breakpoint-md) {

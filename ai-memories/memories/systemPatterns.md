@@ -20,6 +20,8 @@ flowchart LR
 
 每个页面有独立 `index.html` 入口，由对应 `pages/*/index.ts` 在浏览器端渲染；全局布局（Navbar、Footer、ScrollToTop）通过 `mountLayout` / `initPage` 挂载。About 下可有子页（如 `/about/certifications/`、`/about/clients/`），在 `vite.config.ts` 的 `rollupOptions.input` 注册。
 
+主导航稳定路由为 `/`、`/about/`、`/products/`、`/industries/`、`/support/`、`/cases/`、`/news/`、`/contact/`。旧 `/solutions/` 与 `/faq/` 继续作为 MPA input，分别通过 `basePath()` 跳转到 `/products/` 和 `/contact/#faq`；不要用根路径字面量替代这些兼容跳转。
+
 ## 首页信息流（2026-07-05）
 
 Hero → HeroIntro → Solutions → CapabilityRing → CaseCarousel → ProductGrid → ServiceStrip → About。桌面端各屏高度按 `100dvh - navbar` 比例约束（见 `--home-screen-*` CSS 变量与 `home-screen--*` class）。

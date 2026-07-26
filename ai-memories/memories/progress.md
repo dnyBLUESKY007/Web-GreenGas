@@ -4,6 +4,8 @@
 
 > 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Blocking is represented by GitHub-native dependencies; #2-#15 are agent-owned, #1/#16/#17 are human-owned, and #2/#3 are currently unblocked. Sandcastle now queries the correct repository and native dependency state.
 
+> 2026-07-26: Completed GitHub #3. The global shell now has eight multilingual destinations with language access at mobile and desktop widths, consistent browser titles, stable new route contracts, a Contact FAQ anchor, and base-path-safe legacy redirects. Typecheck, contract tests, and root/subpath builds pass; full content for the new route shells remains with downstream issues.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -30,11 +32,11 @@
 - **移动端适配**：1024px 以下抽屉导航、320px 单列产品、Hero/触控热区、Contact/FAQ 全宽、Solutions 横向 Tab 提示与三语窄屏验证
 - **下一阶段需求固化**：八项导航与七个主要内容改造方向已形成 PRD、4 份分域规格、术语表和 16 个纵向执行 Issue
 - **本地素材归档**：三个原始压缩包位于 `ignored/source-archives/`，解压资料位于 `ignored/extracted/`，Sandcastle 可按相同相对路径访问
+- **全局导航与兼容路由**：八项三语导航、左对齐品牌、统一标签标题、Contact FAQ 锚点及旧 Solutions/FAQ 子路径安全跳转；确定 `/products/`、`/industries/`、`/support/`、`/cases/` 稳定路由
 
 ## 进行中
 
 - GitHub #2：素材清单与替换台账（ready-for-agent）
-- GitHub #3：全站导航、标签标题与旧路由（ready-for-agent）
 - 占位内容 → 甲方真实素材替换
 
 ## 待办
@@ -70,3 +72,4 @@
 | 2026-07-17 | 协作记录审计 | 修复残留旧路径与失效链接；数字记忆改为自包含的工具无关记录 |
 | 2026-07-17 | 移动端适配 | 完成导航断点重构与主要页面小屏布局优化；生产构建和多宽度浏览器检查通过 |
 | 2026-07-26 | 改版需求固化 | 完成术语表、PRD、4 份规格和 GitHub #1-#17；#2、#3 可直接领取 |
+| 2026-07-26 | 全局导航与路由 | 完成 GitHub #3 八项导航、统一标题、新路由契约和旧入口兼容跳转 |

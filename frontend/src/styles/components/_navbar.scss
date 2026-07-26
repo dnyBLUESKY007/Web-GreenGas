@@ -28,6 +28,8 @@
     justify-content: space-between;
     gap: 1rem;
     min-height: $navbar-height;
+    width: calc(100% - 2rem);
+    max-width: none;
   }
 
   &__brand {
@@ -59,15 +61,16 @@
 
   &__nav {
     display: none;
-    gap: 2rem;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 1.25rem);
 
-    @media (width >= $breakpoint-lg) {
+    @media (width >= $breakpoint-nav-desktop) {
       display: flex;
     }
   }
 
   &__link {
-    font-size: 1rem;
+    font-size: 1.0625rem;
     color: $color-text-muted;
     transition: color $transition-base;
 
@@ -81,17 +84,6 @@
     }
   }
 
-  &__actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  &__cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 .navbar__mobile-actions {
@@ -102,10 +94,6 @@
   display: flex;
   align-items: flex-end;
   gap: 0.75rem;
-
-  @media (width >= $breakpoint-lg) {
-    display: none;
-  }
 }
 
 .navbar__action-buttons {
@@ -183,14 +171,15 @@
   }
 }
 
-@media (width < 23rem) {
-  .navbar__brand-zh {
+@media (width >= $breakpoint-nav-desktop) {
+  .navbar__action-button--menu,
+  .navbar__action-button--top {
     display: none;
   }
 }
 
-:root[lang='ru'] {
-  .navbar__link {
-    font-size: 0.8rem;
+@media (width < 23rem) {
+  .navbar__brand-zh {
+    display: none;
   }
 }

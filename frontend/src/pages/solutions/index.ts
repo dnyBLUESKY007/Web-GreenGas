@@ -103,4 +103,4 @@ function createCta(): HTMLElement {
   return section;
 }
 
-initPage('solutions', renderSolutionsPage);
+initPage('products', renderSolutionsPage);

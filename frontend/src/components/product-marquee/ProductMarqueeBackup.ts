@@ -23,7 +23,7 @@ export function createProductMarqueeBackup(): HTMLElement {
 
   const moreLink = document.createElement('a');
   moreLink.className = 'section-head__action';
-  moreLink.href = basePath('/solutions/');
+  moreLink.href = basePath('/products/');
   moreLink.textContent = `${t('home.products.more')} →`;
 
   head.append(title, moreLink);

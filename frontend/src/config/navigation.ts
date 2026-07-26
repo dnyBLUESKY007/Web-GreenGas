@@ -3,10 +3,12 @@ import { basePath } from '@/utils/path';
 
 export const NAV_ITEMS: readonly NavItem[] = [
   { id: 'home', labelKey: 'nav.home', href: basePath('/') },
-  { id: 'solutions', labelKey: 'nav.solutions', href: basePath('/solutions/') },
   { id: 'about', labelKey: 'nav.about', href: basePath('/about/') },
+  { id: 'products', labelKey: 'nav.products', href: basePath('/products/') },
+  { id: 'industries', labelKey: 'nav.industries', href: basePath('/industries/') },
+  { id: 'support', labelKey: 'nav.support', href: basePath('/support/') },
+  { id: 'cases', labelKey: 'nav.cases', href: basePath('/cases/') },
   { id: 'news', labelKey: 'nav.news', href: basePath('/news/') },
-  { id: 'faq', labelKey: 'nav.faq', href: basePath('/faq/') },
   { id: 'contact', labelKey: 'nav.contact', href: basePath('/contact/') },
 ];
 
