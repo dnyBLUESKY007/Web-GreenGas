@@ -4,11 +4,17 @@ import { t } from '@/i18n';
 import type { PageId } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 
-type PlaceholderPageId = Extract<PageId, 'industries' | 'support' | 'cases'>;
+const PLACEHOLDER_PAGE_IDS = ['industries', 'support', 'cases'] as const satisfies readonly PageId[];
 
-const pageId = document.body.dataset.page as PlaceholderPageId | undefined;
+type PlaceholderPageId = (typeof PLACEHOLDER_PAGE_IDS)[number];
 
-if (!pageId || !['industries', 'support', 'cases'].includes(pageId)) {
+function isPlaceholderPageId(value: string | undefined): value is PlaceholderPageId {
+  return value !== undefined && PLACEHOLDER_PAGE_IDS.some((pageId) => pageId === value);
+}
+
+const pageId = document.body.dataset.page;
+
+if (!isPlaceholderPageId(pageId)) {
   throw new Error('Invalid destination placeholder page');
 }
 

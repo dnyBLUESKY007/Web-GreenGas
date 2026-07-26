@@ -208,7 +208,6 @@ export interface NavItem {
 }
 
 export interface PageMeta {
-  readonly titleKey: string;
   readonly descriptionKey: string;
   readonly ogTitleKey: string;
   readonly ogDescriptionKey: string;

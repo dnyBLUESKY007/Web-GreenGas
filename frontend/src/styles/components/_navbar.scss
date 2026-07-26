@@ -64,7 +64,7 @@
     align-items: center;
     gap: clamp(0.5rem, 1vw, 1.25rem);
 
-    @media (width >= 84rem) {
+    @media (width >= $breakpoint-nav-desktop) {
       display: flex;
     }
   }
@@ -95,7 +95,7 @@
   align-items: flex-end;
   gap: 0.75rem;
 
-  @media (width >= 84rem) {
+  @media (width >= $breakpoint-nav-desktop) {
     display: none;
   }
 }

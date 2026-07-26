@@ -37,13 +37,12 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
     ['contact', 'nav.contact', '/contact/'],
   ];
 
-  let previousIndex = -1;
-  for (const [id, labelKey, path] of expectedNavigation) {
-    const item = `{ id: '${id}', labelKey: '${labelKey}', href: basePath('${path}') }`;
-    const itemIndex = navigation.indexOf(item);
-    assert.ok(itemIndex > previousIndex, `missing or misordered navigation item: ${item}`);
-    previousIndex = itemIndex;
-  }
+  const actualNavigation = [
+    ...navigation.matchAll(
+      /\{ id: '([^']+)', labelKey: '([^']+)', href: basePath\('([^']+)'\) \}/g,
+    ),
+  ].map(([, id, labelKey, path]) => [id, labelKey, path]);
+  assert.deepEqual(actualNavigation, expectedNavigation);
 
   const expectedLabels = {
     en: ['Home', 'About Us', 'Product Navigation', 'Industry Applications', 'Technical Support', 'Case Center', 'News Center', 'Contact Us'],
@@ -64,7 +63,10 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
   const navbarStyles = await read('src/styles/components/_navbar.scss');
   assert.match(navbarStyles, /font-size: 1\.0625rem/);
   assert.match(navbarStyles, /width: calc\(100% - 2rem\)/);
-  assert.match(navbarStyles, /@media \(width >= 84rem\)/);
+  assert.equal(navbarStyles.match(/width >= \$breakpoint-nav-desktop/g)?.length, 2);
+
+  const styleVariables = await read('src/styles/base/_variables.scss');
+  assert.match(styleVariables, /\$breakpoint-nav-desktop: 84rem/);
 
   const pageMeta = await read('src/config/pageMeta.ts');
   assert.match(pageMeta, new RegExp(`const BRAND_TITLE = ['\"]${BRAND_TITLE}['\"]`));
@@ -75,11 +77,18 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
     assert.match(html, new RegExp(`<title>${BRAND_TITLE}</title>`), htmlPath);
   }
 
-  const solutionsRedirect = await read('src/pages/legacy/solutions.ts');
-  assert.match(solutionsRedirect, /location\.replace\(basePath\('\/products\/'\)\)/);
+  const legacyRoutes = [
+    ['solutions', '/products/'],
+    ['faq', '/contact/#faq'],
+  ];
+  for (const [route, target] of legacyRoutes) {
+    const html = await read(`${route}/index.html`);
+    assert.match(html, new RegExp(`src="/src/pages/legacy/${route}\\.ts"`));
 
-  const faqRedirect = await read('src/pages/legacy/faq.ts');
-  assert.match(faqRedirect, /location\.replace\(basePath\('\/contact\/#faq'\)\)/);
+    const redirect = await read(`src/pages/legacy/${route}.ts`);
+    const escapedTarget = target.replaceAll('/', '\\/');
+    assert.match(redirect, new RegExp(`location\\.replace\\(basePath\\('${escapedTarget}'\\)\\)`));
+  }
 
   const viteConfig = await read('vite.config.ts');
   for (const route of ['products', 'industries', 'support', 'cases', 'solutions', 'faq']) {
