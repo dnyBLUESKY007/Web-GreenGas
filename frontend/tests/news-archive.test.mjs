@@ -2,26 +2,67 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-const root = new URL('../', import.meta.url);
+const FRONTEND_ROOT = new URL('../', import.meta.url);
+const CDN_BASE_URL = 'https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources';
 
-async function read(relativePath) {
-  return readFile(new URL(relativePath, root), 'utf8');
+async function readTextFile(relativePath) {
+  return readFile(new URL(relativePath, FRONTEND_ROOT), 'utf8');
+}
+
+async function readJsonFile(relativePath) {
+  return JSON.parse(await readTextFile(relativePath));
+}
+
+function getArticle(articles, id) {
+  const article = articles.find((candidate) => candidate.id === id);
+  assert.ok(article, `missing article ${id}`);
+  return article;
 }
 
 test('news archive preserves official records and homepage-ready featured data', async () => {
-  const articles = JSON.parse(await read('src/data/news.json'));
-  const imageResources = JSON.parse(await read('src/data/image-resources.json'));
+  const articles = await readJsonFile('src/data/news.json');
+  const imageResources = await readJsonFile('src/data/image-resources.json');
   const expectedRecords = [
-    ['industrial-air-conditioning-features', '2025-11-20', 'industry', 'https://cn.greennb.com/id46737575.html'],
-    ['iso9001-certification', '2020-12-18', 'company', 'https://cn.greennb.com/id40837575.html'],
-    ['ce-certification', '2020-12-12', 'company', 'https://cn.greennb.com/zhuhewosichanpintongguobinghuodecerenzheng.html'],
-    ['shanghai-refrigeration-expo-2019', '2020-08-24', 'industry', 'https://cn.greennb.com/id3426212.html'],
-    ['australian-client-visit', '2020-07-29', 'company', 'https://cn.greennb.com/id3836212.html'],
-    ['meltblown-fabric-workshop-delivery', '2020-07-20', 'company', 'https://cn.greennb.com/id3726212.html'],
+    {
+      id: 'industrial-air-conditioning-features',
+      date: '2025-11-20',
+      category: 'industry',
+      sourceUrl: 'https://cn.greennb.com/id46737575.html',
+    },
+    {
+      id: 'iso9001-certification',
+      date: '2020-12-18',
+      category: 'company',
+      sourceUrl: 'https://cn.greennb.com/id40837575.html',
+    },
+    {
+      id: 'ce-certification',
+      date: '2020-12-12',
+      category: 'company',
+      sourceUrl: 'https://cn.greennb.com/zhuhewosichanpintongguobinghuodecerenzheng.html',
+    },
+    {
+      id: 'shanghai-refrigeration-expo-2019',
+      date: '2020-08-24',
+      category: 'industry',
+      sourceUrl: 'https://cn.greennb.com/id3426212.html',
+    },
+    {
+      id: 'australian-client-visit',
+      date: '2020-07-29',
+      category: 'company',
+      sourceUrl: 'https://cn.greennb.com/id3836212.html',
+    },
+    {
+      id: 'meltblown-fabric-workshop-delivery',
+      date: '2020-07-20',
+      category: 'company',
+      sourceUrl: 'https://cn.greennb.com/id3726212.html',
+    },
   ];
 
   assert.deepEqual(
-    articles.map(({ id, date, category, sourceUrl }) => [id, date, category, sourceUrl]),
+    articles.map(({ id, date, category, sourceUrl }) => ({ id, date, category, sourceUrl })),
     expectedRecords,
   );
   assert.deepEqual([...new Set(articles.map(({ category }) => category))].sort(), ['company', 'industry']);
@@ -40,21 +81,21 @@ test('news archive preserves official records and homepage-ready featured data',
     assert.equal(article.paragraphs_ru.length, article.paragraphs.length, `${article.id}: Russian body`);
     assert.ok(article.images.length > 0, `${article.id}: images`);
     for (const image of article.images) {
-      const url = `https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/${image.category}/${image.filename}`;
+      const url = `${CDN_BASE_URL}/${image.category}/${image.filename}`;
       assert.ok(imageResources[url], `${article.id}: registered image ${url}`);
       assert.ok(image.alt && image.alt_zh && image.alt_ru, `${article.id}: image alt text`);
     }
   }
 
-  assert.equal(articles.find(({ id }) => id === 'iso9001-certification').paragraphs_zh.length, 4);
-  assert.equal(articles.find(({ id }) => id === 'meltblown-fabric-workshop-delivery').paragraphs_zh.length, 3);
+  assert.equal(getArticle(articles, 'iso9001-certification').paragraphs_zh.length, 4);
+  assert.equal(getArticle(articles, 'meltblown-fabric-workshop-delivery').paragraphs_zh.length, 3);
 });
 
 test('news list and generic detail expose required behavior', async () => {
   const [listPage, detailPage, styles] = await Promise.all([
-    read('src/pages/news/index.ts'),
-    read('src/pages/news/detail/index.ts'),
-    read('src/styles/components/_news-page.scss'),
+    readTextFile('src/pages/news/index.ts'),
+    readTextFile('src/pages/news/detail/index.ts'),
+    readTextFile('src/styles/components/_news-page.scss'),
   ]);
 
   for (const field of ['date', 'category']) {
