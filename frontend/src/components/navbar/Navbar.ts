@@ -6,6 +6,7 @@ import { basePath } from '@/utils/path';
 import type { CompanyData, PageId } from '@/types';
 
 const company = companyData as CompanyData;
+type ActionPanel = 'language' | 'menu';
 
 export function createNavbar(activePageId: PageId): HTMLElement {
   const header = document.createElement('header');
@@ -88,18 +89,22 @@ function createMobileActionDock(activePageId: PageId): HTMLElement {
   buttons.append(topButton, languageButton, menuButton);
   dock.append(panel, buttons);
 
-  let activePanel: 'language' | 'menu' | null = null;
-  const closePanel = (restoreFocus = false): void => {
-    const trigger = activePanel === 'language' ? languageButton : menuButton;
+  let activePanel: ActionPanel | null = null;
+  const closePanel = (): void => {
     activePanel = null;
     panel.hidden = true;
     panel.replaceChildren();
     languageButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-expanded', 'false');
-    if (restoreFocus) trigger.focus();
   };
 
-  const openPanel = (nextPanel: 'language' | 'menu'): void => {
+  const closePanelAndRestoreFocus = (): void => {
+    const trigger = activePanel === 'language' ? languageButton : menuButton;
+    closePanel();
+    trigger.focus();
+  };
+
+  const openPanel = (nextPanel: ActionPanel): void => {
     if (activePanel === nextPanel) {
       closePanel();
       return;
@@ -135,7 +140,7 @@ function createMobileActionDock(activePageId: PageId): HTMLElement {
   dock.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && activePanel) {
       event.preventDefault();
-      closePanel(true);
+      closePanelAndRestoreFocus();
     }
   });
 

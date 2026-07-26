@@ -58,7 +58,7 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
   const navbar = await read('src/components/navbar/Navbar.ts');
   assert.doesNotMatch(navbar, /navbar__cta|nav\.cta/);
   assert.match(navbar, /menu\.querySelector<HTMLAnchorElement>\('a'\)\?\.focus\(\)/);
-  assert.match(navbar, /closePanel\(true\)/);
+  assert.match(navbar, /closePanelAndRestoreFocus\(\)/);
 
   const navbarStyles = await read('src/styles/components/_navbar.scss');
   assert.match(navbarStyles, /font-size: 1\.0625rem/);

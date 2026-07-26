@@ -48,11 +48,9 @@ function renderContactPage(): void {
   faqContainer.appendChild(faqMount);
   faqSection.appendChild(faqContainer);
 
-  // [联系方式] Contact channels
   const channelsMount = document.createElement('div');
   channelsMount.id = 'contact-channels';
 
-  // [留言板] Message board
   const formMount = document.createElement('div');
   formMount.appendChild(createContactForm());
 
