@@ -19,7 +19,7 @@ export function createContactForm(): HTMLElement {
 
   section.innerHTML = `
     <h2 class="message-board__title" id="message-board-title">${t(ROTATING_TITLE_KEYS[0])}</h2>
-    <form class="contact-form__form" id="contact-form" novalidate>
+    <form class="contact-form__form" id="contact-form" aria-describedby="contact-form-note">
       <div class="contact-form__row">
         <div class="contact-form__field">
           <label class="contact-form__label" for="contact-name">${t('form.name')}</label>
@@ -34,17 +34,12 @@ export function createContactForm(): HTMLElement {
         <label class="contact-form__label" for="contact-message">${t('form.message')}</label>
         <textarea class="contact-form__textarea" id="contact-message" name="message" rows="5" required></textarea>
       </div>
-      <button class="btn btn--primary contact-form__submit" type="submit">${t('form.submit')}</button>
-      <p class="contact-form__note">${t('form.note')}</p>
+      <button class="btn btn--primary contact-form__submit" type="submit" disabled aria-disabled="true">${t('form.unavailable')}</button>
+      <p class="contact-form__note" id="contact-form-note">${t('form.note')}</p>
     </form>
   `;
 
-  const form = section.querySelector<HTMLFormElement>('#contact-form');
   const titleEl = section.querySelector<HTMLElement>('#message-board-title');
-
-  if (form) {
-    form.addEventListener('submit', handleFormSubmit);
-  }
 
   if (titleEl) {
     startTitleRotation(titleEl);
@@ -71,9 +66,4 @@ function startTitleRotation(titleEl: HTMLElement): void {
       titleEl.classList.remove('message-board__title--hidden');
     }, FADE_DURATION_MS);
   }, ROTATION_INTERVAL_MS);
-}
-
-function handleFormSubmit(event: SubmitEvent): void {
-  event.preventDefault();
-  alert(t('form.alert'));
 }

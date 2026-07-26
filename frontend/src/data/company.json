@@ -79,6 +79,7 @@
       "label_ru": "Email",
       "value": "15058821688@163.com",
       "href": "mailto:15058821688@163.com",
+      "status": "approved",
       "locales": ["zh"]
     },
     {
@@ -87,6 +88,7 @@
       "label_ru": "Телефон",
       "value": "15058821688",
       "href": "tel:15058821688",
+      "status": "approved",
       "locales": ["zh"]
     },
     {
@@ -95,6 +97,7 @@
       "label_ru": "Email",
       "value": "zhouminlu9@gmail.com",
       "href": "mailto:zhouminlu9@gmail.com",
+      "status": "approved",
       "locales": ["en", "ru"]
     },
     {
@@ -103,6 +106,7 @@
       "label_ru": "WhatsApp",
       "value": "+86 18958330001",
       "href": "https://wa.me/8618958330001",
+      "status": "approved",
       "locales": ["en", "ru"]
     }
   ],
@@ -114,6 +118,32 @@
       "answer": "Yes. Every project starts with site assessment and engineering design tailored to your facility, climate, and process requirements.",
       "answer_zh": "支持。每个项目均从现场评估开始，并根据您的设施、气候及工艺需求进行工程设计。",
       "answer_ru": "Да. Каждый проект начинается с оценки площадки и инженерного проектирования с учётом вашего объекта, климата и технологических требований."
+    },
+    {
+      "question": "What information should we provide for an initial assessment?",
+      "question_zh": "初步评估需要提供哪些信息？",
+      "question_ru": "Какие данные нужны для предварительной оценки?",
+      "answer": "The following information helps our engineering team understand the operating requirement:",
+      "answer_zh": "以下信息有助于工程团队了解实际工况：",
+      "answer_ru": "Следующие данные помогут инженерной команде понять условия эксплуатации:",
+      "answerItems": [
+        "Facility location and application",
+        "Required temperature and humidity range",
+        "Available utilities and installation constraints",
+        "Relevant drawings, dimensions, or existing equipment information"
+      ],
+      "answerItems_zh": [
+        "设施所在地及应用场景",
+        "所需温度与湿度范围",
+        "可用能源条件及安装限制",
+        "相关图纸、尺寸或现有设备信息"
+      ],
+      "answerItems_ru": [
+        "Местоположение объекта и область применения",
+        "Требуемый диапазон температуры и влажности",
+        "Доступные инженерные ресурсы и ограничения монтажа",
+        "Соответствующие чертежи, размеры или данные существующего оборудования"
+      ]
     },
     {
       "question": "Can we visit your factory?",
@@ -130,6 +160,35 @@
       "answer": "We serve manufacturing, marine, data centers, chemical processing, food & beverage, and government infrastructure projects.",
       "answer_zh": "我们服务制造业、船用、数据中心、化工、食品饮料及政府基础设施项目。",
       "answer_ru": "Мы обслуживаем производство, морскую отрасль, дата-центры, химическую переработку, пищевую промышленность и государственные инфраструктурные проекты."
+    },
+    {
+      "question": "How is a custom project delivered?",
+      "question_zh": "定制项目如何交付？",
+      "question_ru": "Как реализуется индивидуальный проект?",
+      "answer": "A typical project follows these coordinated stages:",
+      "answer_zh": "典型项目按以下协同阶段推进：",
+      "answer_ru": "Типовой проект проходит следующие согласованные этапы:",
+      "answerItems": [
+        "Requirements analysis",
+        "System design",
+        "Equipment manufacturing and inspection",
+        "Installation and commissioning",
+        "After-sales support"
+      ],
+      "answerItems_zh": [
+        "需求分析",
+        "系统设计",
+        "设备制造与检验",
+        "安装调试",
+        "售后支持"
+      ],
+      "answerItems_ru": [
+        "Анализ требований",
+        "Проектирование системы",
+        "Производство и контроль оборудования",
+        "Монтаж и пусконаладка",
+        "Послепродажная поддержка"
+      ]
     },
     {
       "question": "Do you provide installation and after-sales support?",

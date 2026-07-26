@@ -1,7 +1,7 @@
 import companyData from '@/data/company.json';
 import { getContactChannels } from '@/config/contact';
-import { td } from '@/i18n';
-import type { CompanyData } from '@/types';
+import { getLocale, td } from '@/i18n';
+import type { CompanyData, FaqItem } from '@/types';
 
 const company = companyData as CompanyData;
 
@@ -29,14 +29,46 @@ export function renderFaq(container: HTMLElement): void {
   for (const item of company.faq) {
     const details = document.createElement('details');
     details.className = 'faq-item';
-    details.innerHTML = `
-      <summary class="faq-item__question">${td(item, 'question')}</summary>
-      <p class="faq-item__answer">${td(item, 'answer')}</p>
-    `;
+
+    const question = document.createElement('summary');
+    question.className = 'faq-item__question';
+    question.textContent = td(item, 'question');
+
+    const answer = document.createElement('div');
+    answer.className = 'faq-item__answer';
+    const introduction = document.createElement('p');
+    introduction.textContent = td(item, 'answer');
+    answer.appendChild(introduction);
+
+    const answerItems = getLocalizedAnswerItems(item);
+    if (answerItems.length > 0) {
+      const numberedAnswers = document.createElement('ol');
+      for (const answerItem of answerItems) {
+        const listItem = document.createElement('li');
+        listItem.textContent = answerItem;
+        numberedAnswers.appendChild(listItem);
+      }
+      answer.appendChild(numberedAnswers);
+    }
+
+    details.append(question, answer);
     list.appendChild(details);
   }
 
   container.replaceChildren(list);
+}
+
+function getLocalizedAnswerItems(item: FaqItem): readonly string[] {
+  const locale = getLocale();
+
+  if (locale === 'zh') {
+    return item.answerItems_zh ?? item.answerItems ?? [];
+  }
+  if (locale === 'ru') {
+    return item.answerItems_ru ?? item.answerItems ?? [];
+  }
+
+  return item.answerItems ?? [];
 }
 
 const CHANNEL_ICON_MAP: Readonly<Record<string, string>> = {

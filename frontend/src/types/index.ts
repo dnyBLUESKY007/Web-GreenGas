@@ -129,6 +129,9 @@ export interface FaqItem {
   readonly answer: string;
   readonly answer_zh?: string;
   readonly answer_ru?: string;
+  readonly answerItems?: readonly string[];
+  readonly answerItems_zh?: readonly string[];
+  readonly answerItems_ru?: readonly string[];
 }
 
 export interface ContactChannel {
@@ -137,6 +140,7 @@ export interface ContactChannel {
   readonly label_ru?: string;
   readonly value: string;
   readonly href: string;
+  readonly status: 'approved';
   /** When set, channel is only shown for these locales. */
   readonly locales?: readonly Locale[];
 }

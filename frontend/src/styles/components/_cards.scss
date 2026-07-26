@@ -253,6 +253,13 @@
   &__answer {
     margin-top: 0.75rem;
     font-size: 0.9375rem;
+
+    ol {
+      display: grid;
+      gap: 0.5rem;
+      margin: 0.75rem 0 0;
+      padding-inline-start: 1.5rem;
+    }
   }
 }
 

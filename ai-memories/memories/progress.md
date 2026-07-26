@@ -8,6 +8,8 @@
 
 > 2026-07-26: Completed GitHub #3. The global shell now has eight multilingual destinations with language access at mobile and desktop widths, consistent browser titles, stable new route contracts, a Contact FAQ anchor, and base-path-safe legacy redirects. Typecheck, contract tests, and root/subpath builds pass; full content for the new route shells remains with downstream issues.
 
+> 2026-07-26: Completed GitHub #5. Contact now presents six multilingual FAQ groups before approved locale-specific direct channels and the message area, preserves numbered answers as semantic lists, and disables online sending until EmailJS is configured. Typecheck, contract tests, and the production build pass.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -36,6 +38,7 @@
 - **本地素材归档**：三个原始压缩包位于 `ignored/source-archives/`，解压资料位于 `ignored/extracted/`，Sandcastle 可按相同相对路径访问
 - **全局导航与兼容路由**：八项三语导航、左对齐品牌、统一标签标题、Contact FAQ 锚点及旧 Solutions/FAQ 子路径安全跳转；确定 `/products/`、`/industries/`、`/support/`、`/cases/` 稳定路由
 - **素材包本地盘点**：验证完整 RAR 与六组 35 个文件，完成逐文件哈希、可读性、分类、歧义与敏感内容审查；未发现损坏或精确重复
+- **FAQ 与 Contact 合并**：六组三语 FAQ 位于直接联系和留言区之前；编号答案使用有序列表；只渲染显式批准渠道；EmailJS 未配置时不允许提交或显示送达反馈
 
 ## 进行中
 
@@ -51,7 +54,7 @@
 
 ## 已知问题 / 技术债
 
-- 部分联系方式与公司信息仍为占位数据
+- 地址、座机、微信、工作时间和独立售后联系方式仍待确认；详见 `ai-memories/materials/2026-07-26-contact-gaps.md`
 - `全资料.rar` 内全部素材仍未获得公开许可；部分涉及人员肖像、车牌、客户/政府场地、第三方图片、技术参数和来源歧义
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
@@ -79,3 +82,4 @@
 | 2026-07-26 | 全局导航与路由 | 完成 GitHub #3 八项导航、统一标题、新路由契约和旧入口兼容跳转 |
 | 2026-07-26 | 素材台账基线 | 登记 25 条仓库来源/缺口和 OSS 审查规则；等待完整素材包继续 #2 |
 | 2026-07-26 | 素材包本地盘点 | 验证 RAR 与六组 35 文件；无损坏或精确重复，全部等待人工公开审批 |
+| 2026-07-26 | FAQ 与 Contact 合并 | 完成 GitHub #5 六组三语 FAQ、批准渠道过滤和未配置 EmailJS 的诚实禁用状态 |
