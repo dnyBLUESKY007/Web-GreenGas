@@ -47,6 +47,11 @@ out/
 .env.production.local
 *.local
 
+# Local Sandcastle orchestration
+/.sandcastle/
+/package.json
+/package-lock.json
+
 # =============================================================================
 # Python
 # =============================================================================
