@@ -38,44 +38,52 @@ const publicationStatuses = new Set([
 
 function parseCsv(csv) {
   const rows = [];
-  let field = "";
-  let row = [];
-  let quoted = false;
+  let currentField = "";
+  let currentRow = [];
+  let insideQuotedField = false;
 
   for (let index = 0; index < csv.length; index += 1) {
     const character = csv[index];
 
     if (character === '"') {
-      if (quoted && csv[index + 1] === '"') {
-        field += '"';
+      if (insideQuotedField && csv[index + 1] === '"') {
+        currentField += '"';
         index += 1;
       } else {
-        quoted = !quoted;
+        insideQuotedField = !insideQuotedField;
       }
-    } else if (character === "," && !quoted) {
-      row.push(field);
-      field = "";
-    } else if (character === "\n" && !quoted) {
-      row.push(field.replace(/\r$/, ""));
-      rows.push(row);
-      row = [];
-      field = "";
+    } else if (character === "," && !insideQuotedField) {
+      currentRow.push(currentField);
+      currentField = "";
+    } else if (character === "\n" && !insideQuotedField) {
+      currentRow.push(currentField.replace(/\r$/, ""));
+      rows.push(currentRow);
+      currentRow = [];
+      currentField = "";
     } else {
-      field += character;
+      currentField += character;
     }
   }
 
-  assert.equal(quoted, false, "ledger contains an unterminated quoted field");
-  if (field || row.length > 0) {
-    row.push(field.replace(/\r$/, ""));
-    rows.push(row);
+  assert.equal(insideQuotedField, false, "ledger contains an unterminated quoted field");
+  if (currentField || currentRow.length > 0) {
+    currentRow.push(currentField.replace(/\r$/, ""));
+    rows.push(currentRow);
   }
 
   return rows;
 }
 
+async function readLedgerRows() {
+  return parseCsv(await readFile(ledgerUrl, "utf8"));
+}
+
+function createRecord(headers, entry) {
+  return Object.fromEntries(headers.map((header, column) => [header, entry[column]]));
+}
+
 test("material ledger satisfies its tracking contract", async () => {
-  const rows = parseCsv(await readFile(ledgerUrl, "utf8"));
+  const rows = await readLedgerRows();
   const [headers, ...entries] = rows;
 
   assert.deepEqual(headers, expectedColumns);
@@ -86,7 +94,7 @@ test("material ledger satisfies its tracking contract", async () => {
     const rowNumber = index + 2;
     assert.equal(entry.length, expectedColumns.length, `invalid column count on row ${rowNumber}`);
 
-    const record = Object.fromEntries(headers.map((header, column) => [header, entry[column]]));
+    const record = createRecord(headers, entry);
     for (const column of expectedColumns) {
       assert.ok(record[column].trim(), `${column} is empty on row ${rowNumber}`);
     }
@@ -104,11 +112,9 @@ test("material ledger satisfies its tracking contract", async () => {
 });
 
 test("material ledger represents the complete local archive inventory", async () => {
-  const rows = parseCsv(await readFile(ledgerUrl, "utf8"));
+  const rows = await readLedgerRows();
   const [headers, ...entries] = rows;
-  const records = entries.map((entry) =>
-    Object.fromEntries(headers.map((header, column) => [header, entry[column]])),
-  );
+  const records = entries.map((entry) => createRecord(headers, entry));
   const archiveFiles = records.filter((record) => record.source_path.startsWith("全资料/案例/"));
   const archive = records.find((record) => record.id === "archive-full-materials");
   const archivePaths = new Set(archiveFiles.map((record) => record.source_path));
