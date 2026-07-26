@@ -11,37 +11,59 @@ const candidateUrl = new URL(
   import.meta.url,
 );
 
+function assertContainsLines(document, expectedLines) {
+  const documentLines = new Set(document.split(/\r?\n/));
+
+  for (const line of expectedLines) {
+    assert.ok(documentLines.has(line), `missing line: ${line}`);
+  }
+}
+
+function assertContainsText(document, expectedValues) {
+  for (const value of expectedValues) {
+    assert.ok(document.includes(value), `missing text: ${value}`);
+  }
+}
+
 test("final material report preserves the release approval contract", async () => {
   const report = await readFile(reportUrl, "utf8");
 
-  for (const heading of [
+  assertContainsLines(report, [
     "## 已完成",
     "## 未完成",
     "## 示例占位",
     "## 待资料替换",
     "## 外部阻塞",
-  ]) {
-    assert.match(report, new RegExp(`^${heading}$`, "m"), `missing ${heading}`);
-  }
+    "| 资料包 | 用途 | 页面 | 期望格式 | 优先级 |",
+  ]);
 
-  assert.match(report, /\| 资料包 \| 用途 \| 页面 \| 期望格式 \| 优先级 \|/);
-  assert.match(report, /ISO140001/);
-  assert.match(report, /ISO14001/);
-  assert.match(report, /EmailJS/);
-  assert.match(report, /不属于本轮发布必需项/);
-  assert.match(report, /尚未执行生产部署/);
+  assertContainsText(report, [
+    "ISO140001",
+    "ISO14001",
+    "EmailJS",
+    "不属于本轮发布必需项",
+    "尚未执行生产部署",
+  ]);
 });
 
 test("release candidate records reproducible source and verification evidence", async () => {
   const candidate = await readFile(candidateUrl, "utf8");
 
-  assert.match(candidate, /sandcastle\/issue-15/);
-  assert.match(candidate, /[0-9a-f]{40}/);
-  assert.match(candidate, /npm ci/);
-  assert.match(candidate, /npm run typecheck/);
-  assert.match(candidate, /npm run test/);
-  assert.match(candidate, /npm run build/);
-  assert.match(candidate, /VITE_BASE=\/rc\/ npm run build/);
-  assert.match(candidate, /SHA-256/);
-  assert.match(candidate, /未执行生产部署/);
+  assert.match(
+    candidate,
+    /^- \*\*集成应用源码提交：\*\* `[0-9a-f]{40}`$/m,
+    "missing the integrated source commit",
+  );
+  assertContainsLines(candidate, [
+    "npm ci",
+    "npm run typecheck",
+    "npm run test",
+    "npm run build",
+    "VITE_BASE=/rc/ npm run build",
+  ]);
+  assertContainsText(candidate, [
+    "sandcastle/issue-15",
+    "SHA-256",
+    "未执行生产部署",
+  ]);
 });
