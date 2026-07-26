@@ -1,11 +1,13 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Issues #2 and #3 are ready for implementation; the remaining issues record their dependencies.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
 
 > 项目的“状态快照”：已完成、待办、已知问题。细节可随时间模糊化，只保留结论。
-> 最近更新：2026-07-20
+> 最近更新：2026-07-26
 
 ## 已完成
 
@@ -24,9 +26,12 @@
 - **Solutions 双路径改版**：四类应用场景及经典案例路径、四大产品系列及 14 个代表设备；`products_v2` 86 张 OSS WebP 已登记溯源
 - **About / News 重设计**：About 迁移公司、团队与发展资料；News 迁移 6 篇旧站新闻，支持分类筛选与统一详情页，复用已登记 OSS 图片并补齐三语内容
 - **移动端适配**：1024px 以下抽屉导航、320px 单列产品、Hero/触控热区、Contact/FAQ 全宽、Solutions 横向 Tab 提示与三语窄屏验证
+- **下一阶段需求固化**：八项导航与七个主要内容改造方向已形成 PRD、4 份分域规格、术语表和 16 个纵向执行 Issue
 
 ## 进行中
 
+- GitHub #2：素材清单与替换台账（ready-for-agent）
+- GitHub #3：全站导航、标签标题与旧路由（ready-for-agent）
 - 占位内容 → 甲方真实素材替换
 
 ## 待办
@@ -61,3 +66,4 @@
 | 2026-07-15 | About / News 重设计 | 旧站公司与新闻内容迁移；JSON 驱动 6 篇新闻分类与详情页 |
 | 2026-07-17 | 协作记录审计 | 修复残留旧路径与失效链接；数字记忆改为自包含的工具无关记录 |
 | 2026-07-17 | 移动端适配 | 完成导航断点重构与主要页面小屏布局优化；生产构建和多宽度浏览器检查通过 |
+| 2026-07-26 | 改版需求固化 | 完成术语表、PRD、4 份规格和 GitHub #1-#17；#2、#3 可直接领取 |

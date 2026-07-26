@@ -1,18 +1,21 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Approved and documented the next website restructure. The scope is captured in `CONTEXT.md`, one PRD, four domain specifications, and GitHub parent issue #1 with execution issues #2-#17. Issues #2 (material inventory) and #3 (global navigation/routes) are ready for agents; later issues declare their blockers. The daily summary tracks the open question of whether `ISO140001` should be `ISO14001`.
+
 > 2026-07-20: Production moved to the new Ubuntu 24.04 server reached with `ssh web-server`. Nginx serves `/var/www/corp/dist`; both deployment scripts now target this SSH alias and replace the remote dist without creating server-side backups. The current site was built and deployed successfully; the server-side HTTP health check returned 200.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
 
 > 更新最频繁的文件。每次里程碑或换方向时刷新，保证“下一步一目了然”。
-> 最近更新：2026-07-20
+> 最近更新：2026-07-26
 
 ## 当前焦点
 
-About 与 News 已按旧站归档重建：About 采用公司、团队、发展资料与可信入口；News 已迁移 6 篇真实内容，提供分类列表与统一详情页。生产环境已迁移至通过 `ssh web-server` 访问的 Ubuntu 24.04 主机，本地一键发布脚本就绪。
+下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；首批可并行任务为 #2 素材清单和 #3 全站导航/标题/旧路由。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
 
 ## 近期变更
 
+- 2026-07-26 需求与任务拆分：通过 grill-with-docs 明确八项导航、三语、示例占位、案例双层地图、来源优先级、OSS 下载、统一发布等边界；创建 1 份 PRD、4 份分域规格和 GitHub #1-#17。
 - 2026-07-17 移动端适配：新增 1024px 以下可访问抽屉导航；首页 Hero/卡片、Solutions 横向 Tab、Contact/FAQ 宽度与安全区完成小屏优化。已实测 320/390/768/820/1024px 的主要页面及中俄长文案，生产构建通过。
 
 - 2026-07-17 协作记录审计：修复迁移后残留路径与失效文档链接；数字记忆已改为自包含的工具无关记录，网站验收原则已沉淀到 `projectbrief.md`。人工输入中的历史记录保持原样，仅标注其旧路径已过时。
@@ -33,6 +36,9 @@ About 与 News 已按旧站归档重建：About 采用公司、团队、发展�
 
 ## 下一步
 
+- [ ] 执行 GitHub #2：建立素材清单与替换台账
+- [ ] 执行 GitHub #3：重构全站导航、标签标题与旧路由
+- [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
 - [ ] 将 `ignored/resources/page-headers/` 五张图上传 OSS `resources/page-headers/`
 - [ ] 用户审阅首页及 About / News 视觉（Solutions 尖角贴合、五步工程能力区实图、About 布局）
 - [ ] 替换其余占位文案/图片为甲方真实素材
@@ -42,7 +48,7 @@ About 与 News 已按旧站归档重建：About 采用公司、团队、发展�
 
 ## 进行中的任务 Plan
 
-- 无
+- `ai-memories/tasks/2026-07-26-website-restructure-planning.md`（规划已完成，等待 #2-#17 实施）
 
 ## 待决问题 / 阻塞
 

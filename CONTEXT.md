@@ -1,0 +1,62 @@
+# Domain Context
+
+## Company
+
+**GREENGAS 格灵空调**
+: The public brand name used in browser tab titles and brand-facing website copy.
+
+**宁波格灵空调科技有限公司**
+: The company's full Chinese legal and descriptive name. Use it in company-profile copy, footer ownership text, and formal contact information where appropriate.
+
+## Website Sections
+
+**Product Navigation（产品导航）**
+: The product discovery area. It organizes product series, product cards, and a reusable product-detail structure. It is not an automated equipment-selection tool.
+
+**Industry Application（行业应用）**
+: A description of cooling needs, recommended equipment types, and relevant experience for a particular industry or operating environment.
+
+**Technical Support（技术支持）**
+: Public technical manuals, product samples, installation guidance, maintenance information, pre-sales selection material, and after-sales support information.
+
+**Case Center（案例中心）**
+: The map, list, filters, and detail pages used to present customer projects and market coverage.
+
+**News Center（新闻中心）**
+: Company and industry news migrated from approved GREENGAS sources and displayed as categorized list and detail content.
+
+**Contact Page（联系我们）**
+: The combined FAQ and contact destination. FAQ appears before contact information and the message form.
+
+## Content Status
+
+**Verified Content（已核实内容）**
+: Content supported by the current stakeholder instruction, an approved formal source file, or the official GREENGAS legacy website, in that priority order.
+
+**Example Placeholder（示例占位）**
+: Publicly visible example content used to complete a page framework before final source material arrives. It must be visibly labelled “示例内容” or “待资料替换” and must not be presented as a verified fact.
+
+**Pending Replacement（待资料替换）**
+: A field, image, document, product, customer logo, case, or technical value that requires stakeholder-supplied material before it can become Verified Content.
+
+**Public Material（可公开资料）**
+: A source document explicitly accepted for website display or download. Presence in an archive alone does not establish permission to publish it.
+
+## Case Geography
+
+**Verified Case Point（已核实案例点）**
+: A map point backed by an identifiable project and a sufficiently reliable country, province, or city location.
+
+**Market Coverage Point（市场覆盖点）**
+: A map point backed only by a company statement that GREENGAS supplied equipment in that country or region. It must be visually distinct from a Verified Case Point.
+
+## Source Priority
+
+When sources conflict, use this order:
+
+1. Decisions confirmed in the 2026-07-26 stakeholder session.
+2. Approved formal material from the supplied archives.
+3. The official GREENGAS legacy website.
+4. The current website implementation.
+
+Competitor and reference websites define presentation patterns only. Their copy, customer claims, images, and technical data are not GREENGAS source material.
