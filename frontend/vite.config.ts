@@ -20,6 +20,7 @@ export default defineConfig({
         aboutCertifications: resolve(__dirname, 'about/certifications/index.html'),
         aboutClients: resolve(__dirname, 'about/clients/index.html'),
         products: resolve(__dirname, 'products/index.html'),
+        productsDetail: resolve(__dirname, 'products/detail/index.html'),
         industries: resolve(__dirname, 'industries/index.html'),
         support: resolve(__dirname, 'support/index.html'),
         cases: resolve(__dirname, 'cases/index.html'),
