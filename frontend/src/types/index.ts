@@ -10,11 +10,32 @@ export interface Certification {
   readonly image: string;
 }
 
-export interface ClientIndustry {
+export type ContentStatus = 'verified-content' | 'example-placeholder' | 'pending-replacement';
+
+export interface PartnerLogo {
+  readonly category: string;
+  readonly filename: string;
+  readonly alt: string;
+  readonly alt_zh?: string;
+  readonly alt_ru?: string;
+}
+
+export interface PartnerCompany {
   readonly id: string;
   readonly name: string;
-  readonly name_en?: string;
+  readonly name_zh?: string;
   readonly name_ru?: string;
+  readonly status: ContentStatus;
+  readonly logo: PartnerLogo | null;
+}
+
+export interface PartnerGroup {
+  readonly id: string;
+  readonly name: string;
+  readonly name_zh?: string;
+  readonly name_ru?: string;
+  readonly status: ContentStatus;
+  readonly partners: readonly PartnerCompany[];
 }
 
 export type ProductGroup =

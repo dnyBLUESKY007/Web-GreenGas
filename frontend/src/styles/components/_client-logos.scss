@@ -2,34 +2,107 @@
 
 .client-logos {
   &__header {
+    max-width: 48rem;
+    margin: 0 auto 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+  }
+
+  &__groups {
+    display: grid;
+    gap: 2rem;
+  }
+
+  &__group {
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border: 1px solid $color-border;
+    background: $color-bg;
+  }
+
+  &__group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__group-title {
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  &__status {
+    flex: none;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid color-mix(in srgb, var(--color-accent) 35%, $color-border);
+    color: $color-text-muted;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.3;
   }
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    max-width: 40rem;
-    margin-inline: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.875rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
     @media (width < $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (width < $breakpoint-sm) {
+      grid-template-columns: 1fr;
     }
   }
 
   &__tile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem 0.75rem;
-    background-color: $color-bg;
+    min-width: 0;
+    padding: 1rem;
     border: 1px solid $color-border;
-    border-radius: $radius-sm;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: $color-text-muted;
+    background: $color-bg-muted;
     text-align: center;
-    transition: border-color $transition-base;
+  }
+
+  &__logo-frame {
+    display: grid;
+    place-items: center;
+    min-height: 5rem;
+    margin-bottom: 0.75rem;
+    background: $color-bg;
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 4rem;
+    object-fit: contain;
+  }
+
+  &__placeholder {
+    color: $color-text-muted;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    opacity: 0.55;
+  }
+
+  &__name {
+    margin: 0;
+    color: $color-text-muted;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  @media (width < $breakpoint-sm) {
+    &__group-header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 }

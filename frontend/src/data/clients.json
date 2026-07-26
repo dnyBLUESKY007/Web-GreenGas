@@ -1,38 +1,43 @@
 [
   {
-    "id": "steel",
-    "name": "Steel Manufacturing",
-    "name_zh": "钢铁冶炼",
-    "name_ru": "Сталелитейное производство"
-  },
-  {
-    "id": "marine",
-    "name": "Marine & Offshore",
-    "name_zh": "船舶海工",
-    "name_ru": "Морская отрасль"
-  },
-  {
-    "id": "chemical",
-    "name": "Chemical & Energy",
-    "name_zh": "化工能源",
-    "name_ru": "Химическая и энергетическая"
-  },
-  {
-    "id": "food",
-    "name": "Food Processing",
-    "name_zh": "食品加工",
-    "name_ru": "Пищевая промышленность"
-  },
-  {
-    "id": "datacenter",
-    "name": "Data Centers",
-    "name_zh": "数据中心",
-    "name_ru": "Дата-центры"
-  },
-  {
-    "id": "gov",
-    "name": "Government Projects",
-    "name_zh": "政府项目",
-    "name_ru": "Государственные проекты"
+    "id": "pending-partner-materials",
+    "name": "Partner materials pending",
+    "name_zh": "合作资料待补充",
+    "name_ru": "Материалы партнёров ожидаются",
+    "status": "pending-replacement",
+    "partners": [
+      {
+        "id": "partner-slot-01",
+        "name": "Partner logo slot 01 — pending replacement",
+        "name_zh": "合作公司 Logo 位 01 — 待资料替换",
+        "name_ru": "Место для логотипа 01 — ожидает замены",
+        "status": "pending-replacement",
+        "logo": null
+      },
+      {
+        "id": "partner-slot-02",
+        "name": "Partner logo slot 02 — pending replacement",
+        "name_zh": "合作公司 Logo 位 02 — 待资料替换",
+        "name_ru": "Место для логотипа 02 — ожидает замены",
+        "status": "pending-replacement",
+        "logo": null
+      },
+      {
+        "id": "partner-slot-03",
+        "name": "Partner logo slot 03 — pending replacement",
+        "name_zh": "合作公司 Logo 位 03 — 待资料替换",
+        "name_ru": "Место для логотипа 03 — ожидает замены",
+        "status": "pending-replacement",
+        "logo": null
+      },
+      {
+        "id": "partner-slot-04",
+        "name": "Partner logo slot 04 — pending replacement",
+        "name_zh": "合作公司 Logo 位 04 — 待资料替换",
+        "name_ru": "Место для логотипа 04 — ожидает замены",
+        "status": "pending-replacement",
+        "logo": null
+      }
+    ]
   }
 ]

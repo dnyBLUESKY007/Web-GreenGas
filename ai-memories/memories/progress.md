@@ -8,6 +8,8 @@
 
 > 2026-07-26: Completed GitHub #3. The global shell now has eight multilingual destinations with language access at mobile and desktop widths, consistent browser titles, stable new route contracts, a Contact FAQ anchor, and base-path-safe legacy redirects. Typecheck, contract tests, and root/subpath builds pass; full content for the new route shells remains with downstream issues.
 
+> 2026-07-26: Completed GitHub #12. The reusable partner showcase now uses status-bearing grouped data, a responsive static grid, visible multilingual pending labels, and an OSS-only accessible image path. No real partner identity or Logo is published because zero items currently have public approval.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -36,6 +38,7 @@
 - **本地素材归档**：三个原始压缩包位于 `ignored/source-archives/`，解压资料位于 `ignored/extracted/`，Sandcastle 可按相同相对路径访问
 - **全局导航与兼容路由**：八项三语导航、左对齐品牌、统一标签标题、Contact FAQ 锚点及旧 Solutions/FAQ 子路径安全跳转；确定 `/products/`、`/industries/`、`/support/`、`/cases/` 稳定路由
 - **素材包本地盘点**：验证完整 RAR 与六组 35 个文件，完成逐文件哈希、可读性、分类、歧义与敏感内容审查；未发现损坏或精确重复
+- **合作公司 Logo 展示基础**：结构化分组、4/2/1 列响应式网格、三语状态及可访问 OSS 图片契约；当前四项均明确待资料替换
 
 ## 进行中
 
@@ -52,6 +55,7 @@
 ## 已知问题 / 技术债
 
 - 部分联系方式与公司信息仍为占位数据
+- 合作公司正式名称、Logo 源文件和公开展示许可尚未提供；当前展示位不得视为真实合作关系
 - `全资料.rar` 内全部素材仍未获得公开许可；部分涉及人员肖像、车牌、客户/政府场地、第三方图片、技术参数和来源歧义
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
@@ -79,3 +83,4 @@
 | 2026-07-26 | 全局导航与路由 | 完成 GitHub #3 八项导航、统一标题、新路由契约和旧入口兼容跳转 |
 | 2026-07-26 | 素材台账基线 | 登记 25 条仓库来源/缺口和 OSS 审查规则；等待完整素材包继续 #2 |
 | 2026-07-26 | 素材包本地盘点 | 验证 RAR 与六组 35 文件；无损坏或精确重复，全部等待人工公开审批 |
+| 2026-07-26 | 合作公司 Logo 展示 | 建立状态化分组网格和 OSS/alt 契约；零项获批，保留四个明确待替换位 |
