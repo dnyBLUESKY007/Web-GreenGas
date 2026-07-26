@@ -20,23 +20,23 @@ export function createClientLogos(): HTMLElement {
   });
   header.classList.add('client-logos__header');
 
-  const groups = document.createElement('div');
-  groups.className = 'client-logos__groups';
+  const groupsContainer = document.createElement('div');
+  groupsContainer.className = 'client-logos__groups';
 
   for (const partnerGroup of partnerGroups) {
-    groups.appendChild(createPartnerGroup(partnerGroup));
+    groupsContainer.appendChild(createPartnerGroup(partnerGroup));
   }
 
-  container.append(header, groups);
+  container.append(header, groupsContainer);
   section.appendChild(container);
 
   return section;
 }
 
 function createPartnerGroup(partnerGroup: PartnerGroup): HTMLElement {
-  const group = document.createElement('section');
-  group.className = 'client-logos__group';
-  group.setAttribute('aria-labelledby', `partner-group-${partnerGroup.id}`);
+  const groupSection = document.createElement('section');
+  groupSection.className = 'client-logos__group';
+  groupSection.setAttribute('aria-labelledby', `partner-group-${partnerGroup.id}`);
 
   const groupHeader = document.createElement('div');
   groupHeader.className = 'client-logos__group-header';
@@ -46,19 +46,19 @@ function createPartnerGroup(partnerGroup: PartnerGroup): HTMLElement {
   title.className = 'client-logos__group-title';
   title.textContent = td(partnerGroup, 'name');
 
-  const status = document.createElement('span');
-  status.className = 'client-logos__status';
-  status.textContent = t(`home.clients.status.${partnerGroup.status}`);
+  const statusLabel = document.createElement('span');
+  statusLabel.className = 'client-logos__status';
+  statusLabel.textContent = t(`home.clients.status.${partnerGroup.status}`);
 
-  const grid = document.createElement('ul');
-  grid.className = 'client-logos__grid';
+  const partnerList = document.createElement('ul');
+  partnerList.className = 'client-logos__grid';
   for (const partner of partnerGroup.partners) {
-    grid.appendChild(createPartnerTile(partner));
+    partnerList.appendChild(createPartnerTile(partner));
   }
 
-  groupHeader.append(title, status);
-  group.append(groupHeader, grid);
-  return group;
+  groupHeader.append(title, statusLabel);
+  groupSection.append(groupHeader, partnerList);
+  return groupSection;
 }
 
 function createPartnerTile(partner: PartnerCompany): HTMLLIElement {
@@ -68,11 +68,12 @@ function createPartnerTile(partner: PartnerCompany): HTMLLIElement {
   const logoFrame = document.createElement('div');
   logoFrame.className = 'client-logos__logo-frame';
 
-  if (partner.logo) {
+  const { logo } = partner;
+  if (logo) {
     const logoImage = document.createElement('img');
     logoImage.className = 'client-logos__logo';
-    logoImage.src = cdnUrl(partner.logo.category, partner.logo.filename);
-    logoImage.alt = td(partner.logo, 'alt');
+    logoImage.src = cdnUrl(logo.category, logo.filename);
+    logoImage.alt = td(logo, 'alt');
     logoImage.loading = 'lazy';
     logoImage.decoding = 'async';
     logoFrame.appendChild(logoImage);
@@ -84,10 +85,10 @@ function createPartnerTile(partner: PartnerCompany): HTMLLIElement {
     logoFrame.appendChild(placeholder);
   }
 
-  const name = document.createElement('p');
-  name.className = 'client-logos__name';
-  name.textContent = td(partner, 'name');
+  const partnerName = document.createElement('p');
+  partnerName.className = 'client-logos__name';
+  partnerName.textContent = td(partner, 'name');
 
-  tile.append(logoFrame, name);
+  tile.append(logoFrame, partnerName);
   return tile;
 }

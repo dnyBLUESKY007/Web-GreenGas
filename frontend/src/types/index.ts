@@ -10,7 +10,10 @@ export interface Certification {
   readonly image: string;
 }
 
-export type ContentStatus = 'verified-content' | 'example-placeholder' | 'pending-replacement';
+export type PartnerContentStatus =
+  | 'verified-content'
+  | 'example-placeholder'
+  | 'pending-replacement';
 
 export interface PartnerLogo {
   readonly category: string;
@@ -25,7 +28,7 @@ export interface PartnerCompany {
   readonly name: string;
   readonly name_zh?: string;
   readonly name_ru?: string;
-  readonly status: ContentStatus;
+  readonly status: PartnerContentStatus;
   readonly logo: PartnerLogo | null;
 }
 
@@ -34,7 +37,7 @@ export interface PartnerGroup {
   readonly name: string;
   readonly name_zh?: string;
   readonly name_ru?: string;
-  readonly status: ContentStatus;
+  readonly status: PartnerContentStatus;
   readonly partners: readonly PartnerCompany[];
 }
 
