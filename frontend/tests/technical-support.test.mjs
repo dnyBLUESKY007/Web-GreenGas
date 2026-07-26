@@ -63,7 +63,7 @@ test('technical support exposes truthful categorized metadata and safe downloads
   assert.match(supportPage, /publicationStatus !== 'approved'/);
   assert.match(supportPage, /availabilityStatus !== 'verified'/);
   assert.match(supportPage, /url\.hostname === new URL\(CDN_BASE\)\.hostname/);
-  assert.match(supportPage, /new URL\(document\.downloadUrl\)/);
+  assert.match(supportPage, /new URL\(technicalDocument\.downloadUrl\)/);
   assert.match(supportPage, /aria-pressed/);
   assert.match(supportPage, /aria-live/);
   assert.match(supportPage, /filter\.setAttribute\('role', 'group'\)/);

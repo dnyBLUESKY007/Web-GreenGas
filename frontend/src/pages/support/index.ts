@@ -100,8 +100,8 @@ function createCategorySections(): HTMLElement {
     } else {
       const list = document.createElement('div');
       list.className = 'support-category__documents';
-      for (const item of categoryDocuments) {
-        list.appendChild(createDocumentCard(item, category));
+      for (const technicalDocument of categoryDocuments) {
+        list.appendChild(createDocumentCard(technicalDocument, category));
       }
       section.appendChild(list);
     }
@@ -113,7 +113,7 @@ function createCategorySections(): HTMLElement {
 }
 
 function createDocumentCard(
-  item: TechnicalDocument,
+  technicalDocument: TechnicalDocument,
   category: TechnicalDocumentCategoryRecord,
 ): HTMLElement {
   const card = document.createElement('article');
@@ -121,43 +121,44 @@ function createDocumentCard(
 
   const heading = document.createElement('div');
   heading.className = 'support-document__heading';
-  const title = documentElement('h3', 'support-document__title', td(item, 'title'));
-  heading.appendChild(title);
+  heading.appendChild(
+    createTextElement('h3', 'support-document__title', td(technicalDocument, 'title')),
+  );
 
-  if (item.contentStatus === 'example-placeholder') {
-    heading.appendChild(documentElement('span', 'support-document__badge', t('support.example')));
+  if (technicalDocument.contentStatus === 'example-placeholder') {
+    heading.appendChild(createTextElement('span', 'support-document__badge', t('support.example')));
   }
 
   const metadata = document.createElement('dl');
   metadata.className = 'support-document__metadata';
   appendMetadata(metadata, t('support.meta.category'), td(category, 'name'));
-  appendMetadata(metadata, t('support.meta.product'), td(item, 'relatedProduct'));
-  appendMetadata(metadata, t('support.meta.language'), td(item, 'language'));
-  appendMetadata(metadata, t('support.meta.fileType'), item.fileType);
-  appendMetadata(metadata, t('support.meta.versionOrDate'), td(item, 'versionOrDate'));
+  appendMetadata(metadata, t('support.meta.product'), td(technicalDocument, 'relatedProduct'));
+  appendMetadata(metadata, t('support.meta.language'), td(technicalDocument, 'language'));
+  appendMetadata(metadata, t('support.meta.fileType'), technicalDocument.fileType);
+  appendMetadata(metadata, t('support.meta.versionOrDate'), td(technicalDocument, 'versionOrDate'));
 
-  card.append(heading, metadata, createDownloadAction(item));
+  card.append(heading, metadata, createDownloadAction(technicalDocument));
   return card;
 }
 
 function appendMetadata(list: HTMLDListElement, label: string, value: string): void {
   list.append(
-    documentElement('dt', 'support-document__label', label),
-    documentElement('dd', 'support-document__value', value),
+    createTextElement('dt', 'support-document__label', label),
+    createTextElement('dd', 'support-document__value', value),
   );
 }
 
-function createDownloadAction(document: TechnicalDocument): HTMLElement {
-  if (isDownloadReady(document)) {
-    const link = documentElement('a', 'support-document__download', t('support.download'));
-    link.setAttribute('href', document.downloadUrl);
-    link.setAttribute('aria-label', `${t('support.download')}: ${td(document, 'title')}`);
+function createDownloadAction(technicalDocument: TechnicalDocument): HTMLElement {
+  if (isDownloadReady(technicalDocument)) {
+    const link = createTextElement('a', 'support-document__download', t('support.download'));
+    link.setAttribute('href', technicalDocument.downloadUrl);
+    link.setAttribute('aria-label', `${t('support.download')}: ${td(technicalDocument, 'title')}`);
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
     return link;
   }
 
-  const unavailable = documentElement(
+  const unavailable = createTextElement(
     'span',
     'support-document__download support-document__download--unavailable',
     t('support.unavailable'),
@@ -166,15 +167,19 @@ function createDownloadAction(document: TechnicalDocument): HTMLElement {
   return unavailable;
 }
 
-function isDownloadReady(document: TechnicalDocument): document is TechnicalDocument & { downloadUrl: string } {
+function isDownloadReady(
+  technicalDocument: TechnicalDocument,
+): technicalDocument is TechnicalDocument & { downloadUrl: string } {
   if (
-    document.publicationStatus !== 'approved'
-    || document.availabilityStatus !== 'verified'
-    || !document.downloadUrl
-  ) return false;
+    technicalDocument.publicationStatus !== 'approved'
+    || technicalDocument.availabilityStatus !== 'verified'
+    || !technicalDocument.downloadUrl
+  ) {
+    return false;
+  }
 
   try {
-    const url = new URL(document.downloadUrl);
+    const url = new URL(technicalDocument.downloadUrl);
     return url.protocol === 'https:' && url.hostname === new URL(CDN_BASE).hostname;
   } catch {
     return false;
@@ -187,7 +192,7 @@ function focusActiveFilter(): void {
   )?.focus();
 }
 
-function documentElement<K extends keyof HTMLElementTagNameMap>(
+function createTextElement<K extends keyof HTMLElementTagNameMap>(
   tagName: K,
   className: string,
   text: string,
