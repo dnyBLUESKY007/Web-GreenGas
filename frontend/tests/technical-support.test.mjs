@@ -22,7 +22,9 @@ test('technical support exposes truthful categorized metadata and safe downloads
   ];
 
   assert.deepEqual(data.categories.map(({ id }) => id), expectedCategories);
+  assert.equal(new Set(data.categories.map(({ id }) => id)).size, data.categories.length);
   assert.ok(data.documents.length > 0, 'the library should demonstrate its metadata contract');
+  assert.equal(new Set(data.documents.map(({ id }) => id)).size, data.documents.length);
 
   for (const category of data.categories) {
     assert.ok(category.name && category.name_zh && category.name_ru, `${category.id} labels`);
@@ -56,13 +58,16 @@ test('technical support exposes truthful categorized metadata and safe downloads
 
   const supportPage = await read('src/pages/support/index.ts');
   assert.match(supportPage, /technical-support\.json/);
+  assert.match(supportPage, /import \{ CDN_BASE \} from '@\/config\/assets'/);
   assert.match(supportPage, /contentStatus === 'example-placeholder'/);
   assert.match(supportPage, /publicationStatus !== 'approved'/);
   assert.match(supportPage, /availabilityStatus !== 'verified'/);
-  assert.match(supportPage, /OSS_HOST_PATTERN/);
+  assert.match(supportPage, /url\.hostname === new URL\(CDN_BASE\)\.hostname/);
   assert.match(supportPage, /new URL\(document\.downloadUrl\)/);
   assert.match(supportPage, /aria-pressed/);
   assert.match(supportPage, /aria-live/);
+  assert.match(supportPage, /filter\.setAttribute\('role', 'group'\)/);
+  assert.match(supportPage, /link\.setAttribute\('aria-label'/);
   assert.match(supportPage, /focusActiveFilter/);
   assert.match(supportPage, /support\.empty/);
 

@@ -8,7 +8,7 @@
 
 > 2026-07-26: Completed GitHub #3 global shell work: eight ordered multilingual destinations, desktop/mobile language access, stable `/products/`, `/industries/`, `/support/`, and `/cases/` route contracts, constant browser titles, Contact `#faq`, and base-path-safe redirects from `/solutions/` and `/faq/`. Typecheck, contract tests, and root/subpath production builds pass.
 
-> 2026-07-26: Completed GitHub #8 technical-support library: eight inventory-backed categories, trilingual filtering and metadata, visible example/empty/unavailable states, and approved-HTTPS-OSS-only download enforcement. No technical file is currently approved for public download.
+> 2026-07-26: Completed GitHub #8 technical-support library: eight inventory-backed categories, trilingual filtering and metadata, visible example/empty/unavailable states, and downloads restricted to approved, availability-verified files on the configured GREENGAS OSS host. No technical file is currently approved for public download.
 
 > 2026-07-20: Production moved to the new Ubuntu 24.04 server reached with `ssh web-server`. Nginx serves `/var/www/corp/dist`; both deployment scripts now target this SSH alias and replace the remote dist without creating server-side backups. The current site was built and deployed successfully; the server-side HTTP health check returned 200.
 

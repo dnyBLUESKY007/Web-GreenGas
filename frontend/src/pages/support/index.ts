@@ -1,5 +1,6 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { CDN_BASE } from '@/config/assets';
 import supportDataJson from '@/data/technical-support.json';
 import { t, td } from '@/i18n';
 import type {
@@ -11,7 +12,6 @@ import type {
 import { initPage } from '@/utils/mountLayout';
 
 const supportData = supportDataJson as TechnicalSupportData;
-const OSS_HOST_PATTERN = /\.oss-[a-z0-9-]+\.aliyuncs\.com$/;
 let activeCategory: TechnicalDocumentCategory | 'all' = 'all';
 
 function renderSupportPage(): void {
@@ -48,6 +48,7 @@ function createInventoryNotice(): HTMLElement {
 function createCategoryFilter(): HTMLElement {
   const filter = document.createElement('div');
   filter.className = 'support-filter';
+  filter.setAttribute('role', 'group');
   filter.setAttribute('aria-label', t('support.filter.label'));
 
   const options: readonly (TechnicalDocumentCategoryRecord | { readonly id: 'all' })[] = [
@@ -150,6 +151,7 @@ function createDownloadAction(document: TechnicalDocument): HTMLElement {
   if (isDownloadReady(document)) {
     const link = documentElement('a', 'support-document__download', t('support.download'));
     link.setAttribute('href', document.downloadUrl);
+    link.setAttribute('aria-label', `${t('support.download')}: ${td(document, 'title')}`);
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
     return link;
@@ -173,7 +175,7 @@ function isDownloadReady(document: TechnicalDocument): document is TechnicalDocu
 
   try {
     const url = new URL(document.downloadUrl);
-    return url.protocol === 'https:' && OSS_HOST_PATTERN.test(url.hostname);
+    return url.protocol === 'https:' && url.hostname === new URL(CDN_BASE).hostname;
   } catch {
     return false;
   }
