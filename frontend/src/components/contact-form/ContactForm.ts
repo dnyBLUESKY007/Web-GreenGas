@@ -1,6 +1,5 @@
 import { t } from '@/i18n';
 
-const ROTATING_TITLE_COUNT = 5;
 const ROTATION_INTERVAL_MS = 3000;
 const FADE_DURATION_MS = 300;
 
@@ -61,7 +60,7 @@ function startTitleRotation(titleEl: HTMLElement): void {
     titleEl.classList.add('message-board__title--hidden');
 
     window.setTimeout(() => {
-      currentIndex = (currentIndex + 1) % ROTATING_TITLE_COUNT;
+      currentIndex = (currentIndex + 1) % ROTATING_TITLE_KEYS.length;
       titleEl.textContent = t(ROTATING_TITLE_KEYS[currentIndex]);
       titleEl.classList.remove('message-board__title--hidden');
     }, FADE_DURATION_MS);

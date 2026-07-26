@@ -42,13 +42,13 @@ export function renderFaq(container: HTMLElement): void {
 
     const answerItems = getLocalizedAnswerItems(item);
     if (answerItems.length > 0) {
-      const numberedAnswers = document.createElement('ol');
+      const answerList = document.createElement('ol');
       for (const answerItem of answerItems) {
         const listItem = document.createElement('li');
         listItem.textContent = answerItem;
-        numberedAnswers.appendChild(listItem);
+        answerList.appendChild(listItem);
       }
-      answer.appendChild(numberedAnswers);
+      answer.appendChild(answerList);
     }
 
     details.append(question, answer);
@@ -59,16 +59,14 @@ export function renderFaq(container: HTMLElement): void {
 }
 
 function getLocalizedAnswerItems(item: FaqItem): readonly string[] {
-  const locale = getLocale();
-
-  if (locale === 'zh') {
-    return item.answerItems_zh ?? item.answerItems ?? [];
+  switch (getLocale()) {
+    case 'zh':
+      return item.answerItems_zh ?? item.answerItems ?? [];
+    case 'ru':
+      return item.answerItems_ru ?? item.answerItems ?? [];
+    default:
+      return item.answerItems ?? [];
   }
-  if (locale === 'ru') {
-    return item.answerItems_ru ?? item.answerItems ?? [];
-  }
-
-  return item.answerItems ?? [];
 }
 
 const CHANNEL_ICON_MAP: Readonly<Record<string, string>> = {
