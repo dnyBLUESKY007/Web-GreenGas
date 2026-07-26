@@ -1,0 +1,218 @@
+[
+  {
+    "id": "steel",
+    "status": "example-placeholder",
+    "icon": "factory",
+    "name": "Steel Production",
+    "name_zh": "钢铁行业",
+    "name_ru": "Сталелитейная промышленность",
+    "summary": "A framework for cooling high-heat production and operator spaces.",
+    "summary_zh": "面向高热生产区域与人员作业空间的冷却方案框架。",
+    "summary_ru": "Структура решений для охлаждения горячих производственных зон и рабочих мест.",
+    "environment": "Furnace-adjacent workshops, crane cabins, electrical rooms, and continuously operated production areas.",
+    "environment_zh": "炉区周边车间、行车驾驶室、电气室及连续运行的生产区域。",
+    "environment_ru": "Цеха рядом с печами, кабины кранов, электрощитовые и зоны непрерывного производства.",
+    "challenge": "High radiant heat, dust, and uneven loads can make conventional comfort cooling unsuitable.",
+    "challenge_zh": "高辐射热、粉尘与不均衡负荷，可能使常规舒适性空调难以适用。",
+    "challenge_ru": "Высокое лучистое тепло, пыль и неравномерные нагрузки могут исключать обычное комфортное охлаждение.",
+    "response": "Assess heat sources, duty cycle, filtration, and equipment placement before selecting a high-temperature configuration.",
+    "response_zh": "在选择耐高温配置前，先评估热源、运行周期、过滤需求与设备布置。",
+    "response_ru": "Перед выбором высокотемпературной конфигурации оцениваются источники тепла, режим работы, фильтрация и размещение.",
+    "equipment": [
+      {
+        "productId": "overhead-crane-high-temp-ac",
+        "name": "High-temperature crane-cabin air conditioner",
+        "name_zh": "行车高温空调",
+        "name_ru": "Высокотемпературный кондиционер крановой кабины"
+      }
+    ],
+    "relatedCases": [
+      {
+        "id": "steel-high-temperature-example",
+        "name": "High-temperature workshop case space",
+        "name_zh": "高温车间案例空间",
+        "name_ru": "Раздел примера для высокотемпературного цеха"
+      }
+    ]
+  },
+  {
+    "id": "chemical",
+    "status": "example-placeholder",
+    "icon": "gear",
+    "name": "Chemical Processing",
+    "name_zh": "化工行业",
+    "name_ru": "Химическая промышленность",
+    "summary": "A framework for controlled cooling in corrosive or classified process areas.",
+    "summary_zh": "面向腐蚀性或有分区要求工艺区域的受控冷却框架。",
+    "summary_ru": "Структура контролируемого охлаждения для коррозионных или классифицированных технологических зон.",
+    "environment": "Process rooms, utility spaces, control rooms, and outdoor equipment exposed to aggressive conditions.",
+    "environment_zh": "工艺间、公用工程区域、控制室及暴露于严苛条件的室外设备区。",
+    "environment_ru": "Технологические и вспомогательные помещения, диспетчерские и наружные зоны с агрессивной средой.",
+    "challenge": "Corrosion, airborne contaminants, and hazardous-area requirements may constrain materials and system layout.",
+    "challenge_zh": "腐蚀、空气污染物与危险区域要求，可能限制材料选用和系统布置。",
+    "challenge_ru": "Коррозия, загрязнения воздуха и требования опасных зон могут ограничивать материалы и компоновку системы.",
+    "response": "Confirm site classification and media exposure, then define protection, separation, and maintainability requirements.",
+    "response_zh": "确认现场分区与介质暴露条件，再定义防护、隔离和可维护性要求。",
+    "response_ru": "После подтверждения классификации зоны и воздействия среды определяются защита, разделение и обслуживание.",
+    "equipment": [
+      {
+        "productId": "packaged-dx-evap-cond",
+        "name": "Packaged direct-expansion unit",
+        "name_zh": "整体式直膨机组",
+        "name_ru": "Компактная установка прямого расширения"
+      }
+    ],
+    "relatedCases": [
+      {
+        "id": "chemical-process-example",
+        "name": "Chemical process cooling case space",
+        "name_zh": "化工工艺冷却案例空间",
+        "name_ru": "Раздел примера охлаждения химического процесса"
+      }
+    ]
+  },
+  {
+    "id": "power",
+    "status": "example-placeholder",
+    "icon": "server",
+    "name": "Power Facilities",
+    "name_zh": "电力行业",
+    "name_ru": "Энергетика",
+    "summary": "A framework for stable climate control around critical electrical equipment.",
+    "summary_zh": "面向关键电气设备周边稳定环境控制的方案框架。",
+    "summary_ru": "Структура стабильного климат-контроля для критически важного электрооборудования.",
+    "environment": "Electrical rooms, control rooms, substations, and equipment enclosures with continuous internal heat gain.",
+    "environment_zh": "电气室、控制室、变电设施及具有持续内部散热的设备舱体。",
+    "environment_ru": "Электрощитовые, диспетчерские, подстанции и аппаратные контейнеры с постоянным тепловыделением.",
+    "challenge": "Continuous operation and equipment heat loads require predictable temperature control and service access.",
+    "challenge_zh": "连续运行与设备散热要求温度控制可预测，同时保留维护通道。",
+    "challenge_ru": "Непрерывная работа и тепловыделение оборудования требуют предсказуемой температуры и доступа для сервиса.",
+    "response": "Review load profile, redundancy expectations, enclosure conditions, and maintenance windows before configuration.",
+    "response_zh": "配置前评估负荷曲线、冗余预期、舱体条件与维护窗口。",
+    "response_ru": "До конфигурирования оцениваются профиль нагрузки, резервирование, условия корпуса и окна обслуживания.",
+    "equipment": [
+      {
+        "productId": "air-cooled-temp-humidity",
+        "name": "Constant temperature and humidity unit",
+        "name_zh": "恒温恒湿机组",
+        "name_ru": "Установка постоянной температуры и влажности"
+      }
+    ],
+    "relatedCases": [
+      {
+        "id": "power-electrical-room-example",
+        "name": "Electrical-room cooling case space",
+        "name_zh": "电气室冷却案例空间",
+        "name_ru": "Раздел примера охлаждения электрощитовой"
+      }
+    ]
+  },
+  {
+    "id": "pharmaceutical",
+    "status": "example-placeholder",
+    "icon": "blueprint",
+    "name": "Pharmaceutical Production",
+    "name_zh": "制药行业",
+    "name_ru": "Фармацевтическое производство",
+    "summary": "A framework for temperature, humidity, and air-treatment requirements in controlled spaces.",
+    "summary_zh": "面向受控空间温度、湿度与空气处理要求的方案框架。",
+    "summary_ru": "Структура требований к температуре, влажности и обработке воздуха в контролируемых помещениях.",
+    "environment": "Production suites, laboratories, storage rooms, and support spaces with defined environmental conditions.",
+    "environment_zh": "具有明确环境条件的生产区域、实验室、储存间及辅助空间。",
+    "environment_ru": "Производственные зоны, лаборатории, склады и вспомогательные помещения с заданными условиями.",
+    "challenge": "Temperature, humidity, filtration, pressure relationships, and cleaning needs must be considered together.",
+    "challenge_zh": "温度、湿度、过滤、压差关系与清洁需求需要统筹考虑。",
+    "challenge_ru": "Температуру, влажность, фильтрацию, перепады давления и очистку необходимо учитывать совместно.",
+    "response": "Translate the approved room and process requirements into an air-treatment concept before equipment selection.",
+    "response_zh": "先将已确认的房间与工艺要求转化为空气处理方案，再进行设备选择。",
+    "response_ru": "Утверждённые требования помещения и процесса переводятся в концепцию обработки воздуха до выбора оборудования.",
+    "equipment": [
+      {
+        "productId": "air-handling-unit",
+        "name": "Air handling unit",
+        "name_zh": "空气处理机组",
+        "name_ru": "Установка обработки воздуха"
+      }
+    ],
+    "relatedCases": [
+      {
+        "id": "pharmaceutical-controlled-space-example",
+        "name": "Controlled-space case area",
+        "name_zh": "受控环境案例空间",
+        "name_ru": "Раздел примера контролируемого помещения"
+      }
+    ]
+  },
+  {
+    "id": "defence",
+    "status": "example-placeholder",
+    "icon": "shield",
+    "name": "Defence Applications",
+    "name_zh": "军工领域",
+    "name_ru": "Оборонные применения",
+    "summary": "A framework for robust cooling where access, duty, and documentation are tightly controlled.",
+    "summary_zh": "面向访问、工况与资料均受严格控制场景的可靠冷却框架。",
+    "summary_ru": "Структура надёжного охлаждения для объектов со строгим контролем доступа, режима и документации.",
+    "environment": "Equipment shelters, test spaces, control rooms, and mobile or fixed technical facilities.",
+    "environment_zh": "设备舱、试验空间、控制室及移动或固定技术设施。",
+    "environment_ru": "Аппаратные укрытия, испытательные зоны, диспетчерские, мобильные и стационарные технические объекты.",
+    "challenge": "Restricted access, unusual duty cycles, vibration, transport, or environmental exposure may affect the design basis.",
+    "challenge_zh": "受限访问、特殊运行周期、振动、运输或环境暴露可能影响设计依据。",
+    "challenge_ru": "Ограниченный доступ, особые циклы, вибрация, транспортировка и внешняя среда могут влиять на проектирование.",
+    "response": "Define interfaces, environmental limits, service constraints, and acceptance requirements before detailed engineering.",
+    "response_zh": "详细设计前明确接口、环境边界、维护约束与验收要求。",
+    "response_ru": "До детального проектирования определяются интерфейсы, пределы среды, сервисные ограничения и приёмка.",
+    "equipment": [
+      {
+        "productId": "split-dx-unit",
+        "name": "Split direct-expansion unit",
+        "name_zh": "分体式直膨机组",
+        "name_ru": "Сплит-система прямого расширения"
+      }
+    ],
+    "relatedCases": [
+      {
+        "id": "defence-technical-facility-example",
+        "name": "Technical-facility case space",
+        "name_zh": "技术设施案例空间",
+        "name_ru": "Раздел примера технического объекта"
+      }
+    ]
+  },
+  {
+    "id": "special-facilities",
+    "status": "example-placeholder",
+    "icon": "building",
+    "name": "Specialized Facilities",
+    "name_zh": "特种设施",
+    "name_ru": "Специализированные объекты",
+    "summary": "A framework for non-standard sites that require project-specific environmental control.",
+    "summary_zh": "面向需要按项目定义环境控制的非标准设施方案框架。",
+    "summary_ru": "Структура решений для нестандартных объектов с индивидуальным климат-контролем.",
+    "environment": "Marine, high-temperature, remote, modular, or otherwise non-standard operating environments.",
+    "environment_zh": "船用、高温、偏远、模块化或其他非标准运行环境。",
+    "environment_ru": "Морские, высокотемпературные, удалённые, модульные и другие нестандартные условия.",
+    "challenge": "Standard equipment assumptions may not cover weather, corrosion, logistics, footprint, or continuous-duty needs.",
+    "challenge_zh": "标准设备假设可能无法覆盖气候、腐蚀、物流、空间或连续运行需求。",
+    "challenge_ru": "Стандартное оборудование может не учитывать климат, коррозию, логистику, габариты или непрерывную работу.",
+    "response": "Start from verified site constraints and develop a project-specific equipment and controls package.",
+    "response_zh": "从已核实的现场约束出发，形成项目专用的设备与控制配置。",
+    "response_ru": "На основе подтверждённых ограничений объекта разрабатывается индивидуальный комплект оборудования и управления.",
+    "equipment": [
+      {
+        "productId": "packaged-air-cooled-cabinet",
+        "name": "Packaged air-cooled cabinet unit",
+        "name_zh": "单元风冷柜机",
+        "name_ru": "Шкафная установка с воздушным охлаждением"
+      }
+    ],
+    "relatedCases": [
+      {
+        "id": "special-facility-example",
+        "name": "Special-facility case space",
+        "name_zh": "特种设施案例空间",
+        "name_ru": "Раздел примера специализированного объекта"
+      }
+    ]
+  }
+]

@@ -24,6 +24,8 @@
 
 > 2026-07-26: Completed GitHub #4. About now uses the approved four-paragraph source in three languages, preserves `ISO140001`, separates management principles/product scope/industries/supply experience, and explicitly distinguishes market coverage from public case evidence. Company and certificate images remain pending-replacement placeholders until approved. Typecheck, tests, and production build pass.
 
+> 2026-07-26: Completed GitHub #7. Industry Applications now covers six GREENGAS-supported sectors with multilingual structured details, explicit Example Placeholder status, responsive icon navigation, and stable base-safe product/case links. Typecheck, tests, and root/subpath builds pass.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -59,6 +61,7 @@
 - **产品导航与通用详情**：四系列 14 个产品卡片接入独立目录；通用详情覆盖特点、参数、行业、下载、咨询与未找到恢复状态，三语示例/待替换标识明确
 - **FAQ 与 Contact 合并**：六组三语 FAQ 位于直接联系和留言区之前；编号答案使用有序列表；只渲染显式批准渠道；EmailJS 未配置时不允许提交或显示送达反馈
 - **正式 About 重建**：完整四段三语公司描述、四项管理理念、八类产品、五个行业及国内外供应经验；保留 `ISO140001`，未批准公司/证书媒体使用明确待替换占位
+- **行业应用页面**：钢铁、化工、电力、制药、军工和特种设施六类三语结构化内容；逐类包含环境、挑战、应对、设备和案例空间，并明确示例占位状态
 
 ## 进行中
 
@@ -112,3 +115,4 @@
 | 2026-07-26 | FAQ 与 Contact 合并 | 完成 GitHub #5 六组三语 FAQ、批准渠道过滤和未配置 EmailJS 的诚实禁用状态 |
 | 2026-07-26 | About 正式描述 | 完成 GitHub #4 四段三语介绍及证据边界；未批准媒体以待替换占位展示 |
 | 2026-07-26 | Sandcastle 内容分支整合 | 按顺序合并 #12、#11、#9、#6、#5、#4；组合类型检查与 12 项测试通过 |
+| 2026-07-26 | 行业应用 | 完成六行业三语总览与详情、示例状态及稳定跨页链接；根路径与子路径构建通过 |
