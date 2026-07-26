@@ -27,11 +27,11 @@ function renderCasesPage(): void {
   section.className = 'section cases-list';
   const container = document.createElement('div');
   container.className = 'container';
-  const filtered = getFilteredProjects();
+  const filteredProjects = getFilteredProjects();
   container.append(
-    createCaseMap(new Set(filtered.map(({ id }) => id))),
+    createCaseMap(new Set(filteredProjects.map(({ id }) => id))),
     createFilters(),
-    createCaseResults(filtered),
+    createCaseResults(filteredProjects),
   );
   section.appendChild(container);
   main.replaceChildren(header, section);
@@ -103,17 +103,17 @@ function getFilteredProjects(): typeof projects {
   );
 }
 
-function createCaseResults(filtered: typeof projects): HTMLElement {
+function createCaseResults(filteredProjects: typeof projects): HTMLElement {
   const results = document.createElement('div');
   results.className = 'case-results';
 
   const count = document.createElement('p');
   count.className = 'case-results__count';
   count.setAttribute('aria-live', 'polite');
-  count.textContent = t('cases.results').replace('{count}', String(filtered.length));
+  count.textContent = t('cases.results').replace('{count}', String(filteredProjects.length));
   results.appendChild(count);
 
-  if (filtered.length === 0) {
+  if (filteredProjects.length === 0) {
     const empty = document.createElement('p');
     empty.className = 'case-results__empty';
     empty.textContent = t('cases.empty');
@@ -123,7 +123,7 @@ function createCaseResults(filtered: typeof projects): HTMLElement {
 
   const grid = document.createElement('div');
   grid.className = 'grid grid--projects';
-  for (const project of filtered) {
+  for (const project of filteredProjects) {
     const card = createProjectCard(project);
     card.id = `case-card-${project.id}`;
     grid.appendChild(card);

@@ -8,10 +8,10 @@ const DETAILS_ID = 'case-map-details';
 let selectedPointId: string | undefined;
 
 export function createCaseMap(visibleProjectIds: ReadonlySet<string>): HTMLElement {
-  const points = caseMapPoints.filter(
+  const visiblePoints = caseMapPoints.filter(
     (point) => point.type === 'market-coverage' || visibleProjectIds.has(point.projectId),
   );
-  const selectedPoint = points.find(({ id }) => id === selectedPointId) ?? points[0];
+  const selectedPoint = visiblePoints.find(({ id }) => id === selectedPointId) ?? visiblePoints[0];
   selectedPointId = selectedPoint?.id;
 
   const section = document.createElement('section');
@@ -38,7 +38,7 @@ export function createCaseMap(visibleProjectIds: ReadonlySet<string>): HTMLEleme
 
   const layout = document.createElement('div');
   layout.className = 'case-map__layout';
-  const stage = createMapStage(points, selectedPoint?.id);
+  const stage = createMapStage(visiblePoints, selectedPoint?.id);
   const details = document.createElement('article');
   details.id = DETAILS_ID;
   details.className = 'case-map__details';
@@ -46,9 +46,11 @@ export function createCaseMap(visibleProjectIds: ReadonlySet<string>): HTMLEleme
   if (selectedPoint) renderPointDetails(details, selectedPoint);
 
   stage.addEventListener('click', (event) => {
-    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-map-point]');
+    if (!(event.target instanceof Element)) return;
+
+    const button = event.target.closest<HTMLButtonElement>('[data-map-point]');
     if (!button) return;
-    const point = points.find(({ id }) => id === button.dataset.mapPoint);
+    const point = visiblePoints.find(({ id }) => id === button.dataset.mapPoint);
     if (!point) return;
 
     selectedPointId = point.id;
@@ -81,16 +83,18 @@ function createMapStage(points: readonly CaseMapPoint[], selectedId: string | un
   `;
 
   for (const point of points) {
+    const variant = getPointVariant(point);
+    const label = getPointLabel(point);
     const button = document.createElement('button');
     button.type = 'button';
-    button.className = `case-map__point case-map__point--${point.type === 'verified-case' ? 'verified' : 'coverage'}`;
+    button.className = `case-map__point case-map__point--${variant}`;
     button.style.left = `${point.x}%`;
     button.style.top = `${point.y}%`;
     button.dataset.mapPoint = point.id;
     button.setAttribute('aria-controls', DETAILS_ID);
     button.setAttribute('aria-pressed', String(point.id === selectedId));
-    button.setAttribute('aria-label', getPointLabel(point));
-    button.title = getPointLabel(point);
+    button.setAttribute('aria-label', label);
+    button.title = label;
     stage.appendChild(button);
   }
   return stage;
@@ -107,9 +111,10 @@ function getPointLabel(point: CaseMapPoint): string {
 
 function renderPointDetails(container: HTMLElement, point: CaseMapPoint): void {
   container.replaceChildren();
+  const variant = getPointVariant(point);
   const type = document.createElement('p');
-  type.className = `case-map__type case-map__type--${point.type === 'verified-case' ? 'verified' : 'coverage'}`;
-  type.textContent = t(`cases.map.legend.${point.type === 'verified-case' ? 'verified' : 'coverage'}`);
+  type.className = `case-map__type case-map__type--${variant}`;
+  type.textContent = t(`cases.map.legend.${variant}`);
 
   const title = document.createElement('h3');
   const location = document.createElement('p');
@@ -147,6 +152,15 @@ function createLink(href: string, label: string): HTMLAnchorElement {
 
 function getPrecisionLabel(project: Project): string {
   return t(`cases.map.precision.${project.geography.precision}`);
+}
+
+function getPointVariant(point: CaseMapPoint): 'verified' | 'coverage' {
+  switch (point.type) {
+    case 'verified-case':
+      return 'verified';
+    case 'market-coverage':
+      return 'coverage';
+  }
 }
 
 function requireProject(projectId: string): Project {
