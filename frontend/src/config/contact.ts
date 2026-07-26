@@ -12,6 +12,8 @@ export function getContactChannels(): readonly ContactChannel[] {
   const locale = getLocale();
 
   return company.contact.filter(
-    (channel) => !channel.locales || channel.locales.includes(locale),
+    (channel) =>
+      channel.status === 'approved' &&
+      (!channel.locales || channel.locales.includes(locale)),
   );
 }
