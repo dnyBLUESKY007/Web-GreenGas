@@ -1,10 +1,10 @@
 import { createProjectCard } from '@/components/project-card/ProjectCard';
 import { cdnUrl } from '@/config/assets';
-import projectsData from '@/data/projects.json';
+import { projects } from '@/data/projects';
 import solutionsData from '@/data/solutions.json';
 import { t, td } from '@/i18n';
+import type { Solution } from '@/types';
 import { getIcon } from '@/utils/icons';
-import type { Project, Solution } from '@/types';
 
 export function renderScenarioPath(container: HTMLElement): void {
   const solutions = solutionsData as readonly Solution[];
@@ -29,7 +29,6 @@ export function renderScenarioPath(container: HTMLElement): void {
 }
 
 export function renderClassicCases(container: HTMLElement): void {
-  const projects = projectsData as readonly Project[];
   const grid = document.createElement('div');
   grid.className = 'solutions-cases__grid';
 

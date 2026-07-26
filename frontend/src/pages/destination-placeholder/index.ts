@@ -4,7 +4,7 @@ import { t } from '@/i18n';
 import type { PageId } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 
-const PLACEHOLDER_PAGE_IDS = ['industries', 'support', 'cases'] as const satisfies readonly PageId[];
+const PLACEHOLDER_PAGE_IDS = ['industries', 'support'] as const satisfies readonly PageId[];
 
 type PlaceholderPageId = (typeof PLACEHOLDER_PAGE_IDS)[number];
 

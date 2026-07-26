@@ -12,6 +12,16 @@
     transform: translateY(-2px);
   }
 
+  &:focus-within {
+    box-shadow: $shadow-md;
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    color: inherit;
+  }
+
   &__media {
     aspect-ratio: 4 / 3;
     overflow: hidden;
@@ -28,8 +38,16 @@
     padding: 1.25rem;
   }
 
+  &__topline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
+  }
+
   &__meta {
-    margin-bottom: 0.375rem;
     font-size: 0.8125rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -41,8 +59,23 @@
     margin-bottom: 0.5rem;
   }
 
+  &__equipment {
+    margin-bottom: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-text;
+  }
+
   &__summary {
     font-size: 0.9375rem;
+  }
+
+  &__more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $color-primary;
   }
 }
 

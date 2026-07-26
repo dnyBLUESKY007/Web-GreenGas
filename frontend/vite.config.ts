@@ -23,6 +23,7 @@ export default defineConfig({
         industries: resolve(__dirname, 'industries/index.html'),
         support: resolve(__dirname, 'support/index.html'),
         cases: resolve(__dirname, 'cases/index.html'),
+        casesDetail: resolve(__dirname, 'cases/detail/index.html'),
         solutions: resolve(__dirname, 'solutions/index.html'),
         contact: resolve(__dirname, 'contact/index.html'),
         news: resolve(__dirname, 'news/index.html'),

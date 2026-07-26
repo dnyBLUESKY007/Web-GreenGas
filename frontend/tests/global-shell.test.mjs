@@ -13,6 +13,7 @@ const htmlEntries = [
   'industries/index.html',
   'support/index.html',
   'cases/index.html',
+  'cases/detail/index.html',
   'solutions/index.html',
   'contact/index.html',
   'news/index.html',

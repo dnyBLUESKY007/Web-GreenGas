@@ -12,6 +12,8 @@
 
 > 2026-07-26: Completed GitHub #11 news alignment. All six official legacy GREENGAS articles now retain source URLs, full source-aligned Chinese bodies with equivalent English/Russian content, registered OSS image paths, and shared `featured` flags for homepage reuse. News contract tests cover data, images, list/detail, unknown-ID recovery, and responsive rules.
 
+> 2026-07-26: Completed GitHub #9 Case Center list/detail work. Four identifiable official legacy projects replace six unsupported examples; industry/region filters, explicit source status, generic details, unknown-ID recovery, galleries, related cases, and three-language responsive UI are available. Stable geography permits `unspecified` where customer nationality does not prove project location; #10 can consume these IDs and fields for map work.
+
 > 2026-07-20: Production moved to the new Ubuntu 24.04 server reached with `ssh web-server`. Nginx serves `/var/www/corp/dist`; both deployment scripts now target this SSH alias and replace the remote dist without creating server-side backups. The current site was built and deployed successfully; the server-side HTTP health check returned 200.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -21,10 +23,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点、#3 全站导航/标题/旧路由、#11 旧站新闻对齐和 #12 合作公司 Logo 展示基础均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；素材仍需由责任人审批公开许可并处理敏感/歧义项。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
+下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点、#3 全站导航/标题/旧路由、#9 案例列表/详情、#11 旧站新闻对齐和 #12 合作公司 Logo 展示基础均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；素材仍需由责任人审批公开许可并处理敏感/歧义项；案例地图仍由 #10 单独实现。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
 
 ## 近期变更
 
+- 2026-07-26 案例中心：以四项可识别官方旧站项目替换六项无依据示例；新增行业/地区筛选、来源状态、通用详情、图库、相关案例和未知 ID 恢复。地理精度仅到来源支持的国家/省级；南非客户记录地点保持未注明。
 - 2026-07-26 新闻归档对齐：逐篇核对旧站六篇官方新闻的标题、日期、分类、摘要、正文和图片；恢复完整中文正文与等价英俄内容，补来源 URL 和首页 `featured` 标记，并修复 `prev_pic`/旧证书路径导致的资源登记不匹配。旧站新闻素材无新增缺口。
 - 2026-07-26 素材包盘点：验证 391916405 字节 RAR v5 和六组 35 个文件；完成图片/DOCX/TXT 可读性、逐文件 SHA-256、内容分类和敏感风险审查。未发现损坏或精确重复，全部待人工公开审批。
 - 2026-07-26 合作公司 Logo 展示：将旧行业文本卡改为结构化分组网格；因无获批名称/Logo，当前四项全部为三语可见的 `pending-replacement` 中性展示位。未来图片仅通过 OSS `cdnUrl()` 加载并提供本地化替代文本。
@@ -55,6 +58,7 @@
 - [x] 执行 GitHub #3：重构全站导航、标签标题与旧路由
 - [x] 执行 GitHub #12：建立合作公司 Logo 展示组件与资料清单
 - [x] 执行 GitHub #11：对齐旧站新闻内容、图片与精选数据
+- [x] 执行 GitHub #9：建立案例列表与通用详情页
 - [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
 - [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
 - [ ] 核对并上传 `ignored/extracted/web-greengas/ignored/resources/web/page-header-*.webp` 五张图到对应 OSS 路径
@@ -71,6 +75,7 @@
 - `ai-memories/tasks/2026-07-26-global-navigation-legacy-routes.md`（GitHub #3 已完成）
 - `ai-memories/tasks/2026-07-26-partner-logo-showcase.md`（GitHub #12 已完成；等待获批合作公司资料）
 - `ai-memories/tasks/2026-07-26-news-archive-alignment.md`（GitHub #11 已完成，旧站新闻素材无缺口）
+- `ai-memories/tasks/2026-07-26-case-center-list-detail.md`（GitHub #9 已完成，#10 可复用稳定案例标识与地理字段）
 
 ## 待决问题 / 阻塞
 

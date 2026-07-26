@@ -1,7 +1,9 @@
-import projectsData from '@/data/projects.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import { cdnUrl } from '@/config/assets';
+import { getPrimaryProjectImage, projects } from '@/data/projects';
 import { t, td } from '@/i18n';
 import type { Project } from '@/types';
+import { basePath } from '@/utils/path';
 
 export function createCaseCarousel(): HTMLElement {
   const section = document.createElement('section');
@@ -42,8 +44,6 @@ export function createCaseCarousel(): HTMLElement {
   const track = document.createElement('div');
   track.className = 'case-carousel__track';
 
-  const projects = projectsData as readonly Project[];
-
   for (const project of projects) {
     track.appendChild(createCaseCard(project));
   }
@@ -61,27 +61,33 @@ function createCaseCard(project: Project): HTMLElement {
   const name = td(project, 'name');
   const industry = td(project, 'industry');
   const summary = td(project, 'summary');
+  const location = td(project, 'location');
+  const image = getPrimaryProjectImage(project);
 
   const article = document.createElement('article');
   article.className = 'case-card';
 
-  article.innerHTML = `
+  const link = document.createElement('a');
+  link.className = 'case-card__link';
+  link.href = `${basePath('/cases/detail/')}?id=${encodeURIComponent(project.id)}`;
+  link.innerHTML = `
     <div class="case-card__media">
       <img
         class="case-card__image"
-        src="${project.image}"
-        alt="${name}"
+        src="${cdnUrl('projects', image.filename)}"
+        alt="${td(image, 'alt')}"
         width="360"
         height="200"
         loading="lazy"
       />
     </div>
     <div class="case-card__body">
-      <p class="case-card__meta">${industry} · ${project.location}</p>
+      <p class="case-card__meta">${industry} · ${location}</p>
       <h3 class="case-card__title">${name}</h3>
       <p class="case-card__summary">${summary}</p>
     </div>
   `;
+  article.appendChild(link);
 
   return article;
 }
