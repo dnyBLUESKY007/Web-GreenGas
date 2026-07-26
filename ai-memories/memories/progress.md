@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Integrated Sandcastle issues #12, #11, #9, #6, #5, and #4. Shared Memory Bank and locale conflicts were resolved cumulatively so all six feature contracts remain present. Typecheck and the complete 12-test suite pass.
+
 > 2026-07-26: Archived all three supplied packages under `ignored/source-archives/`, extracted them under `ignored/extracted/`, and exposed `ignored/` to Sandcastle at the same repository-relative path. `CONTEXT.md` records the canonical material locations.
 
 > 2026-07-26: Completed issue #2's local archive inventory: validated the 391916405-byte RAR v5 and indexed all 35 files in six case groups. No damaged or exact duplicate files were found; all archive materials still require human publication approval.
@@ -106,3 +108,4 @@
 | 2026-07-26 | 产品导航与通用详情 | 四系列目录、14 个卡片、三语通用详情、内容状态与未知 ID 恢复；资料仍待批准替换 |
 | 2026-07-26 | FAQ 与 Contact 合并 | 完成 GitHub #5 六组三语 FAQ、批准渠道过滤和未配置 EmailJS 的诚实禁用状态 |
 | 2026-07-26 | About 正式描述 | 完成 GitHub #4 四段三语介绍及证据边界；未批准媒体以待替换占位展示 |
+| 2026-07-26 | Sandcastle 内容分支整合 | 按顺序合并 #12、#11、#9、#6、#5、#4；组合类型检查与 12 项测试通过 |

@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Integrated Sandcastle issues #12, #11, #9, #6, #5, and #4 in the requested order. Partner placeholders, aligned news, sourced case list/details, product navigation/details, merged FAQ/Contact, and the formal About profile coexist; shared locale and memory conflicts preserve every feature contract. Typecheck and all 12 combined tests pass.
+
 > 2026-07-26: Supplied archives are stored in `ignored/source-archives/` and extracted under `ignored/extracted/`; Sandcastle mounts `ignored/` at the same repository-relative path. Material location details are canonical in `CONTEXT.md`.
 
 > 2026-07-26: Issue #2 local inventory is complete. The 391916405-byte RAR v5 and all 35 files across six case groups were indexed and integrity-checked; no damage or exact SHA-256 duplicates were found. Every archive item remains `review-required` pending human rights, privacy, customer-name, site, claim, and technical-data approval.
@@ -83,6 +85,7 @@
 
 ## 近期任务 Plan
 
+- `ai-memories/tasks/2026-07-26-merge-sandcastle-content-branches.md`（#4、#5、#6、#9、#11、#12 已合并并通过组合验证）
 - `ai-memories/tasks/2026-07-26-website-restructure-planning.md`（规划已完成，等待 #2-#17 实施）
 - `ai-memories/tasks/2026-07-26-material-inventory-ledger.md`（GitHub #2 本地盘点已完成，等待人工公开审批）
 - `ai-memories/tasks/2026-07-26-global-navigation-legacy-routes.md`（GitHub #3 已完成）
