@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Integrated Sandcastle issue #8. Technical Support retains all newer page, data, locale, style, type, and route contracts. Typecheck and the complete 15-test suite pass; GitHub #8 is closed.
+
 > 2026-07-26: Integrated Sandcastle issues #10 and #7. The layered map and Industry Applications additions now retain all newer page, data, locale, type, and route contracts. Typecheck and the complete 14-test suite pass.
 
 > 2026-07-26: Completed GitHub #10. Case Center now has a local keyless layered world map with three honestly located verified-case points and four formal-profile market-coverage points. Shape/fill distinctions, native accessible controls, persistent multilingual details, filter-aware card links, typecheck, 13 tests, and root/subpath builds pass.
@@ -27,6 +29,8 @@
 > 2026-07-26: Completed GitHub #4. About now uses the approved four-paragraph source in three languages, preserves `ISO140001`, separates management principles/product scope/industries/supply experience, and explicitly distinguishes market coverage from public case evidence. Company and certificate images remain pending-replacement placeholders until approved. Typecheck, tests, and production build pass.
 
 > 2026-07-26: Completed GitHub #7. Industry Applications now covers six GREENGAS-supported sectors with multilingual structured details, explicit Example Placeholder status, responsive icon navigation, and stable base-safe product/case links. Typecheck, tests, and root/subpath builds pass.
+
+> 2026-07-26: Completed GitHub #8. Technical Support now provides eight trilingual categories, metadata-complete example and empty states, and download links restricted to approved, verified files on the configured GREENGAS OSS host. Stable category and document IDs are contract-checked; the inventory currently contains no approved public technical download.
 
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
@@ -64,10 +68,12 @@
 - **FAQ 与 Contact 合并**：六组三语 FAQ 位于直接联系和留言区之前；编号答案使用有序列表；只渲染显式批准渠道；EmailJS 未配置时不允许提交或显示送达反馈
 - **正式 About 重建**：完整四段三语公司描述、四项管理理念、八类产品、五个行业及国内外供应经验；保留 `ISO140001`，未批准公司/证书媒体使用明确待替换占位
 - **行业应用页面**：钢铁、化工、电力、制药、军工和特种设施六类三语结构化内容；逐类包含环境、挑战、应对、设备和案例空间，并明确示例占位状态
+- **技术支持资料库**：八类 JSON 驱动资料结构、三语筛选、完整元数据、示例/空/未开放状态，以及获批 HTTPS OSS 下载门控
 
 ## 进行中
 
 - GitHub #2：本地素材盘点已完成；等待责任人逐项确认公开许可后生成最终 OSS 上传清单
+- GitHub #8：页面框架已完成；等待提供并批准真实技术文件、元数据和 OSS URL
 - 占位内容 → 甲方真实素材替换
 - GitHub #6：页面结构已完成；等待批准的最终产品型号、图片、特点、参数、行业关联和技术下载替换 14 个示例记录
 
@@ -84,6 +90,7 @@
 - 地址、座机、微信、工作时间和独立售后联系方式仍待确认；详见 `ai-memories/materials/2026-07-26-contact-gaps.md`
 - 公司团队、厂房、发展历程、生产检测和证书图片仍待确认公开许可与当前有效性
 - `全资料.rar` 内全部素材仍未获得公开许可；部分涉及人员肖像、车牌、客户/政府场地、第三方图片、技术参数和来源歧义
+- 尚无获批公开的技术手册、产品样本、安装/调试/维护/故障、售前选型或售后服务下载
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
 
@@ -119,3 +126,5 @@
 | 2026-07-26 | Sandcastle 内容分支整合 | 按顺序合并 #12、#11、#9、#6、#5、#4；组合类型检查与 12 项测试通过 |
 | 2026-07-26 | 行业应用 | 完成六行业三语总览与详情、示例状态及稳定跨页链接；根路径与子路径构建通过 |
 | 2026-07-26 | Sandcastle 地图与行业整合 | 按顺序合并 #10、#7；保留全部既有契约，组合类型检查与 14 项测试通过 |
+| 2026-07-26 | 技术支持资料库 | 完成 GitHub #8 八类三语资料库和安全下载门控；真实文件仍待审批与 OSS 上传 |
+| 2026-07-26 | Sandcastle 技术支持整合 | 合并 #8 并保留全部既有契约；组合类型检查与 15 项测试通过，GitHub issue 已关闭 |

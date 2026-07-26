@@ -25,9 +25,9 @@ export const PAGE_META: Record<PageId, PageMeta> = {
     ogImage: DEFAULT_OG_IMAGE,
   },
   support: {
-    descriptionKey: 'destination.support.desc',
-    ogTitleKey: 'destination.support.title',
-    ogDescriptionKey: 'destination.support.desc',
+    descriptionKey: 'support.desc',
+    ogTitleKey: 'support.title',
+    ogDescriptionKey: 'support.desc',
     ogImage: DEFAULT_OG_IMAGE,
   },
   cases: {

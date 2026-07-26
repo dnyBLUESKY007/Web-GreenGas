@@ -406,6 +406,50 @@ export interface ImageResourceEntry {
   readonly description: string;
 }
 
+export type TechnicalDocumentCategory =
+  | 'manuals'
+  | 'product-samples'
+  | 'installation'
+  | 'commissioning'
+  | 'maintenance'
+  | 'troubleshooting'
+  | 'pre-sales'
+  | 'after-sales';
+
+export interface TechnicalDocumentCategoryRecord {
+  readonly id: TechnicalDocumentCategory;
+  readonly name: string;
+  readonly name_zh: string;
+  readonly name_ru: string;
+}
+
+export interface TechnicalDocument {
+  readonly id: string;
+  readonly title: string;
+  readonly title_zh: string;
+  readonly title_ru: string;
+  readonly category: TechnicalDocumentCategory;
+  readonly relatedProduct: string;
+  readonly relatedProduct_zh: string;
+  readonly relatedProduct_ru: string;
+  readonly language: string;
+  readonly language_zh: string;
+  readonly language_ru: string;
+  readonly fileType: string;
+  readonly versionOrDate: string;
+  readonly versionOrDate_zh: string;
+  readonly versionOrDate_ru: string;
+  readonly contentStatus: 'verified-content' | 'example-placeholder' | 'pending-replacement';
+  readonly publicationStatus: 'approved' | 'review-required' | 'unavailable';
+  readonly availabilityStatus: 'verified' | 'unverified';
+  readonly downloadUrl: string | null;
+}
+
+export interface TechnicalSupportData {
+  readonly categories: readonly TechnicalDocumentCategoryRecord[];
+  readonly documents: readonly TechnicalDocument[];
+}
+
 export type NewsCategory = 'company' | 'industry';
 
 export interface NewsImage {
