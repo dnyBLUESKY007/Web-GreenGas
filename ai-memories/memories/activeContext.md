@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Integrated Sandcastle issue #15 by fast-forward. The release-candidate evidence and final material-gap report now coexist with all prior site contracts. Frontend typecheck and all 23 tests pass; GitHub #15 is closed without a production deployment.
+
 > 2026-07-26: Completed GitHub #15 release-candidate evidence and final material-gap report. All #2-#14 implementation issues are closed; typecheck, 23 tests, and reproducible root/subpath builds pass. The report inventories 21 top-level examples, approval-ready material packages, 25 OSS 404s, the unresolved ISO number, browser/audit limitations, and the separate EmailJS/deployment boundaries. No production deployment occurred.
 
 > 2026-07-26: Integrated Sandcastle issue #14 by fast-forward. The trilingual and responsive regression fixes now coexist with all previously completed site contracts. Frontend typecheck and all 21 combined tests pass; GitHub #14 is closed.
@@ -119,6 +121,7 @@
 
 ## 近期任务 Plan
 
+- `ai-memories/tasks/2026-07-26-merge-sandcastle-release-report.md`（#15 已合并并通过 23 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-26-release-candidate-material-gap-report.md`（GitHub #15 已完成；23 项测试及可重复根/子路径构建通过，尚未生产部署）
 - `ai-memories/tasks/2026-07-26-trilingual-responsive-regression.md`（GitHub #14 已完成；21 项测试、类型检查及根/子路径构建通过，记录 25 个 OSS 图片缺口）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-homepage.md`（#13 已合并并通过 17 项组合测试；GitHub issue 已关闭）
