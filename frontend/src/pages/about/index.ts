@@ -4,16 +4,23 @@ import companyData from '@/data/company.json';
 import { getLocale, t, td } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
-import type { CompanyData, CompanyMarketExperience, CompanyProfile, CompanyValue } from '@/types';
+import type { CompanyData, CompanyValue } from '@/types';
 
 const company = companyData as CompanyData;
 
-function getLocalizedList(item: object, field: string): readonly string[] {
-  const locale = getLocale();
-  const record = item as unknown as Readonly<Record<string, readonly string[] | undefined>>;
-  const localized = locale === 'en' ? undefined : record[`${field}_${locale}`];
-
-  return localized ?? record[field] ?? [];
+function getLocalizedList(
+  items: readonly string[],
+  itemsZh?: readonly string[],
+  itemsRu?: readonly string[],
+): readonly string[] {
+  switch (getLocale()) {
+    case 'zh':
+      return itemsZh ?? items;
+    case 'ru':
+      return itemsRu ?? items;
+    default:
+      return items;
+  }
 }
 
 function renderAboutPage(): void {
@@ -46,10 +53,10 @@ function renderAboutPage(): void {
 }
 
 function createProfileSection(): HTMLElement {
-  const profile = company.profile as CompanyProfile;
+  const profile = company.profile;
   const section = document.createElement('section');
   section.className = 'section about-page__profile';
-  const paragraphs = getLocalizedList(profile, 'paragraphs')
+  const paragraphs = getLocalizedList(profile.paragraphs, profile.paragraphs_zh, profile.paragraphs_ru)
     .map((paragraph) => `<p>${paragraph}</p>`)
     .join('');
 
@@ -70,7 +77,7 @@ function createProfileSection(): HTMLElement {
 function createPrinciplesSection(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section about-page__principles';
-  const principles = (company.managementPrinciples ?? [])
+  const principles = company.managementPrinciples
     .map((principle: CompanyValue, index) => `
       <article class="about-page__principle">
         <span>0${index + 1}</span>
@@ -96,8 +103,12 @@ function createPrinciplesSection(): HTMLElement {
 function createScopeSection(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section about-page__scope';
-  const products = createTagList(getLocalizedList(company, 'productRange'));
-  const industries = createTagList(getLocalizedList(company, 'industries'));
+  const products = createTagList(
+    getLocalizedList(company.productRange, company.productRange_zh, company.productRange_ru),
+  );
+  const industries = createTagList(
+    getLocalizedList(company.industries, company.industries_zh, company.industries_ru),
+  );
 
   section.innerHTML = `
     <div class="container">
@@ -125,7 +136,17 @@ function createScopeSection(): HTMLElement {
 function createExperienceSection(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section about-page__experience';
-  const experience = company.marketExperience as CompanyMarketExperience;
+  const experience = company.marketExperience;
+  const internationalMarkets = createTagList(
+    getLocalizedList(
+      experience.international,
+      experience.international_zh,
+      experience.international_ru,
+    ),
+  );
+  const domesticOrganizations = createTagList(
+    getLocalizedList(experience.domestic, experience.domestic_zh, experience.domestic_ru),
+  );
 
   section.innerHTML = `
     <div class="container about-page__experience-grid">
@@ -138,11 +159,11 @@ function createExperienceSection(): HTMLElement {
       <div class="about-page__coverage">
         <div>
           <h3>${t('about.experience.international')}</h3>
-          <ul class="about-page__tag-list">${createTagList(getLocalizedList(experience, 'international'))}</ul>
+          <ul class="about-page__tag-list">${internationalMarkets}</ul>
         </div>
         <div>
           <h3>${t('about.experience.domestic')}</h3>
-          <ul class="about-page__tag-list">${createTagList(getLocalizedList(experience, 'domestic'))}</ul>
+          <ul class="about-page__tag-list">${domesticOrganizations}</ul>
         </div>
       </div>
     </div>

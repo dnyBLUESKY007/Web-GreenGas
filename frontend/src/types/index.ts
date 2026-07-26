@@ -203,15 +203,15 @@ export interface CompanyData {
   readonly services: readonly ServiceItem[];
   readonly aboutHighlights: readonly AboutHighlight[];
   readonly workflow: readonly WorkflowStep[];
-  readonly profile?: CompanyProfile;
-  readonly industries?: readonly string[];
+  readonly profile: CompanyProfile;
+  readonly industries: readonly string[];
   readonly industries_zh?: readonly string[];
   readonly industries_ru?: readonly string[];
-  readonly productRange?: readonly string[];
+  readonly productRange: readonly string[];
   readonly productRange_zh?: readonly string[];
   readonly productRange_ru?: readonly string[];
-  readonly managementPrinciples?: readonly CompanyValue[];
-  readonly marketExperience?: CompanyMarketExperience;
+  readonly managementPrinciples: readonly CompanyValue[];
+  readonly marketExperience: CompanyMarketExperience;
   readonly teamValues?: readonly CompanyValue[];
   readonly historyImages?: readonly CompanyImage[];
 }
