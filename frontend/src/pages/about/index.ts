@@ -1,27 +1,12 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import companyData from '@/data/company.json';
-import { getLocale, t, td } from '@/i18n';
+import { getLocalizedList, t, td } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
 import type { CompanyData, CompanyValue } from '@/types';
 
 const company = companyData as CompanyData;
-
-function getLocalizedList(
-  items: readonly string[],
-  itemsZh?: readonly string[],
-  itemsRu?: readonly string[],
-): readonly string[] {
-  switch (getLocale()) {
-    case 'zh':
-      return itemsZh ?? items;
-    case 'ru':
-      return itemsRu ?? items;
-    default:
-      return items;
-  }
-}
 
 function renderAboutPage(): void {
   const main = document.getElementById('page-content');

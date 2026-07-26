@@ -3,7 +3,7 @@ import supportDataJson from '@/data/technical-support.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { t, td } from '@/i18n';
 import { getIcon } from '@/utils/icons';
-import type { CompanyData, TechnicalSupportData } from '@/types';
+import type { CompanyData, TechnicalDocument, TechnicalSupportData } from '@/types';
 import { basePath } from '@/utils/path';
 
 const company = companyData as CompanyData;
@@ -36,8 +36,8 @@ export function createServiceStrip(): HTMLElement {
     title.textContent = td(sampleDocument, 'title');
     const statuses = document.createElement('span');
     statuses.textContent = [
-      sampleDocument.contentStatus === 'example-placeholder' ? t('support.example') : sampleDocument.contentStatus,
-      sampleDocument.publicationStatus === 'unavailable' ? t('support.unavailable') : sampleDocument.publicationStatus,
+      getContentStatusLabel(sampleDocument.contentStatus),
+      getPublicationStatusLabel(sampleDocument.publicationStatus),
     ].join(' · ');
     const notice = document.createElement('p');
     notice.textContent = t('support.inventoryNotice');
@@ -67,4 +67,20 @@ export function createServiceStrip(): HTMLElement {
   section.appendChild(container);
 
   return section;
+}
+
+function getContentStatusLabel(status: TechnicalDocument['contentStatus']): string {
+  if (status === 'example-placeholder') {
+    return t('support.example');
+  }
+
+  return status;
+}
+
+function getPublicationStatusLabel(status: TechnicalDocument['publicationStatus']): string {
+  if (status === 'unavailable') {
+    return t('support.unavailable');
+  }
+
+  return status;
 }

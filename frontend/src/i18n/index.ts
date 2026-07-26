@@ -107,3 +107,21 @@ export function td(obj: object, field: string): string {
   const localizedKey = `${field}_${currentLocale}`;
   return record[localizedKey] ?? record[field] ?? '';
 }
+
+/**
+ * Resolves a localized list, falling back to the default list.
+ */
+export function getLocalizedList(
+  items: readonly string[],
+  itemsZh?: readonly string[],
+  itemsRu?: readonly string[],
+): readonly string[] {
+  switch (currentLocale) {
+    case 'zh':
+      return itemsZh ?? items;
+    case 'ru':
+      return itemsRu ?? items;
+    default:
+      return items;
+  }
+}

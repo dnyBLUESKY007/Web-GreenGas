@@ -70,7 +70,7 @@ function renderHomePage(): void {
   const productGrid = createProductGrid();
   const industryPreview = createIndustryPreview();
   const caseCarousel = createCaseCarousel();
-  const clientLogos = createClientLogos(true);
+  const clientLogos = createClientLogos({ showDestinationLink: true });
   const newsPreview = createNewsPreview();
   const serviceStrip = createServiceStrip();
   const aboutSummary = createAboutSummary();

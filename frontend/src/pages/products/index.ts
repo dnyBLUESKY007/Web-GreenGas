@@ -1,4 +1,5 @@
 import '@/styles/main.scss';
+import { createProductStatus } from '@/components/product-status/ProductStatus';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { setPageHeaderBackground } from '@/config/assets';
 import productsData from '@/data/products.json';
@@ -7,7 +8,6 @@ import { t, td } from '@/i18n';
 import type { Product, ProductSeries } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
-import { createProductStatus } from './productView';
 
 const products = productsData as readonly Product[];
 const series = seriesData as readonly ProductSeries[];

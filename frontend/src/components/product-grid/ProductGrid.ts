@@ -1,9 +1,9 @@
-import productsData from '@/data/products.json';
+import { createProductStatus } from '@/components/product-status/ProductStatus';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
+import productsData from '@/data/products.json';
 import { t, td } from '@/i18n';
-import { createProductStatus } from '@/pages/products/productView';
-import { basePath } from '@/utils/path';
 import type { Product } from '@/types';
+import { basePath } from '@/utils/path';
 
 const HOME_PRODUCT_COUNT = 6;
 

@@ -7,7 +7,13 @@ import { basePath } from '@/utils/path';
 
 const partnerGroups = clientsData as readonly PartnerGroup[];
 
-export function createClientLogos(showMore = false): HTMLElement {
+interface ClientLogosOptions {
+  readonly showDestinationLink?: boolean;
+}
+
+export function createClientLogos(
+  { showDestinationLink = false }: ClientLogosOptions = {},
+): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section section--light client-logos';
 
@@ -29,7 +35,7 @@ export function createClientLogos(showMore = false): HTMLElement {
   }
 
   container.appendChild(header);
-  if (showMore) {
+  if (showDestinationLink) {
     const moreLink = document.createElement('a');
     moreLink.className = 'client-logos__more section-head__action';
     moreLink.href = basePath('/about/clients/');

@@ -36,9 +36,7 @@ export function createIndustryPreview(): HTMLElement {
     icon.innerHTML = getIcon(industry.icon);
     const status = document.createElement('span');
     status.className = 'home-preview__status';
-    status.textContent = industry.status === 'example-placeholder'
-      ? t('industries.status.example')
-      : industry.status;
+    status.textContent = getIndustryStatusLabel(industry.status);
     const name = document.createElement('strong');
     name.className = 'home-industry-card__title';
     name.textContent = td(industry, 'name');
@@ -52,4 +50,12 @@ export function createIndustryPreview(): HTMLElement {
   container.append(head, grid);
   section.appendChild(container);
   return section;
+}
+
+function getIndustryStatusLabel(status: IndustryApplication['status']): string {
+  if (status === 'example-placeholder') {
+    return t('industries.status.example');
+  }
+
+  return status;
 }

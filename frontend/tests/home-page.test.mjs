@@ -29,7 +29,7 @@ test('homepage follows the approved structured-content order and preserves statu
     previousIndex = sectionIndex;
   }
   assert.doesNotMatch(home, /renderSolutions|createCapabilityBand/);
-  assert.match(home, /createClientLogos\(true\)/);
+  assert.match(home, /createClientLogos\(\{ showDestinationLink: true \}\)/);
 
   const heroIntro = await read('src/components/hero-intro/HeroIntro.ts');
   assert.match(heroIntro, /companyData/);

@@ -1,7 +1,7 @@
 import '@/styles/main.scss';
 import newsData from '@/data/news.json';
 import { cdnUrl } from '@/config/assets';
-import { getLocale, t, td } from '@/i18n';
+import { getLocale, getLocalizedList, t, td } from '@/i18n';
 import type { Locale, NewsArticle } from '@/types';
 import { basePath } from '@/utils/path';
 import { initPage } from '@/utils/mountLayout';
@@ -69,17 +69,11 @@ function createArticle(article: NewsArticle): HTMLElement {
 }
 
 function getLocalizedParagraphs(article: NewsArticle): readonly string[] {
-  const locale = getLocale();
-
-  if (locale === 'zh') {
-    return article.paragraphs_zh ?? article.paragraphs;
-  }
-
-  if (locale === 'ru') {
-    return article.paragraphs_ru ?? article.paragraphs;
-  }
-
-  return article.paragraphs;
+  return getLocalizedList(
+    article.paragraphs,
+    article.paragraphs_zh,
+    article.paragraphs_ru,
+  );
 }
 
 function createNotFound(): HTMLElement {
