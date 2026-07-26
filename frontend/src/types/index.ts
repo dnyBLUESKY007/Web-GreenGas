@@ -259,22 +259,24 @@ export interface NewsImage {
   readonly category: string;
   readonly filename: string;
   readonly alt: string;
-  readonly alt_zh?: string;
-  readonly alt_ru?: string;
+  readonly alt_zh: string;
+  readonly alt_ru: string;
 }
 
 export interface NewsArticle {
   readonly id: string;
   readonly category: NewsCategory;
   readonly date: string;
+  readonly sourceUrl: string;
+  readonly featured: boolean;
   readonly title: string;
-  readonly title_zh?: string;
-  readonly title_ru?: string;
+  readonly title_zh: string;
+  readonly title_ru: string;
   readonly excerpt: string;
-  readonly excerpt_zh?: string;
-  readonly excerpt_ru?: string;
+  readonly excerpt_zh: string;
+  readonly excerpt_ru: string;
   readonly paragraphs: readonly string[];
-  readonly paragraphs_zh?: readonly string[];
-  readonly paragraphs_ru?: readonly string[];
+  readonly paragraphs_zh: readonly string[];
+  readonly paragraphs_ru: readonly string[];
   readonly images: readonly NewsImage[];
 }
