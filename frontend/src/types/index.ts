@@ -87,6 +87,45 @@ export interface Solution {
   readonly icon: string;
 }
 
+export type ContentStatus = 'verified-content' | 'example-placeholder' | 'pending-replacement';
+
+export interface IndustryEquipment {
+  readonly productId: string;
+  readonly name: string;
+  readonly name_zh: string;
+  readonly name_ru: string;
+}
+
+export interface IndustryRelatedCase {
+  readonly id: string;
+  readonly name: string;
+  readonly name_zh: string;
+  readonly name_ru: string;
+}
+
+export interface IndustryApplication {
+  readonly id: string;
+  readonly status: ContentStatus;
+  readonly icon: string;
+  readonly name: string;
+  readonly name_zh: string;
+  readonly name_ru: string;
+  readonly summary: string;
+  readonly summary_zh: string;
+  readonly summary_ru: string;
+  readonly environment: string;
+  readonly environment_zh: string;
+  readonly environment_ru: string;
+  readonly challenge: string;
+  readonly challenge_zh: string;
+  readonly challenge_ru: string;
+  readonly response: string;
+  readonly response_zh: string;
+  readonly response_ru: string;
+  readonly equipment: readonly IndustryEquipment[];
+  readonly relatedCases: readonly IndustryRelatedCase[];
+}
+
 export interface WorkflowStep {
   readonly title: string;
   readonly title_zh?: string;
