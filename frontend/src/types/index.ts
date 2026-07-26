@@ -79,7 +79,7 @@ export interface Product {
   readonly category?: string;
   readonly category_zh?: string;
   readonly category_ru?: string;
-  readonly description?: string;
+  readonly description: string;
   readonly description_zh?: string;
   readonly description_ru?: string;
   readonly image: string;

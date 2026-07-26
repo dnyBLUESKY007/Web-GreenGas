@@ -7,6 +7,7 @@ import { t, td } from '@/i18n';
 import type { Product, ProductSeries } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
+import { createProductStatus } from './productView';
 
 const products = productsData as readonly Product[];
 const series = seriesData as readonly ProductSeries[];
@@ -41,10 +42,14 @@ function renderProductNavigation(): void {
 function createContentNotice(): HTMLElement {
   const notice = document.createElement('aside');
   notice.className = 'product-status-notice';
-  notice.innerHTML = `
-    <strong>${t('products.status.example-placeholder')}</strong>
-    <span>${t('products.placeholderNotice')}</span>
-  `;
+
+  const title = document.createElement('strong');
+  title.textContent = t('products.status.example-placeholder');
+
+  const description = document.createElement('span');
+  description.textContent = t('products.placeholderNotice');
+
+  notice.append(title, description);
   return notice;
 }
 
@@ -70,11 +75,17 @@ function createSeriesSection(item: ProductSeries): HTMLElement {
 
   const heading = document.createElement('header');
   heading.className = 'product-catalogue__series-heading';
-  heading.innerHTML = `
-    <p>${td(item, 'applications')}</p>
-    <h2>${td(item, 'name')}</h2>
-    <p>${td(item, 'description')}</p>
-  `;
+
+  const applications = document.createElement('p');
+  applications.textContent = td(item, 'applications');
+
+  const title = document.createElement('h2');
+  title.textContent = td(item, 'name');
+
+  const description = document.createElement('p');
+  description.textContent = td(item, 'description');
+
+  heading.append(applications, title, description);
 
   const grid = document.createElement('div');
   grid.className = 'product-catalogue__grid';
@@ -89,21 +100,45 @@ function createSeriesSection(item: ProductSeries): HTMLElement {
 function createProductCard(product: Product, productSeries: ProductSeries): HTMLElement {
   const card = document.createElement('article');
   card.className = 'product-card';
-  const detailUrl = basePath(`/products/detail/?id=${product.id}`);
+  const detailUrl = basePath(`/products/detail/?id=${encodeURIComponent(product.id)}`);
   const name = td(product, 'name');
 
-  card.innerHTML = `
-    <a class="product-card__media" href="${detailUrl}" aria-label="${name}">
-      <img src="${product.image}" alt="${name}" width="640" height="480" loading="lazy" />
-      <span class="product-status product-status--${product.contentStatus}">${t(`products.status.${product.contentStatus}`)}</span>
-    </a>
-    <div class="product-card__body">
-      <p class="product-card__series">${td(productSeries, 'name')}</p>
-      <h3><a href="${detailUrl}">${name}</a></h3>
-      <p>${td(product, 'description')}</p>
-      <a class="product-card__detail" href="${detailUrl}">${t('products.viewDetail')}</a>
-    </div>
-  `;
+  const mediaLink = document.createElement('a');
+  mediaLink.className = 'product-card__media';
+  mediaLink.href = detailUrl;
+  mediaLink.setAttribute('aria-label', name);
+
+  const image = document.createElement('img');
+  image.src = product.image;
+  image.alt = name;
+  image.width = 640;
+  image.height = 480;
+  image.loading = 'lazy';
+  mediaLink.append(image, createProductStatus(product.contentStatus));
+
+  const body = document.createElement('div');
+  body.className = 'product-card__body';
+
+  const seriesName = document.createElement('p');
+  seriesName.className = 'product-card__series';
+  seriesName.textContent = td(productSeries, 'name');
+
+  const heading = document.createElement('h3');
+  const titleLink = document.createElement('a');
+  titleLink.href = detailUrl;
+  titleLink.textContent = name;
+  heading.appendChild(titleLink);
+
+  const description = document.createElement('p');
+  description.textContent = td(product, 'description');
+
+  const detailLink = document.createElement('a');
+  detailLink.className = 'product-card__detail';
+  detailLink.href = detailUrl;
+  detailLink.textContent = t('products.viewDetail');
+
+  body.append(seriesName, heading, description, detailLink);
+  card.append(mediaLink, body);
   return card;
 }
 

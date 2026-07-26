@@ -12,6 +12,7 @@ import type {
 } from '@/types';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
+import { createProductStatus } from '../productView';
 
 const products = productsData as readonly Product[];
 const series = seriesData as readonly ProductSeries[];
@@ -29,25 +30,53 @@ function createProductDetail(product: Product): HTMLElement {
   const article = document.createElement('article');
   article.className = 'product-detail';
   const productSeries = series.find(({ id }) => id === product.group);
+  const productName = td(product, 'name');
 
   const hero = document.createElement('section');
   hero.className = 'product-detail__hero';
-  hero.innerHTML = `
-    <div class="container product-detail__hero-grid">
-      <div class="product-detail__media">
-        <img src="${product.image}" alt="${td(product, 'name')}" width="960" height="720" />
-        ${createStatusMarkup(product.contentStatus)}
-      </div>
-      <div class="product-detail__intro">
-        <a class="product-detail__back" href="${basePath('/products/')}">${t('products.detail.back')}</a>
-        <p class="product-detail__series">${productSeries ? td(productSeries, 'name') : ''}</p>
-        <h1>${td(product, 'name')}</h1>
-        <p class="product-detail__summary">${td(product, 'description')}</p>
-        <p>${td(product, 'application') || td(product, 'description')}</p>
-        <a class="btn btn--primary" href="${basePath('/contact/')}">${t('products.detail.inquire')}</a>
-      </div>
-    </div>
-  `;
+
+  const heroGrid = document.createElement('div');
+  heroGrid.className = 'container product-detail__hero-grid';
+
+  const media = document.createElement('div');
+  media.className = 'product-detail__media';
+  const image = document.createElement('img');
+  image.src = product.image;
+  image.alt = productName;
+  image.width = 960;
+  image.height = 720;
+  media.append(image, createProductStatus(product.contentStatus));
+
+  const intro = document.createElement('div');
+  intro.className = 'product-detail__intro';
+
+  const backLink = document.createElement('a');
+  backLink.className = 'product-detail__back';
+  backLink.href = basePath('/products/');
+  backLink.textContent = t('products.detail.back');
+
+  const seriesName = document.createElement('p');
+  seriesName.className = 'product-detail__series';
+  seriesName.textContent = productSeries ? td(productSeries, 'name') : '';
+
+  const title = document.createElement('h1');
+  title.textContent = productName;
+
+  const summary = document.createElement('p');
+  summary.className = 'product-detail__summary';
+  summary.textContent = td(product, 'description');
+
+  const application = document.createElement('p');
+  application.textContent = td(product, 'application') || td(product, 'description');
+
+  const inquiryLink = document.createElement('a');
+  inquiryLink.className = 'btn btn--primary';
+  inquiryLink.href = basePath('/contact/');
+  inquiryLink.textContent = t('products.detail.inquire');
+
+  intro.append(backLink, seriesName, title, summary, application, inquiryLink);
+  heroGrid.append(media, intro);
+  hero.appendChild(heroGrid);
 
   const content = document.createElement('div');
   content.className = 'container product-detail__content';
@@ -60,10 +89,6 @@ function createProductDetail(product: Product): HTMLElement {
   );
   article.append(hero, content);
   return article;
-}
-
-function createStatusMarkup(status: Product['contentStatus']): string {
-  return `<span class="product-status product-status--${status}">${t(`products.status.${status}`)}</span>`;
 }
 
 function createDetailSection(titleKey: string, content: HTMLElement): HTMLElement {
@@ -99,11 +124,16 @@ function createParameters(parameters: readonly ProductParameter[] | undefined): 
   const wrapper = document.createElement('div');
   wrapper.className = 'product-detail__table-wrap';
   const table = document.createElement('table');
-  table.innerHTML = `<caption>${t('products.detail.parameterNotice')}</caption><tbody></tbody>`;
-  const body = table.tBodies[0];
+  const caption = document.createElement('caption');
+  caption.textContent = t('products.detail.parameterNotice');
+  table.appendChild(caption);
+  const body = table.createTBody();
   for (const parameter of parameters) {
     const row = body.insertRow();
-    row.insertCell().textContent = td(parameter, 'label');
+    const label = document.createElement('th');
+    label.scope = 'row';
+    label.textContent = td(parameter, 'label');
+    row.appendChild(label);
     row.insertCell().textContent = td(parameter, 'value');
   }
   wrapper.appendChild(table);
@@ -116,7 +146,7 @@ function createIndustries(industries: readonly ProductIndustry[] | undefined): H
   list.className = 'product-detail__links';
   for (const industry of industries) {
     const link = document.createElement('a');
-    link.href = basePath(`/industries/?id=${industry.id}`);
+    link.href = basePath(`/industries/?id=${encodeURIComponent(industry.id)}`);
     link.textContent = td(industry, 'name');
     list.appendChild(link);
   }
@@ -132,7 +162,10 @@ function createDownloads(downloads: readonly ProductDownload[] | undefined): HTM
     item.className = 'product-detail__download';
     if (download.href && item instanceof HTMLAnchorElement) item.href = download.href;
     if (!download.href) item.setAttribute('aria-disabled', 'true');
-    item.innerHTML = `<strong>${td(download, 'title')}</strong>${createStatusMarkup(download.status)}`;
+
+    const title = document.createElement('strong');
+    title.textContent = td(download, 'title');
+    item.append(title, createProductStatus(download.status));
     list.appendChild(item);
   }
   return createDetailSection('products.detail.downloads', list);
@@ -141,27 +174,47 @@ function createDownloads(downloads: readonly ProductDownload[] | undefined): HTM
 function createInquiry(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'product-detail__inquiry';
-  section.innerHTML = `
-    <div>
-      <h2>${t('products.detail.inquiryTitle')}</h2>
-      <p>${t('products.detail.inquiryDesc')}</p>
-    </div>
-    <a class="btn btn--primary" href="${basePath('/contact/')}">${t('products.detail.inquire')}</a>
-  `;
+
+  const content = document.createElement('div');
+  const title = document.createElement('h2');
+  title.textContent = t('products.detail.inquiryTitle');
+  const description = document.createElement('p');
+  description.textContent = t('products.detail.inquiryDesc');
+  content.append(title, description);
+
+  const link = document.createElement('a');
+  link.className = 'btn btn--primary';
+  link.href = basePath('/contact/');
+  link.textContent = t('products.detail.inquire');
+
+  section.append(content, link);
   return section;
 }
 
 function createNotFound(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section product-detail__not-found';
-  section.innerHTML = `
-    <div class="container container--narrow">
-      <p class="product-detail__code">404</p>
-      <h1>${t('products.notFound.title')}</h1>
-      <p>${t('products.notFound.desc')}</p>
-      <a class="btn btn--primary" href="${basePath('/products/')}">${t('products.notFound.back')}</a>
-    </div>
-  `;
+
+  const container = document.createElement('div');
+  container.className = 'container container--narrow';
+
+  const code = document.createElement('p');
+  code.className = 'product-detail__code';
+  code.textContent = '404';
+
+  const title = document.createElement('h1');
+  title.textContent = t('products.notFound.title');
+
+  const description = document.createElement('p');
+  description.textContent = t('products.notFound.desc');
+
+  const link = document.createElement('a');
+  link.className = 'btn btn--primary';
+  link.href = basePath('/products/');
+  link.textContent = t('products.notFound.back');
+
+  container.append(code, title, description, link);
+  section.appendChild(container);
   return section;
 }
 

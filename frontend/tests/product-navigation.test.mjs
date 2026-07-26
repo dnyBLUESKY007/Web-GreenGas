@@ -39,7 +39,7 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
   ));
 
   const listing = await read('src/pages/products/index.ts');
-  assert.match(listing, /basePath\(`\/products\/detail\/\?id=\$\{product\.id\}`\)/);
+  assert.match(listing, /basePath\(`\/products\/detail\/\?id=\$\{encodeURIComponent\(product\.id\)\}`\)/);
   assert.match(listing, /product\.contentStatus/);
 
   const detail = await read('src/pages/products/detail/index.ts');
@@ -47,7 +47,7 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
   assert.match(detail, /createNotFound/);
   assert.match(detail, /basePath\('\/products\/'\)/);
   assert.match(detail, /basePath\('\/contact\/'\)/);
-  assert.match(detail, /basePath\(`\/industries\/\?id=\$\{industry\.id\}`\)/);
+  assert.match(detail, /basePath\(`\/industries\/\?id=\$\{encodeURIComponent\(industry\.id\)\}`\)/);
 
   const detailHtml = await read('products/detail/index.html');
   assert.match(detailHtml, /src="\/src\/pages\/products\/detail\/index\.ts"/);
@@ -58,6 +58,7 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
   for (const locale of ['en', 'zh', 'ru']) {
     const messages = JSON.parse(await read(`src/i18n/locales/${locale}.json`));
     for (const key of [
+      'products.status.verified-content',
       'products.status.example-placeholder',
       'products.status.pending-replacement',
       'products.detail.features',
