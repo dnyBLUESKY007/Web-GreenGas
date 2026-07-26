@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Established the issue #2 repository-source material ledger and daily gap report. Archive-level completion is blocked because `全资料.rar` is unavailable; no current OSS or legacy source was implicitly approved for publication.
+
 > 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Blocking is represented by GitHub-native dependencies; #2-#15 are agent-owned, #1/#16/#17 are human-owned, and #2/#3 are currently unblocked. Sandcastle now queries the correct repository and native dependency state.
 
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
@@ -30,7 +32,7 @@
 
 ## 进行中
 
-- GitHub #2：素材清单与替换台账（ready-for-agent）
+- GitHub #2：仓库来源台账已建立；等待完整 `全资料.rar` 后继续逐文件盘点
 - GitHub #3：全站导航、标签标题与旧路由（ready-for-agent）
 - 占位内容 → 甲方真实素材替换
 
@@ -44,6 +46,7 @@
 ## 已知问题 / 技术债
 
 - 部分联系方式与公司信息仍为占位数据
+- `全资料.rar` 未提供给当前工作区，素材盘点无法完成压缩包下载、解压、损坏检测和哈希去重
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
 
@@ -67,3 +70,4 @@
 | 2026-07-17 | 协作记录审计 | 修复残留旧路径与失效链接；数字记忆改为自包含的工具无关记录 |
 | 2026-07-17 | 移动端适配 | 完成导航断点重构与主要页面小屏布局优化；生产构建和多宽度浏览器检查通过 |
 | 2026-07-26 | 改版需求固化 | 完成术语表、PRD、4 份规格和 GitHub #1-#17；#2、#3 可直接领取 |
+| 2026-07-26 | 素材台账基线 | 登记 25 条仓库来源/缺口和 OSS 审查规则；等待完整素材包继续 #2 |
