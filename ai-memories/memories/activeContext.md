@@ -2,6 +2,8 @@
 
 > 2026-07-26: Supplied archives are stored in `ignored/source-archives/` and extracted under `ignored/extracted/`; Sandcastle mounts `ignored/` at the same repository-relative path. Material location details are canonical in `CONTEXT.md`.
 
+> 2026-07-26: Issue #2 local inventory is complete. The 391916405-byte RAR v5 and all 35 files across six case groups were indexed and integrity-checked; no damage or exact SHA-256 duplicates were found. Every archive item remains `review-required` pending human rights, privacy, customer-name, site, claim, and technical-data approval.
+
 > 2026-07-26: Approved and documented the next website restructure. The scope is captured in `CONTEXT.md`, one PRD, four domain specifications, and GitHub parent issue #1 with execution issues #2-#17. GitHub-native dependencies are authoritative; #2-#15 are labelled by agent ownership while native blockers currently leave #2 and #3 runnable. #1, #16, and #17 are `ready-for-human`. Sandcastle now queries the correct repository and filters native blockers.
 
 > 2026-07-26: Completed GitHub #3 global shell work: eight ordered multilingual destinations, desktop/mobile language access, stable `/products/`, `/industries/`, `/support/`, and `/cases/` route contracts, constant browser titles, Contact `#faq`, and base-path-safe redirects from `/solutions/` and `/faq/`. Typecheck, contract tests, and root/subpath production builds pass.
@@ -15,10 +17,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#3 全站导航/标题/旧路由已完成，新增内容目的地目前为稳定路由壳，等待各自后续 Issue 填充。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
+下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点和 #3 全站导航/标题/旧路由均已完成。素材需由责任人审批公开许可并处理敏感/歧义项；新增内容目的地目前为稳定路由壳，等待各自后续 Issue 填充。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
 
 ## 近期变更
 
+- 2026-07-26 素材包盘点：验证 391916405 字节 RAR v5 和六组 35 个文件；完成图片/DOCX/TXT 可读性、逐文件 SHA-256、内容分类和敏感风险审查。未发现损坏或精确重复，全部待人工公开审批。
 - 2026-07-26 全局壳与路由：主导航改为八项三语结构；桌面品牌靠左并移除重复 CTA，同时保留语言入口；移动菜单补齐首项聚焦与 Escape 焦点恢复；全站标题统一。稳定路由为 `/products/`、`/industries/`、`/support/`、`/cases/`，旧 Solutions/FAQ 在根路径和子路径构建下兼容跳转；FAQ 锚点已进入 Contact。
 - 2026-07-26 需求与任务拆分：通过 grill-with-docs 明确八项导航、三语、示例占位、案例双层地图、来源优先级、OSS 下载、统一发布等边界；创建 1 份 PRD、4 份分域规格和 GitHub #1-#17。
 - 2026-07-26 Issue 编排修正：#4-#17 已使用 GitHub 原生 dependencies；删除 `blocked` 标签和正文依赖；#2-#15 标记 `ready-for-agent`，#1/#16/#17 标记 `ready-for-human`。Sandcastle 修正目标仓库和原生未阻塞筛选后返回 #2、#3。
@@ -42,8 +45,9 @@
 
 ## 下一步
 
-- [ ] 执行 GitHub #2：建立素材清单与替换台账
+- [x] 执行 GitHub #2：建立素材清单与替换台账
 - [x] 执行 GitHub #3：重构全站导航、标签标题与旧路由
+- [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
 - [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
 - [ ] 核对并上传 `ignored/extracted/web-greengas/ignored/resources/web/page-header-*.webp` 五张图到对应 OSS 路径
 - [ ] 用户审阅首页及 About / News 视觉（Solutions 尖角贴合、五步工程能力区实图、About 布局）
@@ -55,6 +59,7 @@
 ## 近期任务 Plan
 
 - `ai-memories/tasks/2026-07-26-website-restructure-planning.md`（规划已完成，等待 #2-#17 实施）
+- `ai-memories/tasks/2026-07-26-material-inventory-ledger.md`（GitHub #2 本地盘点已完成，等待人工公开审批）
 - `ai-memories/tasks/2026-07-26-global-navigation-legacy-routes.md`（GitHub #3 已完成）
 
 ## 待决问题 / 阻塞
