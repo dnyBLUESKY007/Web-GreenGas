@@ -10,15 +10,24 @@ const company = companyData as CompanyData;
 
 export function createAboutSummary(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--muted about-summary-section home-screen home-screen--about';
+  section.className = 'section section--muted about-summary-section';
 
   const container = document.createElement('div');
   container.className = 'container';
 
+  const head = document.createElement('div');
+  head.className = 'section-head';
   const title = createSectionTitle({
     title: t('home.about.title'),
     description: t('home.about.desc'),
   });
+  const actions = document.createElement('div');
+  actions.className = 'about-summary__actions';
+  actions.append(
+    createSummaryLink('/about/', t('home.about.more')),
+    createSummaryLink('/contact/', t('home.about.contactMore')),
+  );
+  head.append(title, actions);
 
   const grid = document.createElement('div');
   grid.className = 'about-summary';
@@ -61,8 +70,16 @@ export function createAboutSummary(): HTMLElement {
   }
 
   grid.append(textCol, badgesCol);
-  container.append(title, grid);
+  container.append(head, grid);
   section.appendChild(container);
 
   return section;
+}
+
+function createSummaryLink(path: string, label: string): HTMLAnchorElement {
+  const link = document.createElement('a');
+  link.className = 'section-head__action';
+  link.href = basePath(path);
+  link.textContent = `${label} →`;
+  return link;
 }

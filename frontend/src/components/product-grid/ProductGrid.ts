@@ -1,6 +1,7 @@
 import productsData from '@/data/products.json';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { t, td } from '@/i18n';
+import { createProductStatus } from '@/pages/products/productView';
 import { basePath } from '@/utils/path';
 import type { Product } from '@/types';
 
@@ -8,7 +9,7 @@ const HOME_PRODUCT_COUNT = 6;
 
 export function createProductGrid(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section section--muted product-grid-section home-screen home-screen--products';
+  section.className = 'section section--muted product-grid-section';
 
   const container = document.createElement('div');
   container.className = 'container';
@@ -50,24 +51,36 @@ function createProductCard(product: Product): HTMLElement {
   const article = document.createElement('article');
   article.className = 'product-grid-card';
 
-  article.innerHTML = `
-    <div class="product-grid-card__media card-media">
-      <div class="card-media__frame">
-        <img
-          class="card-media__image"
-          src="${product.image}"
-          alt="${name}"
-          width="320"
-          height="240"
-          loading="lazy"
-        />
-      </div>
-    </div>
-    <div class="product-grid-card__body">
-      <h3 class="product-grid-card__name">${name}</h3>
-      <p class="product-grid-card__desc">${description}</p>
-    </div>
-  `;
+  const link = document.createElement('a');
+  link.className = 'product-grid-card__link';
+  link.href = basePath(`/products/detail/?id=${encodeURIComponent(product.id)}`);
+
+  const media = document.createElement('div');
+  media.className = 'product-grid-card__media card-media';
+  const frame = document.createElement('div');
+  frame.className = 'card-media__frame';
+  const image = document.createElement('img');
+  image.className = 'card-media__image';
+  image.src = product.image;
+  image.alt = name;
+  image.width = 320;
+  image.height = 240;
+  image.loading = 'lazy';
+  frame.appendChild(image);
+  media.appendChild(frame);
+
+  const body = document.createElement('div');
+  body.className = 'product-grid-card__body';
+  const status = createProductStatus(product.contentStatus);
+  const title = document.createElement('h3');
+  title.className = 'product-grid-card__name';
+  title.textContent = name;
+  const copy = document.createElement('p');
+  copy.className = 'product-grid-card__desc';
+  copy.textContent = description;
+  body.append(status, title, copy);
+  link.append(media, body);
+  article.appendChild(link);
 
   return article;
 }

@@ -1,0 +1,43 @@
+# Task: 重新编排首页全部板块
+
+- **日期**：2026-07-26
+- **状态**：已完成
+- **关联**：GitHub #13；父 PRD GitHub #1；`ai-memories/requirements/global-home.spec.md`
+
+## Problem / 目标
+
+当前首页仍使用旧 Solutions、能力统计和旧内容顺序，缺少行业、合作公司、精选新闻及技术资料状态预览；轮播后的简介也不是已批准公司描述第一段。需要仅使用已完成页面的共享结构化数据，将首页重组为规格批准的九段信息流，并保持三语、占位状态、子路径链接和移动端可用性。
+
+## 核心思路
+
+保留现有四图轮播，移除首页中的旧 Solutions 与无批准来源的能力统计。复用产品、行业、案例、合作公司、新闻、技术支持及公司数据，为缺失的行业和新闻预览增加轻量组件；所有卡片保留内容状态并通过 `basePath()` 进入完整页面或详情。首页区段采用自然高度响应式网格，避免旧版视口配对高度压缩长俄文。
+
+## 受影响的文件 / 模块
+
+- `frontend/src/pages/home/index.ts` — 按批准顺序组装九段首页内容
+- `frontend/src/components/` — 复用并补齐各内容中心的首页预览、状态和链接
+- `frontend/src/styles/` — 新预览区和 320–1440 像素响应式规则
+- `frontend/src/i18n/locales/*.json` — 新首页入口的三语短文案
+- `frontend/tests/home-page.test.mjs` — 首页顺序、数据复用、状态与链接契约
+- `ai-memories/memories/activeContext.md`、`progress.md` — 记录完成状态
+
+## 分步计划
+
+- [x] Step 1: 添加失败的首页契约测试，固定批准顺序、共享数据和状态要求
+- [x] Step 2: 接入批准公司首段及产品、行业、案例、合作公司、新闻、技术支持、公司联系预览
+- [x] Step 3: 完成自然高度及多断点响应式样式与三语文案
+- [x] Step 4: 运行 typecheck、全部测试及根路径/子路径生产构建
+- [x] Step 5: 更新记忆记录并提交 issue #13 的聚焦变更
+
+## Debug Notes
+
+- 2026-07-26 发现 `gh` 默认解析到 upstream fork；issue 和父 PRD 必须显式使用 `-R dnyBLUESKY007/Web-GreenGas`。
+- 2026-07-26 旧首页能力统计包含未获批准的数字能力声明；按规格将该区块从首页组装中移除，而不改动其他页面或历史数据。
+- 2026-07-26 初次 typecheck 因依赖未安装无法启动；按 lockfile 安装后恢复验证，并撤销 npm 版本造成的无关 lockfile 元数据改写。
+- 2026-07-26 最终 `npm run typecheck`、17 项测试、根路径构建、`VITE_BASE=/issue-13/` 子路径构建及 `git diff --check` 全部通过。
+
+## Lessons Learned
+
+- 页面模块带有 `initPage()` 副作用时不应跨页导入；首页轻量预览直接复用共享 JSON，避免初始化错误和第二份内容源。
+- 首页摘要必须复用详情数据中的内容状态；缩短内容不能成为隐藏 Example Placeholder 或未开放状态的理由。
+- 内容中心数量增加后，自然高度网格比旧版成对视口高度更能容纳三语长文案和 320–1440 像素布局。

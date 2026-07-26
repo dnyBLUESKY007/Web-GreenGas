@@ -1,14 +1,14 @@
 import '@/styles/main.scss';
 import { createAboutSummary } from '@/components/about-summary/AboutSummary';
-import { createCapabilityBand } from '@/components/capability-band/CapabilityBand';
 import { createCaseCarousel } from '@/components/case-carousel/CaseCarousel';
+import { createClientLogos } from '@/components/client-logos/ClientLogos';
 import { createHeroCarousel } from '@/components/hero-carousel/HeroCarousel';
 import type { HeroSlide } from '@/components/hero-carousel/HeroCarousel';
 import { createHeroIntro } from '@/components/hero-intro/HeroIntro';
+import { createIndustryPreview } from '@/components/industry-preview/IndustryPreview';
+import { createNewsPreview } from '@/components/news-preview/NewsPreview';
 import { createProductGrid } from '@/components/product-grid/ProductGrid';
-import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { createServiceStrip } from '@/components/service-strip/ServiceStrip';
-import { renderSolutions } from '@/pages/home/renderSolutions';
 import { t } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
@@ -67,48 +67,25 @@ function renderHomePage(): void {
   const hero = createHeroCarousel(heroSlides);
   const heroIntro = createHeroIntro();
 
-  const solutionsSection = createSectionBlock(
-    createSectionTitle({
-      title: t('home.solutions.title'),
-      description: t('home.solutions.desc'),
-    }),
-    'home-solutions',
-  );
-
-  const capabilityBand = createCapabilityBand();
-  const caseCarousel = createCaseCarousel();
   const productGrid = createProductGrid();
+  const industryPreview = createIndustryPreview();
+  const caseCarousel = createCaseCarousel();
+  const clientLogos = createClientLogos(true);
+  const newsPreview = createNewsPreview();
   const serviceStrip = createServiceStrip();
   const aboutSummary = createAboutSummary();
 
   main.replaceChildren(
     hero,
     heroIntro,
-    solutionsSection,
-    capabilityBand,
-    caseCarousel,
     productGrid,
+    industryPreview,
+    caseCarousel,
+    clientLogos,
+    newsPreview,
     serviceStrip,
     aboutSummary,
   );
-
-  renderSolutions(document.getElementById('home-solutions')!);
-}
-
-function createSectionBlock(title: HTMLElement, contentId: string): HTMLElement {
-  const section = document.createElement('section');
-  section.className = 'section section--compact home-screen home-screen--solutions';
-
-  const container = document.createElement('div');
-  container.className = 'container';
-
-  const content = document.createElement('div');
-  content.id = contentId;
-
-  container.append(title, content);
-  section.appendChild(container);
-
-  return section;
 }
 
 initPage('home', renderHomePage);

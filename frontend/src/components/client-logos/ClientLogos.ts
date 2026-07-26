@@ -3,10 +3,11 @@ import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { cdnUrl } from '@/config/assets';
 import { t, td } from '@/i18n';
 import type { PartnerCompany, PartnerGroup } from '@/types';
+import { basePath } from '@/utils/path';
 
 const partnerGroups = clientsData as readonly PartnerGroup[];
 
-export function createClientLogos(): HTMLElement {
+export function createClientLogos(showMore = false): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section section--light client-logos';
 
@@ -27,7 +28,15 @@ export function createClientLogos(): HTMLElement {
     groupsContainer.appendChild(createPartnerGroup(partnerGroup));
   }
 
-  container.append(header, groupsContainer);
+  container.appendChild(header);
+  if (showMore) {
+    const moreLink = document.createElement('a');
+    moreLink.className = 'client-logos__more section-head__action';
+    moreLink.href = basePath('/about/clients/');
+    moreLink.textContent = `${t('home.clients.more')} →`;
+    container.appendChild(moreLink);
+  }
+  container.appendChild(groupsContainer);
   section.appendChild(container);
 
   return section;

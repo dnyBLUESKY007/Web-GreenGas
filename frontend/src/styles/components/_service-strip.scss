@@ -55,3 +55,39 @@
     }
   }
 }
+
+.support-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid $color-border;
+  background: $color-bg-muted;
+
+  strong,
+  span,
+  p {
+    overflow-wrap: anywhere;
+  }
+
+  span {
+    color: $color-primary;
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  p {
+    grid-column: 1 / -1;
+    color: $color-text-muted;
+    font-size: 0.875rem;
+  }
+
+  @media (width < $breakpoint-sm) {
+    grid-template-columns: 1fr;
+
+    p {
+      grid-column: auto;
+    }
+  }
+}

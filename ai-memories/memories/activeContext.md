@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Completed GitHub #13 homepage recomposition. The four-slide hero now leads into the approved first company paragraph, then structured product, industry, case, partner, featured-news, technical-support/service, and company/contact previews. Placeholder and unavailable states remain visible; typecheck, all 17 tests, and root/subpath builds pass.
+
 > 2026-07-26: Integrated Sandcastle issue #8. The trilingual technical-support library now coexists with all previously completed pages; shared memory, locale, style, type, and route conflicts preserve current contracts. Typecheck and all 15 combined tests pass, and GitHub #8 is closed.
 
 > 2026-07-26: Integrated Sandcastle issues #10 and #7 in the requested order. The layered Case Center map and six-sector Industry Applications page coexist with all previously completed content; shared memory, locale, style, type, and route conflicts preserve current contracts. Typecheck and all 14 combined tests pass.
@@ -41,10 +43,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点、#3 全站导航/标题/旧路由、#4 正式 About 重建、#5 FAQ/Contact 合并、#6 产品导航/通用详情、#7 行业应用、#8 技术支持资料库、#9 案例列表/详情、#10 双层案例地图、#11 旧站新闻对齐和 #12 合作公司 Logo 展示基础均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；产品、行业和技术支持资料仍使用明确标识的示例/待替换或未开放状态；素材仍需由责任人审批公开许可并处理敏感/歧义项。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
+下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2–#13 的素材盘点、全局壳、主要内容页和首页重组均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；产品、行业和技术支持资料仍使用明确标识的示例/待替换或未开放状态；素材仍需由责任人审批公开许可并处理敏感/歧义项。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
 
 ## 近期变更
 
+- 2026-07-26 首页重组：保留四图轮播，轮播后使用批准公司描述首段，并按产品、行业、案例、合作公司、精选新闻、技术支持与服务、公司与联系摘要顺序复用共享数据；所有示例、待替换及未开放状态保持可见，入口均支持子路径。
 - 2026-07-26 案例双层地图：本地无密钥 SVG 以实心圆和空心菱形区分三项具备诚实地理精度的案例与正式公司描述支持的四个市场覆盖国家；原生点位按钮、持久三语详情、筛选同步和案例卡片/详情互通已完成。南非客户案例因项目地点未注明不进入案例点层。
 - 2026-07-26 案例中心：以四项可识别官方旧站项目替换六项无依据示例；新增行业/地区筛选、来源状态、通用详情、图库、相关案例和未知 ID 恢复。地理精度仅到来源支持的国家/省级；南非客户记录地点保持未注明。
 - 2026-07-26 新闻归档对齐：逐篇核对旧站六篇官方新闻的标题、日期、分类、摘要、正文和图片；恢复完整中文正文与等价英俄内容，补来源 URL 和首页 `featured` 标记，并修复 `prev_pic`/旧证书路径导致的资源登记不匹配。旧站新闻素材无新增缺口。
@@ -90,6 +93,7 @@
 - [x] 执行 GitHub #4：按正式公司描述重建关于我们
 - [x] 执行 GitHub #7：建立行业应用页面
 - [x] 执行 GitHub #8：建立技术支持资料库与安全下载状态
+- [x] 执行 GitHub #13：按批准结构重组首页全部板块
 - [ ] 提供并批准技术手册、产品样本、安装/调试/维护/故障、售前选型和售后服务文件及 OSS URL
 - [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
 - [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
@@ -102,6 +106,7 @@
 
 ## 近期任务 Plan
 
+- `ai-memories/tasks/2026-07-26-homepage-recomposition.md`（GitHub #13 已完成；17 项测试及根/子路径构建通过）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-support.md`（#8 已合并并通过 15 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-map-industries.md`（#10、#7 已合并并通过 14 项组合测试）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-content-branches.md`（#4、#5、#6、#9、#11、#12 已合并并通过组合验证）

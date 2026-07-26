@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Completed GitHub #13. Homepage now follows the approved nine-part flow, reusing structured product, industry, case, partner, featured-news, support, service, and company/contact content after the four-slide hero and exact approved first profile paragraph. Visible source statuses, typecheck, 17 tests, and root/subpath builds pass.
+
 > 2026-07-26: Integrated Sandcastle issue #8. Technical Support retains all newer page, data, locale, style, type, and route contracts. Typecheck and the complete 15-test suite pass; GitHub #8 is closed.
 
 > 2026-07-26: Integrated Sandcastle issues #10 and #7. The layered map and Industry Applications additions now retain all newer page, data, locale, type, and route contracts. Typecheck and the complete 14-test suite pass.
@@ -69,6 +71,7 @@
 - **正式 About 重建**：完整四段三语公司描述、四项管理理念、八类产品、五个行业及国内外供应经验；保留 `ISO140001`，未批准公司/证书媒体使用明确待替换占位
 - **行业应用页面**：钢铁、化工、电力、制药、军工和特种设施六类三语结构化内容；逐类包含环境、挑战、应对、设备和案例空间，并明确示例占位状态
 - **技术支持资料库**：八类 JSON 驱动资料结构、三语筛选、完整元数据、示例/空/未开放状态，以及获批 HTTPS OSS 下载门控
+- **首页全部板块重组**：四图轮播与批准公司首段之后，依次接入产品、行业、案例、合作公司、精选新闻、技术支持与服务、公司联系摘要；共享数据、内容状态和子路径安全入口完整保留
 
 ## 进行中
 
@@ -128,3 +131,4 @@
 | 2026-07-26 | Sandcastle 地图与行业整合 | 按顺序合并 #10、#7；保留全部既有契约，组合类型检查与 14 项测试通过 |
 | 2026-07-26 | 技术支持资料库 | 完成 GitHub #8 八类三语资料库和安全下载门控；真实文件仍待审批与 OSS 上传 |
 | 2026-07-26 | Sandcastle 技术支持整合 | 合并 #8 并保留全部既有契约；组合类型检查与 15 项测试通过，GitHub issue 已关闭 |
+| 2026-07-26 | 首页全部板块重组 | 完成 GitHub #13 九段批准信息流、共享数据预览、显式状态和三语响应式入口；17 项测试及根/子路径构建通过 |

@@ -24,6 +24,11 @@
   background-color: $color-bg;
   transition: box-shadow $transition-base, transform $transition-base;
 
+  &__link {
+    display: block;
+    color: inherit;
+  }
+
   &:hover {
     box-shadow: $shadow-md;
     transform: translateY(-2px);
@@ -35,6 +40,11 @@
 
   &__body {
     padding: 0.875rem 1rem 1rem;
+
+    .product-status {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
   }
 
   &__name {
@@ -50,6 +60,7 @@
     font-size: 0.8125rem;
     line-height: 1.45;
     color: $color-text-muted;
+    overflow-wrap: anywhere;
   }
 }
 

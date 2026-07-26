@@ -1,6 +1,12 @@
 @use '../base/variables' as *;
 
 .client-logos {
+  &__more {
+    display: block;
+    width: fit-content;
+    margin: -1.5rem 0 2rem auto;
+  }
+
   &__header {
     max-width: 48rem;
     margin: 0 auto 2.5rem;
@@ -100,6 +106,10 @@
   }
 
   @media (width < $breakpoint-sm) {
+    &__more {
+      margin: -1.5rem 0 2rem;
+    }
+
     &__group-header {
       align-items: flex-start;
       flex-direction: column;

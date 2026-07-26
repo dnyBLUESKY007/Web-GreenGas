@@ -7,7 +7,7 @@ import { basePath } from '@/utils/path';
 
 export function createCaseCarousel(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section case-carousel-section home-screen home-screen--cases';
+  section.className = 'section case-carousel-section';
 
   const container = document.createElement('div');
   container.className = 'container';
@@ -23,6 +23,11 @@ export function createCaseCarousel(): HTMLElement {
   const nav = document.createElement('div');
   nav.className = 'case-carousel__nav';
 
+  const moreLink = document.createElement('a');
+  moreLink.className = 'section-head__action';
+  moreLink.href = basePath('/cases/');
+  moreLink.textContent = `${t('home.cases.more')} →`;
+
   const prevBtn = document.createElement('button');
   prevBtn.className = 'case-carousel__nav-btn';
   prevBtn.type = 'button';
@@ -35,7 +40,7 @@ export function createCaseCarousel(): HTMLElement {
   nextBtn.setAttribute('aria-label', t('carousel.next'));
   nextBtn.textContent = '›';
 
-  nav.append(prevBtn, nextBtn);
+  nav.append(moreLink, prevBtn, nextBtn);
   head.append(title, nav);
 
   const trackWrapper = document.createElement('div');
@@ -82,6 +87,7 @@ function createCaseCard(project: Project): HTMLElement {
       />
     </div>
     <div class="case-card__body">
+      <span class="case-card__status">${t(`cases.status.${project.status}`)}</span>
       <p class="case-card__meta">${industry} · ${location}</p>
       <h3 class="case-card__title">${name}</h3>
       <p class="case-card__summary">${summary}</p>
