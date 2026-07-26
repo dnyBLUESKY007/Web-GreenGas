@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: Production deployment for GitHub #16 succeeded and GitHub #16 plus parent #1 are closed. The approved `d47c491` build passed typecheck, all 23 tests, Nginx validation/reload, eight-route public HTTP checks, live trilingual switching, and exact local/remote verification across 46 files. The release owner accepted the documented content gaps; a verified pre-deployment rollback artifact is retained locally.
+
 > 2026-07-26: Integrated Sandcastle issue #15 by fast-forward. The release-candidate evidence and final material-gap report now coexist with all prior site contracts. Frontend typecheck and all 23 tests pass; GitHub #15 is closed without a production deployment.
 
 > 2026-07-26: Completed GitHub #15 release-candidate evidence and final material-gap report. All #2-#14 implementation issues are closed; typecheck, 23 tests, and reproducible root/subpath builds pass. The report inventories 21 top-level examples, approval-ready material packages, 25 OSS 404s, the unresolved ISO number, browser/audit limitations, and the separate EmailJS/deployment boundaries. No production deployment occurred.
@@ -53,10 +55,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版的 #2–#15 已完成。发布候选、可重复构建证据和最终资料缺口报告已生成，等待发布负责人审批；尚未执行 #16 生产部署。合作公司资料当前为零项获批，产品、行业和技术支持仍保留明确示例/待替换状态；25 个案例/新闻 OSS 图片仍待上传。完整资料请求见 `ai-memories/materials/2026-07-26-final-material-gap-report.md`。
+下一阶段网站改版的 #2–#16 已完成并发布到生产环境，父任务 #1 与发布任务 #16 均已关闭。发布负责人接受本次带已披露缺口发布；合作公司资料当前为零项获批，产品、行业和技术支持仍保留明确示例/待替换状态，25 个案例/新闻 OSS 图片仍待上传。EmailJS 继续由独立 #17 跟踪。完整资料请求见 `ai-memories/materials/2026-07-26-final-material-gap-report.md`。
 
 ## 近期变更
 
+- 2026-07-27 生产发布：以 `d47c491` 构建并发布 GitHub #16；类型检查、23 项测试、Nginx 检查/reload、八项公网路由及核心资源均通过。线上 46 个文件与本地构建聚合摘要一致，原线上产物已保留在本地忽略目录作为回滚来源。
 - 2026-07-26 发布候选：确认 #2-#14 均关闭，以锁文件重建并通过类型检查、23 项测试及根/`/rc/` 双构建；两种候选摘要连续重建稳定。最终报告分列完成、未完成、21 个顶层示例、待替换资料包和外部阻塞；ISO 编号、EmailJS 与未部署边界明确。
 - 2026-07-26 全站回归：新增三语键与跨数据引用契约；修复产品/行业深链、行业示例案例空链接、FAQ 动态锚点、全局可访问名称、轮播动态偏好及俄文新闻卡固定高度问题；图片失败改为三语可访问状态。21 项测试及根/子路径构建通过，25 个案例/新闻 OSS 对象仍返回 404。
 - 2026-07-26 首页重组：保留四图轮播，轮播后使用批准公司描述首段，并按产品、行业、案例、合作公司、精选新闻、技术支持与服务、公司与联系摘要顺序复用共享数据；所有示例、待替换及未开放状态保持可见，入口均支持子路径。
@@ -108,7 +111,7 @@
 - [x] 执行 GitHub #13：按批准结构重组首页全部板块
 - [x] 执行 GitHub #14：完成全站三语与响应式回归验收
 - [x] 执行 GitHub #15：生成发布候选证据与最终资料缺口报告
-- [ ] 由发布负责人审批候选后单独执行 GitHub #16；本任务未部署
+- [x] 由发布负责人批准并完成 GitHub #16 生产部署
 - [ ] 提供并批准技术手册、产品样本、安装/调试/维护/故障、售前选型和售后服务文件及 OSS URL
 - [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
 - [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
@@ -122,14 +125,15 @@
 ## 近期任务 Plan
 
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-release-report.md`（#15 已合并并通过 23 项组合测试；GitHub issue 已关闭）
-- `ai-memories/tasks/2026-07-26-release-candidate-material-gap-report.md`（GitHub #15 已完成；23 项测试及可重复根/子路径构建通过，尚未生产部署）
+- `ai-memories/tasks/2026-07-27-approved-production-deployment.md`（GitHub #16 已部署、通过线上验收并关闭；父任务 #1 已关闭）
+- `ai-memories/tasks/2026-07-26-release-candidate-material-gap-report.md`（GitHub #15 已完成；23 项测试及可重复根/子路径构建通过，候选已由 #16 发布）
 - `ai-memories/tasks/2026-07-26-trilingual-responsive-regression.md`（GitHub #14 已完成；21 项测试、类型检查及根/子路径构建通过，记录 25 个 OSS 图片缺口）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-homepage.md`（#13 已合并并通过 17 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-26-homepage-recomposition.md`（GitHub #13 已完成；17 项测试及根/子路径构建通过）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-support.md`（#8 已合并并通过 15 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-map-industries.md`（#10、#7 已合并并通过 14 项组合测试）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-content-branches.md`（#4、#5、#6、#9、#11、#12 已合并并通过组合验证）
-- `ai-memories/tasks/2026-07-26-website-restructure-planning.md`（规划已完成，等待 #2-#17 实施）
+- `ai-memories/tasks/2026-07-26-website-restructure-planning.md`（#2-#16 已完成；独立 #17 待配置）
 - `ai-memories/tasks/2026-07-26-material-inventory-ledger.md`（GitHub #2 本地盘点已完成，等待人工公开审批）
 - `ai-memories/tasks/2026-07-26-global-navigation-legacy-routes.md`（GitHub #3 已完成）
 - `ai-memories/tasks/2026-07-26-partner-logo-showcase.md`（GitHub #12 已完成；等待获批合作公司资料）

@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Completed and closed the approved GitHub #16 production deployment and parent #1 from `d47c491`. Typecheck, all 23 tests, the production build, Nginx validation/reload, all eight public destination checks, live trilingual switching, approved-candidate hash reconciliation, and exact local/remote verification across 46 files pass. The release owner accepted the documented content gaps, and the previous production artifact is retained locally for rollback.
+
 > 2026-07-26: Integrated Sandcastle issue #15 by fast-forward. Release-candidate evidence and the final material-gap report retain all previous site contracts. Frontend typecheck and the complete 23-test suite pass; GitHub #15 is closed and production remains unchanged.
 
 > 2026-07-26: Completed GitHub #15. Generated reproducible root and `/rc/` release-candidate evidence plus the final approval/material-gap report. Typecheck, 23 tests, and repeated builds pass with stable SHA-256 summaries. ISO140001 confirmation, 25 OSS images, browser visual evidence, material approvals, and two transitive build-tool advisories are explicit; production deployment remains separate and was not run.
