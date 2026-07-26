@@ -1,7 +1,5 @@
 @use '../base/variables' as *;
 
-$news-card-text-offset: 34%;
-
 .news-filter {
   display: flex;
   flex-wrap: wrap;
@@ -71,21 +69,6 @@ $news-card-text-offset: 34%;
   }
 
   @media (width >= $breakpoint-md) {
-    &__category {
-      position: absolute;
-      top: 3rem;
-      inset-inline-start: $news-card-text-offset;
-      margin: 0;
-    }
-
-    &__title {
-      top: 4.75rem;
-    }
-
-    &__excerpt {
-      top: 7rem;
-    }
-
     &__more {
       display: none;
     }

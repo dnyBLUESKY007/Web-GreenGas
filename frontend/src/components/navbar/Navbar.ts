@@ -31,7 +31,7 @@ export function createNavbar(activePageId: PageId): HTMLElement {
 
   const nav = document.createElement('nav');
   nav.className = 'navbar__nav';
-  nav.setAttribute('aria-label', 'Main navigation');
+  nav.setAttribute('aria-label', t('nav.main.label'));
 
   for (const item of NAV_ITEMS) {
     nav.appendChild(createNavLink(item, activePageId, 'navbar__link'));
@@ -124,7 +124,7 @@ function createMobileActionDock(activePageId: PageId): HTMLElement {
 
     const menu = document.createElement('nav');
     menu.className = 'navbar__action-menu';
-    menu.setAttribute('aria-label', 'Main navigation');
+    menu.setAttribute('aria-label', t('nav.main.label'));
     for (const item of NAV_ITEMS) {
       menu.appendChild(createNavLink(item, activePageId, 'navbar__action-menu-link'));
     }

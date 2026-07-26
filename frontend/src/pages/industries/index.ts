@@ -1,6 +1,7 @@
 import '@/styles/main.scss';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import industriesData from '@/data/industries.json';
+import projectsData from '@/data/projects.json';
 import { t, td } from '@/i18n';
 import type { IndustryApplication } from '@/types';
 import { getIcon } from '@/utils/icons';
@@ -8,6 +9,7 @@ import { initPage } from '@/utils/mountLayout';
 import { basePath } from '@/utils/path';
 
 const industries = industriesData as readonly IndustryApplication[];
+const projectIds = new Set(projectsData.map(({ id }) => id));
 
 function renderIndustriesPage(): void {
   const main = document.getElementById('page-content');
@@ -133,15 +135,19 @@ function setRequiredText(container: ParentNode, selector: string, value: string)
 function createLinkList<T extends object>(
   items: readonly T[],
   getHref: (item: T) => string,
+  isItemAvailable: (item: T) => boolean = () => true,
 ): HTMLUListElement {
   const list = document.createElement('ul');
 
   for (const item of items) {
     const row = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = getHref(item);
-    link.textContent = td(item, 'name');
-    row.appendChild(link);
+    const isAvailable = isItemAvailable(item);
+    const element = document.createElement(isAvailable ? 'a' : 'span');
+    if (isAvailable && element instanceof HTMLAnchorElement) {
+      element.href = getHref(item);
+    }
+    element.textContent = td(item, 'name');
+    row.appendChild(element);
     list.appendChild(row);
   }
 
@@ -174,6 +180,7 @@ function createRelatedCases(industry: IndustryApplication): HTMLElement {
 
   const list = createLinkList(industry.relatedCases, (relatedCase) =>
     basePath(`/cases/detail/?id=${encodeURIComponent(relatedCase.id)}`),
+    (relatedCase) => projectIds.has(relatedCase.id),
   );
 
   item.append(heading, list);

@@ -62,6 +62,10 @@ function renderContactPage(): void {
 
   renderFaq(faqMount);
   renderContactChannels(channelsMount);
+
+  if (location.hash === '#faq') {
+    requestAnimationFrame(() => faqSection.scrollIntoView());
+  }
 }
 
 initPage('contact', renderContactPage);

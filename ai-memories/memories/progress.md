@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Completed GitHub #14. Cross-site regression now enforces locale parity and cross-data references, fixes broken product/industry and placeholder-case navigation, restores dynamic FAQ fragment landing, localizes global accessibility labels, pauses the hero carousel for interaction/reduced motion, uses intrinsic-height news cards, and provides localized image-failure states. Typecheck, 21 tests, and root/subpath builds pass. Twenty-five case/news OSS images remain unavailable remotely.
+
 > 2026-07-26: Integrated Sandcastle issue #13 by fast-forward. The homepage recomposition retains all previously completed shared content and route contracts. Typecheck and the complete 17-test suite pass; GitHub #13 is closed.
 
 > 2026-07-26: Completed GitHub #13. Homepage now follows the approved nine-part flow, reusing structured product, industry, case, partner, featured-news, support, service, and company/contact content after the four-slide hero and exact approved first profile paragraph. Visible source statuses, typecheck, 17 tests, and root/subpath builds pass.
@@ -74,6 +76,7 @@
 - **行业应用页面**：钢铁、化工、电力、制药、军工和特种设施六类三语结构化内容；逐类包含环境、挑战、应对、设备和案例空间，并明确示例占位状态
 - **技术支持资料库**：八类 JSON 驱动资料结构、三语筛选、完整元数据、示例/空/未开放状态，以及获批 HTTPS OSS 下载门控
 - **首页全部板块重组**：四图轮播与批准公司首段之后，依次接入产品、行业、案例、合作公司、精选新闻、技术支持与服务、公司联系摘要；共享数据、内容状态和子路径安全入口完整保留
+- **全站三语与响应式回归**：21 项组合契约覆盖三语键、跨页引用、内容状态及关键交互；修复深链、FAQ 锚点、轮播可访问性与俄文新闻卡溢出，图片失败显示三语不可用状态
 
 ## 进行中
 
@@ -98,6 +101,8 @@
 - 尚无获批公开的技术手册、产品样本、安装/调试/维护/故障、售前选型或售后服务下载
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
+- 25 个已登记案例/新闻 OSS 图片仍返回 404；代码侧已避免可见破图，发布候选仍需上传与浏览器复核
+- 当前 ARM 验收宿主缺少 Chromium 系统动态库，本轮五宽度检查以响应式契约和历史浏览器基线为主，未完成新的自动化截图
 
 ## 里程碑记录
 
@@ -134,3 +139,4 @@
 | 2026-07-26 | 技术支持资料库 | 完成 GitHub #8 八类三语资料库和安全下载门控；真实文件仍待审批与 OSS 上传 |
 | 2026-07-26 | Sandcastle 技术支持整合 | 合并 #8 并保留全部既有契约；组合类型检查与 15 项测试通过，GitHub issue 已关闭 |
 | 2026-07-26 | 首页全部板块重组 | 完成 GitHub #13 九段批准信息流、共享数据预览、显式状态和三语响应式入口；17 项测试及根/子路径构建通过 |
+| 2026-07-26 | 全站三语与响应式回归 | 完成 GitHub #14 跨页/三语/响应式/可访问性修复；21 项测试、类型检查及根/子路径构建通过，记录 25 个 OSS 图片缺口 |

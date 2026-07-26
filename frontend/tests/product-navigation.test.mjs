@@ -47,7 +47,7 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
   assert.match(detail, /createNotFound/);
   assert.match(detail, /basePath\('\/products\/'\)/);
   assert.match(detail, /basePath\('\/contact\/'\)/);
-  assert.match(detail, /basePath\(`\/industries\/\?id=\$\{encodeURIComponent\(industry\.id\)\}`\)/);
+  assert.match(detail, /basePath\(`\/industries\/#industry-\$\{encodeURIComponent\(industry\.id\)\}`\)/);
 
   const detailHtml = await read('products/detail/index.html');
   assert.match(detailHtml, /src="\/src\/pages\/products\/detail\/index\.ts"/);

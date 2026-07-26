@@ -60,6 +60,8 @@ test('contact page only exposes approved channels', async () => {
 test('contact page exposes FAQ before an honestly disabled message form', async () => {
   const contactPage = await read('src/pages/contact/index.ts');
   assert.match(contactPage, /main\.replaceChildren\(header, faqSection, contactSection\)/);
+  assert.match(contactPage, /location\.hash === '#faq'/);
+  assert.match(contactPage, /faqSection\.scrollIntoView\(\)/);
 
   const form = await read('src/components/contact-form/ContactForm.ts');
   assert.match(form, /disabled aria-disabled="true"/);

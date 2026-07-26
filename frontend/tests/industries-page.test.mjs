@@ -13,6 +13,7 @@ test('industry applications expose six multilingual placeholder records and safe
   assert.match(html, /src="\/src\/pages\/industries\/index\.ts"/);
 
   const industries = JSON.parse(await read('src/data/industries.json'));
+  const products = JSON.parse(await read('src/data/products.json'));
   assert.deepEqual(
     industries.map(({ id }) => id),
     ['steel', 'chemical', 'power', 'pharmaceutical', 'defence', 'special-facilities'],
@@ -27,11 +28,16 @@ test('industry applications expose six multilingual placeholder records and safe
     }
     assert.ok(industry.equipment.length > 0, `${industry.id}.equipment`);
     assert.ok(industry.relatedCases.length > 0, `${industry.id}.relatedCases`);
+    assert.ok(
+      industry.equipment.every(({ productId }) => products.some(({ id }) => id === productId)),
+      `${industry.id}.equipment references`,
+    );
   }
 
   const page = await read('src/pages/industries/index.ts');
   assert.match(page, /basePath\(`\/products\/detail\/\?id=\$\{encodeURIComponent\(equipment\.productId\)\}`\)/);
   assert.match(page, /basePath\(`\/cases\/detail\/\?id=\$\{encodeURIComponent\(relatedCase\.id\)\}`\)/);
+  assert.match(page, /projectIds\.has\(relatedCase\.id\)/);
   assert.match(page, /industry\.status === 'example-placeholder'/);
 
   for (const locale of ['en', 'zh', 'ru']) {

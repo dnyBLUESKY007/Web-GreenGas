@@ -146,7 +146,7 @@ function createIndustries(industries: readonly ProductIndustry[] | undefined): H
   list.className = 'product-detail__links';
   for (const industry of industries) {
     const link = document.createElement('a');
-    link.href = basePath(`/industries/?id=${encodeURIComponent(industry.id)}`);
+    link.href = basePath(`/industries/#industry-${encodeURIComponent(industry.id)}`);
     link.textContent = td(industry, 'name');
     list.appendChild(link);
   }

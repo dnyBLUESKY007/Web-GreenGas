@@ -27,6 +27,8 @@ const SWIPE_HINT_SVG = `
 export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
   const container = document.createElement('section');
   container.className = 'hero-carousel';
+  container.setAttribute('aria-label', t('hero.carousel.label'));
+  container.setAttribute('aria-roledescription', t('hero.carousel.role'));
 
   const slidesWrapper = document.createElement('div');
   slidesWrapper.className = 'hero-carousel__slides';
@@ -63,7 +65,8 @@ export function createHeroCarousel(slides: readonly HeroSlide[]): HTMLElement {
   for (let i = 0; i < slides.length; i++) {
     const tab = document.createElement('button');
     tab.className = 'hero-carousel__tab';
-    tab.setAttribute('aria-label', `Slide ${i + 1}`);
+    tab.setAttribute('aria-label', `${t('hero.carousel.slide')} ${i + 1}`);
+    tab.setAttribute('aria-current', String(i === 0));
     tab.dataset.index = String(i);
 
     const progress = document.createElement('span');
@@ -173,16 +176,18 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   if (slides.length === 0) return;
 
   let currentIndex = 0;
-  let hoveredIndex: number | undefined;
+  let isPointerInside = false;
+  let hasFocusInside = false;
   let intervalId: ReturnType<typeof setInterval> | undefined;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function isHoveringActiveTab(): boolean {
-    return hoveredIndex === currentIndex;
+  function isAutoRotatePaused(): boolean {
+    return reduceMotion || isPointerInside || hasFocusInside;
   }
 
   function resetAutoRotate(): void {
     clearInterval(intervalId);
-    if (isHoveringActiveTab()) return;
+    if (isAutoRotatePaused()) return;
     intervalId = setInterval(() => {
       goToSlide((currentIndex + 1) % slideCount);
     }, AUTO_ROTATE_INTERVAL);
@@ -192,12 +197,14 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
     stopTabProgress(tabs[currentIndex]);
     slides[currentIndex].classList.remove('hero-carousel__slide--active');
     tabs[currentIndex].classList.remove('hero-carousel__tab--active');
+    tabs[currentIndex].setAttribute('aria-current', 'false');
 
     currentIndex = index;
 
     slides[currentIndex].classList.add('hero-carousel__slide--active');
     tabs[currentIndex].classList.add('hero-carousel__tab--active');
-    if (!isHoveringActiveTab()) {
+    tabs[currentIndex].setAttribute('aria-current', 'true');
+    if (!isAutoRotatePaused()) {
       startTabProgress(tabs[currentIndex]);
     }
   }
@@ -215,6 +222,35 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   prevBtn?.addEventListener('click', goToPrev);
   nextBtn?.addEventListener('click', goToNext);
 
+  const pauseAutoRotate = (): void => {
+    clearInterval(intervalId);
+    stopTabProgress(tabs[currentIndex]);
+  };
+  const resumeAutoRotate = (): void => {
+    if (isAutoRotatePaused()) return;
+    startTabProgress(tabs[currentIndex]);
+    resetAutoRotate();
+  };
+
+  container.addEventListener('mouseenter', () => {
+    isPointerInside = true;
+    pauseAutoRotate();
+  });
+  container.addEventListener('mouseleave', () => {
+    isPointerInside = false;
+    resumeAutoRotate();
+  });
+  container.addEventListener('focusin', () => {
+    hasFocusInside = true;
+    pauseAutoRotate();
+  });
+  container.addEventListener('focusout', (event) => {
+    if (!container.contains(event.relatedTarget as Node | null)) {
+      hasFocusInside = false;
+      resumeAutoRotate();
+    }
+  });
+
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => {
       if (i !== currentIndex) {
@@ -223,21 +259,6 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
       }
     });
 
-    tab.addEventListener('mouseenter', () => {
-      hoveredIndex = i;
-      if (i === currentIndex) {
-        clearInterval(intervalId);
-        stopTabProgress(tab);
-      }
-    });
-
-    tab.addEventListener('mouseleave', () => {
-      hoveredIndex = undefined;
-      if (i === currentIndex) {
-        startTabProgress(tab);
-        resetAutoRotate();
-      }
-    });
   });
 
   if (slidesWrapper) {
@@ -245,7 +266,7 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   }
 
   tabs[0].classList.add('hero-carousel__tab--active');
-  startTabProgress(tabs[0]);
+  if (!reduceMotion) startTabProgress(tabs[0]);
   resetAutoRotate();
 }
 

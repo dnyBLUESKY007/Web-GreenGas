@@ -6,6 +6,7 @@ import { createScrollToTop } from '@/components/scroll-to-top/ScrollToTop';
 import { initI18n, onLocaleChange } from '@/i18n';
 import { initTheme, onThemeChange } from '@/theme';
 import { initScrollReveal } from '@/utils/initScrollReveal';
+import { initImageFallback } from '@/utils/initImageFallback';
 import type { PageId } from '@/types';
 
 export function mountLayout(pageId: PageId): void {
@@ -44,6 +45,7 @@ function ensureScrollToTop(): void {
 export function initPage(pageId: PageId, renderContent: () => void): void {
   initI18n();
   initTheme();
+  initImageFallback();
 
   const render = (): void => {
     mountLayout(pageId);

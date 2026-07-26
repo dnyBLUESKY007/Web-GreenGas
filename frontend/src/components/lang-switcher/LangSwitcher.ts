@@ -1,4 +1,4 @@
-import { getLocale, setLocale } from '@/i18n';
+import { getLocale, setLocale, t } from '@/i18n';
 import type { Locale } from '@/types';
 
 const LOCALE_OPTIONS: readonly { readonly locale: Locale; readonly label: string }[] = [
@@ -11,7 +11,7 @@ export function createLangSwitcher(onLocaleSelect?: () => void): HTMLElement {
   const wrapper = document.createElement('div');
   wrapper.className = 'lang-switcher';
   wrapper.setAttribute('role', 'group');
-  wrapper.setAttribute('aria-label', 'Language');
+  wrapper.setAttribute('aria-label', t('nav.language.group'));
 
   const currentLocale = getLocale();
 

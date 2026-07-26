@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Completed GitHub #14 trilingual responsive regression. Added 4 cross-site contracts (21 total), fixed product/industry and placeholder-case links, dynamic FAQ fragment landing, localized accessible labels, carousel pause/reduced-motion behavior, Russian news-card intrinsic layout, and localized image-failure states. Typecheck plus root/subpath builds pass. Live probing found 25 case/news OSS images still return 404; browser visual automation was unavailable because the ARM host lacks system browser libraries.
+
 > 2026-07-26: Integrated Sandcastle issue #13. The approved homepage sequence now coexists with all previously completed content and route contracts; the branch fast-forwarded without conflicts. Typecheck and all 17 combined tests pass, and GitHub #13 is closed.
 
 > 2026-07-26: Completed GitHub #13 homepage recomposition. The four-slide hero now leads into the approved first company paragraph, then structured product, industry, case, partner, featured-news, technical-support/service, and company/contact previews. Placeholder and unavailable states remain visible; typecheck, all 17 tests, and root/subpath builds pass.
@@ -45,10 +47,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2–#13 的素材盘点、全局壳、主要内容页和首页重组均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；产品、行业和技术支持资料仍使用明确标识的示例/待替换或未开放状态；素材仍需由责任人审批公开许可并处理敏感/歧义项。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
+下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2–#14 的素材盘点、全局壳、主要内容页、首页重组与全站回归均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；产品、行业和技术支持资料仍使用明确标识的示例/待替换或未开放状态；25 个案例/新闻 OSS 图片仍待上传，当前由三语不可用状态避免显示破图。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
 
 ## 近期变更
 
+- 2026-07-26 全站回归：新增三语键与跨数据引用契约；修复产品/行业深链、行业示例案例空链接、FAQ 动态锚点、全局可访问名称、轮播动态偏好及俄文新闻卡固定高度问题；图片失败改为三语可访问状态。21 项测试及根/子路径构建通过，25 个案例/新闻 OSS 对象仍返回 404。
 - 2026-07-26 首页重组：保留四图轮播，轮播后使用批准公司描述首段，并按产品、行业、案例、合作公司、精选新闻、技术支持与服务、公司与联系摘要顺序复用共享数据；所有示例、待替换及未开放状态保持可见，入口均支持子路径。
 - 2026-07-26 案例双层地图：本地无密钥 SVG 以实心圆和空心菱形区分三项具备诚实地理精度的案例与正式公司描述支持的四个市场覆盖国家；原生点位按钮、持久三语详情、筛选同步和案例卡片/详情互通已完成。南非客户案例因项目地点未注明不进入案例点层。
 - 2026-07-26 案例中心：以四项可识别官方旧站项目替换六项无依据示例；新增行业/地区筛选、来源状态、通用详情、图库、相关案例和未知 ID 恢复。地理精度仅到来源支持的国家/省级；南非客户记录地点保持未注明。
@@ -96,6 +99,7 @@
 - [x] 执行 GitHub #7：建立行业应用页面
 - [x] 执行 GitHub #8：建立技术支持资料库与安全下载状态
 - [x] 执行 GitHub #13：按批准结构重组首页全部板块
+- [x] 执行 GitHub #14：完成全站三语与响应式回归验收
 - [ ] 提供并批准技术手册、产品样本、安装/调试/维护/故障、售前选型和售后服务文件及 OSS URL
 - [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
 - [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
@@ -108,6 +112,7 @@
 
 ## 近期任务 Plan
 
+- `ai-memories/tasks/2026-07-26-trilingual-responsive-regression.md`（GitHub #14 已完成；21 项测试、类型检查及根/子路径构建通过，记录 25 个 OSS 图片缺口）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-homepage.md`（#13 已合并并通过 17 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-26-homepage-recomposition.md`（GitHub #13 已完成；17 项测试及根/子路径构建通过）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-support.md`（#8 已合并并通过 15 项组合测试；GitHub issue 已关闭）
@@ -128,4 +133,6 @@
 
 ## 待决问题 / 阻塞
 
+- 25 个已登记案例/新闻图片 URL 仍返回 OSS 404；页面已显示本地化不可用状态，但发布候选前仍需上传并复核
+- 当前 ARM 验收宿主缺少 Chromium 所需系统动态库；未执行一次性五宽度浏览器截图，需在具备浏览器环境的发布候选阶段复核
 - 甲方真实厂址与 GCJ-02 经纬度（Contact 地图依赖）

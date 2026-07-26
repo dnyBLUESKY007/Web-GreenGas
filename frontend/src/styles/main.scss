@@ -50,3 +50,15 @@ body {
 #page-content {
   flex: 1;
 }
+
+.media-unavailable {
+  display: grid;
+  width: 100%;
+  min-height: 8rem;
+  padding: 1rem;
+  place-items: center;
+  background: $color-bg-muted;
+  color: $color-text-muted;
+  font-size: 0.875rem;
+  text-align: center;
+}
