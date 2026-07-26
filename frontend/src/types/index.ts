@@ -129,6 +129,29 @@ export interface CaseImage {
   readonly alt_ru?: string;
 }
 
+interface CaseMapPointBase {
+  readonly id: string;
+  readonly countryCode: string;
+  readonly x: number;
+  readonly y: number;
+}
+
+export interface VerifiedCaseMapPoint extends CaseMapPointBase {
+  readonly type: 'verified-case';
+  readonly projectId: string;
+}
+
+export interface MarketCoverageMapPoint extends CaseMapPointBase {
+  readonly type: 'market-coverage';
+  readonly scope: 'country';
+  readonly source: 'formal-company-profile';
+  readonly name: string;
+  readonly name_zh: string;
+  readonly name_ru: string;
+}
+
+export type CaseMapPoint = VerifiedCaseMapPoint | MarketCoverageMapPoint;
+
 export interface Product {
   readonly id: string;
   readonly name: string;

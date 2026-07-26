@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Completed GitHub #10. Case Center now has a local keyless layered world map with three honestly located verified-case points and four formal-profile market-coverage points. Shape/fill distinctions, native accessible controls, persistent multilingual details, filter-aware card links, typecheck, 13 tests, and root/subpath builds pass.
+
 > 2026-07-26: Integrated Sandcastle issues #12, #11, #9, #6, #5, and #4. Shared Memory Bank and locale conflicts were resolved cumulatively so all six feature contracts remain present. Typecheck and the complete 12-test suite pass.
 
 > 2026-07-26: Archived all three supplied packages under `ignored/source-archives/`, extracted them under `ignored/extracted/`, and exposed `ignored/` to Sandcastle at the same repository-relative path. `CONTEXT.md` records the canonical material locations.
@@ -53,6 +55,7 @@
 - **合作公司 Logo 展示基础**：结构化分组、4/2/1 列响应式网格、三语状态及可访问 OSS 图片契约；当前四项均明确待资料替换
 - **新闻归档对齐**：六篇旧站官方新闻补齐来源、完整三语正文和首页精选标记；列表/通用详情/未知 ID 恢复及全部登记 OSS 图片由契约测试覆盖
 - **案例中心列表与详情**：四项官方旧站案例、行业/地区筛选、来源状态、通用详情、图库、相关案例及未知 ID 恢复；为地图保留稳定标识与诚实地理精度
+- **案例中心双层地图**：无密钥本地 SVG、三项已核实案例点、四项正式描述市场覆盖点、双形状图例、键盘/触摸点位、持久三语信息及筛选后的案例卡片/详情互通
 - **产品导航与通用详情**：四系列 14 个产品卡片接入独立目录；通用详情覆盖特点、参数、行业、下载、咨询与未找到恢复状态，三语示例/待替换标识明确
 - **FAQ 与 Contact 合并**：六组三语 FAQ 位于直接联系和留言区之前；编号答案使用有序列表；只渲染显式批准渠道；EmailJS 未配置时不允许提交或显示送达反馈
 - **正式 About 重建**：完整四段三语公司描述、四项管理理念、八类产品、五个行业及国内外供应经验；保留 `ISO140001`，未批准公司/证书媒体使用明确待替换占位

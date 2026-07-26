@@ -1,5 +1,197 @@
 @use '../base/variables' as *;
 
+.case-map {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: $radius-lg;
+  background: $color-primary-dark;
+  color: $color-bg;
+
+  &__heading {
+    display: grid;
+    gap: 0.75rem;
+
+    @media (width >= $breakpoint-md) {
+      grid-template-columns: minmax(12rem, 0.8fr) minmax(18rem, 1.2fr);
+      align-items: end;
+    }
+  }
+
+  &__eyebrow,
+  &__type {
+    color: $color-accent;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__heading h2 {
+    color: inherit;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  &__heading > p,
+  &__precision-note {
+    color: rgb(255 255 255 / 72%);
+  }
+
+  &__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__legend li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-width: 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  &__legend-mark {
+    width: 0.875rem;
+    height: 0.875rem;
+    flex: 0 0 auto;
+
+    &--verified {
+      border: 2px solid $color-bg;
+      border-radius: 50%;
+      background: $color-accent;
+    }
+
+    &--coverage {
+      border: 2px solid $color-accent;
+      background: transparent;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__layout {
+    display: grid;
+    gap: 1rem;
+
+    @media (width >= $breakpoint-lg) {
+      grid-template-columns: minmax(0, 2fr) minmax(17rem, 0.8fr);
+    }
+  }
+
+  &__stage {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    aspect-ratio: 2 / 1;
+    border: 1px solid rgb(255 255 255 / 14%);
+    border-radius: $radius-md;
+    background: rgb(255 255 255 / 4%);
+  }
+
+  &__world {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: rgb(255 255 255 / 12%);
+    stroke: rgb(255 255 255 / 22%);
+    stroke-width: 2;
+  }
+
+  &__point {
+    position: absolute;
+    width: 2.75rem;
+    min-width: 2.75rem;
+    height: 2.75rem;
+    translate: -50% -50%;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0.75rem;
+      transition: scale $transition-base, box-shadow $transition-base;
+    }
+
+    &--verified::before {
+      border: 2px solid $color-bg;
+      border-radius: 50%;
+      background: $color-accent;
+    }
+
+    &--coverage::before {
+      border: 3px solid $color-accent;
+      background: $color-primary-dark;
+      rotate: 45deg;
+    }
+
+    &:hover::before,
+    &[aria-pressed='true']::before {
+      scale: 1.35;
+      box-shadow: 0 0 0 0.3rem rgb(255 255 255 / 18%);
+    }
+
+    &:focus-visible {
+      border-radius: 50%;
+      outline: 2px solid $color-bg;
+      outline-offset: -2px;
+    }
+  }
+
+  &__details {
+    display: grid;
+    align-content: center;
+    gap: 0.625rem;
+    min-height: 10rem;
+    padding: 1.25rem;
+    border: 1px solid rgb(255 255 255 / 14%);
+    border-radius: $radius-md;
+    background: rgb(255 255 255 / 7%);
+  }
+
+  &__details h3 {
+    color: inherit;
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  &__type--coverage {
+    color: $color-bg;
+  }
+
+  &__location,
+  &__coverage-note {
+    color: rgb(255 255 255 / 72%);
+    overflow-wrap: anywhere;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  &__actions a {
+    color: $color-accent;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+
+    &:focus-visible {
+      outline: 2px solid $color-bg;
+      outline-offset: 3px;
+    }
+  }
+
+  &__precision-note {
+    font-size: 0.8125rem;
+  }
+}
+
 .case-filter {
   display: grid;
   gap: 1rem;
@@ -249,6 +441,16 @@
 }
 
 @media (width < $breakpoint-sm) {
+  .case-map {
+    &__legend {
+      display: grid;
+    }
+
+    &__stage {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
   .case-filter {
     padding: 1rem;
   }

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "case-haoda-tools-hvac",
+    "type": "verified-case",
+    "projectId": "haoda-tools-hvac",
+    "countryCode": "CN",
+    "x": 82,
+    "y": 45
+  },
+  {
+    "id": "case-liaoning-port-cooling",
+    "type": "verified-case",
+    "projectId": "liaoning-port-cooling",
+    "countryCode": "CN",
+    "x": 83,
+    "y": 35
+  },
+  {
+    "id": "case-queensland-medical-research",
+    "type": "verified-case",
+    "projectId": "queensland-medical-research",
+    "countryCode": "AU",
+    "x": 87,
+    "y": 76
+  },
+  {
+    "id": "market-south-africa",
+    "type": "market-coverage",
+    "countryCode": "ZA",
+    "scope": "country",
+    "source": "formal-company-profile",
+    "name": "South Africa",
+    "name_zh": "南非",
+    "name_ru": "Южная Африка",
+    "x": 55,
+    "y": 75
+  },
+  {
+    "id": "market-australia",
+    "type": "market-coverage",
+    "countryCode": "AU",
+    "scope": "country",
+    "source": "formal-company-profile",
+    "name": "Australia",
+    "name_zh": "澳大利亚",
+    "name_ru": "Австралия",
+    "x": 92,
+    "y": 70
+  },
+  {
+    "id": "market-south-korea",
+    "type": "market-coverage",
+    "countryCode": "KR",
+    "scope": "country",
+    "source": "formal-company-profile",
+    "name": "South Korea",
+    "name_zh": "韩国",
+    "name_ru": "Южная Корея",
+    "x": 88,
+    "y": 41
+  },
+  {
+    "id": "market-russia",
+    "type": "market-coverage",
+    "countryCode": "RU",
+    "scope": "country",
+    "source": "formal-company-profile",
+    "name": "Russia",
+    "name_zh": "俄罗斯",
+    "name_ru": "Россия",
+    "x": 68,
+    "y": 25
+  }
+]

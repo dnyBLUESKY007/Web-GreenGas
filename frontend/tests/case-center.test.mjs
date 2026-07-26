@@ -97,3 +97,93 @@ test('case center provides sourced filterable cases and a recoverable generic de
     }
   }
 });
+
+test('case map separates sourced projects from country-level market coverage', async () => {
+  const projects = JSON.parse(await read('src/data/projects.json'));
+  const points = JSON.parse(await read('src/data/case-map.json'));
+  const projectById = new Map(projects.map((project) => [project.id, project]));
+  const pointIds = new Set(points.map(({ id }) => id));
+
+  assert.equal(pointIds.size, points.length, 'map point IDs must be unique');
+  assert.deepEqual(
+    points.filter(({ type }) => type === 'verified-case').map(({ projectId }) => projectId),
+    ['haoda-tools-hvac', 'liaoning-port-cooling', 'queensland-medical-research'],
+  );
+  assert.deepEqual(
+    points.filter(({ type }) => type === 'market-coverage').map(({ countryCode }) => countryCode),
+    ['ZA', 'AU', 'KR', 'RU'],
+  );
+
+  for (const point of points) {
+    assert.ok(point.x >= 0 && point.x <= 100, `${point.id}: x outside map`);
+    assert.ok(point.y >= 0 && point.y <= 100, `${point.id}: y outside map`);
+
+    if (point.type === 'verified-case') {
+      const project = projectById.get(point.projectId);
+      assert.ok(project, `${point.id}: unknown project ${point.projectId}`);
+      assert.notEqual(project.geography.precision, 'unspecified');
+      assert.equal(point.countryCode, project.geography.countryCode);
+      assert.equal('name' in point, false, `${point.id}: project copy must come from projects.json`);
+      continue;
+    }
+
+    assert.equal(point.type, 'market-coverage');
+    assert.equal(point.scope, 'country');
+    assert.equal(point.source, 'formal-company-profile');
+    assert.equal('projectId' in point, false, `${point.id}: coverage must not imply a case`);
+    for (const field of ['name', 'name_zh', 'name_ru']) {
+      assert.ok(point[field], `${point.id}: ${field}`);
+    }
+  }
+
+  const mapData = await read('src/data/caseMap.ts');
+  assert.match(mapData, /getProjectById/);
+  assert.match(mapData, /precision === 'unspecified'/);
+
+  const listPage = await read('src/pages/cases/index.ts');
+  assert.match(listPage, /createCaseMap/);
+  assert.match(listPage, /case-card-/);
+
+  const component = await read('src/components/case-map/CaseMap.ts');
+  assert.match(component, /createElement\('button'\)/);
+  assert.match(component, /aria-controls/);
+  assert.match(component, /aria-pressed/);
+  assert.match(component, /basePath\('\/cases\/detail\/'\)/);
+  assert.match(component, /cases\.map\.coverageOnly/);
+  assert.doesNotMatch(component, /mapbox|google|amap|leaflet|openstreetmap/i);
+
+  const styles = await read('src/styles/components/_cases-page.scss');
+  assert.match(styles, /(?:case-map__point|&)--verified/);
+  assert.match(styles, /(?:case-map__point|&)--coverage/);
+  assert.match(styles, /min-(?:width|inline-size): 2\.75rem/);
+  assert.match(styles, /:focus-visible/);
+  assert.match(styles, /overflow-wrap: anywhere/);
+
+  const requiredMessages = [
+    'cases.map.title',
+    'cases.map.description',
+    'cases.map.legend.verified',
+    'cases.map.legend.coverage',
+    'cases.map.coverageOnly',
+    'cases.map.precision.country',
+    'cases.map.precision.province',
+    'cases.map.viewCase',
+    'cases.map.showInList',
+  ];
+  for (const locale of ['en', 'zh', 'ru']) {
+    const messages = JSON.parse(await read(`src/i18n/locales/${locale}.json`));
+    for (const key of requiredMessages) {
+      assert.ok(messages[key], `${locale}: ${key}`);
+    }
+  }
+
+  const packageJson = JSON.parse(await read('package.json'));
+  const dependencies = {
+    ...packageJson.dependencies,
+    ...packageJson.devDependencies,
+  };
+  assert.equal(
+    Object.keys(dependencies).some((name) => /mapbox|leaflet|openlayers|world-atlas|d3/i.test(name)),
+    false,
+  );
+});

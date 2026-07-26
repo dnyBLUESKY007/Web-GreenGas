@@ -1,4 +1,5 @@
 import '@/styles/main.scss';
+import { createCaseMap } from '@/components/case-map/CaseMap';
 import { createProjectCard } from '@/components/project-card/ProjectCard';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { projects } from '@/data/projects';
@@ -26,7 +27,12 @@ function renderCasesPage(): void {
   section.className = 'section cases-list';
   const container = document.createElement('div');
   container.className = 'container';
-  container.append(createFilters(), createCaseResults());
+  const filtered = getFilteredProjects();
+  container.append(
+    createCaseMap(new Set(filtered.map(({ id }) => id))),
+    createFilters(),
+    createCaseResults(filtered),
+  );
   section.appendChild(container);
   main.replaceChildren(header, section);
 }
@@ -89,14 +95,17 @@ function getRegionOptions(): ReadonlyMap<string, string> {
   return options;
 }
 
-function createCaseResults(): HTMLElement {
-  const results = document.createElement('div');
-  results.className = 'case-results';
-  const filtered = projects.filter(
+function getFilteredProjects(): typeof projects {
+  return projects.filter(
     (project) =>
       (activeIndustry === 'all' || project.industryKey === activeIndustry) &&
       (activeRegion === 'all' || project.regionKey === activeRegion),
   );
+}
+
+function createCaseResults(filtered: typeof projects): HTMLElement {
+  const results = document.createElement('div');
+  results.className = 'case-results';
 
   const count = document.createElement('p');
   count.className = 'case-results__count';
@@ -115,7 +124,9 @@ function createCaseResults(): HTMLElement {
   const grid = document.createElement('div');
   grid.className = 'grid grid--projects';
   for (const project of filtered) {
-    grid.appendChild(createProjectCard(project));
+    const card = createProjectCard(project);
+    card.id = `case-card-${project.id}`;
+    grid.appendChild(card);
   }
   results.appendChild(grid);
   return results;

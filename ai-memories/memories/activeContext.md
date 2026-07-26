@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Completed GitHub #10 layered Case Center map. A local keyless SVG separates three honestly located verified cases from four formal-profile market-coverage countries using filled circles versus outlined diamonds. Native 44px controls, persistent multilingual details, filtered-card/detail links, and explicit country/province precision boundaries pass typecheck, all 13 tests, and root/subpath builds.
+
 > 2026-07-26: Integrated Sandcastle issues #12, #11, #9, #6, #5, and #4 in the requested order. Partner placeholders, aligned news, sourced case list/details, product navigation/details, merged FAQ/Contact, and the formal About profile coexist; shared locale and memory conflicts preserve every feature contract. Typecheck and all 12 combined tests pass.
 
 > 2026-07-26: Supplied archives are stored in `ignored/source-archives/` and extracted under `ignored/extracted/`; Sandcastle mounts `ignored/` at the same repository-relative path. Material location details are canonical in `CONTEXT.md`.
@@ -31,10 +33,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点、#3 全站导航/标题/旧路由、#4 正式 About 重建、#5 FAQ/Contact 合并、#6 产品导航/通用详情、#9 案例列表/详情、#11 旧站新闻对齐和 #12 合作公司 Logo 展示基础均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；产品仍使用明确标识的示例/待替换资料；素材仍需由责任人审批公开许可并处理敏感/歧义项；案例地图仍由 #10 单独实现。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
+下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点、#3 全站导航/标题/旧路由、#4 正式 About 重建、#5 FAQ/Contact 合并、#6 产品导航/通用详情、#9 案例列表/详情、#10 双层案例地图、#11 旧站新闻对齐和 #12 合作公司 Logo 展示基础均已完成。合作公司资料当前为零项获批，组件仅展示明确的待替换位；产品仍使用明确标识的示例/待替换资料；素材仍需由责任人审批公开许可并处理敏感/歧义项。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
 
 ## 近期变更
 
+- 2026-07-26 案例双层地图：本地无密钥 SVG 以实心圆和空心菱形区分三项具备诚实地理精度的案例与正式公司描述支持的四个市场覆盖国家；原生点位按钮、持久三语详情、筛选同步和案例卡片/详情互通已完成。南非客户案例因项目地点未注明不进入案例点层。
 - 2026-07-26 案例中心：以四项可识别官方旧站项目替换六项无依据示例；新增行业/地区筛选、来源状态、通用详情、图库、相关案例和未知 ID 恢复。地理精度仅到来源支持的国家/省级；南非客户记录地点保持未注明。
 - 2026-07-26 新闻归档对齐：逐篇核对旧站六篇官方新闻的标题、日期、分类、摘要、正文和图片；恢复完整中文正文与等价英俄内容，补来源 URL 和首页 `featured` 标记，并修复 `prev_pic`/旧证书路径导致的资源登记不匹配。旧站新闻素材无新增缺口。
 - 2026-07-26 产品导航与通用详情：独立 `/products/` 已按四系列展示 14 个产品卡片，详情路由支持特点、参数、行业、资料和咨询，并为未知 ID 提供恢复入口。现有产品内容全部显式标记为示例，技术资料标记待替换；三语、类型检查、契约测试及根/子路径构建通过。
@@ -70,6 +73,7 @@
 - [x] 执行 GitHub #12：建立合作公司 Logo 展示组件与资料清单
 - [x] 执行 GitHub #11：对齐旧站新闻内容、图片与精选数据
 - [x] 执行 GitHub #9：建立案例列表与通用详情页
+- [x] 执行 GitHub #10：增加双层世界地图并保持案例/市场证据边界
 - [x] 执行 GitHub #6：建立产品导航与通用产品详情模板
 - [ ] 提供并审批 14 个产品的最终型号、图片、特点、参数、行业关联和技术下载资料
 - [x] 执行 GitHub #5：合并六组 FAQ 与 Contact，并如实处理未配置表单
@@ -92,6 +96,7 @@
 - `ai-memories/tasks/2026-07-26-partner-logo-showcase.md`（GitHub #12 已完成；等待获批合作公司资料）
 - `ai-memories/tasks/2026-07-26-news-archive-alignment.md`（GitHub #11 已完成，旧站新闻素材无缺口）
 - `ai-memories/tasks/2026-07-26-case-center-list-detail.md`（GitHub #9 已完成，#10 可复用稳定案例标识与地理字段）
+- `ai-memories/tasks/2026-07-26-layered-case-world-map.md`（GitHub #10 已完成；三项案例点与四项市场覆盖点保持独立语义）
 - `ai-memories/tasks/2026-07-26-product-navigation-detail.md`（GitHub #6 已完成，等待批准的产品资料替换示例内容）
 - `ai-memories/tasks/2026-07-26-faq-contact-merge.md`（GitHub #5 已完成）
 - `ai-memories/tasks/2026-07-26-about-formal-company-profile.md`（GitHub #4 已完成；公司与证书媒体等待公开审批）
