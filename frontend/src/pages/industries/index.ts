@@ -62,8 +62,8 @@ function createOverviewGrid(): HTMLElement {
       <span class="industry-card__summary"></span>
       <span class="industry-card__action">${t('industries.view')} <span aria-hidden="true">↓</span></span>
     `;
-    card.querySelector<HTMLElement>('.industry-card__title')!.textContent = td(industry, 'name');
-    card.querySelector<HTMLElement>('.industry-card__summary')!.textContent = td(industry, 'summary');
+    setRequiredText(card, '.industry-card__title', td(industry, 'name'));
+    setRequiredText(card, '.industry-card__summary', td(industry, 'summary'));
     grid.appendChild(card);
   }
 
@@ -87,10 +87,13 @@ function createIndustryDetail(industry: IndustryApplication, index: number): HTM
     <h2 class="industry-detail__title"></h2>
     <p class="industry-detail__summary"></p>
   `;
-  heading.querySelector<HTMLElement>('.industry-detail__status')!.textContent =
-    industry.status === 'example-placeholder' ? t('industries.status.example') : industry.status;
-  heading.querySelector<HTMLElement>('.industry-detail__title')!.textContent = td(industry, 'name');
-  heading.querySelector<HTMLElement>('.industry-detail__summary')!.textContent = td(industry, 'summary');
+  setRequiredText(
+    heading,
+    '.industry-detail__status',
+    industry.status === 'example-placeholder' ? t('industries.status.example') : industry.status,
+  );
+  setRequiredText(heading, '.industry-detail__title', td(industry, 'name'));
+  setRequiredText(heading, '.industry-detail__summary', td(industry, 'summary'));
 
   const body = document.createElement('div');
   body.className = 'industry-detail__body';
@@ -118,21 +121,41 @@ function createFact(label: string, value: string): HTMLElement {
   return item;
 }
 
+function setRequiredText(container: ParentNode, selector: string, value: string): void {
+  const element = container.querySelector<HTMLElement>(selector);
+  if (!element) {
+    throw new Error(`Missing required element: ${selector}`);
+  }
+
+  element.textContent = value;
+}
+
+function createLinkList<T extends object>(
+  items: readonly T[],
+  getHref: (item: T) => string,
+): HTMLUListElement {
+  const list = document.createElement('ul');
+
+  for (const item of items) {
+    const row = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = getHref(item);
+    link.textContent = td(item, 'name');
+    row.appendChild(link);
+    list.appendChild(row);
+  }
+
+  return list;
+}
+
 function createEquipment(industry: IndustryApplication): HTMLElement {
   const item = document.createElement('section');
   item.className = 'industry-fact industry-fact--links';
   const title = document.createElement('h3');
   title.textContent = t('industries.equipment');
-  const list = document.createElement('ul');
-
-  for (const equipment of industry.equipment) {
-    const row = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = basePath(`/products/?id=${equipment.productId}`);
-    link.textContent = td(equipment, 'name');
-    row.appendChild(link);
-    list.appendChild(row);
-  }
+  const list = createLinkList(industry.equipment, (equipment) =>
+    basePath(`/products/?id=${equipment.productId}`),
+  );
 
   item.append(title, list);
   return item;
@@ -149,15 +172,9 @@ function createRelatedCases(industry: IndustryApplication): HTMLElement {
   status.textContent = t('industries.status.example');
   heading.append(title, status);
 
-  const list = document.createElement('ul');
-  for (const relatedCase of industry.relatedCases) {
-    const row = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = basePath(`/cases/?id=${relatedCase.id}`);
-    link.textContent = td(relatedCase, 'name');
-    row.appendChild(link);
-    list.appendChild(row);
-  }
+  const list = createLinkList(industry.relatedCases, (relatedCase) =>
+    basePath(`/cases/?id=${relatedCase.id}`),
+  );
 
   item.append(heading, list);
   return item;
