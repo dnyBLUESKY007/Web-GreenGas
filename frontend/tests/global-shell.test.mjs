@@ -64,6 +64,10 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
   assert.match(navbarStyles, /font-size: 1\.0625rem/);
   assert.match(navbarStyles, /width: calc\(100% - 2rem\)/);
   assert.equal(navbarStyles.match(/width >= \$breakpoint-nav-desktop/g)?.length, 2);
+  assert.match(
+    navbarStyles,
+    /\.navbar__action-button--menu,\s*\.navbar__action-button--top\s*{\s*display: none;/,
+  );
 
   const styleVariables = await read('src/styles/base/_variables.scss');
   assert.match(styleVariables, /\$breakpoint-nav-desktop: 84rem/);

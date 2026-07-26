@@ -1,6 +1,6 @@
 # Progress（进展与里程碑）
 
-> 2026-07-26: Completed GitHub #3. The global shell now has eight multilingual destinations, consistent browser titles, stable new route contracts, a Contact FAQ anchor, and base-path-safe legacy redirects. Typecheck, contract tests, and root/subpath builds pass; full content for the new route shells remains with downstream issues.
+> 2026-07-26: Completed GitHub #3. The global shell now has eight multilingual destinations with language access at mobile and desktop widths, consistent browser titles, stable new route contracts, a Contact FAQ anchor, and base-path-safe legacy redirects. Typecheck, contract tests, and root/subpath builds pass; full content for the new route shells remains with downstream issues.
 
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 

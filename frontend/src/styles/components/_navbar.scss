@@ -94,10 +94,6 @@
   display: flex;
   align-items: flex-end;
   gap: 0.75rem;
-
-  @media (width >= $breakpoint-nav-desktop) {
-    display: none;
-  }
 }
 
 .navbar__action-buttons {
@@ -172,6 +168,13 @@
   &--active {
     background-color: $color-bg-muted;
     color: $color-primary;
+  }
+}
+
+@media (width >= $breakpoint-nav-desktop) {
+  .navbar__action-button--menu,
+  .navbar__action-button--top {
+    display: none;
   }
 }
 
