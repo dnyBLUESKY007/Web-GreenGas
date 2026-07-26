@@ -1,6 +1,6 @@
 # Progress（进展与里程碑）
 
-> 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Issues #2 and #3 are ready for implementation; the remaining issues record their dependencies.
+> 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Blocking is represented by GitHub-native dependencies; #2-#15 are agent-owned, #1/#16/#17 are human-owned, and #2/#3 are currently unblocked. Sandcastle now queries the correct repository and native dependency state.
 
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 

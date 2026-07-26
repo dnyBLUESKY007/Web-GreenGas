@@ -53,6 +53,8 @@
 - EmailJS 作为独立阻塞 Issue，不计入本轮统一发布的必需 Issue；未配置时表单不得声称发送成功。
 - 单个实现 Issue 不自动部署，全部集成验收后统一发布。
 - 统一验收接缝为 `npm run build` 加浏览器页面行为验收，不新增测试框架。纳入本轮发布范围的实现 Issue 全部通过这两类检查后，才能创建统一发布任务。
+- GitHub 原生 Issue dependencies 是唯一阻塞关系来源，不使用 `blocked` 标签或正文 `Blocked by` 段落表达阻塞状态。
+- `ready-for-agent` / `ready-for-human` 只表达执行责任，不表达当前是否被阻塞。#2 至 #15 由 Agent 执行；父任务 #1、生产发布 #16 和 EmailJS 配置 #17 需要人工操作、批准或凭据。
 
 ## GitHub Issue 索引
 
@@ -79,6 +81,8 @@
 - 2026-07-26：`全资料.rar` 只读目录操作在 iCloud 路径上超时。后续素材盘点 Issue 需先确保文件完整下载到本机，再解压到不纳入 Git 的素材目录。
 - 2026-07-26：`dnyBLUESKY007/Web-GreenGas` 初始关闭了 Issues，用户随后已启用并经 `gh` 验证。
 - 2026-07-26：仓库没有 `ready-for-agent` 标签，发布执行 Issue 前需创建。
+- 2026-07-26：初始 Issue 使用正文依赖和 `blocked` 标签，Sandcastle 运行时又因未指定 `--repo` 而由 `gh` 默认查询 `Junble19768/Web-GreenGas`，导致 Planner 收到空数组。已将 #4 至 #17 迁移为 GitHub 原生 dependencies，删除 `blocked` 标签和正文依赖段落，并将 Sandcastle 本地查询固定到 `dnyBLUESKY007/Web-GreenGas`。
+- 2026-07-26：Sandcastle 查询改用 REST API 的 `issue_dependencies_summary.blocked_by` 过滤原生未阻塞任务。确定性检查返回 `[2,3]`，与当前依赖图一致。
 
 ## Lessons Learned
 
@@ -95,6 +99,8 @@
 - 确认三语、示例占位、案例地图、旧路由兼容、OSS 下载和统一发布策略。
 - 完成一份总纲、四份分域规格和 16 个执行 Issue 的拆分设计。
 - 确认 GitHub Issues 已在 `dnyBLUESKY007/Web-GreenGas` 启用。
+- 将 Issue 阻塞关系迁移为 GitHub 原生 dependencies，并按执行责任完成 `ready-for-agent` / `ready-for-human` 分类。
+- 修复 Sandcastle 查询错误仓库且不读取原生依赖的问题；当前可领取队列为 #2、#3。
 
 ### 验证结果
 
