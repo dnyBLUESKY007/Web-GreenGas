@@ -14,6 +14,8 @@
 
 > 2026-07-26: Completed GitHub #9. Case Center now uses four identifiable official legacy projects, offers industry/region filtering and reusable details with recovery, and exposes honest country/province/unspecified geography for downstream map work. Typecheck, contract tests, and root/subpath builds pass.
 
+> 2026-07-26: Completed GitHub #6. Product Navigation now has four series, 14 linked cards, a reusable multilingual detail route, explicit placeholder/pending states, and recoverable unknown-product behavior. Typecheck, tests, and root/subpath builds pass; approved product specifications and downloads remain outstanding.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -45,11 +47,13 @@
 - **合作公司 Logo 展示基础**：结构化分组、4/2/1 列响应式网格、三语状态及可访问 OSS 图片契约；当前四项均明确待资料替换
 - **新闻归档对齐**：六篇旧站官方新闻补齐来源、完整三语正文和首页精选标记；列表/通用详情/未知 ID 恢复及全部登记 OSS 图片由契约测试覆盖
 - **案例中心列表与详情**：四项官方旧站案例、行业/地区筛选、来源状态、通用详情、图库、相关案例及未知 ID 恢复；为地图保留稳定标识与诚实地理精度
+- **产品导航与通用详情**：四系列 14 个产品卡片接入独立目录；通用详情覆盖特点、参数、行业、下载、咨询与未找到恢复状态，三语示例/待替换标识明确
 
 ## 进行中
 
 - GitHub #2：本地素材盘点已完成；等待责任人逐项确认公开许可后生成最终 OSS 上传清单
 - 占位内容 → 甲方真实素材替换
+- GitHub #6：页面结构已完成；等待批准的最终产品型号、图片、特点、参数、行业关联和技术下载替换 14 个示例记录
 
 ## 待办
 
@@ -92,3 +96,4 @@
 | 2026-07-26 | 合作公司 Logo 展示 | 建立状态化分组网格和 OSS/alt 契约；零项获批，保留四个明确待替换位 |
 | 2026-07-26 | 新闻归档对齐 | 完成 GitHub #11 六篇官方新闻内容、来源、图片与首页精选数据对齐；无新闻素材缺口 |
 | 2026-07-26 | 案例中心列表与详情 | 完成 GitHub #9 四项旧站案例迁移、筛选、三语通用详情与地图数据契约 |
+| 2026-07-26 | 产品导航与通用详情 | 四系列目录、14 个卡片、三语通用详情、内容状态与未知 ID 恢复；资料仍待批准替换 |

@@ -8,7 +8,57 @@
     "description": "Custom-configured cooling for compute rooms, data halls, and high-density heat loads.",
     "description_zh": "面向机房、数据大厅及高热密度负荷的定制冷却机组。",
     "description_ru": "Индивидуальное охлаждение для серверных, машинных залов и высоких тепловых нагрузок.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_retouched_1.webp",
+    "contentStatus": "example-placeholder",
+    "application": "Example application: precision cooling for a compute facility. Final configuration requires a verified heat-load and site assessment.",
+    "application_zh": "示例应用：算力设施精密冷却。最终配置需基于经核实的热负荷和现场评估。",
+    "application_ru": "Пример применения: прецизионное охлаждение вычислительного объекта. Окончательная конфигурация требует подтверждённого расчёта тепловой нагрузки и обследования объекта.",
+    "features": [
+      {
+        "text": "Example feature: project-specific airflow configuration",
+        "text_zh": "示例特点：按项目配置气流组织",
+        "text_ru": "Пример характеристики: конфигурация воздушного потока под проект"
+      },
+      {
+        "text": "Example feature: staged capacity concept",
+        "text_zh": "示例特点：分级容量设计思路",
+        "text_ru": "Пример характеристики: концепция ступенчатой мощности"
+      }
+    ],
+    "parameters": [
+      {
+        "label": "Cooling capacity",
+        "label_zh": "制冷量",
+        "label_ru": "Холодопроизводительность",
+        "value": "Example: project-specific",
+        "value_zh": "示例：按项目确定",
+        "value_ru": "Пример: определяется проектом"
+      },
+      {
+        "label": "Power supply",
+        "label_zh": "电源",
+        "label_ru": "Электропитание",
+        "value": "Example: to be confirmed",
+        "value_zh": "示例：待确认",
+        "value_ru": "Пример: требует подтверждения"
+      }
+    ],
+    "industries": [
+      {
+        "id": "specialized-facilities",
+        "name": "Specialized Facilities",
+        "name_zh": "专业设施",
+        "name_ru": "Специализированные объекты"
+      }
+    ],
+    "downloads": [
+      {
+        "title": "Example technical data sheet",
+        "title_zh": "示例技术数据表",
+        "title_ru": "Пример технического листа",
+        "status": "pending-replacement"
+      }
+    ]
   },
   {
     "id": "packaged-dx-evap-cond",
@@ -19,7 +69,8 @@
     "description": "Integrated direct-expansion equipment engineered for site-specific process cooling.",
     "description_zh": "面向特定工艺冷却需求的一体式直膨设备。",
     "description_ru": "Интегрированное DX-оборудование для технологического охлаждения под объект.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_packaged-dx-evap-cond_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "rotary-dehumidifier",
@@ -30,7 +81,8 @@
     "description": "Custom air treatment for production areas with strict humidity requirements.",
     "description_zh": "适用于湿度要求严格的生产区域的定制空气处理设备。",
     "description_ru": "Индивидуальная обработка воздуха для производств со строгими требованиями к влажности.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_rotary-dehumidifier_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_rotary-dehumidifier_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "packaged-air-cooled-cabinet",
@@ -41,7 +93,8 @@
     "description": "Robust cabinet cooling for workshops, electrical rooms, and industrial spaces.",
     "description_zh": "适用于车间、电气室及工业空间的可靠柜式冷却设备。",
     "description_ru": "Надёжное шкафное охлаждение для цехов, электрощитовых и промышленных зон.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_packaged-air-cooled-cabinet_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_packaged-air-cooled-cabinet_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "overhead-crane-high-temp-ac",
@@ -52,7 +105,8 @@
     "description": "Heat-resistant cooling for overhead crane cabins and high-temperature operations.",
     "description_zh": "为行车驾驶室及高温作业区域提供耐高温冷却。",
     "description_ru": "Термостойкое охлаждение для крановых кабин и высокотемпературных операций.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_overhead-crane-high-temp-ac_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_overhead-crane-high-temp-ac_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "split-dx-unit",
@@ -63,7 +117,8 @@
     "description": "Flexible direct-expansion cooling for industrial rooms with separated indoor and outdoor equipment.",
     "description_zh": "内外机分离布置，适用于工业房间的灵活直膨冷却。",
     "description_ru": "Гибкое DX-охлаждение с раздельным внутренним и наружным оборудованием.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_split-dx-unit_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_split-dx-unit_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "air-cooled-temp-humidity",
@@ -74,7 +129,8 @@
     "description": "Stable temperature and humidity control for process, laboratory, and equipment rooms.",
     "description_zh": "适用于工艺区、实验室及设备间的恒温恒湿控制。",
     "description_ru": "Стабильный контроль температуры и влажности для технологических, лабораторных и аппаратных помещений.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_air-cooled-temp-humidity_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "fresh-air-workstation-cooler",
@@ -85,7 +141,8 @@
     "description": "Targeted fresh-air cooling to improve comfort at heat-intensive workstations.",
     "description_zh": "面向高热岗位的定点新风送冷，改善作业舒适度。",
     "description_ru": "Локальное охлаждение свежим воздухом для повышения комфорта на горячих рабочих местах.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_fresh-air-workstation-cooler_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_fresh-air-workstation-cooler_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "water-cooled-evaporative-ac",
@@ -96,7 +153,8 @@
     "description": "Energy-conscious cooling for large industrial spaces with suitable water conditions.",
     "description_zh": "适用于具备相应水条件的大型工业空间节能降温。",
     "description_ru": "Энергосберегающее охлаждение для больших промышленных помещений при подходящих условиях водоснабжения.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/industrial_water-cooled-evaporative-ac_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "air-handling-unit",
@@ -107,7 +165,8 @@
     "description": "Configured air treatment for commercial, public, and clean-environment applications.",
     "description_zh": "适用于商业、公共建筑及洁净环境的组合式空气处理。",
     "description_ru": "Настраиваемая обработка воздуха для коммерческих, общественных и чистых помещений.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_air-handling-unit_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "fresh-air-ventilator",
@@ -118,7 +177,8 @@
     "description": "Fresh-air and heat-recovery equipment for balanced ventilation and energy performance.",
     "description_zh": "兼顾新风补给与热回收的通风设备。",
     "description_ru": "Оборудование приточной вентиляции и рекуперации для сбалансированного воздухообмена.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/commercial-terminal_fresh-air-ventilator_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "air-cooled-screw-heat-pump",
@@ -129,7 +189,8 @@
     "description": "Year-round cooling and heating capacity for central HVAC applications.",
     "description_zh": "适用于中央空调项目的全年制冷制热主机。",
     "description_ru": "Круглогодичное охлаждение и отопление для центральных систем ОВиК.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_air-cooled-screw-heat-pump_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_air-cooled-screw-heat-pump_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "modular-air-source-heat-pump",
@@ -140,7 +201,8 @@
     "description": "Modular central capacity for phased deployment and flexible system expansion.",
     "description_zh": "支持分期建设与灵活扩容的模块化中央主机。",
     "description_ru": "Модульная центральная мощность для поэтапного внедрения и гибкого расширения.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_modular-air-source-heat-pump_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_modular-air-source-heat-pump_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   },
   {
     "id": "water-source-heat-pump",
@@ -151,6 +213,7 @@
     "description": "Water-loop heat pump equipment for efficient central cooling and heating.",
     "description_zh": "面向高效集中供冷供热的水源热泵设备。",
     "description_ru": "Тепловой насос водяного источника для эффективного центрального охлаждения и отопления.",
-    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_retouched_1.webp"
+    "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/central-host_water-source-heat-pump_retouched_1.webp",
+    "contentStatus": "example-placeholder"
   }
 ]

@@ -10,6 +10,7 @@ const htmlEntries = [
   'about/certifications/index.html',
   'about/clients/index.html',
   'products/index.html',
+  'products/detail/index.html',
   'industries/index.html',
   'support/index.html',
   'cases/index.html',

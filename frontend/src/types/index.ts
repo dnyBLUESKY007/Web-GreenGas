@@ -47,6 +47,38 @@ export type ProductGroup =
   | 'commercial-terminal'
   | 'central-host';
 
+export type ContentStatus = 'verified-content' | 'example-placeholder' | 'pending-replacement';
+
+export interface ProductFeature {
+  readonly text: string;
+  readonly text_zh?: string;
+  readonly text_ru?: string;
+}
+
+export interface ProductParameter {
+  readonly label: string;
+  readonly label_zh?: string;
+  readonly label_ru?: string;
+  readonly value: string;
+  readonly value_zh?: string;
+  readonly value_ru?: string;
+}
+
+export interface ProductIndustry {
+  readonly id: string;
+  readonly name: string;
+  readonly name_zh?: string;
+  readonly name_ru?: string;
+}
+
+export interface ProductDownload {
+  readonly title: string;
+  readonly title_zh?: string;
+  readonly title_ru?: string;
+  readonly status: ContentStatus;
+  readonly href?: string;
+}
+
 export interface Project {
   readonly id: string;
   readonly status: 'verified' | 'example';
@@ -105,10 +137,18 @@ export interface Product {
   readonly category?: string;
   readonly category_zh?: string;
   readonly category_ru?: string;
-  readonly description?: string;
+  readonly description: string;
   readonly description_zh?: string;
   readonly description_ru?: string;
   readonly image: string;
+  readonly contentStatus: ContentStatus;
+  readonly application?: string;
+  readonly application_zh?: string;
+  readonly application_ru?: string;
+  readonly features?: readonly ProductFeature[];
+  readonly parameters?: readonly ProductParameter[];
+  readonly industries?: readonly ProductIndustry[];
+  readonly downloads?: readonly ProductDownload[];
 }
 
 export interface ProductSeries {
