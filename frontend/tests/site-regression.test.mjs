@@ -54,7 +54,8 @@ test('cross-page references resolve or remain visibly non-interactive placeholde
 
   assert.match(industryPage, /const projectIds = new Set/);
   assert.match(industryPage, /projectIds\.has\(relatedCase\.id\)/);
-  assert.match(industryPage, /document\.createElement\(isAvailable \? 'a' : 'span'\)/);
+  assert.match(industryPage, /if \(href\)/);
+  assert.match(industryPage, /document\.createElement\('span'\)/);
   assert.ok(
     industries.some((industry) => industry.relatedCases.some(({ id }) => !projectIds.has(id))),
     'the example related-case placeholder path must remain exercised',

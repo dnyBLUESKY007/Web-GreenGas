@@ -179,10 +179,10 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   let isPointerInside = false;
   let hasFocusInside = false;
   let intervalId: ReturnType<typeof setInterval> | undefined;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function isAutoRotatePaused(): boolean {
-    return reduceMotion || isPointerInside || hasFocusInside;
+    return prefersReducedMotion || isPointerInside || hasFocusInside;
   }
 
   function resetAutoRotate(): void {
@@ -222,15 +222,16 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   prevBtn?.addEventListener('click', goToPrev);
   nextBtn?.addEventListener('click', goToNext);
 
-  const pauseAutoRotate = (): void => {
+  function pauseAutoRotate(): void {
     clearInterval(intervalId);
     stopTabProgress(tabs[currentIndex]);
-  };
-  const resumeAutoRotate = (): void => {
+  }
+
+  function resumeAutoRotate(): void {
     if (isAutoRotatePaused()) return;
     startTabProgress(tabs[currentIndex]);
     resetAutoRotate();
-  };
+  }
 
   container.addEventListener('mouseenter', () => {
     isPointerInside = true;
@@ -258,7 +259,6 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
         resetAutoRotate();
       }
     });
-
   });
 
   if (slidesWrapper) {
@@ -266,7 +266,7 @@ function initializeCarousel(container: HTMLElement, slideCount: number): void {
   }
 
   tabs[0].classList.add('hero-carousel__tab--active');
-  if (!reduceMotion) startTabProgress(tabs[0]);
+  if (!prefersReducedMotion) startTabProgress(tabs[0]);
   resetAutoRotate();
 }
 

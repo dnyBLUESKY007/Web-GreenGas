@@ -134,18 +134,23 @@ function setRequiredText(container: ParentNode, selector: string, value: string)
 
 function createLinkList<T extends object>(
   items: readonly T[],
-  getHref: (item: T) => string,
-  isItemAvailable: (item: T) => boolean = () => true,
+  getHref: (item: T) => string | undefined,
 ): HTMLUListElement {
   const list = document.createElement('ul');
 
   for (const item of items) {
     const row = document.createElement('li');
-    const isAvailable = isItemAvailable(item);
-    const element = document.createElement(isAvailable ? 'a' : 'span');
-    if (isAvailable && element instanceof HTMLAnchorElement) {
-      element.href = getHref(item);
+    const href = getHref(item);
+    let element: HTMLElement;
+
+    if (href) {
+      const link = document.createElement('a');
+      link.href = href;
+      element = link;
+    } else {
+      element = document.createElement('span');
     }
+
     element.textContent = td(item, 'name');
     row.appendChild(element);
     list.appendChild(row);
@@ -178,10 +183,10 @@ function createRelatedCases(industry: IndustryApplication): HTMLElement {
   status.textContent = t('industries.status.example');
   heading.append(title, status);
 
-  const list = createLinkList(industry.relatedCases, (relatedCase) =>
-    basePath(`/cases/detail/?id=${encodeURIComponent(relatedCase.id)}`),
-    (relatedCase) => projectIds.has(relatedCase.id),
-  );
+  const list = createLinkList(industry.relatedCases, (relatedCase) => {
+    if (!projectIds.has(relatedCase.id)) return undefined;
+    return basePath(`/cases/detail/?id=${encodeURIComponent(relatedCase.id)}`);
+  });
 
   item.append(heading, list);
   return item;
