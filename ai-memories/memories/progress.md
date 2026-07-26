@@ -8,6 +8,8 @@
 
 > 2026-07-26: Completed GitHub #3. The global shell now has eight multilingual destinations with language access at mobile and desktop widths, consistent browser titles, stable new route contracts, a Contact FAQ anchor, and base-path-safe legacy redirects. Typecheck, contract tests, and root/subpath builds pass; full content for the new route shells remains with downstream issues.
 
+> 2026-07-26: Completed GitHub #8. Technical Support now provides eight trilingual categories, metadata-complete example and empty states, and download links restricted to approved HTTPS Aliyun OSS files. The inventory currently contains no approved public technical download.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -36,10 +38,12 @@
 - **本地素材归档**：三个原始压缩包位于 `ignored/source-archives/`，解压资料位于 `ignored/extracted/`，Sandcastle 可按相同相对路径访问
 - **全局导航与兼容路由**：八项三语导航、左对齐品牌、统一标签标题、Contact FAQ 锚点及旧 Solutions/FAQ 子路径安全跳转；确定 `/products/`、`/industries/`、`/support/`、`/cases/` 稳定路由
 - **素材包本地盘点**：验证完整 RAR 与六组 35 个文件，完成逐文件哈希、可读性、分类、歧义与敏感内容审查；未发现损坏或精确重复
+- **技术支持资料库**：八类 JSON 驱动资料结构、三语筛选、完整元数据、示例/空/未开放状态，以及获批 HTTPS OSS 下载门控
 
 ## 进行中
 
 - GitHub #2：本地素材盘点已完成；等待责任人逐项确认公开许可后生成最终 OSS 上传清单
+- GitHub #8：页面框架已完成；等待提供并批准真实技术文件、元数据和 OSS URL
 - 占位内容 → 甲方真实素材替换
 
 ## 待办
@@ -53,6 +57,7 @@
 
 - 部分联系方式与公司信息仍为占位数据
 - `全资料.rar` 内全部素材仍未获得公开许可；部分涉及人员肖像、车牌、客户/政府场地、第三方图片、技术参数和来源歧义
+- 尚无获批公开的技术手册、产品样本、安装/调试/维护/故障、售前选型或售后服务下载
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
 
@@ -79,3 +84,4 @@
 | 2026-07-26 | 全局导航与路由 | 完成 GitHub #3 八项导航、统一标题、新路由契约和旧入口兼容跳转 |
 | 2026-07-26 | 素材台账基线 | 登记 25 条仓库来源/缺口和 OSS 审查规则；等待完整素材包继续 #2 |
 | 2026-07-26 | 素材包本地盘点 | 验证 RAR 与六组 35 文件；无损坏或精确重复，全部等待人工公开审批 |
+| 2026-07-26 | 技术支持资料库 | 完成 GitHub #8 八类三语资料库和安全下载门控；真实文件仍待审批与 OSS 上传 |

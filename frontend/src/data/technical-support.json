@@ -1,0 +1,75 @@
+{
+  "categories": [
+    {
+      "id": "manuals",
+      "name": "Technical manuals",
+      "name_zh": "技术手册",
+      "name_ru": "Технические руководства"
+    },
+    {
+      "id": "product-samples",
+      "name": "Product catalogues",
+      "name_zh": "产品样本",
+      "name_ru": "Каталоги продукции"
+    },
+    {
+      "id": "installation",
+      "name": "Installation guidance",
+      "name_zh": "安装指导",
+      "name_ru": "Инструкции по монтажу"
+    },
+    {
+      "id": "commissioning",
+      "name": "Commissioning",
+      "name_zh": "调试资料",
+      "name_ru": "Пусконаладка"
+    },
+    {
+      "id": "maintenance",
+      "name": "Maintenance",
+      "name_zh": "维护保养",
+      "name_ru": "Техническое обслуживание"
+    },
+    {
+      "id": "troubleshooting",
+      "name": "Troubleshooting",
+      "name_zh": "故障指导",
+      "name_ru": "Устранение неисправностей"
+    },
+    {
+      "id": "pre-sales",
+      "name": "Pre-sales selection",
+      "name_zh": "售前选型",
+      "name_ru": "Предпродажный подбор"
+    },
+    {
+      "id": "after-sales",
+      "name": "After-sales service",
+      "name_zh": "售后服务",
+      "name_ru": "Послепродажное обслуживание"
+    }
+  ],
+  "documents": [
+    {
+      "id": "example-product-catalogue",
+      "title": "Example product catalogue entry",
+      "title_zh": "产品样本条目示例",
+      "title_ru": "Пример записи каталога продукции",
+      "category": "product-samples",
+      "relatedProduct": "Product model pending confirmation",
+      "relatedProduct_zh": "关联产品型号待确认",
+      "relatedProduct_ru": "Модель продукции ожидает подтверждения",
+      "language": "Pending confirmation",
+      "language_zh": "待确认",
+      "language_ru": "Ожидает подтверждения",
+      "fileType": "PDF",
+      "versionOrDate": "Pending replacement",
+      "versionOrDate_zh": "待资料替换",
+      "versionOrDate_ru": "Ожидается замена материала",
+      "contentStatus": "example-placeholder",
+      "publicationStatus": "unavailable",
+      "availabilityStatus": "unverified",
+      "downloadUrl": null
+    }
+  ]
+}
