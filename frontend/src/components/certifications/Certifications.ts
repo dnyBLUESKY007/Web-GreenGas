@@ -27,17 +27,27 @@ export function createCertifications(): HTMLElement {
     const card = document.createElement('figure');
     card.className = 'certifications__card';
 
-    const img = document.createElement('img');
-    img.className = 'certifications__image';
-    img.src = cdnUrl('company', cert.image);
-    img.alt = td(cert, 'name');
-    img.loading = 'lazy';
-
     const caption = document.createElement('figcaption');
     caption.className = 'certifications__name';
     caption.textContent = td(cert, 'name');
 
-    card.append(img, caption);
+    if (cert.publicationStatus === 'approved') {
+      const img = document.createElement('img');
+      img.className = 'certifications__image';
+      img.src = cdnUrl('company', cert.image);
+      img.alt = td(cert, 'name');
+      img.loading = 'lazy';
+      card.appendChild(img);
+    } else {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'certifications__placeholder';
+      placeholder.textContent = t('about.media.pending');
+      placeholder.setAttribute('role', 'img');
+      placeholder.setAttribute('aria-label', `${td(cert, 'name')} — ${t('about.media.pending')}`);
+      card.appendChild(placeholder);
+    }
+
+    card.appendChild(caption);
     track.appendChild(card);
   }
 

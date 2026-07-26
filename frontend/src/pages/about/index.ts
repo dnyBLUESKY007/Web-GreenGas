@@ -3,16 +3,12 @@ import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import companyData from '@/data/company.json';
 import { getLocale, t, td } from '@/i18n';
 import { initPage } from '@/utils/mountLayout';
-import { cdnUrl, setPageHeaderBackground } from '@/config/assets';
 import { basePath } from '@/utils/path';
-import type { CompanyData, CompanyImage, CompanyProfile, CompanyValue } from '@/types';
+import type { CompanyData, CompanyMarketExperience, CompanyProfile, CompanyValue } from '@/types';
 
 const company = companyData as CompanyData;
 
-function getLocalizedList(
-  item: CompanyProfile | CompanyData,
-  field: 'paragraphs' | 'industries',
-): readonly string[] {
+function getLocalizedList(item: object, field: string): readonly string[] {
   const locale = getLocale();
   const record = item as unknown as Readonly<Record<string, readonly string[] | undefined>>;
   const localized = locale === 'en' ? undefined : record[`${field}_${locale}`];
@@ -29,7 +25,6 @@ function renderAboutPage(): void {
 
   const header = document.createElement('section');
   header.className = 'page-header';
-  setPageHeaderBackground(header, '02_about.webp');
   header.appendChild(
     createSectionTitle({
       eyebrow: t('about.eyebrow'),
@@ -41,7 +36,9 @@ function renderAboutPage(): void {
   main.replaceChildren(
     header,
     createProfileSection(),
-    createCapabilitySection(),
+    createPrinciplesSection(),
+    createScopeSection(),
+    createExperienceSection(),
     createTeamSection(),
     createHistorySection(),
     createTrustLinksSection(),
@@ -57,38 +54,96 @@ function createProfileSection(): HTMLElement {
     .join('');
 
   section.innerHTML = `
-    <div class="container about-page__split">
+    <div class="container about-page__profile-grid">
       <div class="about-page__content">
         <p class="section-eyebrow">${t('about.profile.eyebrow')}</p>
         <h2>${td(profile, 'title')}</h2>
         ${paragraphs}
       </div>
-      <figure class="about-page__facility">
-        <img src="${cdnUrl('company', 'company-exterior-photo-beautify.webp')}" alt="${t('about.factory.alt')}" width="1200" height="640" loading="lazy" />
-      </figure>
+      ${createMediaPlaceholder(t('about.media.factory'))}
     </div>
   `;
 
   return section;
 }
 
-function createCapabilitySection(): HTMLElement {
+function createPrinciplesSection(): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section about-page__capabilities';
-  const industries = getLocalizedList(company, 'industries')
-    .map((industry) => `<li>${industry}</li>`)
+  section.className = 'section about-page__principles';
+  const principles = (company.managementPrinciples ?? [])
+    .map((principle: CompanyValue, index) => `
+      <article class="about-page__principle">
+        <span>0${index + 1}</span>
+        <h3>${td(principle, 'title')}</h3>
+        <p>${td(principle, 'description')}</p>
+      </article>
+    `)
     .join('');
 
   section.innerHTML = `
-    <div class="container about-page__split">
-      <div class="about-page__content">
-        <p class="section-eyebrow">${t('about.mission.eyebrow')}</p>
-        <h2>${t('about.mission.title')}</h2>
-        <p>${td(company, 'mission')}</p>
+    <div class="container">
+      <div class="about-page__section-heading">
+        <p class="section-eyebrow">${t('about.principles.eyebrow')}</p>
+        <h2>${t('about.principles.title')}</h2>
       </div>
-      <div class="about-page__industries">
-        <p class="about-page__label">${t('about.industries.label')}</p>
-        <ul>${industries}</ul>
+      <div class="about-page__principles-grid">${principles}</div>
+    </div>
+  `;
+
+  return section;
+}
+
+function createScopeSection(): HTMLElement {
+  const section = document.createElement('section');
+  section.className = 'section about-page__scope';
+  const products = createTagList(getLocalizedList(company, 'productRange'));
+  const industries = createTagList(getLocalizedList(company, 'industries'));
+
+  section.innerHTML = `
+    <div class="container">
+      <div class="about-page__section-heading">
+        <p class="section-eyebrow">${t('about.scope.eyebrow')}</p>
+        <h2>${t('about.scope.title')}</h2>
+        <p>${t('about.scope.desc')}</p>
+      </div>
+      <div class="about-page__scope-grid">
+        <article>
+          <h3>${t('about.products.label')}</h3>
+          <ul class="about-page__tag-list">${products}</ul>
+        </article>
+        <article>
+          <h3>${t('about.industries.label')}</h3>
+          <ul class="about-page__tag-list">${industries}</ul>
+        </article>
+      </div>
+    </div>
+  `;
+
+  return section;
+}
+
+function createExperienceSection(): HTMLElement {
+  const section = document.createElement('section');
+  section.className = 'section about-page__experience';
+  const experience = company.marketExperience as CompanyMarketExperience;
+
+  section.innerHTML = `
+    <div class="container about-page__experience-grid">
+      <div class="about-page__section-heading">
+        <p class="section-eyebrow">${t('about.experience.eyebrow')}</p>
+        <h2>${t('about.experience.title')}</h2>
+        <p>${t('about.experience.desc')}</p>
+        <p class="about-page__evidence-note">${t('about.experience.note')}</p>
+      </div>
+      <div class="about-page__coverage">
+        <div>
+          <h3>${t('about.experience.international')}</h3>
+          <ul class="about-page__tag-list">${createTagList(getLocalizedList(experience, 'international'))}</ul>
+        </div>
+        <div>
+          <h3>${t('about.experience.domestic')}</h3>
+          <ul class="about-page__tag-list">${createTagList(getLocalizedList(experience, 'domestic'))}</ul>
+        </div>
       </div>
     </div>
   `;
@@ -99,6 +154,7 @@ function createCapabilitySection(): HTMLElement {
 function createTeamSection(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section about-page__team';
+  section.id = 'team';
   const teamValues = (company.teamValues ?? [])
     .map((value: CompanyValue) => `
       <article class="about-page__value">
@@ -115,7 +171,7 @@ function createTeamSection(): HTMLElement {
         <h2>${t('about.team.title')}</h2>
       </div>
       <div class="about-page__team-grid">
-        <img src="${cdnUrl('company', 'company-team-photo.webp')}" alt="${t('about.team.alt')}" loading="lazy" />
+        ${createMediaPlaceholder(t('about.media.team'))}
         <div class="about-page__values">${teamValues}</div>
       </div>
     </div>
@@ -127,13 +183,7 @@ function createTeamSection(): HTMLElement {
 function createHistorySection(): HTMLElement {
   const section = document.createElement('section');
   section.className = 'section about-page__history';
-  const figures = (company.historyImages ?? [])
-    .map((image: CompanyImage) => `
-      <figure>
-        <img src="${cdnUrl(image.category, image.filename)}" alt="${td(image, 'alt')}" loading="lazy" />
-      </figure>
-    `)
-    .join('');
+  section.id = 'history';
 
   section.innerHTML = `
     <div class="container">
@@ -142,7 +192,10 @@ function createHistorySection(): HTMLElement {
         <h2>${t('about.history.title')}</h2>
         <p>${t('about.history.desc')}</p>
       </div>
-      <div class="about-page__history-grid">${figures}</div>
+      <div class="about-page__history-grid">
+        ${createMediaPlaceholder(t('about.media.history'))}
+        ${createMediaPlaceholder(t('about.media.production'))}
+      </div>
     </div>
   `;
 
@@ -162,10 +215,31 @@ function createTrustLinksSection(): HTMLElement {
         <span>${t('about.trust.clients.eyebrow')}</span>
         <strong>${t('about.trust.clients.title')}</strong>
       </a>
+      <a href="#team">
+        <span>${t('about.trust.team.eyebrow')}</span>
+        <strong>${t('about.trust.team.title')}</strong>
+      </a>
+      <a href="#history">
+        <span>${t('about.trust.history.eyebrow')}</span>
+        <strong>${t('about.trust.history.title')}</strong>
+      </a>
     </div>
   `;
 
   return section;
+}
+
+function createTagList(items: readonly string[]): string {
+  return items.map((item) => `<li>${item}</li>`).join('');
+}
+
+function createMediaPlaceholder(subject: string): string {
+  return `
+    <div class="about-page__media-placeholder" role="img" aria-label="${subject} — ${t('about.media.pending')}">
+      <span>${t('about.media.pending')}</span>
+      <strong>${subject}</strong>
+    </div>
+  `;
 }
 
 initPage('about', renderAboutPage);

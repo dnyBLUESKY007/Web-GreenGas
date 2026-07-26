@@ -8,6 +8,8 @@
 
 > 2026-07-26: Completed GitHub #3 global shell work: eight ordered multilingual destinations, desktop/mobile language access, stable `/products/`, `/industries/`, `/support/`, and `/cases/` route contracts, constant browser titles, Contact `#faq`, and base-path-safe redirects from `/solutions/` and `/faq/`. Typecheck, contract tests, and root/subpath production builds pass.
 
+> 2026-07-26: Completed GitHub #4 About rebuild: the approved four-paragraph company description now appears in Chinese with complete English/Russian translations; management principles, product scope, industries, and domestic/international experience are source-bounded. `ISO140001` remains unchanged. Unapproved company and certificate media render as explicit pending-replacement placeholders. Typecheck, tests, and production build pass.
+
 > 2026-07-20: Production moved to the new Ubuntu 24.04 server reached with `ssh web-server`. Nginx serves `/var/www/corp/dist`; both deployment scripts now target this SSH alias and replace the remote dist without creating server-side backups. The current site was built and deployed successfully; the server-side HTTP health check returned 200.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -17,10 +19,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点和 #3 全站导航/标题/旧路由均已完成。素材需由责任人审批公开许可并处理敏感/歧义项；新增内容目的地目前为稳定路由壳，等待各自后续 Issue 填充。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
+下一阶段网站改版已完成需求固化与 Issue 拆分。执行入口为 GitHub 父任务 `dnyBLUESKY007/Web-GreenGas#1`；#2 本地素材盘点、#3 全站导航/标题/旧路由和 #4 正式 About 重建均已完成。素材需由责任人审批公开许可并处理敏感/歧义项；未批准的公司与证书媒体当前明确显示为待资料替换。新增内容目的地目前为稳定路由壳，等待各自后续 Issue 填充。完整需求见 `ai-memories/requirements/`，术语和内容来源规则见根目录 `CONTEXT.md`。
 
 ## 近期变更
 
+- 2026-07-26 About 正式描述：逐段接入四段批准中文及完整英俄机器翻译，拆出技术/节能/质量/服务、八类产品、五个重点行业及国内外供应经验；市场覆盖附证据边界，不生成未核实案例。保留 `ISO140001`，公司/团队/发展/生产检测及证书图片在公开审批前显示待替换占位。
 - 2026-07-26 素材包盘点：验证 391916405 字节 RAR v5 和六组 35 个文件；完成图片/DOCX/TXT 可读性、逐文件 SHA-256、内容分类和敏感风险审查。未发现损坏或精确重复，全部待人工公开审批。
 - 2026-07-26 全局壳与路由：主导航改为八项三语结构；桌面品牌靠左并移除重复 CTA，同时保留语言入口；移动菜单补齐首项聚焦与 Escape 焦点恢复；全站标题统一。稳定路由为 `/products/`、`/industries/`、`/support/`、`/cases/`，旧 Solutions/FAQ 在根路径和子路径构建下兼容跳转；FAQ 锚点已进入 Contact。
 - 2026-07-26 需求与任务拆分：通过 grill-with-docs 明确八项导航、三语、示例占位、案例双层地图、来源优先级、OSS 下载、统一发布等边界；创建 1 份 PRD、4 份分域规格和 GitHub #1-#17。
@@ -47,6 +50,7 @@
 
 - [x] 执行 GitHub #2：建立素材清单与替换台账
 - [x] 执行 GitHub #3：重构全站导航、标签标题与旧路由
+- [x] 执行 GitHub #4：按正式公司描述重建关于我们
 - [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
 - [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
 - [ ] 核对并上传 `ignored/extracted/web-greengas/ignored/resources/web/page-header-*.webp` 五张图到对应 OSS 路径
@@ -61,6 +65,7 @@
 - `ai-memories/tasks/2026-07-26-website-restructure-planning.md`（规划已完成，等待 #2-#17 实施）
 - `ai-memories/tasks/2026-07-26-material-inventory-ledger.md`（GitHub #2 本地盘点已完成，等待人工公开审批）
 - `ai-memories/tasks/2026-07-26-global-navigation-legacy-routes.md`（GitHub #3 已完成）
+- `ai-memories/tasks/2026-07-26-about-formal-company-profile.md`（GitHub #4 已完成；公司与证书媒体等待公开审批）
 
 ## 待决问题 / 阻塞
 
