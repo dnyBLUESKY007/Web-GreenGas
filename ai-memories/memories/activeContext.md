@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Supplied archives are stored in `ignored/source-archives/` and extracted under `ignored/extracted/`; Sandcastle mounts `ignored/` at the same repository-relative path. Material location details are canonical in `CONTEXT.md`.
+
 > 2026-07-26: Approved and documented the next website restructure. The scope is captured in `CONTEXT.md`, one PRD, four domain specifications, and GitHub parent issue #1 with execution issues #2-#17. GitHub-native dependencies are authoritative; #2-#15 are labelled by agent ownership while native blockers currently leave #2 and #3 runnable. #1, #16, and #17 are `ready-for-human`. Sandcastle now queries the correct repository and filters native blockers.
 
 > 2026-07-20: Production moved to the new Ubuntu 24.04 server reached with `ssh web-server`. Nginx serves `/var/www/corp/dist`; both deployment scripts now target this SSH alias and replace the remote dist without creating server-side backups. The current site was built and deployed successfully; the server-side HTTP health check returned 200.
@@ -40,7 +42,7 @@
 - [ ] 执行 GitHub #2：建立素材清单与替换台账
 - [ ] 执行 GitHub #3：重构全站导航、标签标题与旧路由
 - [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
-- [ ] 将 `ignored/resources/page-headers/` 五张图上传 OSS `resources/page-headers/`
+- [ ] 核对并上传 `ignored/extracted/web-greengas/ignored/resources/web/page-header-*.webp` 五张图到对应 OSS 路径
 - [ ] 用户审阅首页及 About / News 视觉（Solutions 尖角贴合、五步工程能力区实图、About 布局）
 - [ ] 替换其余占位文案/图片为甲方真实素材
 - [ ] Contact 页高德地图（[issue-0001](../issues/issue-0001-contact-amap-map.md)）

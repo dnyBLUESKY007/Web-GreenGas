@@ -60,3 +60,22 @@ When sources conflict, use this order:
 4. The current website implementation.
 
 Competitor and reference websites define presentation patterns only. Their copy, customer claims, images, and technical data are not GREENGAS source material.
+
+## Local Material Locations
+
+All local material below is excluded from Git by `ignored/` and is available inside Sandcastle at the same repository-relative paths.
+
+- Supplied archives: `ignored/source-archives/`
+  - `全资料.rar`
+  - `网站素材.zip`
+  - `web-greengas.zip`
+- Extracted material: `ignored/extracted/<archive-name>/`
+  - Cases and descriptions: `ignored/extracted/全资料/`
+  - Product images, catalogues, and translations: `ignored/extracted/网站素材/`
+  - Legacy repository snapshot and its processed assets: `ignored/extracted/web-greengas/`
+- Legacy image working directories restored from the repository snapshot:
+  - Originals: `ignored/extracted/web-greengas/ignored/resources_png/`
+  - WebP output: `ignored/extracted/web-greengas/ignored/resources/`
+  - Conversion tools: `ignored/extracted/web-greengas/ignored/libwebp/` and `ignored/extracted/web-greengas/ignored/scripts/`
+
+Treat archives and extracted files as source material, not as permission to publish. Do not commit them or edit the files under `source-archives/`.

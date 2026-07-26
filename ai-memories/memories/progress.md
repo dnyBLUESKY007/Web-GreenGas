@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Archived all three supplied packages under `ignored/source-archives/`, extracted them under `ignored/extracted/`, and exposed `ignored/` to Sandcastle at the same repository-relative path. `CONTEXT.md` records the canonical material locations.
+
 > 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Blocking is represented by GitHub-native dependencies; #2-#15 are agent-owned, #1/#16/#17 are human-owned, and #2/#3 are currently unblocked. Sandcastle now queries the correct repository and native dependency state.
 
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
@@ -27,6 +29,7 @@
 - **About / News 重设计**：About 迁移公司、团队与发展资料；News 迁移 6 篇旧站新闻，支持分类筛选与统一详情页，复用已登记 OSS 图片并补齐三语内容
 - **移动端适配**：1024px 以下抽屉导航、320px 单列产品、Hero/触控热区、Contact/FAQ 全宽、Solutions 横向 Tab 提示与三语窄屏验证
 - **下一阶段需求固化**：八项导航与七个主要内容改造方向已形成 PRD、4 份分域规格、术语表和 16 个纵向执行 Issue
+- **本地素材归档**：三个原始压缩包位于 `ignored/source-archives/`，解压资料位于 `ignored/extracted/`，Sandcastle 可按相同相对路径访问
 
 ## 进行中
 

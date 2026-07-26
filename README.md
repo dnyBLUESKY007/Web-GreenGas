@@ -84,13 +84,15 @@ OSS 上按类别分目录，路径格式为 `{CDN_BASE}/{category}/{filename}.we
 
 ### 添加新图片
 
-1. 将新图片放入 `ignored/resources/{category}/`
-2. 更新 `ignored/image-rename-map.json`（完整映射表，77 条）
-3. 运行 `python ignored/rename_images.py` 重命名并复制到新结构
+当前恢复出的图片加工工作区位于 `ignored/extracted/web-greengas/ignored/`；原始压缩包和其他解压资料的位置见 `CONTEXT.md`。
+
+1. 将新原图放入 `ignored/extracted/web-greengas/ignored/resources_png/{category}/`
+2. 更新 `ignored/extracted/web-greengas/ignored/scripts/image-rename-map.json`
+3. 运行 `python ignored/extracted/web-greengas/ignored/scripts/rename_images.py`，输出到 `ignored/extracted/web-greengas/ignored/resources/{category}/`
 4. 上传到 OSS `resources/{category}/`
 5. 在代码中通过 `cdnUrl(category, new-filename.webp)` 引用
 
-映射表备份在 `ignored/image-rename-map.json`，具有中英文完整对照。
+以上本地目录均被 Git 忽略，并以相同的仓库相对路径挂载到 Sandcastle。
 
 ---
 

@@ -90,4 +90,4 @@ All public content must carry an explicit status. Verified Content may be presen
 
 - The supplied company description currently contains `ISO140001`. The material coordinator must confirm whether this should be `ISO14001`; the implementation must not silently change formal stakeholder copy before confirmation.
 - The existing project includes archived GREENGAS news and case content that should take priority over invented replacements.
-- `全资料.rar` could not be listed reliably from its iCloud location during planning. The material-inventory task must ensure the archive is fully downloaded before extraction.
+- The supplied archives are now fully local under `ignored/source-archives/` and extracted by archive name under `ignored/extracted/`. In particular, `全资料.rar` is available at `ignored/source-archives/全资料.rar` and its contents at `ignored/extracted/全资料/`.

@@ -108,12 +108,13 @@ chmod +x scripts/deploy.sh
 
 ## 图片资源工作流
 
-素材与 WebP 产物均在 `ignored/`（不进 git）；线上走阿里云 OSS。
+素材与 WebP 产物均在 `ignored/`（不进 Git），并以相同仓库相对路径挂载到 Sandcastle；线上走阿里云 OSS。原包统一在 `ignored/source-archives/`，解压后按包放在 `ignored/extracted/`。
 
 | 步骤 | 路径 / 工具 | 说明 |
 |------|-------------|------|
-| 1. 原图 | `ignored/resources_png/` | 实拍与 AI 生成图都放这里，按类别子目录（`hero/`、`capacity/` 等） |
-| 2. 转 WebP | `ignored/libwebp/convert_to_webp.py`（及 `trim_images.py`） | 输出到 `ignored/resources/`，目录结构与原图对齐 |
+| 0. 原始资料 | `ignored/source-archives/`、`ignored/extracted/<archive-name>/` | 原包只读保留；解压资料按 `全资料`、`网站素材`、`web-greengas` 隔离 |
+| 1. 原图 | `ignored/extracted/web-greengas/ignored/resources_png/` | 从旧仓库快照恢复的实拍与 AI 图片工作区，按类别子目录组织 |
+| 2. 转 WebP | `ignored/extracted/web-greengas/ignored/libwebp/convert_to_webp.py`（及 `trim_images.py`） | 输出到 `ignored/extracted/web-greengas/ignored/resources/`，目录结构与原图对齐 |
 | 3. 上传 | 手动上传 OSS bucket | `web-greengas.oss-cn-qingdao.aliyuncs.com/resources/...` |
 | 4. 登记 | `frontend/src/data/image-resources.json` | **有文件增删改时必须更新**：CDN URL → `originalPath` + `description` |
 

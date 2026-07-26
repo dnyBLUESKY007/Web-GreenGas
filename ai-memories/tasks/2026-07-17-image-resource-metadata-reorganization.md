@@ -6,7 +6,7 @@
 
 ## Problem / 目标
 
-现有 `frontend/src/data/image-resources.json` 集中保存全部图片的 CDN URL、原始路径和说明，文件过大且与原图目录脱节。用户已经重新组织 `ignored/resources_png/`：顶层目录现为 `web/`、`company/`、`projects/`、`products_v1/`、`products_v2/` 与 `prev_pic/`。需要将图片说明分散到各图片所在的二级目录中，并将旧原始路径映射集中到 `prev_pic/prev-name.yml`。
+现有 `frontend/src/data/image-resources.json` 集中保存全部图片的 CDN URL、原始路径和说明，文件过大且与原图目录脱节。任务执行时用户已重新组织原图工作区；该工作区现已随旧仓库快照恢复到 `ignored/extracted/web-greengas/ignored/resources_png/`，顶层目录为 `web/`、`company/`、`projects/`、`products_v1/`、`products_v2/` 与 `prev_pic/`。需要将图片说明分散到各图片所在的二级目录中，并将旧原始路径映射集中到 `prev_pic/prev-name.yml`。
 
 ## 核心思路
 
@@ -14,8 +14,8 @@
 
 ## 受影响的文件 / 模块
 
-- `ignored/resources_png/*/resources.yml` — 在每个含图片的二级目录写入图片描述
-- `ignored/resources_png/prev_pic/prev-name.yml` — 写入旧图片的原始路径溯源
+- `ignored/extracted/web-greengas/ignored/resources_png/*/resources.yml` — 在每个含图片的二级目录写入图片描述
+- `ignored/extracted/web-greengas/ignored/resources_png/prev_pic/prev-name.yml` — 写入旧图片的原始路径溯源
 - `ai-memories/memories/{activeContext,progress,systemPatterns,techContext}.md` — 完成后更新工作流记录，移除旧 JSON 为唯一登记源的表述
 
 ## 分步计划
@@ -30,7 +30,7 @@
 
 > 开发中遇到的重大 Bug、卡点、设计变更**即时追加**到这里（带时间戳）。
 
-- 2026-07-17 目录检查：用户正文写作 `prev-pic`，当前实际目录为 `ignored/resources_png/prev_pic/`；计划以实际目录 `prev_pic` 为准。
+- 2026-07-17 目录检查：用户正文写作 `prev-pic`，实际目录名为 `prev_pic`；恢复后的当前位置是 `ignored/extracted/web-greengas/ignored/resources_png/prev_pic/`。
 - 2026-07-17 映射：`projects` 中 `proj-4-emperors-palace_org.png` 与 `proj-6-netcare-pinehaven_org.png` 没有独立旧登记，采用对应项目图的描述并明确标注为原始图。
 
 ## Lessons Learned

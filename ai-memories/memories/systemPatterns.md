@@ -40,10 +40,13 @@ Hero → HeroIntro → Solutions → CapabilityRing → CaseCarousel → Product
 
 - 列表型内容（案例、产品、FAQ）**必须**来自 JSON，禁止写死在 HTML
 - 图片统一通过 `cdnUrl(category, filename)` 引用，不写死 OSS URL
-- **图片资源工作流**（素材不进 repo，仅 `ignored/` + OSS）：
-  1. 原图放入 `ignored/resources_png/`（含甲方实拍与 AI 生成图，按类别子目录）
-  2. 用 `ignored/libwebp/` 脚本（`convert_to_webp.py` / `trim_images.py`）生成 WebP → `ignored/resources/`
-  3. 将 `ignored/resources/` 上传至阿里云 OSS（`resources/` 前缀）
+- **本地素材布局**（素材不进 repo，Sandcastle 使用相同仓库相对路径）：
+  1. 原始压缩包保存在 `ignored/source-archives/`
+  2. 解压资料按包隔离在 `ignored/extracted/全资料/`、`ignored/extracted/网站素材/` 和 `ignored/extracted/web-greengas/`
+- **图片资源工作流**（当前工作区由 `web-greengas.zip` 恢复）：
+  1. 原图放入 `ignored/extracted/web-greengas/ignored/resources_png/`（含甲方实拍与 AI 生成图，按类别子目录）
+  2. 用 `ignored/extracted/web-greengas/ignored/libwebp/` 或 `ignored/extracted/web-greengas/ignored/scripts/` 中的脚本生成 WebP → `ignored/extracted/web-greengas/ignored/resources/`
+  3. 将生成的 WebP 上传至阿里云 OSS（`resources/` 前缀）
   4. 有增删改时，同步更新 `frontend/src/data/image-resources.json`（CDN URL → originalPath + description）
 - OSS 图片类别（随素材增减）：`hero` · `scene` · `products` · `projects` · `company` · `company-info` · `certifications` · `capacity`
 - 站内链接统一通过 `basePath('/xxx/')` 生成，支持子路径部署

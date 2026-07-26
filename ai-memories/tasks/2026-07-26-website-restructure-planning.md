@@ -78,7 +78,7 @@
 
 ## Debug Notes
 
-- 2026-07-26：`全资料.rar` 只读目录操作在 iCloud 路径上超时。后续素材盘点 Issue 需先确保文件完整下载到本机，再解压到不纳入 Git 的素材目录。
+- 2026-07-26：规划时 `全资料.rar` 在 iCloud 路径上读取超时；随后已完整下载并迁移至 `ignored/source-archives/全资料.rar`，解压内容位于 `ignored/extracted/全资料/`。
 - 2026-07-26：`dnyBLUESKY007/Web-GreenGas` 初始关闭了 Issues，用户随后已启用并经 `gh` 验证。
 - 2026-07-26：仓库没有 `ready-for-agent` 标签，发布执行 Issue 前需创建。
 - 2026-07-26：初始 Issue 使用正文依赖和 `blocked` 标签，Sandcastle 运行时又因未指定 `--repo` 而由 `gh` 默认查询 `Junble19768/Web-GreenGas`，导致 Planner 收到空数组。已将 #4 至 #17 迁移为 GitHub 原生 dependencies，删除 `blocked` 标签和正文依赖段落，并将 Sandcastle 本地查询固定到 `dnyBLUESKY007/Web-GreenGas`。
@@ -111,7 +111,7 @@
 ### 尚未完成
 
 - 尚未实施页面代码改造。
-- 尚未完整解压和分类 `全资料.rar`。
+- 尚未完成 #2 的素材清单和公开状态分类；三个压缩包的本地归档与解压已完成。
 - 尚未上传技术支持公开文件到 OSS。
 - 尚未接入 EmailJS 留言发送。
 - 尚未执行生产发布。
