@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Integrated Sandcastle issues #10 and #7 in the requested order. The layered Case Center map and six-sector Industry Applications page coexist with all previously completed content; shared memory, locale, style, type, and route conflicts preserve current contracts. Typecheck and all 14 combined tests pass.
+
 > 2026-07-26: Completed GitHub #10 layered Case Center map. A local keyless SVG separates three honestly located verified cases from four formal-profile market-coverage countries using filled circles versus outlined diamonds. Native 44px controls, persistent multilingual details, filtered-card/detail links, and explicit country/province precision boundaries pass typecheck, all 13 tests, and root/subpath builds.
 
 > 2026-07-26: Integrated Sandcastle issues #12, #11, #9, #6, #5, and #4 in the requested order. Partner placeholders, aligned news, sourced case list/details, product navigation/details, merged FAQ/Contact, and the formal About profile coexist; shared locale and memory conflicts preserve every feature contract. Typecheck and all 12 combined tests pass.
@@ -93,6 +95,7 @@
 
 ## 近期任务 Plan
 
+- `ai-memories/tasks/2026-07-26-merge-sandcastle-map-industries.md`（#10、#7 已合并并通过 14 项组合测试）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-content-branches.md`（#4、#5、#6、#9、#11、#12 已合并并通过组合验证）
 - `ai-memories/tasks/2026-07-26-website-restructure-planning.md`（规划已完成，等待 #2-#17 实施）
 - `ai-memories/tasks/2026-07-26-material-inventory-ledger.md`（GitHub #2 本地盘点已完成，等待人工公开审批）

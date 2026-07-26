@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Integrated Sandcastle issues #10 and #7. The layered map and Industry Applications additions now retain all newer page, data, locale, type, and route contracts. Typecheck and the complete 14-test suite pass.
+
 > 2026-07-26: Completed GitHub #10. Case Center now has a local keyless layered world map with three honestly located verified-case points and four formal-profile market-coverage points. Shape/fill distinctions, native accessible controls, persistent multilingual details, filter-aware card links, typecheck, 13 tests, and root/subpath builds pass.
 
 > 2026-07-26: Integrated Sandcastle issues #12, #11, #9, #6, #5, and #4. Shared Memory Bank and locale conflicts were resolved cumulatively so all six feature contracts remain present. Typecheck and the complete 12-test suite pass.
@@ -116,3 +118,4 @@
 | 2026-07-26 | About 正式描述 | 完成 GitHub #4 四段三语介绍及证据边界；未批准媒体以待替换占位展示 |
 | 2026-07-26 | Sandcastle 内容分支整合 | 按顺序合并 #12、#11、#9、#6、#5、#4；组合类型检查与 12 项测试通过 |
 | 2026-07-26 | 行业应用 | 完成六行业三语总览与详情、示例状态及稳定跨页链接；根路径与子路径构建通过 |
+| 2026-07-26 | Sandcastle 地图与行业整合 | 按顺序合并 #10、#7；保留全部既有契约，组合类型检查与 14 项测试通过 |
