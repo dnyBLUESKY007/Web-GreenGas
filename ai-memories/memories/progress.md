@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Completed GitHub #15. Generated reproducible root and `/rc/` release-candidate evidence plus the final approval/material-gap report. Typecheck, 23 tests, and repeated builds pass with stable SHA-256 summaries. ISO140001 confirmation, 25 OSS images, browser visual evidence, material approvals, and two transitive build-tool advisories are explicit; production deployment remains separate and was not run.
+
 > 2026-07-26: Integrated Sandcastle issue #14 by fast-forward. The full trilingual and responsive regression changes retain all prior site contracts. Frontend typecheck and the complete 21-test suite pass; GitHub #14 is closed.
 
 > 2026-07-26: Completed GitHub #14. Cross-site regression now enforces locale parity and cross-data references, fixes broken product/industry and placeholder-case navigation, restores dynamic FAQ fragment landing, localizes global accessibility labels, pauses the hero carousel for interaction/reduced motion, uses intrinsic-height news cards, and provides localized image-failure states. Typecheck, 21 tests, and root/subpath builds pass. Twenty-five case/news OSS images remain unavailable remotely.
@@ -79,6 +81,7 @@
 - **技术支持资料库**：八类 JSON 驱动资料结构、三语筛选、完整元数据、示例/空/未开放状态，以及获批 HTTPS OSS 下载门控
 - **首页全部板块重组**：四图轮播与批准公司首段之后，依次接入产品、行业、案例、合作公司、精选新闻、技术支持与服务、公司联系摘要；共享数据、内容状态和子路径安全入口完整保留
 - **全站三语与响应式回归**：21 项组合契约覆盖三语键、跨页引用、内容状态及关键交互；修复深链、FAQ 锚点、轮播可访问性与俄文新闻卡溢出，图片失败显示三语不可用状态
+- **发布候选与最终资料报告**：记录集成源码、锁文件、工具版本、根/子路径可重复构建摘要；汇总完成范围、21 个顶层示例、待资料包、ISO/EmailJS/OSS/浏览器/审计阻塞，且未执行生产部署
 
 ## 进行中
 
@@ -142,3 +145,4 @@
 | 2026-07-26 | Sandcastle 技术支持整合 | 合并 #8 并保留全部既有契约；组合类型检查与 15 项测试通过，GitHub issue 已关闭 |
 | 2026-07-26 | 首页全部板块重组 | 完成 GitHub #13 九段批准信息流、共享数据预览、显式状态和三语响应式入口；17 项测试及根/子路径构建通过 |
 | 2026-07-26 | 全站三语与响应式回归 | 完成 GitHub #14 跨页/三语/响应式/可访问性修复；21 项测试、类型检查及根/子路径构建通过，记录 25 个 OSS 图片缺口 |
+| 2026-07-26 | 发布候选与最终资料报告 | 完成 GitHub #15；23 项测试、类型检查及可重复根/子路径构建通过，候选等待人工审批且未生产部署 |
