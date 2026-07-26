@@ -1,6 +1,6 @@
 # Progress（进展与里程碑）
 
-> 2026-07-26: Established the issue #2 repository-source material ledger and daily gap report. Archive-level completion is blocked because `全资料.rar` is unavailable; no current OSS or legacy source was implicitly approved for publication.
+> 2026-07-26: Established the issue #2 repository-source material ledger, daily gap report, and automated contract test. Archive-level completion is blocked because `全资料.rar` is unavailable; no current OSS or legacy source was implicitly approved for publication.
 
 > 2026-07-26: Captured the approved website restructure in `CONTEXT.md`, one PRD, four domain specifications, and GitHub issues #1-#17. Blocking is represented by GitHub-native dependencies; #2-#15 are agent-owned, #1/#16/#17 are human-owned, and #2/#3 are currently unblocked. Sandcastle now queries the correct repository and native dependency state.
 
@@ -32,7 +32,7 @@
 
 ## 进行中
 
-- GitHub #2：仓库来源台账已建立；等待完整 `全资料.rar` 后继续逐文件盘点
+- GitHub #2：仓库来源台账及自动化契约测试已建立；等待完整 `全资料.rar` 后继续逐文件盘点
 - GitHub #3：全站导航、标签标题与旧路由（ready-for-agent）
 - 占位内容 → 甲方真实素材替换
 

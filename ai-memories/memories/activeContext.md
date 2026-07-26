@@ -1,6 +1,6 @@
 # Active Context（当前焦点）
 
-> 2026-07-26: Issue #2 now has a repository-source material ledger and daily gap report, but remains blocked because `全资料.rar` and a download URL are absent from the agent workspace and GitHub issue. The ledger covers 25 current sources/gaps and explicitly keeps all OSS candidates under review rather than inferring publication permission.
+> 2026-07-26: Issue #2 now has a repository-source material ledger, daily gap report, and automated ledger contract test, but remains blocked because `全资料.rar` and a download URL are absent from the agent workspace and GitHub issue. The ledger covers 25 current sources/gaps and explicitly keeps all OSS candidates under review rather than inferring publication permission.
 
 > 2026-07-26: Approved and documented the next website restructure. The scope is captured in `CONTEXT.md`, one PRD, four domain specifications, and GitHub parent issue #1 with execution issues #2-#17. GitHub-native dependencies are authoritative; #2-#15 are labelled by agent ownership while native blockers currently leave #2 and #3 runnable. #1, #16, and #17 are `ready-for-human`. Sandcastle now queries the correct repository and filters native blockers.
 
@@ -17,7 +17,7 @@
 
 ## 近期变更
 
-- 2026-07-26 素材台账基线：新增 25 条来源/缺口记录、OSS 候选审查规则和当日资料清单；确认当前环境与 GitHub Issue 均未提供 `全资料.rar`，未推测压缩包内容或公开许可。
+- 2026-07-26 素材台账基线：新增 25 条来源/缺口记录、OSS 候选审查规则、当日资料清单和自动化台账契约测试；确认当前环境与 GitHub Issue 均未提供 `全资料.rar`，未推测压缩包内容或公开许可。
 - 2026-07-26 需求与任务拆分：通过 grill-with-docs 明确八项导航、三语、示例占位、案例双层地图、来源优先级、OSS 下载、统一发布等边界；创建 1 份 PRD、4 份分域规格和 GitHub #1-#17。
 - 2026-07-26 Issue 编排修正：#4-#17 已使用 GitHub 原生 dependencies；删除 `blocked` 标签和正文依赖；#2-#15 标记 `ready-for-agent`，#1/#16/#17 标记 `ready-for-human`。Sandcastle 修正目标仓库和原生未阻塞筛选后返回 #2、#3。
 - 2026-07-17 移动端适配：新增 1024px 以下可访问抽屉导航；首页 Hero/卡片、Solutions 横向 Tab、Contact/FAQ 宽度与安全区完成小屏优化。已实测 320/390/768/820/1024px 的主要页面及中俄长文案，生产构建通过。
