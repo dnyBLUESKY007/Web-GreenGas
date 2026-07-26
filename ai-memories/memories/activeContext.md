@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-26: Integrated Sandcastle issue #14 by fast-forward. The trilingual and responsive regression fixes now coexist with all previously completed site contracts. Frontend typecheck and all 21 combined tests pass; GitHub #14 is closed.
+
 > 2026-07-26: Completed GitHub #14 trilingual responsive regression. Added 4 cross-site contracts (21 total), fixed product/industry and placeholder-case links, dynamic FAQ fragment landing, localized accessible labels, carousel pause/reduced-motion behavior, Russian news-card intrinsic layout, and localized image-failure states. Typecheck plus root/subpath builds pass. Live probing found 25 case/news OSS images still return 404; browser visual automation was unavailable because the ARM host lacks system browser libraries.
 
 > 2026-07-26: Integrated Sandcastle issue #13. The approved homepage sequence now coexists with all previously completed content and route contracts; the branch fast-forwarded without conflicts. Typecheck and all 17 combined tests pass, and GitHub #13 is closed.

@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-26: Integrated Sandcastle issue #14 by fast-forward. The full trilingual and responsive regression changes retain all prior site contracts. Frontend typecheck and the complete 21-test suite pass; GitHub #14 is closed.
+
 > 2026-07-26: Completed GitHub #14. Cross-site regression now enforces locale parity and cross-data references, fixes broken product/industry and placeholder-case navigation, restores dynamic FAQ fragment landing, localizes global accessibility labels, pauses the hero carousel for interaction/reduced motion, uses intrinsic-height news cards, and provides localized image-failure states. Typecheck, 21 tests, and root/subpath builds pass. Twenty-five case/news OSS images remain unavailable remotely.
 
 > 2026-07-26: Integrated Sandcastle issue #13 by fast-forward. The homepage recomposition retains all previously completed shared content and route contracts. Typecheck and the complete 17-test suite pass; GitHub #13 is closed.
