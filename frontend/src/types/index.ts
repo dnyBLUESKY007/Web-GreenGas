@@ -8,6 +8,7 @@ export interface Certification {
   readonly name_zh?: string;
   readonly name_ru?: string;
   readonly image: string;
+  readonly publicationStatus?: 'approved' | 'pending-replacement';
 }
 
 export type PartnerContentStatus =
@@ -268,6 +269,15 @@ export interface CompanyValue {
   readonly description_ru?: string;
 }
 
+export interface CompanyMarketExperience {
+  readonly international: readonly string[];
+  readonly international_zh?: readonly string[];
+  readonly international_ru?: readonly string[];
+  readonly domestic: readonly string[];
+  readonly domestic_zh?: readonly string[];
+  readonly domestic_ru?: readonly string[];
+}
+
 export interface CompanyImage {
   readonly category: string;
   readonly filename: string;
@@ -295,10 +305,15 @@ export interface CompanyData {
   readonly services: readonly ServiceItem[];
   readonly aboutHighlights: readonly AboutHighlight[];
   readonly workflow: readonly WorkflowStep[];
-  readonly profile?: CompanyProfile;
-  readonly industries?: readonly string[];
+  readonly profile: CompanyProfile;
+  readonly industries: readonly string[];
   readonly industries_zh?: readonly string[];
   readonly industries_ru?: readonly string[];
+  readonly productRange: readonly string[];
+  readonly productRange_zh?: readonly string[];
+  readonly productRange_ru?: readonly string[];
+  readonly managementPrinciples: readonly CompanyValue[];
+  readonly marketExperience: CompanyMarketExperience;
   readonly teamValues?: readonly CompanyValue[];
   readonly historyImages?: readonly CompanyImage[];
 }

@@ -18,6 +18,8 @@
 
 > 2026-07-26: Completed GitHub #5. Contact now presents six multilingual FAQ groups before approved locale-specific direct channels and the message area, preserves numbered answers as semantic lists, and disables online sending until EmailJS is configured. Typecheck, contract tests, and the production build pass.
 
+> 2026-07-26: Completed GitHub #4. About now uses the approved four-paragraph source in three languages, preserves `ISO140001`, separates management principles/product scope/industries/supply experience, and explicitly distinguishes market coverage from public case evidence. Company and certificate images remain pending-replacement placeholders until approved. Typecheck, tests, and production build pass.
+
 > 2026-07-20: Provisioned the replacement Ubuntu 24.04 production server. Nginx is enabled with the GREENGAS root site at `/var/www/corp/dist`; deployment defaults to `ssh web-server`. Per-deployment backups are temporarily disabled, and a production build/deploy plus HTTP 200 health check passed.
 
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
@@ -51,6 +53,7 @@
 - **案例中心列表与详情**：四项官方旧站案例、行业/地区筛选、来源状态、通用详情、图库、相关案例及未知 ID 恢复；为地图保留稳定标识与诚实地理精度
 - **产品导航与通用详情**：四系列 14 个产品卡片接入独立目录；通用详情覆盖特点、参数、行业、下载、咨询与未找到恢复状态，三语示例/待替换标识明确
 - **FAQ 与 Contact 合并**：六组三语 FAQ 位于直接联系和留言区之前；编号答案使用有序列表；只渲染显式批准渠道；EmailJS 未配置时不允许提交或显示送达反馈
+- **正式 About 重建**：完整四段三语公司描述、四项管理理念、八类产品、五个行业及国内外供应经验；保留 `ISO140001`，未批准公司/证书媒体使用明确待替换占位
 
 ## 进行中
 
@@ -69,6 +72,7 @@
 
 - 合作公司正式名称、Logo 源文件和公开展示许可尚未提供；当前展示位不得视为真实合作关系
 - 地址、座机、微信、工作时间和独立售后联系方式仍待确认；详见 `ai-memories/materials/2026-07-26-contact-gaps.md`
+- 公司团队、厂房、发展历程、生产检测和证书图片仍待确认公开许可与当前有效性
 - `全资料.rar` 内全部素材仍未获得公开许可；部分涉及人员肖像、车牌、客户/政府场地、第三方图片、技术参数和来源歧义
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
@@ -101,3 +105,4 @@
 | 2026-07-26 | 案例中心列表与详情 | 完成 GitHub #9 四项旧站案例迁移、筛选、三语通用详情与地图数据契约 |
 | 2026-07-26 | 产品导航与通用详情 | 四系列目录、14 个卡片、三语通用详情、内容状态与未知 ID 恢复；资料仍待批准替换 |
 | 2026-07-26 | FAQ 与 Contact 合并 | 完成 GitHub #5 六组三语 FAQ、批准渠道过滤和未配置 EmailJS 的诚实禁用状态 |
+| 2026-07-26 | About 正式描述 | 完成 GitHub #4 四段三语介绍及证据边界；未批准媒体以待替换占位展示 |

@@ -24,20 +24,32 @@ export function createCertifications(): HTMLElement {
   track.className = 'certifications__track';
 
   for (const cert of certifications) {
+    const certificationName = td(cert, 'name');
     const card = document.createElement('figure');
     card.className = 'certifications__card';
 
-    const img = document.createElement('img');
-    img.className = 'certifications__image';
-    img.src = cdnUrl('company', cert.image);
-    img.alt = td(cert, 'name');
-    img.loading = 'lazy';
-
     const caption = document.createElement('figcaption');
     caption.className = 'certifications__name';
-    caption.textContent = td(cert, 'name');
+    caption.textContent = certificationName;
 
-    card.append(img, caption);
+    if (cert.publicationStatus === 'approved') {
+      const img = document.createElement('img');
+      img.className = 'certifications__image';
+      img.src = cdnUrl('company', cert.image);
+      img.alt = certificationName;
+      img.loading = 'lazy';
+      card.appendChild(img);
+    } else {
+      const pendingLabel = t('about.media.pending');
+      const placeholder = document.createElement('div');
+      placeholder.className = 'certifications__placeholder';
+      placeholder.textContent = pendingLabel;
+      placeholder.setAttribute('role', 'img');
+      placeholder.setAttribute('aria-label', `${certificationName} — ${pendingLabel}`);
+      card.appendChild(placeholder);
+    }
+
+    card.appendChild(caption);
     track.appendChild(card);
   }
 
