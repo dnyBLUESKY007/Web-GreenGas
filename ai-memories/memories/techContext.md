@@ -115,10 +115,14 @@ chmod +x scripts/deploy.sh
 | 0. 原始资料 | `ignored/source-archives/`、`ignored/extracted/<archive-name>/` | 原包只读保留；解压资料按 `全资料`、`网站素材`、`web-greengas` 隔离 |
 | 1. 原图 | `ignored/extracted/web-greengas/ignored/resources_png/` | 从旧仓库快照恢复的实拍与 AI 图片工作区，按类别子目录组织 |
 | 2. 转 WebP | `ignored/extracted/web-greengas/ignored/libwebp/convert_to_webp.py`（及 `trim_images.py`） | 输出到 `ignored/extracted/web-greengas/ignored/resources/`，目录结构与原图对齐 |
-| 3. 上传 | 手动上传 OSS bucket | `web-greengas.oss-cn-qingdao.aliyuncs.com/resources/...` |
+| 3. 上传 | 官方 `ossutil` 或 OSS 控制台 | `web-greengas.oss-cn-qingdao.aliyuncs.com/resources/...` |
 | 4. 登记 | `frontend/src/data/image-resources.json` | **有文件增删改时必须更新**：CDN URL → `originalPath` + `description` |
 
 代码侧通过 `frontend/src/config/assets.ts` 的 `cdnUrl()` 引用；溯源与说明以 `image-resources.json` 为准。详见 ADR-0002、`systemPatterns.md`。
+
+macOS 上仓库快照内的 `libwebp/bin/cwebp.exe` 不能运行；安装原生 `webp` 后应显式传入 `--cwebp /opt/homebrew/bin/cwebp`。转换脚本还需要 Python 3.10+、OpenCV 和 NumPy，建议在 `ignored/` 下使用隔离虚拟环境。
+
+OSS 命令行上传使用青岛 Endpoint `https://oss-cn-qingdao.aliyuncs.com`。凭据通过 `ossutil config` 写入用户级 `~/.ossutilconfig` 并设置 `600` 权限，禁止进入仓库或日志；优先使用只允许目标前缀 `oss:PutObject` 的 RAM/STS 凭据。上传后必须通过公开 CDN 逐对象验证 HTTP 200、`image/webp` 和长度。
 
 ## 外部依赖 / 集成
 

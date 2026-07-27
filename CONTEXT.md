@@ -3,7 +3,10 @@
 ## Company
 
 **GREENGAS 格灵空调**
-: The public brand name used in browser tab titles and brand-facing website copy.
+: The public bilingual brand name used in brand-facing website copy.
+
+**格灵空调**
+: The browser-tab title used consistently by every website entry point.
 
 **宁波格灵空调科技有限公司**
 : The company's full Chinese legal and descriptive name. Use it in company-profile copy, footer ownership text, and formal contact information where appropriate.
@@ -42,10 +45,22 @@
 **Public Material（可公开资料）**
 : A source document explicitly accepted for website display or download. Presence in an archive alone does not establish permission to publish it.
 
+**Stakeholder Case Package（甲方案例包）**
+: A case archive deliberately organized by the stakeholder into project folders with companion descriptions and images. Once the stakeholder approves the package for publication, its folder grouping is authoritative evidence that the enclosed images belong to that project.
+
+**Internal Provenance（内部溯源）**
+: The repository-only record of where stakeholder material came from, how it was approved, and which public content consumes it. Internal provenance is not displayed on the public website.
+
+**Public Source Link（公开来源链接）**
+: An optional external URL that visitors can open to inspect a public source. A case without a valid external URL shows no source area; internal provenance must never be exposed as a substitute link or label.
+
 ## Case Geography
 
 **Verified Case Point（已核实案例点）**
 : A map point backed by an identifiable project and a sufficiently reliable country, province, or city location.
+
+**Unmapped Verified Case（未绘制的已核实案例）**
+: A verified case whose supplied material does not state a reliable location. It remains in the case list and details but does not receive a map point until the stakeholder confirms its geography.
 
 **Market Coverage Point（市场覆盖点）**
 : A map point backed only by a company statement that GREENGAS supplied equipment in that country or region. It must be visually distinct from a Verified Case Point.
@@ -67,6 +82,7 @@ All local material below is excluded from Git by `ignored/` and is available ins
 
 - Supplied archives: `ignored/source-archives/`
   - `全资料.rar`
+  - `案例.zip`
   - `网站素材.zip`
   - `web-greengas.zip`
 - Extracted material: `ignored/extracted/<archive-name>/`
