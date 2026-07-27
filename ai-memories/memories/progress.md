@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Completed the GitHub #18 stakeholder case/home production release. All six execution issues are closed and fixed candidate `9742d1b` is live with complete acceptance evidence; independent enhancement #24 remains open, and Haoda Tools location remains the only stakeholder follow-up from this release.
+
 > 2026-07-27: Deployed fixed candidate `9742d1b` for GitHub #23 to production. The verified rollback archive is `ignored/deployment-rollbacks/2026-07-27-pre-issue-23-dist.tar.gz`; Nginx, eight routes, 20 live Chrome viewport/route checks, all locales, title/footer/ISO/map behavior, 23 new OSS images, and exact local/remote identity across 47 files pass.
 
 > 2026-07-27: Completed GitHub #22 without deployment. Fixed `9742d1b` as the sole application candidate; typecheck, 23/23 tests, reproducible 47-file root and `/rc/` builds, 15 Chrome viewport/route checks, all three locale transitions, and 23/23 new OSS image checks pass. Known non-blockers are recorded in `ai-memories/releases/2026-07-27-issue-22-rc.md`.

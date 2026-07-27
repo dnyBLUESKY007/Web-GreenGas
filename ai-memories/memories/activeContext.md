@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: Completed the GitHub #18 release sequence. Execution issues #19, #20, #21, #22, #23, and #25 are closed; fixed candidate `9742d1b` is live and fully accepted. Independent non-blocking map redesign #24 remains open. The sole stakeholder follow-up from this release is the missing Haoda Tools project location.
+
 > 2026-07-27: GitHub #23 production deployment succeeded for fixed application candidate `9742d1b`. A verified pre-deployment rollback archive is retained; Nginx, eight public routes, 20 live Chrome route/viewport checks, trilingual switching, title/footer/ISO/map contracts, 23 OSS images, and exact local/remote identity across 47 files all pass.
 
 > 2026-07-27: Completed GitHub #22 release-candidate validation without deployment. Application commit `9742d1b` produces reproducible 47-file root and `/rc/` builds; typecheck, all 23 tests, 15 Chrome route/viewport checks, trilingual switching, and all 23 new OSS image checks pass. Haoda location, map redesign #24, two build-only dependency advisories, EmailJS, and final product/support materials remain explicit non-blockers.
@@ -65,7 +67,7 @@
 
 ## 当前焦点
 
-GitHub #18 的案例、首页和生产发布已完成实现、候选验收和生产部署。固定应用候选 `9742d1b` 已上线并通过全部核心验收；当前只需提交发布记录、确认 Issue 状态并关闭总 Issue。浩达工具地点待甲方补充，因此暂不生成地图点。
+GitHub #18 的案例、首页和生产发布闭环已完成。#19、#20、#21、#22、#23、#25 均关闭，固定应用候选 `9742d1b` 已上线并通过全部核心验收；独立非阻塞地图视觉优化 #24 保持开放。浩达工具地点待甲方补充，因此暂不生成地图点。
 
 ## 近期变更
 
