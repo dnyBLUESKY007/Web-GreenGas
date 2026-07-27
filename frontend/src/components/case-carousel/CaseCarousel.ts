@@ -73,6 +73,9 @@ function createCaseCard(project: Project): HTMLElement {
   const summary = td(project, 'summary');
   const location = td(project, 'location');
   const image = getPrimaryProjectImage(project);
+  const placeholderLabel = project.status === 'example'
+    ? `<span class="case-card__status case-card__status--example">${t('cases.status.example')}</span>`
+    : '';
 
   const article = document.createElement('article');
   article.className = 'case-card';
@@ -93,7 +96,7 @@ function createCaseCard(project: Project): HTMLElement {
       />
     </div>
     <div class="case-card__body">
-      <span class="case-card__status">${t(`cases.status.${project.status}`)}</span>
+      ${placeholderLabel}
       <p class="case-card__meta">${industry} · ${location}</p>
       <h3 class="case-card__title">${name}</h3>
       <p class="case-card__summary">${summary}</p>

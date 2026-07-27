@@ -8,7 +8,7 @@ async function read(relativePath) {
   return readFile(new URL(relativePath, root), 'utf8');
 }
 
-test('homepage follows the approved structured-content order and preserves statuses', async () => {
+test('homepage follows the approved structured-content order and preserves placeholder states', async () => {
   const home = await read('src/pages/home/index.ts');
   const mountedSections = [
     'hero',
@@ -54,6 +54,9 @@ test('homepage follows the approved structured-content order and preserves statu
   const caseCarousel = await read('src/components/case-carousel/CaseCarousel.ts');
   assert.match(caseCarousel, /createCaseMap\(new Set\(projects\.map/);
   assert.match(caseCarousel, /article\.id = `case-card-\$\{project\.id\}`/);
+  assert.match(caseCarousel, /project\.status === 'example'/);
+  assert.match(caseCarousel, /cases\.status\.example/);
+  assert.doesNotMatch(caseCarousel, /cases\.status\.\$\{project\.status\}/);
 
   const caseCarouselStyles = await read('src/styles/components/_case-carousel.scss');
   assert.match(caseCarouselStyles, /max-width: 100%/);

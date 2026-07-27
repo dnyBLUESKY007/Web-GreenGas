@@ -11,6 +11,9 @@ export function createProjectCard(project: Project): HTMLElement {
   const location = td(project, 'location');
   const equipment = td(project, 'equipment');
   const image = getPrimaryProjectImage(project);
+  const placeholderLabel = project.status === 'example'
+    ? `<span class="case-status case-status--example">${t('cases.status.example')}</span>`
+    : '';
 
   const article = document.createElement('article');
   article.className = 'project-card';
@@ -32,7 +35,7 @@ export function createProjectCard(project: Project): HTMLElement {
     <div class="project-card__body">
       <div class="project-card__topline">
         <p class="project-card__meta">${industry} · ${location}</p>
-        <span class="case-status case-status--${project.status}">${t(`cases.status.${project.status}`)}</span>
+        ${placeholderLabel}
       </div>
       <h3 class="project-card__title">${name}</h3>
       <p class="project-card__equipment">${equipment}</p>

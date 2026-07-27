@@ -106,13 +106,23 @@ test('case center provides sourced filterable cases and a recoverable generic de
   assert.match(detailPage, /createOptionalDetailSection/);
   assert.match(detailPage, /project\.sourceUrl \?/);
 
+  const projectCard = await read('src/components/project-card/ProjectCard.ts');
+  for (const [path, source] of [
+    ['src/components/project-card/ProjectCard.ts', projectCard],
+    ['src/pages/cases/detail/index.ts', detailPage],
+  ]) {
+    assert.match(source, /project\.status === 'example'/, `${path} should label only placeholder cases`);
+    assert.match(source, /cases\.status\.example/, `${path} should use the explicit placeholder label`);
+    assert.doesNotMatch(source, /cases\.status\.\$\{project\.status\}/, `${path} should not expose every internal status`);
+  }
+
   const viteConfig = await read('vite.config.ts');
   assert.match(viteConfig, /casesDetail: resolve\(__dirname, 'cases\/detail\/index\.html'\)/);
 
   const requiredMessages = [
     'cases.filter.industry',
     'cases.filter.region',
-    'cases.status.verified',
+    'cases.status.example',
     'cases.detail.challenge',
     'cases.detail.response',
     'cases.notFound.title',
@@ -122,6 +132,17 @@ test('case center provides sourced filterable cases and a recoverable generic de
     for (const key of requiredMessages) {
       assert.ok(messages[key], `${locale}: ${key}`);
     }
+    assert.equal(messages['cases.status.verified'], undefined, `${locale}: verified content should not have a public label`);
+  }
+
+  const placeholderLabels = {
+    en: 'Example placeholder',
+    zh: '示例占位内容',
+    ru: 'Пример-заполнитель',
+  };
+  for (const [locale, expected] of Object.entries(placeholderLabels)) {
+    const messages = JSON.parse(await read(`src/i18n/locales/${locale}.json`));
+    assert.equal(messages['cases.status.example'], expected);
   }
 });
 

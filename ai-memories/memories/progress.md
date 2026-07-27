@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Restricted public case status badges to placeholder content. Case list/detail and homepage cards no longer expose the internal verified state, while example cases receive explicit English, Chinese, and Russian placeholder labels. Map verification language remains intact as a separate location-evidence contract. Typecheck, all 23 tests, and the production build pass; this follow-up remains local.
+
 > 2026-07-27: Completed the GitHub #18 stakeholder case/home production release. All six execution issues are closed and fixed candidate `9742d1b` is live with complete acceptance evidence; independent enhancement #24 remains open, and Haoda Tools location remains the only stakeholder follow-up from this release.
 
 > 2026-07-27: Deployed fixed candidate `9742d1b` for GitHub #23 to production. The verified rollback archive is `ignored/deployment-rollbacks/2026-07-27-pre-issue-23-dist.tar.gz`; Nginx, eight routes, 20 live Chrome viewport/route checks, all locales, title/footer/ISO/map behavior, 23 new OSS images, and exact local/remote identity across 47 files pass.
@@ -100,6 +102,7 @@
 - **发布候选与最终资料报告**：记录集成源码、锁文件、工具版本、根/子路径可重复构建摘要；汇总完成范围、21 个顶层示例、待资料包、ISO/EmailJS/OSS/浏览器/审计阻塞，且未执行生产部署
 - **ISO 编号确认**：甲方于 2026-07-27 确认 `ISO140001` 为笔误；当前公开中英俄 About 文案使用 `ISO14001`，历史记录和来源归档保持不变
 - **甲方案例包替换**：四项甲方最新案例、23 张获批图片、可选详情字段和三个有地点依据的地图点已完成；浩达地点待补充
+- **案例状态标签收敛**：正式案例不再公开显示“已核实内容”；列表、详情和首页仅对示例占位案例显示三语专门标记
 
 ## 进行中
 
@@ -124,8 +127,8 @@
 - 尚无获批公开的技术手册、产品样本、安装/调试/维护/故障、售前选型或售后服务下载
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
-- 25 个已登记案例/新闻 OSS 图片仍返回 404；代码侧已避免可见破图，发布候选仍需上传与浏览器复核
-- 当前 ARM 验收宿主缺少 Chromium 系统动态库，本轮五宽度检查以响应式契约和历史浏览器基线为主，未完成新的自动化截图
+- 浩达工具项目地点尚未提供，当前不生成地图点
+- GitHub #24 地图视觉与交互优化尚未执行，但不阻塞当前生产版本
 
 ## 里程碑记录
 
@@ -166,3 +169,4 @@
 | 2026-07-26 | 发布候选与最终资料报告 | 完成 GitHub #15；23 项测试、类型检查及可重复根/子路径构建通过，候选等待人工审批且未生产部署 |
 | 2026-07-27 | ISO 编号确认 | 完成 GitHub #21 本地修改；公开中英俄 About 文案使用 `ISO14001`，未部署 |
 | 2026-07-27 | 甲方案例包替换 | 完成 GitHub #20 四项案例、23 张图片和三个已核实地图点；类型检查与 23 项测试通过，未部署 |
+| 2026-07-27 | 案例状态标签收敛 | 正式案例移除公开状态徽标，仅对示例占位案例显示明确三语标记；地图证据语义保持不变 |

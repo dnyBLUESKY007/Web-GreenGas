@@ -22,12 +22,15 @@ function createCaseDetail(project: Project): HTMLElement {
   const relatedCases = project.relatedCaseIds
     .map(getProjectById)
     .filter((item): item is Project => item !== undefined);
+  const placeholderLabel = project.status === 'example'
+    ? `<span class="case-status case-status--example">${t('cases.status.example')}</span>`
+    : '';
 
   article.innerHTML = `
     <header class="case-detail__hero">
       <div class="container case-detail__hero-inner">
         <a class="case-detail__back" href="${basePath('/cases/')}">← ${t('cases.back')}</a>
-        <span class="case-status case-status--${project.status}">${t(`cases.status.${project.status}`)}</span>
+        ${placeholderLabel}
         <p class="case-detail__meta">${td(project, 'industry')} · ${td(project, 'location')}</p>
         <h1>${td(project, 'name')}</h1>
         <p class="case-detail__summary">${td(project, 'summary')}</p>

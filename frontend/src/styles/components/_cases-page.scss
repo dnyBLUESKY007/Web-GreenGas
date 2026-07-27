@@ -266,11 +266,6 @@
   letter-spacing: 0.04em;
   overflow-wrap: anywhere;
 
-  &--verified {
-    background: rgb(22 59 49 / 10%);
-    color: $color-primary;
-  }
-
   &--example {
     background: #fff3cd;
     color: #704f00;
@@ -293,11 +288,6 @@
     width: fit-content;
     color: $color-accent;
     font-weight: 700;
-  }
-
-  &__hero .case-status {
-    background: rgb(255 255 255 / 12%);
-    color: $color-bg;
   }
 
   &__meta {

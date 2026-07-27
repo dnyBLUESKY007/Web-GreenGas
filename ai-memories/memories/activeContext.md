@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: Case content labels now expose only placeholder states. The list, detail page, and homepage cards retain internal `verified | example` data but render a badge only for `example`; the unused verified-content locale labels and styles are removed. Map verification terminology remains unchanged because it describes location evidence rather than content status. Typecheck, all 23 tests, and the production build pass; this follow-up is not yet deployed.
+
 > 2026-07-27: Completed the GitHub #18 release sequence. Execution issues #19, #20, #21, #22, #23, and #25 are closed; fixed candidate `9742d1b` is live and fully accepted. Independent non-blocking map redesign #24 remains open. The sole stakeholder follow-up from this release is the missing Haoda Tools project location.
 
 > 2026-07-27: GitHub #23 production deployment succeeded for fixed application candidate `9742d1b`. A verified pre-deployment rollback archive is retained; Nginx, eight public routes, 20 live Chrome route/viewport checks, trilingual switching, title/footer/ISO/map contracts, 23 OSS images, and exact local/remote identity across 47 files all pass.
@@ -67,10 +69,11 @@
 
 ## 当前焦点
 
-GitHub #18 的案例、首页和生产发布闭环已完成。#19、#20、#21、#22、#23、#25 均关闭，固定应用候选 `9742d1b` 已上线并通过全部核心验收；独立非阻塞地图视觉优化 #24 保持开放。浩达工具地点待甲方补充，因此暂不生成地图点。
+GitHub #18 的案例、首页和生产发布闭环已完成。#19、#20、#21、#22、#23、#25 均关闭，固定应用候选 `9742d1b` 已上线并通过全部核心验收；独立非阻塞地图视觉优化 #24 保持开放。案例内容徽标现仅标记占位项目，正式案例不再显示“已核实内容”；该标签调整尚未单独部署。浩达工具地点待甲方补充，因此暂不生成地图点。
 
 ## 近期变更
 
+- 2026-07-27 案例内容标签：列表、详情和首页卡片只为 `example` 显示三语占位徽标；内部正式状态及地图地点证据语义保持不变。
 - 2026-07-27 生产部署：固定 `9742d1b` 候选已发布；保留部署前回滚归档，Nginx、八路由、20 组在线浏览器检查、三语、ISO、标题/页脚、案例地图、23 张 OSS 图片及 47 文件本地/远端一致性均通过。
 - 2026-07-27 发布候选：固定 `9742d1b`；类型检查、23 项测试、根/子路径可重复构建、五宽度三路由 Chrome 检查、三语切换及 23 张新增 OSS 图片均通过。
 - 2026-07-27 首页与全局展示：首页代表性项目区复用案例地图并建立有效卡片锚点；轮播横向滚动限制在容器内；页脚移除 tagline；全站浏览器标题统一为“格灵空调”。类型检查、23 项测试和生产构建通过。
@@ -132,6 +135,7 @@ GitHub #18 的案例、首页和生产发布闭环已完成。#19、#20、#21、
 - [ ] 提供并批准技术手册、产品样本、安装/调试/维护/故障、售前选型和售后服务文件及 OSS URL
 - [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
 - [x] 甲方于 2026-07-27 确认 `ISO140001` 为笔误；当前公开文案使用 `ISO14001`
+- [x] 案例列表、详情和首页移除“已核实内容”，仅为占位案例显示专门标记
 - [ ] 核对并上传 `ignored/extracted/web-greengas/ignored/resources/web/page-header-*.webp` 五张图到对应 OSS 路径
 - [ ] 用户审阅首页及 About / News 视觉（Solutions 尖角贴合、五步工程能力区实图、About 布局）
 - [ ] 替换其余占位文案/图片为甲方真实素材
@@ -165,6 +169,6 @@ GitHub #18 的案例、首页和生产发布闭环已完成。#19、#20、#21、
 
 ## 待决问题 / 阻塞
 
-- 25 个已登记案例/新闻图片 URL 仍返回 OSS 404；页面已显示本地化不可用状态，但发布候选前仍需上传并复核
-- 当前 ARM 验收宿主缺少 Chromium 所需系统动态库；未执行一次性五宽度浏览器截图，需在具备浏览器环境的发布候选阶段复核
+- 浩达工具项目地点仍待甲方补充；在获得可靠地点前不生成地图点
+- GitHub #24 地图视觉与交互优化保持开放，但不阻塞当前生产版本
 - 甲方真实厂址与 GCJ-02 经纬度（Contact 地图依赖）
