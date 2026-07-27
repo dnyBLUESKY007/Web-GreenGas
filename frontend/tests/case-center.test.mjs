@@ -15,12 +15,17 @@ test('case center provides sourced filterable cases and a recoverable generic de
     [...projectIds],
     [
       'haoda-tools-hvac',
-      'liaoning-port-cooling',
-      'south-africa-three-stage-cooling',
-      'queensland-medical-research',
+      'netcare-pinehaven-hospital',
+      'mauritania-parliament-hvac',
+      'brisbane-airport-air-handling',
     ],
   );
   assert.equal(projectIds.size, projects.length, 'project IDs must be unique');
+  assert.ok(projects.every((project) => project.sourceUrl === undefined));
+  assert.deepEqual(
+    projects.find(({ id }) => id === 'haoda-tools-hvac').geography,
+    { precision: 'unspecified' },
+  );
 
   const localizedFields = [
     'name',
@@ -28,16 +33,21 @@ test('case center provides sourced filterable cases and a recoverable generic de
     'location',
     'equipment',
     'summary',
-    'context',
-    'challenge',
-    'response',
   ];
+
+  const optionalLocalizedFields = ['context', 'challenge', 'response', 'result'];
+  const expectedImages = new Map([
+    ['haoda-tools-hvac', ['haoda-tools', 5]],
+    ['netcare-pinehaven-hospital', ['netcare-pinehaven', 5]],
+    ['mauritania-parliament-hvac', ['mauritania-parliament', 4]],
+    ['brisbane-airport-air-handling', ['brisbane-airport', 9]],
+  ]);
 
   for (const project of projects) {
     assert.equal(project.status, 'verified');
-    const sourceUrl = new URL(project.sourceUrl);
-    assert.equal(sourceUrl.protocol, 'https:');
-    assert.equal(sourceUrl.hostname, 'cn.greennb.com');
+    if (project.sourceUrl) {
+      assert.equal(new URL(project.sourceUrl).protocol, 'https:');
+    }
     assert.ok(project.industryKey);
     assert.ok(project.regionKey);
     assert.ok(['country', 'province', 'unspecified'].includes(project.geography.precision));
@@ -48,8 +58,23 @@ test('case center provides sourced filterable cases and a recoverable generic de
       assert.ok(project[`${field}_zh`], `${project.id}: ${field}_zh`);
       assert.ok(project[`${field}_ru`], `${project.id}: ${field}_ru`);
     }
+    for (const field of optionalLocalizedFields) {
+      if (project[field] === undefined) continue;
+      assert.ok(project[field], `${project.id}: ${field}`);
+      assert.ok(project[`${field}_zh`], `${project.id}: ${field}_zh`);
+      assert.ok(project[`${field}_ru`], `${project.id}: ${field}_ru`);
+    }
+    const expectedImage = expectedImages.get(project.id);
+    assert.ok(expectedImage, `${project.id}: image contract`);
+    const [imageStem, imageCount] = expectedImage;
+    assert.equal(project.images.length, imageCount, `${project.id}: image count`);
+    assert.equal(
+      project.images[0].filename,
+      `stakeholder-cases-2026/${imageStem}-01.webp`,
+      `${project.id}: primary image`,
+    );
     for (const image of project.images) {
-      assert.match(image.filename, /\.webp$/);
+      assert.match(image.filename, new RegExp(`^stakeholder-cases-2026/${imageStem}-\\d{2}\\.webp$`));
       assert.ok(image.alt);
       assert.ok(image.alt_zh);
       assert.ok(image.alt_ru);
@@ -78,6 +103,8 @@ test('case center provides sourced filterable cases and a recoverable generic de
   assert.match(detailPage, /createNotFound/);
   assert.match(detailPage, /relatedCaseIds/);
   assert.match(detailPage, /basePath\('\/cases\/'\)/);
+  assert.match(detailPage, /createOptionalDetailSection/);
+  assert.match(detailPage, /project\.sourceUrl \?/);
 
   const viteConfig = await read('vite.config.ts');
   assert.match(viteConfig, /casesDetail: resolve\(__dirname, 'cases\/detail\/index\.html'\)/);
@@ -107,7 +134,7 @@ test('case map separates sourced projects from country-level market coverage', a
   assert.equal(pointIds.size, points.length, 'map point IDs must be unique');
   assert.deepEqual(
     points.filter(({ type }) => type === 'verified-case').map(({ projectId }) => projectId),
-    ['haoda-tools-hvac', 'liaoning-port-cooling', 'queensland-medical-research'],
+    ['netcare-pinehaven-hospital', 'mauritania-parliament-hvac', 'brisbane-airport-air-handling'],
   );
   assert.deepEqual(
     points.filter(({ type }) => type === 'market-coverage').map(({ countryCode }) => countryCode),

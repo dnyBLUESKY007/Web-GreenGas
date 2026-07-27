@@ -83,7 +83,7 @@ export interface ProductDownload {
 export interface Project {
   readonly id: string;
   readonly status: 'verified' | 'example';
-  readonly sourceUrl: string;
+  readonly sourceUrl?: string;
   readonly name: string;
   readonly name_zh?: string;
   readonly name_ru?: string;
@@ -106,13 +106,13 @@ export interface Project {
   readonly summary: string;
   readonly summary_zh?: string;
   readonly summary_ru?: string;
-  readonly context: string;
+  readonly context?: string;
   readonly context_zh?: string;
   readonly context_ru?: string;
-  readonly challenge: string;
+  readonly challenge?: string;
   readonly challenge_zh?: string;
   readonly challenge_ru?: string;
-  readonly response: string;
+  readonly response?: string;
   readonly response_zh?: string;
   readonly response_ru?: string;
   readonly result?: string;

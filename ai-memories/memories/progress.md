@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Completed GitHub #20 locally without deployment. Four stakeholder-supplied cases replace the prior case set, all 23 approved images are referenced, optional narrative/source fields preserve source boundaries, and only the three cases with supplied country locations receive verified map points. Typecheck and all 23 tests pass.
+
 > 2026-07-27: Completed GitHub #21 locally without deployment. Stakeholder confirmation established that `ISO140001` was a typo, and current public About copy now uses `ISO14001` in English, Chinese, and Russian. Historical records and source archives remain unchanged.
 
 > 2026-07-27: Completed and closed the approved GitHub #16 production deployment and parent #1 from `d47c491`. Typecheck, all 23 tests, the production build, Nginx validation/reload, all eight public destination checks, live trilingual switching, approved-candidate hash reconciliation, and exact local/remote verification across 46 files pass. The release owner accepted the documented content gaps, and the previous production artifact is retained locally for rollback.
@@ -89,6 +91,7 @@
 - **全站三语与响应式回归**：21 项组合契约覆盖三语键、跨页引用、内容状态及关键交互；修复深链、FAQ 锚点、轮播可访问性与俄文新闻卡溢出，图片失败显示三语不可用状态
 - **发布候选与最终资料报告**：记录集成源码、锁文件、工具版本、根/子路径可重复构建摘要；汇总完成范围、21 个顶层示例、待资料包、ISO/EmailJS/OSS/浏览器/审计阻塞，且未执行生产部署
 - **ISO 编号确认**：甲方于 2026-07-27 确认 `ISO140001` 为笔误；当前公开中英俄 About 文案使用 `ISO14001`，历史记录和来源归档保持不变
+- **甲方案例包替换**：四项甲方最新案例、23 张获批图片、可选详情字段和三个有地点依据的地图点已完成；浩达地点待补充
 
 ## 进行中
 
@@ -154,3 +157,4 @@
 | 2026-07-26 | 全站三语与响应式回归 | 完成 GitHub #14 跨页/三语/响应式/可访问性修复；21 项测试、类型检查及根/子路径构建通过，记录 25 个 OSS 图片缺口 |
 | 2026-07-26 | 发布候选与最终资料报告 | 完成 GitHub #15；23 项测试、类型检查及可重复根/子路径构建通过，候选等待人工审批且未生产部署 |
 | 2026-07-27 | ISO 编号确认 | 完成 GitHub #21 本地修改；公开中英俄 About 文案使用 `ISO14001`，未部署 |
+| 2026-07-27 | 甲方案例包替换 | 完成 GitHub #20 四项案例、23 张图片和三个已核实地图点；类型检查与 23 项测试通过，未部署 |

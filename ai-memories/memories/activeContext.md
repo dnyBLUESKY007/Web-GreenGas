@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: Completed GitHub #20 locally without deployment. Case Center now uses exactly four stakeholder-supplied cases and all 23 approved images; Netcare Pinehaven, Mauritania Parliament, and Brisbane Airport have country-level verified points, while Haoda remains an unmapped verified case until its location is supplied. Optional narrative/source fields prevent invented sections and internal provenance from appearing publicly.
+
 > 2026-07-27: Completed GitHub #21 locally without deployment. The stakeholder confirmed `ISO140001` was a typo; current public English, Chinese, and Russian About copy now uses `ISO14001`, while historical records and source archives remain unchanged.
 
 > 2026-07-27: Production deployment for GitHub #16 succeeded and GitHub #16 plus parent #1 are closed. The approved `d47c491` build passed typecheck, all 23 tests, Nginx validation/reload, eight-route public HTTP checks, live trilingual switching, and exact local/remote verification across 46 files. The release owner accepted the documented content gaps; a verified pre-deployment rollback artifact is retained locally.
@@ -57,10 +59,11 @@
 
 ## 当前焦点
 
-下一阶段网站改版的 #2–#16 已完成并发布到生产环境，父任务 #1 与发布任务 #16 均已关闭。发布负责人接受本次带已披露缺口发布；合作公司资料当前为零项获批，产品、行业和技术支持仍保留明确示例/待替换状态，25 个案例/新闻 OSS 图片仍待上传。`ISO140001` 已于 2026-07-27 确认为笔误，当前公开文案使用 `ISO14001`。EmailJS 继续由独立 #17 跟踪。完整资料请求见 `ai-memories/materials/2026-07-26-final-material-gap-report.md`。
+GitHub #18 正在执行今日案例、首页和生产发布闭环。#19 已完成 23 张甲方案例图的 OSS 发布，#20 已将案例中心替换为四项甲方最新案例，#21 已把当前公开 ISO 编号更正为 `ISO14001`；首页/全局展示、发布候选和生产部署仍待后续子 Issue。浩达工具地点待甲方补充，因此暂不生成地图点。
 
 ## 近期变更
 
+- 2026-07-27 甲方案例替换：案例中心仅保留浩达工具、Netcare Pinehaven、毛里塔尼亚国会大楼和布里斯班机场；23 张已批准图片全部接入，地图展示三个有国家级地点依据的案例点，内部溯源不公开显示。
 - 2026-07-27 ISO 编号确认：甲方确认 `ISO140001` 为笔误；当前 About 中英俄公开公司描述统一改为 `ISO14001`，历史任务/发布记录及来源归档不改写。本次未部署。
 - 2026-07-27 生产发布：以 `d47c491` 构建并发布 GitHub #16；类型检查、23 项测试、Nginx 检查/reload、八项公网路由及核心资源均通过。线上 46 个文件与本地构建聚合摘要一致，原线上产物已保留在本地忽略目录作为回滚来源。
 - 2026-07-26 发布候选：确认 #2-#14 均关闭，以锁文件重建并通过类型检查、23 项测试及根/`/rc/` 双构建；两种候选摘要连续重建稳定。最终报告分列完成、未完成、21 个顶层示例、待替换资料包和外部阻塞；ISO 编号、EmailJS 与未部署边界明确。

@@ -1,27 +1,27 @@
 [
   {
-    "id": "case-haoda-tools-hvac",
+    "id": "case-netcare-pinehaven-hospital",
     "type": "verified-case",
-    "projectId": "haoda-tools-hvac",
-    "countryCode": "CN",
-    "x": 82,
-    "y": 45
+    "projectId": "netcare-pinehaven-hospital",
+    "countryCode": "ZA",
+    "x": 53,
+    "y": 72
   },
   {
-    "id": "case-liaoning-port-cooling",
+    "id": "case-mauritania-parliament-hvac",
     "type": "verified-case",
-    "projectId": "liaoning-port-cooling",
-    "countryCode": "CN",
-    "x": 83,
-    "y": 35
+    "projectId": "mauritania-parliament-hvac",
+    "countryCode": "MR",
+    "x": 45,
+    "y": 51
   },
   {
-    "id": "case-queensland-medical-research",
+    "id": "case-brisbane-airport-air-handling",
     "type": "verified-case",
-    "projectId": "queensland-medical-research",
+    "projectId": "brisbane-airport-air-handling",
     "countryCode": "AU",
-    "x": 87,
-    "y": 76
+    "x": 90,
+    "y": 73
   },
   {
     "id": "market-south-africa",

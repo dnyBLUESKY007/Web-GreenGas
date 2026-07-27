@@ -19,7 +19,6 @@ function renderCaseDetail(): void {
 function createCaseDetail(project: Project): HTMLElement {
   const article = document.createElement('article');
   article.className = 'case-detail';
-  const result = td(project, 'result');
   const relatedCases = project.relatedCaseIds
     .map(getProjectById)
     .filter((item): item is Project => item !== undefined);
@@ -37,17 +36,17 @@ function createCaseDetail(project: Project): HTMLElement {
     <div class="section">
       <div class="container case-detail__layout">
         <div class="case-detail__content">
-          ${createDetailSection('cases.detail.context', td(project, 'context'))}
-          ${createDetailSection('cases.detail.challenge', td(project, 'challenge'))}
-          ${createDetailSection('cases.detail.response', td(project, 'response'))}
-          ${result ? createDetailSection('cases.detail.result', result) : ''}
+          ${createOptionalDetailSection(project, 'context')}
+          ${createOptionalDetailSection(project, 'challenge')}
+          ${createOptionalDetailSection(project, 'response')}
+          ${createOptionalDetailSection(project, 'result')}
         </div>
         <aside class="case-detail__facts" aria-label="${t('cases.detail.facts')}">
           <h2>${t('cases.detail.facts')}</h2>
           ${createFact('cases.detail.industry', td(project, 'industry'))}
           ${createFact('cases.detail.region', td(project, 'location'))}
           ${createFact('cases.detail.equipment', td(project, 'equipment'))}
-          <a href="${project.sourceUrl}" target="_blank" rel="noreferrer">${t('cases.detail.source')}</a>
+          ${project.sourceUrl ? `<a href="${project.sourceUrl}" target="_blank" rel="noreferrer">${t('cases.detail.source')}</a>` : ''}
         </aside>
       </div>
       ${createGallery(project)}
@@ -59,6 +58,14 @@ function createCaseDetail(project: Project): HTMLElement {
 
 function createDetailSection(titleKey: string, content: string): string {
   return `<section class="case-detail__section"><h2>${t(titleKey)}</h2><p>${content}</p></section>`;
+}
+
+function createOptionalDetailSection(
+  project: Project,
+  field: 'context' | 'challenge' | 'response' | 'result',
+): string {
+  const content = td(project, field);
+  return content ? createDetailSection(`cases.detail.${field}`, content) : '';
 }
 
 function createFact(labelKey: string, value: string): string {
