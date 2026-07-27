@@ -38,7 +38,7 @@ export function createServiceStrip(): HTMLElement {
     statuses.textContent = [
       getContentStatusLabel(sampleDocument.contentStatus),
       getPublicationStatusLabel(sampleDocument.publicationStatus),
-    ].join(' · ');
+    ].filter(Boolean).join(' · ');
     const notice = document.createElement('p');
     notice.textContent = t('support.inventoryNotice');
     supportSummary.append(title, statuses, notice);
@@ -69,18 +69,18 @@ export function createServiceStrip(): HTMLElement {
   return section;
 }
 
-function getContentStatusLabel(status: TechnicalDocument['contentStatus']): string {
+function getContentStatusLabel(status: TechnicalDocument['contentStatus']): string | undefined {
   if (status === 'example-placeholder') {
     return t('support.example');
   }
 
-  return status;
+  return undefined;
 }
 
-function getPublicationStatusLabel(status: TechnicalDocument['publicationStatus']): string {
+function getPublicationStatusLabel(status: TechnicalDocument['publicationStatus']): string | undefined {
   if (status === 'unavailable') {
     return t('support.unavailable');
   }
 
-  return status;
+  return undefined;
 }

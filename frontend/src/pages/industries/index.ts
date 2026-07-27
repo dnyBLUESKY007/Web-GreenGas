@@ -85,15 +85,15 @@ function createIndustryDetail(industry: IndustryApplication, index: number): HTM
   heading.innerHTML = `
     <span class="industry-detail__number">${String(index + 1).padStart(2, '0')}</span>
     <span class="industry-detail__icon">${getIcon(industry.icon)}</span>
-    <p class="industry-detail__status"></p>
     <h2 class="industry-detail__title"></h2>
     <p class="industry-detail__summary"></p>
   `;
-  setRequiredText(
-    heading,
-    '.industry-detail__status',
-    industry.status === 'example-placeholder' ? t('industries.status.example') : industry.status,
-  );
+  if (industry.status === 'example-placeholder') {
+    const status = document.createElement('p');
+    status.className = 'industry-detail__status';
+    status.textContent = t('industries.status.example');
+    heading.insertBefore(status, heading.querySelector('.industry-detail__title'));
+  }
   setRequiredText(heading, '.industry-detail__title', td(industry, 'name'));
   setRequiredText(heading, '.industry-detail__summary', td(industry, 'summary'));
 

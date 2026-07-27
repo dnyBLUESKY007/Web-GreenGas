@@ -134,11 +134,15 @@ interface CaseMapPointBase {
   readonly countryCode: string;
   readonly x: number;
   readonly y: number;
+  readonly labelSide: 'above' | 'below' | 'left' | 'right';
 }
 
 export interface VerifiedCaseMapPoint extends CaseMapPointBase {
   readonly type: 'verified-case';
   readonly projectId: string;
+  readonly label: string;
+  readonly label_zh: string;
+  readonly label_ru: string;
 }
 
 export interface MarketCoverageMapPoint extends CaseMapPointBase {

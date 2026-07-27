@@ -165,6 +165,7 @@ test('case map separates sourced projects from country-level market coverage', a
   for (const point of points) {
     assert.ok(point.x >= 0 && point.x <= 100, `${point.id}: x outside map`);
     assert.ok(point.y >= 0 && point.y <= 100, `${point.id}: y outside map`);
+    assert.ok(['above', 'below', 'left', 'right'].includes(point.labelSide), `${point.id}: label side`);
 
     if (point.type === 'verified-case') {
       const project = projectById.get(point.projectId);
@@ -172,6 +173,9 @@ test('case map separates sourced projects from country-level market coverage', a
       assert.notEqual(project.geography.precision, 'unspecified');
       assert.equal(point.countryCode, project.geography.countryCode);
       assert.equal('name' in point, false, `${point.id}: project copy must come from projects.json`);
+      for (const field of ['label', 'label_zh', 'label_ru']) {
+        assert.ok(point[field], `${point.id}: ${field}`);
+      }
       continue;
     }
 
@@ -193,12 +197,22 @@ test('case map separates sourced projects from country-level market coverage', a
   assert.match(listPage, /case-card-/);
 
   const component = await read('src/components/case-map/CaseMap.ts');
+  assert.match(component, /world-map\.svg\?url/);
   assert.match(component, /createElement\('button'\)/);
   assert.match(component, /aria-controls/);
   assert.match(component, /aria-pressed/);
+  assert.match(component, /case-map__point-selector/);
+  assert.match(component, /loading = 'lazy'/);
   assert.match(component, /basePath\('\/cases\/detail\/'\)/);
   assert.match(component, /cases\.map\.coverageOnly/);
   assert.doesNotMatch(component, /mapbox|google|amap|leaflet|openstreetmap/i);
+  assert.doesNotMatch(component, /preserveAspectRatio="none"/);
+
+  const worldMap = await read('src/assets/maps/world-map.svg');
+  assert.match(worldMap, /Natural Earth/);
+  assert.match(worldMap, /viewBox="0 0 1000 570"/);
+  assert.ok((worldMap.match(/<path/g) ?? []).length > 20, 'world map must retain detailed land shapes');
+  assert.ok(Buffer.byteLength(worldMap) < 300_000, 'optimized world map must stay below 300 KB');
 
   const styles = await read('src/styles/components/_cases-page.scss');
   assert.match(styles, /(?:case-map__point|&)--verified/);
@@ -206,12 +220,16 @@ test('case map separates sourced projects from country-level market coverage', a
   assert.match(styles, /min-(?:width|inline-size): 2\.75rem/);
   assert.match(styles, /:focus-visible/);
   assert.match(styles, /overflow-wrap: anywhere/);
+  assert.match(styles, /prefers-reduced-motion/);
+  assert.match(styles, /aspect-ratio: 1000 \/ 570/);
+  assert.match(styles, /min-height: 2\.75rem/);
 
   const requiredMessages = [
     'cases.map.title',
     'cases.map.description',
-    'cases.map.legend.verified',
+    'cases.map.legend.project',
     'cases.map.legend.coverage',
+    'cases.map.selectorLabel',
     'cases.map.coverageOnly',
     'cases.map.precision.country',
     'cases.map.precision.province',

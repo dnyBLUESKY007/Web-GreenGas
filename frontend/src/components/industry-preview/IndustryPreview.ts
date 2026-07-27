@@ -34,28 +34,24 @@ export function createIndustryPreview(): HTMLElement {
     const icon = document.createElement('span');
     icon.className = 'home-industry-card__icon';
     icon.innerHTML = getIcon(industry.icon);
-    const status = document.createElement('span');
-    status.className = 'home-preview__status';
-    status.textContent = getIndustryStatusLabel(industry.status);
     const name = document.createElement('strong');
     name.className = 'home-industry-card__title';
     name.textContent = td(industry, 'name');
     const summary = document.createElement('span');
     summary.className = 'home-industry-card__summary';
     summary.textContent = td(industry, 'summary');
-    card.append(icon, status, name, summary);
+    card.appendChild(icon);
+    if (industry.status === 'example-placeholder') {
+      const status = document.createElement('span');
+      status.className = 'home-preview__status';
+      status.textContent = t('industries.status.example');
+      card.appendChild(status);
+    }
+    card.append(name, summary);
     grid.appendChild(card);
   }
 
   container.append(head, grid);
   section.appendChild(container);
   return section;
-}
-
-function getIndustryStatusLabel(status: IndustryApplication['status']): string {
-  if (status === 'example-placeholder') {
-    return t('industries.status.example');
-  }
-
-  return status;
 }

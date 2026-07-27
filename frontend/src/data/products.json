@@ -10,9 +10,9 @@
     "description_ru": "Индивидуальное охлаждение для серверных, машинных залов и высоких тепловых нагрузок.",
     "image": "https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/products_v2/custom_data-center-ac_retouched_1.webp",
     "contentStatus": "example-placeholder",
-    "application": "Example application: precision cooling for a compute facility. Final configuration requires a verified heat-load and site assessment.",
-    "application_zh": "示例应用：算力设施精密冷却。最终配置需基于经核实的热负荷和现场评估。",
-    "application_ru": "Пример применения: прецизионное охлаждение вычислительного объекта. Окончательная конфигурация требует подтверждённого расчёта тепловой нагрузки и обследования объекта.",
+    "application": "Example application: precision cooling for a compute facility. Final configuration requires measured heat-load data and a site assessment.",
+    "application_zh": "示例应用：算力设施精密冷却。最终配置需基于实测热负荷数据和现场评估。",
+    "application_ru": "Пример применения: прецизионное охлаждение вычислительного объекта. Для окончательной конфигурации необходимы данные измерения тепловой нагрузки и обследование объекта.",
     "features": [
       {
         "text": "Example feature: project-specific airflow configuration",

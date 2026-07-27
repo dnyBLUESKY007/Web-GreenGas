@@ -114,7 +114,9 @@ function createProductCard(product: Product, productSeries: ProductSeries): HTML
   image.width = 640;
   image.height = 480;
   image.loading = 'lazy';
-  mediaLink.append(image, createProductStatus(product.contentStatus));
+  mediaLink.appendChild(image);
+  const status = createProductStatus(product.contentStatus);
+  if (status) mediaLink.appendChild(status);
 
   const body = document.createElement('div');
   body.className = 'product-card__body';

@@ -195,9 +195,9 @@
     "challenge": "Standard equipment assumptions may not cover weather, corrosion, logistics, footprint, or continuous-duty needs.",
     "challenge_zh": "标准设备假设可能无法覆盖气候、腐蚀、物流、空间或连续运行需求。",
     "challenge_ru": "Стандартное оборудование может не учитывать климат, коррозию, логистику, габариты или непрерывную работу.",
-    "response": "Start from verified site constraints and develop a project-specific equipment and controls package.",
-    "response_zh": "从已核实的现场约束出发，形成项目专用的设备与控制配置。",
-    "response_ru": "На основе подтверждённых ограничений объекта разрабатывается индивидуальный комплект оборудования и управления.",
+    "response": "Start from actual site constraints and develop a project-specific equipment and controls package.",
+    "response_zh": "从实际现场约束出发，形成项目专用的设备与控制配置。",
+    "response_ru": "На основе фактических ограничений объекта разрабатывается индивидуальный комплект оборудования и управления.",
     "equipment": [
       {
         "productId": "packaged-air-cooled-cabinet",

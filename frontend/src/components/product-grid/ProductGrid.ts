@@ -78,7 +78,8 @@ function createProductCard(product: Product): HTMLElement {
   const copy = document.createElement('p');
   copy.className = 'product-grid-card__desc';
   copy.textContent = description;
-  body.append(status, title, copy);
+  if (status) body.appendChild(status);
+  body.append(title, copy);
   link.append(media, body);
   article.appendChild(link);
 

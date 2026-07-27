@@ -58,7 +58,6 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
   for (const locale of ['en', 'zh', 'ru']) {
     const messages = JSON.parse(await read(`src/i18n/locales/${locale}.json`));
     for (const key of [
-      'products.status.verified-content',
       'products.status.example-placeholder',
       'products.status.pending-replacement',
       'products.detail.features',
@@ -70,5 +69,6 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
     ]) {
       assert.ok(messages[key], `${locale}: ${key}`);
     }
+    assert.equal(messages['products.status.verified-content'], undefined);
   }
 });

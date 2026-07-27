@@ -1,3 +1,4 @@
+import worldMapUrl from '@/assets/maps/world-map.svg?url';
 import { caseMapPoints } from '@/data/caseMap';
 import { getProjectById } from '@/data/projects';
 import { t, td } from '@/i18n';
@@ -32,20 +33,23 @@ export function createCaseMap(visibleProjectIds: ReadonlySet<string>): HTMLEleme
   legend.className = 'case-map__legend';
   legend.setAttribute('aria-label', t('cases.map.legend.label'));
   legend.innerHTML = `
-    <li><span class="case-map__legend-mark case-map__legend-mark--verified" aria-hidden="true"></span>${t('cases.map.legend.verified')}</li>
+    <li><span class="case-map__legend-mark case-map__legend-mark--verified" aria-hidden="true"></span>${t('cases.map.legend.project')}</li>
     <li><span class="case-map__legend-mark case-map__legend-mark--coverage" aria-hidden="true"></span>${t('cases.map.legend.coverage')}</li>
   `;
 
   const layout = document.createElement('div');
   layout.className = 'case-map__layout';
   const stage = createMapStage(visiblePoints, selectedPoint?.id);
+  const mapPanel = document.createElement('div');
+  mapPanel.className = 'case-map__map-panel';
+  mapPanel.append(stage, createPointSelector(visiblePoints, selectedPoint?.id));
   const details = document.createElement('article');
   details.id = DETAILS_ID;
   details.className = 'case-map__details';
   details.setAttribute('aria-live', 'polite');
   if (selectedPoint) renderPointDetails(details, selectedPoint);
 
-  stage.addEventListener('click', (event) => {
+  layout.addEventListener('click', (event) => {
     if (!(event.target instanceof Element)) return;
 
     const button = event.target.closest<HTMLButtonElement>('[data-map-point]');
@@ -54,13 +58,13 @@ export function createCaseMap(visibleProjectIds: ReadonlySet<string>): HTMLEleme
     if (!point) return;
 
     selectedPointId = point.id;
-    for (const control of stage.querySelectorAll<HTMLButtonElement>('[data-map-point]')) {
-      control.setAttribute('aria-pressed', String(control === button));
+    for (const control of layout.querySelectorAll<HTMLButtonElement>('[data-map-point]')) {
+      control.setAttribute('aria-pressed', String(control.dataset.mapPoint === point.id));
     }
     renderPointDetails(details, point);
   });
 
-  layout.append(stage, details);
+  layout.append(mapPanel, details);
   const note = document.createElement('p');
   note.className = 'case-map__precision-note';
   note.textContent = t('cases.map.precisionNote');
@@ -71,16 +75,17 @@ export function createCaseMap(visibleProjectIds: ReadonlySet<string>): HTMLEleme
 function createMapStage(points: readonly CaseMapPoint[], selectedId: string | undefined): HTMLElement {
   const stage = document.createElement('div');
   stage.className = 'case-map__stage';
-  stage.innerHTML = `
-    <svg class="case-map__world" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-      <path d="M70 105 155 62l120 18 55 55-30 58-77 7-30 72-55-24-18-74-58-25Z" />
-      <path d="m265 266 54 18 39 67-17 92-43 47-25-80-35-65Z" />
-      <path d="m430 95 85-34 79 24 42-20 142 16 135 67-35 73-112 12-57 49-70-31-57 20-42-56-89-21-52-57Z" />
-      <path d="m484 252 92-3 53 57-31 122-66 24-43-95-43-49Z" />
-      <path d="m791 336 83-35 85 51-31 79-101 4-58-51Z" />
-      <path d="m898 224 27-16 20 31-29 23Z" />
-    </svg>
-  `;
+  const world = document.createElement('img');
+  world.className = 'case-map__world';
+  world.src = worldMapUrl;
+  world.alt = '';
+  world.width = 1000;
+  world.height = 570;
+  world.loading = 'lazy';
+  world.decoding = 'async';
+  world.fetchPriority = 'low';
+  world.setAttribute('aria-hidden', 'true');
+  stage.appendChild(world);
 
   for (const point of points) {
     const variant = getPointVariant(point);
@@ -95,9 +100,51 @@ function createMapStage(points: readonly CaseMapPoint[], selectedId: string | un
     button.setAttribute('aria-pressed', String(point.id === selectedId));
     button.setAttribute('aria-label', label);
     button.title = label;
+    const pointLabel = document.createElement('span');
+    pointLabel.className = `case-map__point-label case-map__point-label--${point.labelSide}`;
+    pointLabel.textContent = getPointDisplayName(point);
+    pointLabel.setAttribute('aria-hidden', 'true');
+    button.appendChild(pointLabel);
     stage.appendChild(button);
   }
   return stage;
+}
+
+function createPointSelector(
+  points: readonly CaseMapPoint[],
+  selectedId: string | undefined,
+): HTMLUListElement {
+  const selector = document.createElement('ul');
+  selector.className = 'case-map__point-selector';
+  selector.setAttribute('aria-label', t('cases.map.selectorLabel'));
+
+  for (const point of points) {
+    const item = document.createElement('li');
+    const button = document.createElement('button');
+    const variant = getPointVariant(point);
+    button.type = 'button';
+    button.className = `case-map__selector-button case-map__selector-button--${variant}`;
+    button.dataset.mapPoint = point.id;
+    button.setAttribute('aria-controls', DETAILS_ID);
+    button.setAttribute('aria-pressed', String(point.id === selectedId));
+    button.setAttribute('aria-label', getPointLabel(point));
+    const mark = document.createElement('span');
+    mark.className = 'case-map__selector-mark';
+    mark.setAttribute('aria-hidden', 'true');
+    const label = document.createElement('span');
+    label.textContent = getPointDisplayName(point);
+    button.append(mark, label);
+    item.appendChild(button);
+    selector.appendChild(item);
+  }
+
+  return selector;
+}
+
+function getPointDisplayName(point: CaseMapPoint): string {
+  return point.type === 'market-coverage'
+    ? td(point, 'name')
+    : td(point, 'label');
 }
 
 function getPointLabel(point: CaseMapPoint): string {
@@ -106,7 +153,7 @@ function getPointLabel(point: CaseMapPoint): string {
   }
 
   const project = requireProject(point.projectId);
-  return `${t('cases.map.legend.verified')}: ${td(project, 'name')}. ${getPrecisionLabel(project)}`;
+  return `${t('cases.map.legend.project')}: ${td(project, 'name')}. ${getPrecisionLabel(project)}`;
 }
 
 function renderPointDetails(container: HTMLElement, point: CaseMapPoint): void {
@@ -114,7 +161,7 @@ function renderPointDetails(container: HTMLElement, point: CaseMapPoint): void {
   const variant = getPointVariant(point);
   const type = document.createElement('p');
   type.className = `case-map__type case-map__type--${variant}`;
-  type.textContent = t(`cases.map.legend.${variant}`);
+  type.textContent = t(`cases.map.legend.${variant === 'verified' ? 'project' : 'coverage'}`);
 
   const title = document.createElement('h3');
   const location = document.createElement('p');

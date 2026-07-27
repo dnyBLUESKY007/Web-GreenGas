@@ -4,24 +4,36 @@
     "type": "verified-case",
     "projectId": "netcare-pinehaven-hospital",
     "countryCode": "ZA",
-    "x": 53,
-    "y": 72
+    "label": "Netcare Pine Haven",
+    "label_zh": "Netcare Pine Haven 医院",
+    "label_ru": "Больница Netcare Pine Haven",
+    "x": 57.5,
+    "y": 67,
+    "labelSide": "left"
   },
   {
     "id": "case-mauritania-parliament-hvac",
     "type": "verified-case",
     "projectId": "mauritania-parliament-hvac",
     "countryCode": "MR",
-    "x": 45,
-    "y": 51
+    "label": "Mauritania Parliament",
+    "label_zh": "毛里塔尼亚国会",
+    "label_ru": "Парламент Мавритании",
+    "x": 47,
+    "y": 39,
+    "labelSide": "right"
   },
   {
     "id": "case-brisbane-airport-air-handling",
     "type": "verified-case",
     "projectId": "brisbane-airport-air-handling",
     "countryCode": "AU",
-    "x": 90,
-    "y": 73
+    "label": "Brisbane Airport",
+    "label_zh": "布里斯班机场",
+    "label_ru": "Аэропорт Брисбена",
+    "x": 92,
+    "y": 65,
+    "labelSide": "left"
   },
   {
     "id": "market-south-africa",
@@ -32,8 +44,9 @@
     "name": "South Africa",
     "name_zh": "南非",
     "name_ru": "Южная Африка",
-    "x": 55,
-    "y": 75
+    "x": 55.8,
+    "y": 69,
+    "labelSide": "above"
   },
   {
     "id": "market-australia",
@@ -44,8 +57,9 @@
     "name": "Australia",
     "name_zh": "澳大利亚",
     "name_ru": "Австралия",
-    "x": 92,
-    "y": 70
+    "x": 87,
+    "y": 64,
+    "labelSide": "below"
   },
   {
     "id": "market-south-korea",
@@ -56,8 +70,9 @@
     "name": "South Korea",
     "name_zh": "韩国",
     "name_ru": "Южная Корея",
-    "x": 88,
-    "y": 41
+    "x": 85.5,
+    "y": 30.5,
+    "labelSide": "left"
   },
   {
     "id": "market-russia",
@@ -68,7 +83,8 @@
     "name": "Russia",
     "name_zh": "俄罗斯",
     "name_ru": "Россия",
-    "x": 68,
-    "y": 25
+    "x": 70,
+    "y": 18,
+    "labelSide": "below"
   }
 ]

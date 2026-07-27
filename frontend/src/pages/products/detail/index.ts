@@ -45,7 +45,9 @@ function createProductDetail(product: Product): HTMLElement {
   image.alt = productName;
   image.width = 960;
   image.height = 720;
-  media.append(image, createProductStatus(product.contentStatus));
+  media.appendChild(image);
+  const productStatus = createProductStatus(product.contentStatus);
+  if (productStatus) media.appendChild(productStatus);
 
   const intro = document.createElement('div');
   intro.className = 'product-detail__intro';
@@ -165,7 +167,9 @@ function createDownloads(downloads: readonly ProductDownload[] | undefined): HTM
 
     const title = document.createElement('strong');
     title.textContent = td(download, 'title');
-    item.append(title, createProductStatus(download.status));
+    item.appendChild(title);
+    const downloadStatus = createProductStatus(download.status);
+    if (downloadStatus) item.appendChild(downloadStatus);
     list.appendChild(item);
   }
   return createDetailSection('products.detail.downloads', list);

@@ -61,17 +61,19 @@ function createPartnerGroup(partnerGroup: PartnerGroup): HTMLElement {
   title.className = 'client-logos__group-title';
   title.textContent = td(partnerGroup, 'name');
 
-  const statusLabel = document.createElement('span');
-  statusLabel.className = 'client-logos__status';
-  statusLabel.textContent = t(`home.clients.status.${partnerGroup.status}`);
-
   const partnerList = document.createElement('ul');
   partnerList.className = 'client-logos__grid';
   for (const partner of partnerGroup.partners) {
     partnerList.appendChild(createPartnerTile(partner));
   }
 
-  groupHeader.append(title, statusLabel);
+  groupHeader.appendChild(title);
+  if (partnerGroup.status !== 'verified-content') {
+    const statusLabel = document.createElement('span');
+    statusLabel.className = 'client-logos__status';
+    statusLabel.textContent = t(`home.clients.status.${partnerGroup.status}`);
+    groupHeader.appendChild(statusLabel);
+  }
   groupSection.append(groupHeader, partnerList);
   return groupSection;
 }

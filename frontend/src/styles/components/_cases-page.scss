@@ -84,23 +84,35 @@
     }
   }
 
+  &__map-panel {
+    display: grid;
+    align-content: start;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
   &__stage {
     position: relative;
     min-width: 0;
     overflow: hidden;
-    aspect-ratio: 2 / 1;
+    isolation: isolate;
+    aspect-ratio: 1000 / 570;
     border: 1px solid rgb(255 255 255 / 14%);
     border-radius: $radius-md;
-    background: rgb(255 255 255 / 4%);
+    background-color: rgb(255 255 255 / 4%);
+    background-image:
+      linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+    background-size: 12.5% 25%;
   }
 
   &__world {
-    display: block;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
     width: 100%;
     height: 100%;
-    fill: rgb(255 255 255 / 12%);
-    stroke: rgb(255 255 255 / 22%);
-    stroke-width: 2;
+    object-fit: fill;
   }
 
   &__point {
@@ -110,6 +122,19 @@
     height: 2.75rem;
     translate: -50% -50%;
     cursor: pointer;
+    overflow: visible;
+
+    &--verified {
+      z-index: 3;
+    }
+
+    &--coverage {
+      z-index: 2;
+    }
+
+    &[aria-pressed='true'] {
+      z-index: 5;
+    }
 
     &::before {
       content: '';
@@ -130,6 +155,19 @@
       rotate: 45deg;
     }
 
+    &--coverage::after {
+      content: '';
+      position: absolute;
+      inset: 0.7rem;
+      border: 1px solid rgb(168 255 96 / 48%);
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    &--coverage[aria-pressed='true']::after {
+      animation: case-map-pulse 2.4s ease-out infinite;
+    }
+
     &:hover::before,
     &[aria-pressed='true']::before {
       scale: 1.35;
@@ -141,6 +179,173 @@
       outline: 2px solid $color-bg;
       outline-offset: -2px;
     }
+  }
+
+  &__point-label {
+    position: absolute;
+    width: max-content;
+    max-width: min(12rem, 32vw);
+    padding: 0.32rem 0.5rem;
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 0.25rem;
+    background: rgb(15 46 37 / 94%);
+    box-shadow: 0 0.4rem 1rem rgb(0 0 0 / 18%);
+    color: $color-bg;
+    font-size: clamp(0.65rem, 1.15vw, 0.78rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: left;
+    white-space: normal;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-base, translate $transition-base;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: rgb(255 255 255 / 38%);
+    }
+
+    &--above {
+      left: 50%;
+      bottom: calc(100% - 0.15rem);
+      translate: -50% 0.25rem;
+
+      &::before {
+        top: 100%;
+        left: 50%;
+        width: 1px;
+        height: 0.45rem;
+      }
+    }
+
+    &--below {
+      top: calc(100% - 0.15rem);
+      left: 50%;
+      translate: -50% -0.25rem;
+
+      &::before {
+        bottom: 100%;
+        left: 50%;
+        width: 1px;
+        height: 0.45rem;
+      }
+    }
+
+    &--left {
+      top: 50%;
+      right: calc(100% - 0.15rem);
+      translate: 0.25rem -50%;
+
+      &::before {
+        top: 50%;
+        left: 100%;
+        width: 0.45rem;
+        height: 1px;
+      }
+    }
+
+    &--right {
+      top: 50%;
+      left: calc(100% - 0.15rem);
+      translate: -0.25rem -50%;
+
+      &::before {
+        top: 50%;
+        right: 100%;
+        width: 0.45rem;
+        height: 1px;
+      }
+    }
+  }
+
+  &__point--verified &__point-label,
+  &__point:hover &__point-label,
+  &__point:focus-visible &__point-label,
+  &__point[aria-pressed='true'] &__point-label {
+    opacity: 1;
+  }
+
+  &__point:hover &__point-label--above,
+  &__point:focus-visible &__point-label--above,
+  &__point[aria-pressed='true'] &__point-label--above,
+  &__point:hover &__point-label--below,
+  &__point:focus-visible &__point-label--below,
+  &__point[aria-pressed='true'] &__point-label--below {
+    translate: -50% 0;
+  }
+
+  &__point:hover &__point-label--left,
+  &__point:focus-visible &__point-label--left,
+  &__point[aria-pressed='true'] &__point-label--left,
+  &__point:hover &__point-label--right,
+  &__point:focus-visible &__point-label--right,
+  &__point[aria-pressed='true'] &__point-label--right {
+    translate: 0 -50%;
+  }
+
+  &__point-selector {
+    display: none;
+    grid-auto-columns: minmax(9rem, 42%);
+    grid-auto-flow: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0 0 0.25rem;
+    overflow-x: auto;
+    list-style: none;
+    scrollbar-width: thin;
+    scroll-snap-type: x proximity;
+  }
+
+  &__point-selector li {
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  &__selector-button {
+    display: grid;
+    grid-template-columns: 1rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    min-height: 2.75rem;
+    height: 100%;
+    padding: 0.5rem 0.625rem;
+    border: 1px solid rgb(255 255 255 / 14%);
+    border-radius: $radius-sm;
+    background: rgb(255 255 255 / 5%);
+    color: rgb(255 255 255 / 76%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: left;
+
+    &[aria-pressed='true'] {
+      border-color: $color-accent;
+      background: rgb(168 255 96 / 10%);
+      color: $color-bg;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-bg;
+      outline-offset: -3px;
+    }
+  }
+
+  &__selector-mark {
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid $color-accent;
+  }
+
+  &__selector-button--verified &__selector-mark {
+    border-color: $color-bg;
+    border-radius: 50%;
+    background: $color-accent;
+  }
+
+  &__selector-button--coverage &__selector-mark {
+    rotate: 45deg;
   }
 
   &__details {
@@ -189,6 +394,44 @@
 
   &__precision-note {
     font-size: 0.8125rem;
+  }
+}
+
+@keyframes case-map-pulse {
+  from {
+    scale: 0.55;
+    opacity: 0.75;
+  }
+
+  to {
+    scale: 1.65;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-map__point--coverage::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+@media (width <= $breakpoint-lg) {
+  .case-map__point-selector {
+    display: grid;
+  }
+}
+
+@media (width < $breakpoint-md), (hover: none) {
+  .case-map {
+    &__point-label {
+      display: none;
+      max-width: 9rem;
+    }
+
+    &__point[aria-pressed='true'] &__point-label {
+      display: block;
+    }
   }
 }
 
@@ -436,8 +679,8 @@
       display: grid;
     }
 
-    &__stage {
-      aspect-ratio: 4 / 3;
+    &__point-selector {
+      grid-auto-columns: minmax(8.5rem, 65%);
     }
   }
 
