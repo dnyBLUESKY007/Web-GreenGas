@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: Deployed fixed candidate `9c6460d` for GitHub #24. A verified pre-deployment rollback archive is retained; Nginx, 48 files, 20 Chrome route/viewport checks, trilingual switching, refined map behavior, exact map-asset identity, and 39 route/locale public-status scans pass.
+
 > 2026-07-27: Public status reminders are now placeholder-only across cases, maps, products, industries, partners, and support previews. Neutral project-point wording replaces verified-case labels; reusable renderers suppress formal internal statuses. Typecheck, 24 tests, build, 15 viewport checks, and 39 route/locale public-text scans pass; not deployed.
 
 > 2026-07-27: Completed GitHub #24 locally without deployment. The SANY Japan-inspired case map now uses a detailed lazy-loaded Natural Earth SVG, calibrated layered markers, short multilingual labels, selected-only coverage motion, and a synchronized 44px mobile/tablet point selector. Typecheck, all 23 tests, production build, 15 Chrome route/viewport checks, three locale transitions, and 390/1440px visual review pass.
@@ -73,10 +75,11 @@
 
 ## 当前焦点
 
-GitHub #24 地图精细化已在本地完成并通过自动化及浏览器验收，尚未部署或关闭 Issue。当前生产仍为固定候选 `9742d1b`；案例内容标签调整也尚未单独部署。浩达工具地点待甲方补充，因此暂不生成地图点。
+GitHub #24 地图精细化与公开状态标签收敛已随固定候选 `9c6460d` 发布并通过线上验收，等待关闭 Issue。浩达工具地点待甲方补充，因此暂不生成地图点。
 
 ## 近期变更
 
+- 2026-07-27 #24 生产发布：固定候选 `9c6460d` 已上线；保留部署前回滚归档，Nginx、48 文件、20 组 Chrome 检查、三语、地图资源一致性及 39 组公开状态文案扫描通过。
 - 2026-07-27 公开状态标签收敛：地图改用中性“案例项目点”，行业直接声明占位，产品/合作/技术摘要/行业渲染器只为占位或待替换内容创建提醒；24 项测试、构建及 39 组三语路由全文扫描通过，未部署。
 - 2026-07-27 地图精细化：按三一日本地图构图重建本地案例地图，使用 Natural Earth 1:50m SVG、固定比例、短三语标签、分层点位、选中市场动效和移动/平板 44px 点位选择条；23 项测试、构建、15 组 Chrome 检查及 390/1440px 视觉复核通过，未部署。
 - 2026-07-27 案例内容标签：列表、详情和首页卡片只为 `example` 显示三语占位徽标；内部正式状态及地图地点证据语义保持不变。
@@ -151,7 +154,8 @@ GitHub #24 地图精细化已在本地完成并通过自动化及浏览器验收
 
 ## 近期任务 Plan
 
-- `ai-memories/tasks/2026-07-27-refined-case-world-map.md`（#24 已在本地完成；类型检查、23 项测试、构建、多宽度浏览器与视觉复核通过，未部署）
+- `ai-memories/tasks/2026-07-27-public-placeholder-labels-only.md`（已随 #24 部署；正式内容不显示状态提醒，39 组三语路由扫描通过）
+- `ai-memories/tasks/2026-07-27-refined-case-world-map.md`（#24 已部署；类型检查、24 项测试、构建及 20 组线上浏览器检查通过）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-release-report.md`（#15 已合并并通过 23 项组合测试；GitHub issue 已关闭）
 - `ai-memories/tasks/2026-07-27-approved-production-deployment.md`（GitHub #16 已部署、通过线上验收并关闭；父任务 #1 已关闭）
 - `ai-memories/tasks/2026-07-26-release-candidate-material-gap-report.md`（GitHub #15 已完成；23 项测试及可重复根/子路径构建通过，候选已由 #16 发布）
@@ -177,5 +181,4 @@ GitHub #24 地图精细化已在本地完成并通过自动化及浏览器验收
 ## 待决问题 / 阻塞
 
 - 浩达工具项目地点仍待甲方补充；在获得可靠地点前不生成地图点
-- GitHub #24 地图视觉与交互优化保持开放，但不阻塞当前生产版本
 - 甲方真实厂址与 GCJ-02 经纬度（Contact 地图依赖）

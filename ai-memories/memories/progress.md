@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Deployed GitHub #24 candidate `9c6460d`. The refined Natural Earth map and placeholder-only public status labels are live; rollback archive, Nginx, 48 files, 20 viewport checks, three locales, map asset identity, and 39 route/locale scans pass.
+
 > 2026-07-27: Public content-status reminders are now restricted to placeholder, pending-replacement, or unavailable content. Map/project wording is neutral, and reusable product, industry, partner, and support renderers suppress formal internal statuses. Typecheck, 24/24 tests, build, 15 viewport checks, and 39 route/locale text scans pass; not deployed.
 
 > 2026-07-27: Completed GitHub #24 locally without deployment. The case map now follows the SANY Japan composition with a detailed lazy-loaded Natural Earth SVG, calibrated verified/coverage markers, short multilingual labels, selected-only motion, and a synchronized 44px mobile/tablet selector. Typecheck, 23/23 tests, build, 15 Chrome route/viewport checks, three locales, and 390/1440px visual review pass.
@@ -132,7 +134,6 @@
 - EmailJS 尚未接入
 - 无自动化 CI 发布（当前为本地脚本 + SSH）
 - 浩达工具项目地点尚未提供，当前不生成地图点
-- GitHub #24 地图视觉与交互优化尚未执行，但不阻塞当前生产版本
 
 ## 里程碑记录
 
@@ -174,5 +175,5 @@
 | 2026-07-27 | ISO 编号确认 | 完成 GitHub #21 本地修改；公开中英俄 About 文案使用 `ISO14001`，未部署 |
 | 2026-07-27 | 甲方案例包替换 | 完成 GitHub #20 四项案例、23 张图片和三个已核实地图点；类型检查与 23 项测试通过，未部署 |
 | 2026-07-27 | 案例状态标签收敛 | 正式案例移除公开状态徽标，仅对示例占位案例显示明确三语标记；地图证据语义保持不变 |
-| 2026-07-27 | 案例地图精细化 | 完成 GitHub #24 本地实现；Natural Earth 精细底图、分层短标签、移动触控选择与多宽度三语验收通过，未部署 |
+| 2026-07-27 | 案例地图精细化 | GitHub #24 固定候选 `9c6460d` 已上线；Natural Earth 精细底图、分层短标签、移动触控与线上三语验收通过 |
 | 2026-07-27 | 公开状态提醒收敛 | 正式内容不再显示已核实类状态；地图、产品、行业、合作与支持仅保留占位/待替换提醒，39 组三语路由扫描通过 |

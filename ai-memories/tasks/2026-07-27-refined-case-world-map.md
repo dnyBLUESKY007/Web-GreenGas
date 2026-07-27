@@ -1,7 +1,7 @@
 # Task: 精细化案例世界地图视觉与交互
 
 - **日期**：2026-07-27
-- **状态**：已完成（本地，未部署）
+- **状态**：已完成并部署
 - **关联**：GitHub #24、`ai-memories/tasks/2026-07-26-layered-case-world-map.md`、`ai-memories/tasks/2026-07-26-website-restructure-planning.md`
 
 ## Problem / 目标
@@ -35,6 +35,7 @@
 - 2026-07-27：Natural Earth 1:50m 陆地数据经 0.18px 容差简化为 247124 字节本地 SVG（gzip 81.32kB），保留 1000×570 固定坐标系；资源使用 intrinsic size、lazy、async decoding 和 low fetch priority，不增加运行时地图依赖。
 - 2026-07-27：初次审查发现南非同国双点的 44px 地图触控区在小屏重叠。保留地理点位的同时新增 <=1024px 横向点位选择条，七个点均有同步 `aria-pressed` 的独立 44px 控件；市场覆盖脉冲改为仅选中时出现。
 - 2026-07-27：类型检查、全部 23 项测试和生产构建通过；Chrome 在 320/390/768/1024/1440px 的首页、案例中心和案例详情共 15 组检查及中英俄切换通过。390px 与 1440px 地图截图人工复核无变形、溢出或标签遮挡。未部署或关闭 GitHub Issue。
+- 2026-07-27：固定候选 `9c6460d` 已发布至生产；Nginx、20 组线上视口/路由、三语、地图资源哈希及公开状态文案扫描均通过。部署证据见 `ai-memories/releases/2026-07-27-issue-24-production.md`。
 
 ## Lessons Learned
 
