@@ -20,7 +20,6 @@ export function createFooter(): HTMLElement {
       <span class="footer__name-en">${company.name}</span>
       <span class="footer__name-zh">${company.name_zh ?? ''}</span>
     </p>
-    <p class="footer__tagline">${td(company, 'tagline')}</p>
   `;
 
   const contactBlock = document.createElement('div');

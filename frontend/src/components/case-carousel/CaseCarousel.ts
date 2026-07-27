@@ -1,3 +1,4 @@
+import { createCaseMap } from '@/components/case-map/CaseMap';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { cdnUrl } from '@/config/assets';
 import { getPrimaryProjectImage, projects } from '@/data/projects';
@@ -54,7 +55,11 @@ export function createCaseCarousel(): HTMLElement {
   }
 
   trackWrapper.appendChild(track);
-  container.append(head, trackWrapper);
+  container.append(
+    head,
+    trackWrapper,
+    createCaseMap(new Set(projects.map(({ id }) => id))),
+  );
   section.appendChild(container);
 
   initializeCarousel(track, prevBtn, nextBtn);
@@ -71,6 +76,7 @@ function createCaseCard(project: Project): HTMLElement {
 
   const article = document.createElement('article');
   article.className = 'case-card';
+  article.id = `case-card-${project.id}`;
 
   const link = document.createElement('a');
   link.className = 'case-card__link';

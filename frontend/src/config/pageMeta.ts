@@ -3,7 +3,7 @@ import type { PageId, PageMeta } from '@/types';
 import { cdnUrl } from '@/config/assets';
 
 const DEFAULT_OG_IMAGE = cdnUrl('company', 'company-exterior-photo-beautify.webp');
-const BRAND_TITLE = 'GREENGAS 格灵空调';
+const BRAND_TITLE = '格灵空调';
 
 export const PAGE_META: Record<PageId, PageMeta> = {
   home: {

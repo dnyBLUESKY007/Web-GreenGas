@@ -51,6 +51,14 @@ test('homepage follows the approved structured-content order and preserves statu
     for (const pattern of patterns) assert.match(source, pattern, `${path} should satisfy ${pattern}`);
   }
 
+  const caseCarousel = await read('src/components/case-carousel/CaseCarousel.ts');
+  assert.match(caseCarousel, /createCaseMap\(new Set\(projects\.map/);
+  assert.match(caseCarousel, /article\.id = `case-card-\$\{project\.id\}`/);
+
+  const caseCarouselStyles = await read('src/styles/components/_case-carousel.scss');
+  assert.match(caseCarouselStyles, /max-width: 100%/);
+  assert.doesNotMatch(caseCarouselStyles, /margin-inline-end:\s*calc\(-1/);
+
   const company = JSON.parse(await read('src/data/company.json'));
   assert.match(company.profile.paragraphs_zh[0], /^宁波格灵空调科技有限公司是集设计开发/);
 

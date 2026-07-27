@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-const BRAND_TITLE = 'GREENGAS 格灵空调';
+const BRAND_TITLE = '格灵空调';
 const root = new URL('../', import.meta.url);
 const htmlEntries = [
   'index.html',
@@ -82,6 +82,9 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
     const html = await read(htmlPath);
     assert.match(html, new RegExp(`<title>${BRAND_TITLE}</title>`), htmlPath);
   }
+
+  const footer = await read('src/components/footer/Footer.ts');
+  assert.doesNotMatch(footer, /footer__tagline|company, 'tagline'/);
 
   const legacyRoutes = [
     ['solutions', '/products/'],

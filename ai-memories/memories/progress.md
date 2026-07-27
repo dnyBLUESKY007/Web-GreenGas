@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Completed GitHub #25 locally without deployment. The homepage representative-project section reuses the Case Center map with valid list/detail targets, carousel scrolling is container-bound without the former negative margin, the shared footer omits its tagline, and every static/runtime browser title is `格灵空调`. Typecheck, all 23 tests, and the production build pass.
+
 > 2026-07-27: Completed GitHub #20 locally without deployment. Four stakeholder-supplied cases replace the prior case set, all 23 approved images are referenced, optional narrative/source fields preserve source boundaries, and only the three cases with supplied country locations receive verified map points. Typecheck and all 23 tests pass.
 
 > 2026-07-27: Completed GitHub #21 locally without deployment. Stakeholder confirmation established that `ISO140001` was a typo, and current public About copy now uses `ISO14001` in English, Chinese, and Russian. Historical records and source archives remain unchanged.
