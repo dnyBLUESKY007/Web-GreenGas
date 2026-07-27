@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: GitHub #23 production deployment succeeded for fixed application candidate `9742d1b`. A verified pre-deployment rollback archive is retained; Nginx, eight public routes, 20 live Chrome route/viewport checks, trilingual switching, title/footer/ISO/map contracts, 23 OSS images, and exact local/remote identity across 47 files all pass.
+
 > 2026-07-27: Completed GitHub #22 release-candidate validation without deployment. Application commit `9742d1b` produces reproducible 47-file root and `/rc/` builds; typecheck, all 23 tests, 15 Chrome route/viewport checks, trilingual switching, and all 23 new OSS image checks pass. Haoda location, map redesign #24, two build-only dependency advisories, EmailJS, and final product/support materials remain explicit non-blockers.
 
 > 2026-07-27: Completed GitHub #25 locally without deployment. The homepage representative-project area now reuses the Case Center map with valid card/detail links, carousel overflow remains inside its container, the shared footer omits the tagline, and all static/runtime browser titles use `格灵空调`. Typecheck, all 23 tests, and the production build pass.
@@ -63,10 +65,11 @@
 
 ## 当前焦点
 
-GitHub #18 正在执行今日案例、首页和生产发布闭环。#19、#20、#21、#25 的素材与实现均已完成，#22 已固定并验收 `9742d1b` 应用候选；下一步是 #23 生产部署。浩达工具地点待甲方补充，因此暂不生成地图点。
+GitHub #18 的案例、首页和生产发布已完成实现、候选验收和生产部署。固定应用候选 `9742d1b` 已上线并通过全部核心验收；当前只需提交发布记录、确认 Issue 状态并关闭总 Issue。浩达工具地点待甲方补充，因此暂不生成地图点。
 
 ## 近期变更
 
+- 2026-07-27 生产部署：固定 `9742d1b` 候选已发布；保留部署前回滚归档，Nginx、八路由、20 组在线浏览器检查、三语、ISO、标题/页脚、案例地图、23 张 OSS 图片及 47 文件本地/远端一致性均通过。
 - 2026-07-27 发布候选：固定 `9742d1b`；类型检查、23 项测试、根/子路径可重复构建、五宽度三路由 Chrome 检查、三语切换及 23 张新增 OSS 图片均通过。
 - 2026-07-27 首页与全局展示：首页代表性项目区复用案例地图并建立有效卡片锚点；轮播横向滚动限制在容器内；页脚移除 tagline；全站浏览器标题统一为“格灵空调”。类型检查、23 项测试和生产构建通过。
 - 2026-07-27 甲方案例替换：案例中心仅保留浩达工具、Netcare Pinehaven、毛里塔尼亚国会大楼和布里斯班机场；23 张已批准图片全部接入，地图展示三个有国家级地点依据的案例点，内部溯源不公开显示。

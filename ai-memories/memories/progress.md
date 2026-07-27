@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Deployed fixed candidate `9742d1b` for GitHub #23 to production. The verified rollback archive is `ignored/deployment-rollbacks/2026-07-27-pre-issue-23-dist.tar.gz`; Nginx, eight routes, 20 live Chrome viewport/route checks, all locales, title/footer/ISO/map behavior, 23 new OSS images, and exact local/remote identity across 47 files pass.
+
 > 2026-07-27: Completed GitHub #22 without deployment. Fixed `9742d1b` as the sole application candidate; typecheck, 23/23 tests, reproducible 47-file root and `/rc/` builds, 15 Chrome viewport/route checks, all three locale transitions, and 23/23 new OSS image checks pass. Known non-blockers are recorded in `ai-memories/releases/2026-07-27-issue-22-rc.md`.
 
 > 2026-07-27: Completed GitHub #25 locally without deployment. The homepage representative-project section reuses the Case Center map with valid list/detail targets, carousel scrolling is container-bound without the former negative margin, the shared footer omits its tagline, and every static/runtime browser title is `格灵空调`. Typecheck, all 23 tests, and the production build pass.
