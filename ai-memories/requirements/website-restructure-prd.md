@@ -88,6 +88,6 @@ All public content must carry an explicit status. Verified Content may be presen
 
 ## Further Notes
 
-- The supplied company description currently contains `ISO140001`. The material coordinator must confirm whether this should be `ISO14001`; the implementation must not silently change formal stakeholder copy before confirmation.
+- On 2026-07-27, the stakeholder confirmed that `ISO140001` in the supplied company description was a typo. Current public copy must use `ISO14001`; source archives remain unchanged.
 - The existing project includes archived GREENGAS news and case content that should take priority over invented replacements.
 - The supplied archives are now fully local under `ignored/source-archives/` and extracted by archive name under `ignored/extracted/`. In particular, `全资料.rar` is available at `ignored/source-archives/全资料.rar` and its contents at `ignored/extracted/全资料/`.

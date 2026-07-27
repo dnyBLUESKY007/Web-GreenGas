@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Completed GitHub #21 locally without deployment. Stakeholder confirmation established that `ISO140001` was a typo, and current public About copy now uses `ISO14001` in English, Chinese, and Russian. Historical records and source archives remain unchanged.
+
 > 2026-07-27: Completed and closed the approved GitHub #16 production deployment and parent #1 from `d47c491`. Typecheck, all 23 tests, the production build, Nginx validation/reload, all eight public destination checks, live trilingual switching, approved-candidate hash reconciliation, and exact local/remote verification across 46 files pass. The release owner accepted the documented content gaps, and the previous production artifact is retained locally for rollback.
 
 > 2026-07-26: Integrated Sandcastle issue #15 by fast-forward. Release-candidate evidence and the final material-gap report retain all previous site contracts. Frontend typecheck and the complete 23-test suite pass; GitHub #15 is closed and production remains unchanged.
@@ -51,7 +53,7 @@
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
 
 > 项目的“状态快照”：已完成、待办、已知问题。细节可随时间模糊化，只保留结论。
-> 最近更新：2026-07-26
+> 最近更新：2026-07-27
 
 ## 已完成
 
@@ -86,6 +88,7 @@
 - **首页全部板块重组**：四图轮播与批准公司首段之后，依次接入产品、行业、案例、合作公司、精选新闻、技术支持与服务、公司联系摘要；共享数据、内容状态和子路径安全入口完整保留
 - **全站三语与响应式回归**：21 项组合契约覆盖三语键、跨页引用、内容状态及关键交互；修复深链、FAQ 锚点、轮播可访问性与俄文新闻卡溢出，图片失败显示三语不可用状态
 - **发布候选与最终资料报告**：记录集成源码、锁文件、工具版本、根/子路径可重复构建摘要；汇总完成范围、21 个顶层示例、待资料包、ISO/EmailJS/OSS/浏览器/审计阻塞，且未执行生产部署
+- **ISO 编号确认**：甲方于 2026-07-27 确认 `ISO140001` 为笔误；当前公开中英俄 About 文案使用 `ISO14001`，历史记录和来源归档保持不变
 
 ## 进行中
 
@@ -150,3 +153,4 @@
 | 2026-07-26 | 首页全部板块重组 | 完成 GitHub #13 九段批准信息流、共享数据预览、显式状态和三语响应式入口；17 项测试及根/子路径构建通过 |
 | 2026-07-26 | 全站三语与响应式回归 | 完成 GitHub #14 跨页/三语/响应式/可访问性修复；21 项测试、类型检查及根/子路径构建通过，记录 25 个 OSS 图片缺口 |
 | 2026-07-26 | 发布候选与最终资料报告 | 完成 GitHub #15；23 项测试、类型检查及可重复根/子路径构建通过，候选等待人工审批且未生产部署 |
+| 2026-07-27 | ISO 编号确认 | 完成 GitHub #21 本地修改；公开中英俄 About 文案使用 `ISO14001`，未部署 |

@@ -14,15 +14,24 @@ test('About page preserves formal company content and evidence boundaries', asyn
   const sourceParagraphs = source
     .split('\n')
     .filter((line) => line.startsWith('宁波格灵'));
+  const approvedSourceParagraphs = sourceParagraphs.map((paragraph) =>
+    paragraph.replace('ISO140001', 'ISO14001'),
+  );
 
   assert.equal(sourceParagraphs.length, 4);
-  assert.deepEqual(company.profile.paragraphs_zh, sourceParagraphs);
+  assert.deepEqual(company.profile.paragraphs_zh, approvedSourceParagraphs);
   assert.equal(company.profile.paragraphs.length, 4);
   assert.equal(company.profile.paragraphs_ru.length, 4);
   assert.ok(company.profile.paragraphs.every(Boolean));
   assert.ok(company.profile.paragraphs_ru.every(Boolean));
-  assert.match(company.profile.paragraphs_zh[2], /ISO140001/);
-  assert.doesNotMatch(company.profile.paragraphs_zh[2], /ISO14001(?!1)/);
+  for (const paragraphs of [
+    company.profile.paragraphs,
+    company.profile.paragraphs_zh,
+    company.profile.paragraphs_ru,
+  ]) {
+    assert.match(paragraphs[2], /ISO14001(?!1)/);
+    assert.doesNotMatch(paragraphs[2], /ISO140001/);
+  }
 
   assert.deepEqual(
     company.managementPrinciples.map((principle) => principle.title_zh),

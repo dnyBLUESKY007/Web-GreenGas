@@ -39,7 +39,7 @@ Rebuild About Us around the approved four-paragraph company description and supp
 ## Content Rules
 
 - The stakeholder-provided company description has priority over archive, legacy-site, and current-site wording.
-- Preserve `ISO140001` in formal copy until the material coordinator confirms whether `ISO14001` is intended; track the question in the daily summary.
+- The stakeholder confirmed on 2026-07-27 that `ISO140001` was a typo; use `ISO14001` in current public Chinese, English, and Russian copy while leaving source archives unchanged.
 - Certification display must use supplied GREENGAS evidence, not reference-site examples.
 - Contact values are Verified Content only after stakeholder confirmation or match with a higher-priority approved source.
 

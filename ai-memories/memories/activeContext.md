@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: Completed GitHub #21 locally without deployment. The stakeholder confirmed `ISO140001` was a typo; current public English, Chinese, and Russian About copy now uses `ISO14001`, while historical records and source archives remain unchanged.
+
 > 2026-07-27: Production deployment for GitHub #16 succeeded and GitHub #16 plus parent #1 are closed. The approved `d47c491` build passed typecheck, all 23 tests, Nginx validation/reload, eight-route public HTTP checks, live trilingual switching, and exact local/remote verification across 46 files. The release owner accepted the documented content gaps; a verified pre-deployment rollback artifact is retained locally.
 
 > 2026-07-26: Integrated Sandcastle issue #15 by fast-forward. The release-candidate evidence and final material-gap report now coexist with all prior site contracts. Frontend typecheck and all 23 tests pass; GitHub #15 is closed without a production deployment.
@@ -51,14 +53,15 @@
 > 2026-07-17: Completed page-content adjustments — News card metadata layout fix, stable Solutions product-tab order, homepage solution cards without page navigation, a fourth international-partnership statistic, and no homepage section eyebrows. Production build passed.
 
 > 更新最频繁的文件。每次里程碑或换方向时刷新，保证“下一步一目了然”。
-> 最近更新：2026-07-26
+> 最近更新：2026-07-27
 
 ## 当前焦点
 
-下一阶段网站改版的 #2–#16 已完成并发布到生产环境，父任务 #1 与发布任务 #16 均已关闭。发布负责人接受本次带已披露缺口发布；合作公司资料当前为零项获批，产品、行业和技术支持仍保留明确示例/待替换状态，25 个案例/新闻 OSS 图片仍待上传。EmailJS 继续由独立 #17 跟踪。完整资料请求见 `ai-memories/materials/2026-07-26-final-material-gap-report.md`。
+下一阶段网站改版的 #2–#16 已完成并发布到生产环境，父任务 #1 与发布任务 #16 均已关闭。发布负责人接受本次带已披露缺口发布；合作公司资料当前为零项获批，产品、行业和技术支持仍保留明确示例/待替换状态，25 个案例/新闻 OSS 图片仍待上传。`ISO140001` 已于 2026-07-27 确认为笔误，当前公开文案使用 `ISO14001`。EmailJS 继续由独立 #17 跟踪。完整资料请求见 `ai-memories/materials/2026-07-26-final-material-gap-report.md`。
 
 ## 近期变更
 
+- 2026-07-27 ISO 编号确认：甲方确认 `ISO140001` 为笔误；当前 About 中英俄公开公司描述统一改为 `ISO14001`，历史任务/发布记录及来源归档不改写。本次未部署。
 - 2026-07-27 生产发布：以 `d47c491` 构建并发布 GitHub #16；类型检查、23 项测试、Nginx 检查/reload、八项公网路由及核心资源均通过。线上 46 个文件与本地构建聚合摘要一致，原线上产物已保留在本地忽略目录作为回滚来源。
 - 2026-07-26 发布候选：确认 #2-#14 均关闭，以锁文件重建并通过类型检查、23 项测试及根/`/rc/` 双构建；两种候选摘要连续重建稳定。最终报告分列完成、未完成、21 个顶层示例、待替换资料包和外部阻塞；ISO 编号、EmailJS 与未部署边界明确。
 - 2026-07-26 全站回归：新增三语键与跨数据引用契约；修复产品/行业深链、行业示例案例空链接、FAQ 动态锚点、全局可访问名称、轮播动态偏好及俄文新闻卡固定高度问题；图片失败改为三语可访问状态。21 项测试及根/子路径构建通过，25 个案例/新闻 OSS 对象仍返回 404。
@@ -114,7 +117,7 @@
 - [x] 由发布负责人批准并完成 GitHub #16 生产部署
 - [ ] 提供并批准技术手册、产品样本、安装/调试/维护/故障、售前选型和售后服务文件及 OSS URL
 - [ ] 人工审批 GitHub #2 台账中的客户名称、肖像、场地、第三方图片、技术参数和公开许可
-- [ ] 确认公司描述中的 `ISO140001` 是否应为 `ISO14001`
+- [x] 甲方于 2026-07-27 确认 `ISO140001` 为笔误；当前公开文案使用 `ISO14001`
 - [ ] 核对并上传 `ignored/extracted/web-greengas/ignored/resources/web/page-header-*.webp` 五张图到对应 OSS 路径
 - [ ] 用户审阅首页及 About / News 视觉（Solutions 尖角贴合、五步工程能力区实图、About 布局）
 - [ ] 替换其余占位文案/图片为甲方真实素材
