@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-27: Closed GitHub #24 after successful production deployment and acceptance of candidate `9c6460d`.
+
 > 2026-07-27: Deployed GitHub #24 candidate `9c6460d`. The refined Natural Earth map and placeholder-only public status labels are live; rollback archive, Nginx, 48 files, 20 viewport checks, three locales, map asset identity, and 39 route/locale scans pass.
 
 > 2026-07-27: Public content-status reminders are now restricted to placeholder, pending-replacement, or unavailable content. Map/project wording is neutral, and reusable product, industry, partner, and support renderers suppress formal internal statuses. Typecheck, 24/24 tests, build, 15 viewport checks, and 39 route/locale text scans pass; not deployed.

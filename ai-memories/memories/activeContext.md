@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-27: Closed GitHub #24 after fixed candidate `9c6460d` was deployed and all production acceptance checks passed.
+
 > 2026-07-27: Deployed fixed candidate `9c6460d` for GitHub #24. A verified pre-deployment rollback archive is retained; Nginx, 48 files, 20 Chrome route/viewport checks, trilingual switching, refined map behavior, exact map-asset identity, and 39 route/locale public-status scans pass.
 
 > 2026-07-27: Public status reminders are now placeholder-only across cases, maps, products, industries, partners, and support previews. Neutral project-point wording replaces verified-case labels; reusable renderers suppress formal internal statuses. Typecheck, 24 tests, build, 15 viewport checks, and 39 route/locale public-text scans pass; not deployed.
@@ -75,7 +77,7 @@
 
 ## 当前焦点
 
-GitHub #24 地图精细化与公开状态标签收敛已随固定候选 `9c6460d` 发布并通过线上验收，等待关闭 Issue。浩达工具地点待甲方补充，因此暂不生成地图点。
+GitHub #24 地图精细化与公开状态标签收敛已随固定候选 `9c6460d` 发布、通过线上验收并关闭。浩达工具地点待甲方补充，因此暂不生成地图点。
 
 ## 近期变更
 
