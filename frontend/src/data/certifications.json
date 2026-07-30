@@ -1,18 +1,26 @@
 [
   {
-    "id": "ce",
-    "name": "CE Certification",
-    "name_zh": "CE 认证",
-    "name_ru": "Сертификация CE",
-    "image": "achieve-deprecated-cert-ce.webp",
-    "publicationStatus": "pending-replacement"
+    "id": "iso9001",
+    "name": "ISO 9001:2015 Quality Management Certificate",
+    "name_zh": "ISO 9001:2015 质量管理体系证书",
+    "name_ru": "Сертификат системы менеджмента качества ISO 9001:2015",
+    "image": "iso9001-2020-2023.webp",
+    "imageCategory": "certifications-0730",
+    "validFrom": "2020-12-16",
+    "validUntil": "2023-12-15",
+    "validityStatus": "historical",
+    "publicationStatus": "approved"
   },
   {
-    "id": "iso9001",
-    "name": "ISO 9001 Quality Management",
-    "name_zh": "ISO 9001 质量管理体系",
-    "name_ru": "ISO 9001 Менеджмент качества",
-    "image": "achieve-deprecated-cert-iso9001.webp",
-    "publicationStatus": "pending-replacement"
+    "id": "ce",
+    "name": "CE Attestation Certificate",
+    "name_zh": "CE 符合性认证证书",
+    "name_ru": "Сертификат соответствия CE",
+    "image": "ce-2020-2025.webp",
+    "imageCategory": "certifications-0730",
+    "validFrom": "2020-11-09",
+    "validUntil": "2025-11-08",
+    "validityStatus": "historical",
+    "publicationStatus": "approved"
   }
 ]

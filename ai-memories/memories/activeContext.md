@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-30: Completed the 0730 supplemental-content update locally without application deployment. Product navigation now uses the requested four-block order and a large product hero; Haoda's exterior image is last; two expired certificates are explicitly historical; four supplied partners and ten news records are available. Twenty-five new WebP objects were uploaded and verified; typecheck, 24 tests, build, and Chrome review pass. DNS remains deferred pending public-security filing.
+
 > 2026-07-27: Closed GitHub #24 after fixed candidate `9c6460d` was deployed and all production acceptance checks passed.
 
 > 2026-07-27: Deployed fixed candidate `9c6460d` for GitHub #24. A verified pre-deployment rollback archive is retained; Nginx, 48 files, 20 Chrome route/viewport checks, trilingual switching, refined map behavior, exact map-asset identity, and 39 route/locale public-status scans pass.
@@ -77,10 +79,11 @@
 
 ## 当前焦点
 
-GitHub #24 地图精细化与公开状态标签收敛已随固定候选 `9c6460d` 发布、通过线上验收并关闭。浩达工具地点待甲方补充，因此暂不生成地图点。
+0730 补充内容已在本地实现并完成 OSS 素材上传，但网站代码尚未部署。域名解析按甲方要求等待公安备案完成；浩达工具地点仍待补充，因此暂不生成地图点。
 
 ## 近期变更
 
+- 2026-07-30 补充资料接入：产品中心按工业空调、中央空调主机、中央空调末端、非标定制重排并增加大版头；浩达厂区图移到最后；ISO/CE 以历史证书及证载有效期展示；接入四家合作公司和四篇新增新闻，并替换 2019 展会图片。25 张新 WebP 已上传 OSS 且逐项验证，类型检查、24 项测试、构建和 Chrome 视觉复核通过，未部署。
 - 2026-07-27 #24 生产发布：固定候选 `9c6460d` 已上线；保留部署前回滚归档，Nginx、48 文件、20 组 Chrome 检查、三语、地图资源一致性及 39 组公开状态文案扫描通过。
 - 2026-07-27 公开状态标签收敛：地图改用中性“案例项目点”，行业直接声明占位，产品/合作/技术摘要/行业渲染器只为占位或待替换内容创建提醒；24 项测试、构建及 39 组三语路由全文扫描通过，未部署。
 - 2026-07-27 地图精细化：按三一日本地图构图重建本地案例地图，使用 Natural Earth 1:50m SVG、固定比例、短三语标签、分层点位、选中市场动效和移动/平板 44px 点位选择条；23 项测试、构建、15 组 Chrome 检查及 390/1440px 视觉复核通过，未部署。
@@ -153,9 +156,12 @@ GitHub #24 地图精细化与公开状态标签收敛已随固定候选 `9c6460d
 - [ ] Contact 页高德地图（[issue-0001](../issues/issue-0001-contact-amap-map.md)）
 - [ ] EmailJS 表单接入
 - [ ] （可选）Cloudflare Pages 或 CI 自动发布
+- [ ] 公安备案完成后再执行 `greennb.com` 主站及语言子域名解析
+- [ ] 审批并部署 0730 补充内容候选
 
 ## 近期任务 Plan
 
+- `ai-memories/tasks/2026-07-30-stakeholder-supplemental-content.md`（本地实现完成；25 张 OSS 图片已上传验收，应用未部署，域名解析延期）
 - `ai-memories/tasks/2026-07-27-public-placeholder-labels-only.md`（已随 #24 部署；正式内容不显示状态提醒，39 组三语路由扫描通过）
 - `ai-memories/tasks/2026-07-27-refined-case-world-map.md`（#24 已部署；类型检查、24 项测试、构建及 20 组线上浏览器检查通过）
 - `ai-memories/tasks/2026-07-26-merge-sandcastle-release-report.md`（#15 已合并并通过 23 项组合测试；GitHub issue 已关闭）

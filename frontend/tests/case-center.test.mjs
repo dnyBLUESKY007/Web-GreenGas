@@ -68,11 +68,15 @@ test('case center provides sourced filterable cases and a recoverable generic de
     assert.ok(expectedImage, `${project.id}: image contract`);
     const [imageStem, imageCount] = expectedImage;
     assert.equal(project.images.length, imageCount, `${project.id}: image count`);
+    const primarySequence = project.id === 'haoda-tools-hvac' ? '02' : '01';
     assert.equal(
       project.images[0].filename,
-      `stakeholder-cases-2026/${imageStem}-01.webp`,
+      `stakeholder-cases-2026/${imageStem}-${primarySequence}.webp`,
       `${project.id}: primary image`,
     );
+    if (project.id === 'haoda-tools-hvac') {
+      assert.equal(project.images.at(-1).filename, 'stakeholder-cases-2026/haoda-tools-01.webp');
+    }
     for (const image of project.images) {
       assert.match(image.filename, new RegExp(`^stakeholder-cases-2026/${imageStem}-\\d{2}\\.webp$`));
       assert.ok(image.alt);

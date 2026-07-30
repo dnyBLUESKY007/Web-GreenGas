@@ -49,9 +49,27 @@ test('About page preserves formal company content and evidence boundaries', asyn
   }
 
   const certifications = JSON.parse(await read('src/data/certifications.json'));
-  assert.ok(certifications.every((certification) => certification.publicationStatus === 'pending-replacement'));
+  const imageResources = JSON.parse(await read('src/data/image-resources.json'));
+  assert.deepEqual(
+    certifications.map(({ id, publicationStatus, validityStatus, validUntil }) => ({
+      id,
+      publicationStatus,
+      validityStatus,
+      validUntil,
+    })),
+    [
+      { id: 'iso9001', publicationStatus: 'approved', validityStatus: 'historical', validUntil: '2023-12-15' },
+      { id: 'ce', publicationStatus: 'approved', validityStatus: 'historical', validUntil: '2025-11-08' },
+    ],
+  );
+  for (const certification of certifications) {
+    const imageUrl = `https://web-greengas.oss-cn-qingdao.aliyuncs.com/resources/${certification.imageCategory}/${certification.image}`;
+    assert.ok(imageResources[imageUrl], `registered certificate image ${imageUrl}`);
+  }
   const certificationComponent = await read('src/components/certifications/Certifications.ts');
   assert.match(certificationComponent, /publicationStatus === 'approved'/);
+  assert.match(certificationComponent, /cdnUrl\(cert\.imageCategory, cert\.image\)/);
+  assert.match(certificationComponent, /home\.certifications\.historical/);
   assert.match(certificationComponent, /about\.media\.pending/);
 
   const page = await read('src/pages/about/index.ts');
@@ -63,5 +81,6 @@ test('About page preserves formal company content and evidence boundaries', asyn
   for (const locale of ['en', 'zh', 'ru']) {
     const messages = JSON.parse(await read(`src/i18n/locales/${locale}.json`));
     assert.doesNotMatch(messages['meta.about.ogDescription'], /15\+|15 年|15-лет/);
+    assert.doesNotMatch(messages['about.certifications.desc'], /pending|待替换|ожидают замены/i);
   }
 });

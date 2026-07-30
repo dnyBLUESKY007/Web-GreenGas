@@ -35,7 +35,7 @@ export function createCertifications(): HTMLElement {
     if (cert.publicationStatus === 'approved') {
       const img = document.createElement('img');
       img.className = 'certifications__image';
-      img.src = cdnUrl('company', cert.image);
+      img.src = cdnUrl(cert.imageCategory, cert.image);
       img.alt = certificationName;
       img.loading = 'lazy';
       card.appendChild(img);
@@ -49,6 +49,12 @@ export function createCertifications(): HTMLElement {
       card.appendChild(placeholder);
     }
 
+    if (cert.validityStatus === 'historical') {
+      const validity = document.createElement('span');
+      validity.className = 'certifications__validity';
+      validity.innerHTML = `${t('home.certifications.historical')}<br><time datetime="${cert.validFrom}">${cert.validFrom}</time>–<time datetime="${cert.validUntil}">${cert.validUntil}</time>`;
+      caption.appendChild(validity);
+    }
     card.appendChild(caption);
     track.appendChild(card);
   }

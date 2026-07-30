@@ -85,6 +85,7 @@ All local material below is excluded from Git by `ignored/` and is available ins
   - `案例.zip`
   - `网站素材.zip`
   - `web-greengas.zip`
+  - `0730/补充.docx`、合作公司/新闻图片压缩包及备案、商务资质 PDF
 - Extracted material: `ignored/extracted/<archive-name>/`
   - Cases and descriptions: `ignored/extracted/全资料/`
   - Product images, catalogues, and translations: `ignored/extracted/网站素材/`

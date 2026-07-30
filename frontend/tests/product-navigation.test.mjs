@@ -12,7 +12,15 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
   const products = JSON.parse(await read('src/data/products.json'));
   const series = JSON.parse(await read('src/data/product-series.json'));
 
-  assert.ok(series.length >= 4);
+  assert.deepEqual(
+    series.map(({ id, name_zh }) => ({ id, name_zh })),
+    [
+      { id: 'industrial', name_zh: '工业空调' },
+      { id: 'central-host', name_zh: '中央空调主机系列' },
+      { id: 'commercial-terminal', name_zh: '中央空调末端系列' },
+      { id: 'custom', name_zh: '非标定制' },
+    ],
+  );
   assert.ok(products.length > 0);
   assert.equal(new Set(products.map(({ id }) => id)).size, products.length);
 
@@ -41,6 +49,8 @@ test('product navigation provides a reusable, explicitly labelled detail contrac
   const listing = await read('src/pages/products/index.ts');
   assert.match(listing, /basePath\(`\/products\/detail\/\?id=\$\{encodeURIComponent\(product\.id\)\}`\)/);
   assert.match(listing, /product\.contentStatus/);
+  assert.match(listing, /products-hero__media/);
+  assert.match(listing, /id === 'air-cooled-temp-humidity'/);
 
   const detail = await read('src/pages/products/detail/index.ts');
   assert.match(detail, /new URLSearchParams\(window\.location\.search\)\.get\('id'\)/);

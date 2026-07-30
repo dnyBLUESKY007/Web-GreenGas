@@ -17,13 +17,30 @@ function renderProductNavigation(): void {
   if (!main) return;
 
   const header = document.createElement('section');
-  header.className = 'page-header';
+  header.className = 'page-header products-hero';
   setPageHeaderBackground(header, '01_solutions.webp');
-  header.appendChild(createSectionTitle({
+  const headerContent = createSectionTitle({
     eyebrow: t('products.eyebrow'),
     title: t('products.title'),
     description: t('products.desc'),
-  }));
+  });
+  headerContent.classList.add('products-hero__content');
+
+  const heroProduct = products.find(({ id }) => id === 'air-cooled-temp-humidity');
+  if (heroProduct) {
+    const media = document.createElement('div');
+    media.className = 'products-hero__media';
+    const image = document.createElement('img');
+    image.src = heroProduct.image;
+    image.alt = td(heroProduct, 'name');
+    image.width = 760;
+    image.height = 570;
+    image.decoding = 'async';
+    media.appendChild(image);
+    header.append(headerContent, media);
+  } else {
+    header.appendChild(headerContent);
+  }
 
   const catalogue = document.createElement('section');
   catalogue.className = 'section product-catalogue';

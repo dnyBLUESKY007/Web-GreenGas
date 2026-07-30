@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-30: Completed the stakeholder supplemental-content candidate without deploying application code. The product page uses the requested four-series order and large visual header; Haoda's exterior photo is last; ISO 9001 and CE records are explicitly historical with validity dates; four partner identities and four new supplied articles join the archive. All 25 new WebP objects return HTTP 200 with exact local/remote sizes. Typecheck, 24 tests, build, diff checks, and Chrome visual review pass. DNS remains deferred pending public-security filing.
+
 > 2026-07-27: Closed GitHub #24 after successful production deployment and acceptance of candidate `9c6460d`.
 
 > 2026-07-27: Deployed GitHub #24 candidate `9c6460d`. The refined Natural Earth map and placeholder-only public status labels are live; rollback archive, Nginx, 48 files, 20 viewport checks, three locales, map asset identity, and 39 route/locale scans pass.

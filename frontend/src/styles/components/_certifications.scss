@@ -57,4 +57,14 @@
     color: $color-text-muted;
     text-align: center;
   }
+
+  &__validity {
+    display: block;
+    max-width: 13rem;
+    margin-top: 0.35rem;
+    color: #8a5a13;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    text-align: center;
+  }
 }

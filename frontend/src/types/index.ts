@@ -8,6 +8,10 @@ export interface Certification {
   readonly name_zh?: string;
   readonly name_ru?: string;
   readonly image: string;
+  readonly imageCategory: string;
+  readonly validFrom: string;
+  readonly validUntil: string;
+  readonly validityStatus: 'historical';
   readonly publicationStatus?: 'approved' | 'pending-replacement';
 }
 
@@ -31,6 +35,7 @@ export interface PartnerCompany {
   readonly name_ru?: string;
   readonly status: PartnerContentStatus;
   readonly logo: PartnerLogo | null;
+  readonly website?: string;
 }
 
 export interface PartnerGroup {
@@ -468,7 +473,7 @@ export interface NewsArticle {
   readonly id: string;
   readonly category: NewsCategory;
   readonly date: string;
-  readonly sourceUrl: string;
+  readonly sourceUrl?: string;
   readonly featured: boolean;
   readonly title: string;
   readonly title_zh: string;

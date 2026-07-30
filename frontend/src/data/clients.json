@@ -1,42 +1,70 @@
 [
   {
-    "id": "pending-partner-materials",
-    "name": "Partner materials pending",
-    "name_zh": "合作资料待补充",
-    "name_ru": "Материалы партнёров ожидаются",
-    "status": "pending-replacement",
+    "id": "international-partners",
+    "name": "International Partners",
+    "name_zh": "国际合作公司",
+    "name_ru": "Международные партнёры",
+    "status": "verified-content",
     "partners": [
       {
-        "id": "partner-slot-01",
-        "name": "Partner logo slot 01 — pending replacement",
-        "name_zh": "合作公司 Logo 位 01 — 待资料替换",
-        "name_ru": "Место для логотипа 01 — ожидает замены",
-        "status": "pending-replacement",
-        "logo": null
+        "id": "airwave-australia",
+        "name": "Airwave Air Conditioning Systems",
+        "name_zh": "Airwave 空调系统（澳大利亚）",
+        "name_ru": "Airwave Air Conditioning Systems (Австралия)",
+        "status": "verified-content",
+        "website": "https://www.airwave-ac.com/",
+        "logo": {
+          "category": "partners",
+          "filename": "airwave.webp",
+          "alt": "Airwave Air Conditioning Systems logo",
+          "alt_zh": "Airwave 空调系统标志",
+          "alt_ru": "Логотип Airwave Air Conditioning Systems"
+        }
       },
       {
-        "id": "partner-slot-02",
-        "name": "Partner logo slot 02 — pending replacement",
-        "name_zh": "合作公司 Logo 位 02 — 待资料替换",
-        "name_ru": "Место для логотипа 02 — ожидает замены",
-        "status": "pending-replacement",
-        "logo": null
+        "id": "ascent-aircon-india",
+        "name": "Ascent Aircon",
+        "name_zh": "Ascent Aircon（印度）",
+        "name_ru": "Ascent Aircon (Индия)",
+        "status": "verified-content",
+        "website": "https://www.ascentaircon.com/",
+        "logo": {
+          "category": "partners",
+          "filename": "ascent-aircon.webp",
+          "alt": "Ascent Aircon logo",
+          "alt_zh": "Ascent Aircon 标志",
+          "alt_ru": "Логотип Ascent Aircon"
+        }
       },
       {
-        "id": "partner-slot-03",
-        "name": "Partner logo slot 03 — pending replacement",
-        "name_zh": "合作公司 Logo 位 03 — 待资料替换",
-        "name_ru": "Место для логотипа 03 — ожидает замены",
-        "status": "pending-replacement",
-        "logo": null
+        "id": "ikra-korea",
+        "name": "Korea Refrigeration and Aquatic Food Safety Management Institute",
+        "name_zh": "大韩冷冻水产食品安全管理院",
+        "name_ru": "Корейский институт безопасности холодильной и рыбной продукции",
+        "status": "verified-content",
+        "website": "https://www.ikra.or.kr/",
+        "logo": {
+          "category": "partners",
+          "filename": "ikra.webp",
+          "alt": "Korea Refrigeration and Aquatic Food Safety Management Institute logo",
+          "alt_zh": "大韩冷冻水产食品安全管理院标志",
+          "alt_ru": "Логотип Корейского института безопасности холодильной и рыбной продукции"
+        }
       },
       {
-        "id": "partner-slot-04",
-        "name": "Partner logo slot 04 — pending replacement",
-        "name_zh": "合作公司 Logo 位 04 — 待资料替换",
-        "name_ru": "Место для логотипа 04 — ожидает замены",
-        "status": "pending-replacement",
-        "logo": null
+        "id": "k-cell-korea",
+        "name": "K-CELL",
+        "name_zh": "K-CELL（韩国）",
+        "name_ru": "K-CELL (Республика Корея)",
+        "status": "verified-content",
+        "website": "https://www.k-cell.com/",
+        "logo": {
+          "category": "partners",
+          "filename": "k-cell.webp",
+          "alt": "K-CELL partner logo",
+          "alt_zh": "K-CELL 合作公司标志",
+          "alt_ru": "Логотип партнёра K-CELL"
+        }
       }
     ]
   }

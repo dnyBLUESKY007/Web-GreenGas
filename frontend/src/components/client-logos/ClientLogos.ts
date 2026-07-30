@@ -106,6 +106,16 @@ function createPartnerTile(partner: PartnerCompany): HTMLLIElement {
   partnerName.className = 'client-logos__name';
   partnerName.textContent = td(partner, 'name');
 
-  tile.append(logoFrame, partnerName);
+  if (partner.website) {
+    const link = document.createElement('a');
+    link.className = 'client-logos__link';
+    link.href = partner.website;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.append(logoFrame, partnerName);
+    tile.appendChild(link);
+  } else {
+    tile.append(logoFrame, partnerName);
+  }
   return tile;
 }

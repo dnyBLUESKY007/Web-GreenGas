@@ -29,11 +29,11 @@
     "response_zh": "采用多系统可以除湿加湿以及制冷制热，更满足各种恒温恒湿环境。",
     "response_ru": "Многосистемная конфигурация обеспечивает осушение, увлажнение, охлаждение и нагрев для поддержания постоянной температуры и влажности.",
     "images": [
-      { "filename": "stakeholder-cases-2026/haoda-tools-01.webp", "alt": "Haoda Tools facility exterior", "alt_zh": "浩达工具厂区外观", "alt_ru": "Внешний вид предприятия Haoda Tools" },
       { "filename": "stakeholder-cases-2026/haoda-tools-02.webp", "alt": "Haoda Tools rooftop outdoor unit", "alt_zh": "浩达工具屋顶空调室外机", "alt_ru": "Наружный блок на крыше Haoda Tools" },
       { "filename": "stakeholder-cases-2026/haoda-tools-03.webp", "alt": "Haoda Tools rooftop outdoor units", "alt_zh": "浩达工具屋顶空调室外机组", "alt_ru": "Наружные блоки на крыше Haoda Tools" },
       { "filename": "stakeholder-cases-2026/haoda-tools-04.webp", "alt": "Haoda Tools temperature and humidity control unit installation", "alt_zh": "浩达工具恒温恒湿机组安装现场", "alt_ru": "Монтаж установки поддержания температуры и влажности Haoda Tools" },
-      { "filename": "stakeholder-cases-2026/haoda-tools-05.webp", "alt": "Haoda Tools production workshop", "alt_zh": "浩达工具生产车间", "alt_ru": "Производственный цех Haoda Tools" }
+      { "filename": "stakeholder-cases-2026/haoda-tools-05.webp", "alt": "Haoda Tools production workshop", "alt_zh": "浩达工具生产车间", "alt_ru": "Производственный цех Haoda Tools" },
+      { "filename": "stakeholder-cases-2026/haoda-tools-01.webp", "alt": "Haoda Tools facility exterior", "alt_zh": "浩达工具厂区外观", "alt_ru": "Внешний вид предприятия Haoda Tools" }
     ],
     "relatedCaseIds": []
   },
