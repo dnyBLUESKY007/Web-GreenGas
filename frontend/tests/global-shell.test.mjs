@@ -85,6 +85,8 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
 
   const footer = await read('src/components/footer/Footer.ts');
   assert.doesNotMatch(footer, /footer__tagline|company, 'tagline'/);
+  assert.match(footer, /filingLink\.href = 'https:\/\/beian\.miit\.gov\.cn\/'/);
+  assert.match(footer, /filingLink\.textContent = '浙ICP备2026058394号'/);
 
   const legacyRoutes = [
     ['solutions', '/products/'],

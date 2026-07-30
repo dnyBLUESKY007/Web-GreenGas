@@ -73,7 +73,14 @@ export function createFooter(): HTMLElement {
   copy.className = 'footer__copy';
   copy.textContent = t('footer.copy');
 
-  bar.appendChild(copy);
+  const filingLink = document.createElement('a');
+  filingLink.className = 'footer__filing';
+  filingLink.href = 'https://beian.miit.gov.cn/';
+  filingLink.target = '_blank';
+  filingLink.rel = 'noopener noreferrer';
+  filingLink.textContent = '浙ICP备2026058394号';
+
+  bar.append(copy, filingLink);
   inner.append(brandBlock, contactBlock, linksBlock);
   footer.append(inner, bar);
 

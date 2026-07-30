@@ -69,15 +69,30 @@
   }
 
   &__bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: min(100% - 2rem, $container-max-width);
+    margin: 0 auto;
     padding: 0.375rem 0;
     background-color: $color-primary-dark;
     border-top: 1px solid rgb(255 255 255 / 12%);
   }
 
   &__copy {
-    width: min(100% - 2rem, $container-max-width);
-    margin: 0 auto;
+    margin: 0;
     font-size: 0.8125rem;
     color: rgb(255 255 255 / 65%);
+  }
+
+  &__filing {
+    font-size: 0.8125rem;
+    color: rgb(255 255 255 / 65%);
+
+    &:hover {
+      color: $color-accent;
+    }
   }
 }
