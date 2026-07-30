@@ -1,6 +1,6 @@
 # Progress（进展与里程碑）
 
-> 2026-07-30: Completed the stakeholder supplemental-content candidate without deploying application code. The product page uses the requested four-series order and large visual header; Haoda's exterior photo is last; ISO 9001 and CE records are explicitly historical with validity dates; four partner identities and four new supplied articles join the archive. All 25 new WebP objects return HTTP 200 with exact local/remote sizes. Typecheck, 24 tests, build, diff checks, and Chrome visual review pass. DNS remains deferred pending public-security filing.
+> 2026-07-30: Deployed fixed supplemental-content candidate `820c080`. The four-series product layout and hero, Haoda image order, historical certificates, four partners, and four new articles are live. Twenty-five new WebP objects and one recovered legacy news image return HTTP 200. Typecheck, 24 tests, build, rollback archive, Nginx, 10 routes, exact identity across 48 files, and seven live Chrome locale/viewport checks pass. DNS remains deferred pending public-security filing.
 
 > 2026-07-27: Closed GitHub #24 after successful production deployment and acceptance of candidate `9c6460d`.
 
