@@ -1,5 +1,7 @@
 # Progress（进展与里程碑）
 
+> 2026-07-31: Deployed fixed candidate `f043249`. Four real-product hero groups, uniform 16:9 project cards, equal 4:3 home-news cards, stable news dates/full images, and certificate enlargement are live. Rollback archive, Nginx, eight routes, exact local/remote dist identity, and 390/1440px live browser checks pass. High-resolution certificate replacement remains pending stakeholder files.
+
 > 2026-07-31: Completed a local correction candidate without deployment. ISO 9001 and CE omit validity copy, load eagerly, and support in-page enlargement; the PDF limits ISO to 405×566 and OSS force-download behavior remains a cross-browser risk, so stakeholder high-resolution files are still required. The home carousel uses real product photography for four groups, representative projects are uniform 16:9, and the home news area uses three equal cards with taller 4:3 media and stable title/summary rhythm. Calendar dates and full-width intrinsic article images remain aligned. Typecheck, 24 tests, build, and browser checks at 390/1440px pass.
 
 > 2026-07-30: Deployed fixed supplemental-content candidate `820c080`. The four-series product layout and hero, Haoda image order, historical certificates, four partners, and four new articles are live. Twenty-five new WebP objects and one recovered legacy news image return HTTP 200. Typecheck, 24 tests, build, rollback archive, Nginx, 10 routes, exact identity across 48 files, and seven live Chrome locale/viewport checks pass. DNS remains deferred pending public-security filing.

@@ -1,5 +1,7 @@
 # Active Context（当前焦点）
 
+> 2026-07-31: Deployed fixed visual/content correction candidate `f043249`. The four real-product hero groups, uniform 16:9 representative projects, equal 4:3 home-news cards, source-aligned dates/full article images, and certificate enlargement are live. Rollback archive, Nginx, eight routes, exact local/remote dist identity, and 390/1440px live CDP checks pass. High-resolution certificate replacement remains pending stakeholder files.
+
 > 2026-07-31: Completed a local visual/content correction candidate without deployment. Certificates render without validity copy, load eagerly, and open in-page; ISO remains limited to the PDF's 405×566 bitmap and OSS force-download behavior may differ outside Chrome, so reliable replacement needs stakeholder-supplied high-resolution files. The homepage hero maps four real products to the requested groups, representative projects are uniform 16:9, and the home news section uses three equal editorial cards with taller 4:3 media, stable title/summary rhythm, and reading cues. Dates and article images remain source-aligned. Typecheck, 24 tests, build, and 390/1440px CDP checks pass.
 
 > 2026-07-30: Deployed fixed supplemental-content candidate `820c080`. Product, case, historical certificate, partner, and news updates are live; 25 new WebP objects plus one recovered legacy news image return HTTP 200. Rollback archive, Nginx, 10 routes, 48-file local/remote identity, and seven live Chrome locale/viewport checks pass. DNS remains deferred pending public-security filing.
@@ -81,11 +83,11 @@
 
 ## 当前焦点
 
-甲方第二轮视觉与内容修正已形成本地候选并通过验收，尚未提交或部署。域名解析按甲方要求等待公安备案完成；浩达工具地点仍待补充，因此暂不生成地图点。
+甲方第二轮视觉与内容修正固定候选 `f043249` 已提交、推送、部署并通过线上验收。证书高清源等待甲方后续提供；域名解析继续等待公安备案完成。
 
 ## 近期变更
 
-- 2026-07-31 视觉与内容修正候选：证书移除有效期、改为 eager 大图并支持页内放大，但 ISO 受 PDF 内嵌 405×566 位图及 OSS 跨浏览器交付限制，需甲方高清源文件彻底替换；首页轮播按四个产品板块叠加真实产品图，四个案例卡统一 16:9；首页精选新闻改为三张等权 16:9 编辑卡，新闻列表首图改为厂房图，日期与正文图片保持来源一致。类型检查、24 项测试、构建及 390/1440px CDP 验收通过，未部署。
+- 2026-07-31 视觉与内容修正生产发布：固定候选 `f043249` 已上线；首页四板块真实产品图、16:9 案例卡、三张等权 4:3 新闻卡、新闻日期/完整图片及证书放大通过线上验收。回滚包、Nginx、8 路由、本地/生产文件一致性及 390/1440px CDP 检查通过；证书高清源继续等待甲方提供。
 - 2026-07-30 补充资料生产发布：固定候选 `820c080` 已上线；产品四板块/大版头、浩达图片顺序、历史证书、四家合作公司和补充新闻均通过验收。25 张新 WebP 与 1 张恢复的旧新闻图可用，回滚包、Nginx、10 路由、48 文件一致性及 7 组在线 Chrome 三语/宽度检查通过。
 - 2026-07-27 #24 生产发布：固定候选 `9c6460d` 已上线；保留部署前回滚归档，Nginx、48 文件、20 组 Chrome 检查、三语、地图资源一致性及 39 组公开状态文案扫描通过。
 - 2026-07-27 公开状态标签收敛：地图改用中性“案例项目点”，行业直接声明占位，产品/合作/技术摘要/行业渲染器只为占位或待替换内容创建提醒；24 项测试、构建及 39 组三语路由全文扫描通过，未部署。
@@ -164,7 +166,7 @@
 
 ## 近期任务 Plan
 
-- `ai-memories/tasks/2026-07-31-stakeholder-visual-content-corrections.md`（本地候选完成；类型检查、24 测试、构建和浏览器验收通过，未提交/部署）
+- `ai-memories/tasks/2026-07-31-stakeholder-visual-content-corrections.md`（固定候选 `f043249` 已推送和部署；线上验收通过，证书高清源待后续替换）
 - `ai-memories/tasks/2026-07-30-stakeholder-supplemental-content.md`（候选 `820c080` 已部署；25 张新增 OSS 图片和 1 张旧新闻图可用，线上验收通过，域名解析延期）
 - `ai-memories/tasks/2026-07-27-public-placeholder-labels-only.md`（已随 #24 部署；正式内容不显示状态提醒，39 组三语路由扫描通过）
 - `ai-memories/tasks/2026-07-27-refined-case-world-map.md`（#24 已部署；类型检查、24 项测试、构建及 20 组线上浏览器检查通过）
