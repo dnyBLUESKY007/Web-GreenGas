@@ -7,35 +7,85 @@
   }
 
   &__track {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
-    flex-wrap: wrap;
+    max-width: 64rem;
+    margin-inline: auto;
+
+    @media (width < $breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
   }
 
   &__image,
   &__placeholder {
-    width: 8rem;
-    height: 11rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1190 / 1754;
     border-radius: $radius-sm;
     background-color: $color-bg;
     box-shadow: $shadow-sm;
-    padding: 0.5rem;
-
-    @media (width < $breakpoint-md) {
-      width: 6rem;
-      height: 8.5rem;
-    }
+    padding: 0.75rem;
   }
 
   &__image {
+    display: block;
     object-fit: contain;
+  }
+
+  &__preview {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+
+    &:focus-visible {
+      outline: 3px solid $color-accent;
+      outline-offset: 4px;
+    }
+  }
+
+  &__dialog {
+    width: min(92vw, 58rem);
+    max-height: 94vh;
+    padding: 3.5rem 1rem 1rem;
+    border: 0;
+    border-radius: $radius-md;
+    background: $color-bg;
+    box-shadow: $shadow-md;
+
+    &::backdrop {
+      background: rgb(0 0 0 / 72%);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-height: calc(94vh - 4.5rem);
+      object-fit: contain;
+    }
+  }
+
+  &__dialog-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    min-height: 2.5rem;
+    padding-inline: 1rem;
+    border: 1px solid $color-border;
+    border-radius: 999px;
+    background: $color-bg;
+    color: $color-text;
+    cursor: pointer;
   }
 
   &__placeholder {
@@ -52,19 +102,9 @@
   }
 
   &__name {
-    margin-top: 0.5rem;
-    font-size: 0.8125rem;
+    margin-top: 0.75rem;
+    font-size: 1rem;
     color: $color-text-muted;
-    text-align: center;
-  }
-
-  &__validity {
-    display: block;
-    max-width: 13rem;
-    margin-top: 0.35rem;
-    color: #8a5a13;
-    font-size: 0.75rem;
-    line-height: 1.45;
     text-align: center;
   }
 }

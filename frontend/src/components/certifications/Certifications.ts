@@ -33,12 +33,20 @@ export function createCertifications(): HTMLElement {
     caption.textContent = certificationName;
 
     if (cert.publicationStatus === 'approved') {
+      const preview = document.createElement('button');
+      preview.className = 'certifications__preview';
+      preview.type = 'button';
+      preview.setAttribute('aria-label', `${certificationName} — ${t('about.certifications.enlarge')}`);
+
       const img = document.createElement('img');
       img.className = 'certifications__image';
       img.src = cdnUrl(cert.imageCategory, cert.image);
       img.alt = certificationName;
-      img.loading = 'lazy';
-      card.appendChild(img);
+      img.loading = 'eager';
+      img.decoding = 'sync';
+      preview.appendChild(img);
+      preview.addEventListener('click', () => showCertificatePreview(img.src, certificationName));
+      card.appendChild(preview);
     } else {
       const pendingLabel = t('about.media.pending');
       const placeholder = document.createElement('div');
@@ -49,12 +57,6 @@ export function createCertifications(): HTMLElement {
       card.appendChild(placeholder);
     }
 
-    if (cert.validityStatus === 'historical') {
-      const validity = document.createElement('span');
-      validity.className = 'certifications__validity';
-      validity.innerHTML = `${t('home.certifications.historical')}<br><time datetime="${cert.validFrom}">${cert.validFrom}</time>–<time datetime="${cert.validUntil}">${cert.validUntil}</time>`;
-      caption.appendChild(validity);
-    }
     card.appendChild(caption);
     track.appendChild(card);
   }
@@ -63,4 +65,27 @@ export function createCertifications(): HTMLElement {
   section.appendChild(container);
 
   return section;
+}
+
+function showCertificatePreview(src: string, alt: string): void {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'certifications__dialog';
+
+  const close = document.createElement('button');
+  close.className = 'certifications__dialog-close';
+  close.type = 'button';
+  close.textContent = t('about.certifications.close');
+  close.addEventListener('click', () => dialog.close());
+
+  const image = document.createElement('img');
+  image.src = src;
+  image.alt = alt;
+
+  dialog.append(close, image);
+  dialog.addEventListener('click', ({ target }) => {
+    if (target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => dialog.remove());
+  document.body.appendChild(dialog);
+  dialog.showModal();
 }

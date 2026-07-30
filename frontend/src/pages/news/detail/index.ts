@@ -19,7 +19,8 @@ function formatNewsDate(isoDate: string): string {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(new Date(`${isoDate}T00:00:00`));
+    timeZone: 'UTC',
+  }).format(new Date(`${isoDate}T00:00:00Z`));
 }
 
 function renderNewsDetail(): void {

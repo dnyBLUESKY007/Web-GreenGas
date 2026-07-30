@@ -10,6 +10,8 @@ export interface HeroSlide {
   readonly ctaHref: string;
   readonly imageSrc: string;
   readonly imageAlt: string;
+  readonly productImageSrc?: string;
+  readonly productImageAlt?: string;
   readonly contentAlign?: HeroContentAlign;
   readonly overlayStyle?: HeroOverlayStyle;
 }
@@ -111,6 +113,16 @@ function createSlideElement(slide: HeroSlide, isActive: boolean): HTMLElement {
   imgFg.draggable = false;
 
   media.append(imgBg, imgFg);
+
+  if (slide.productImageSrc) {
+    const product = document.createElement('img');
+    product.className = 'hero-carousel__product';
+    product.src = slide.productImageSrc;
+    product.alt = slide.productImageAlt ?? '';
+    product.loading = isActive ? 'eager' : 'lazy';
+    product.draggable = false;
+    media.appendChild(product);
+  }
 
   const overlay = document.createElement('div');
   overlay.className = 'hero-carousel__overlay';

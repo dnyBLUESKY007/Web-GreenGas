@@ -69,7 +69,9 @@ test('About page preserves formal company content and evidence boundaries', asyn
   const certificationComponent = await read('src/components/certifications/Certifications.ts');
   assert.match(certificationComponent, /publicationStatus === 'approved'/);
   assert.match(certificationComponent, /cdnUrl\(cert\.imageCategory, cert\.image\)/);
-  assert.match(certificationComponent, /home\.certifications\.historical/);
+  assert.doesNotMatch(certificationComponent, /validFrom|validUntil|certifications__validity/);
+  assert.match(certificationComponent, /showCertificatePreview/);
+  assert.match(certificationComponent, /dialog\.showModal\(\)/);
   assert.match(certificationComponent, /about\.media\.pending/);
 
   const page = await read('src/pages/about/index.ts');
@@ -82,5 +84,6 @@ test('About page preserves formal company content and evidence boundaries', asyn
     const messages = JSON.parse(await read(`src/i18n/locales/${locale}.json`));
     assert.doesNotMatch(messages['meta.about.ogDescription'], /15\+|15 年|15-лет/);
     assert.doesNotMatch(messages['about.certifications.desc'], /pending|待替换|ожидают замены/i);
+    assert.doesNotMatch(messages['about.certifications.desc'], /validity|有效期|срок/i);
   }
 });

@@ -100,12 +100,6 @@
     flex-shrink: 0;
     overflow: hidden;
     background-color: $color-bg-muted;
-
-    @media (width >= $breakpoint-md) {
-      aspect-ratio: auto;
-      flex: 1;
-      min-height: 0;
-    }
   }
 
   &__image {

@@ -30,6 +30,14 @@ test('homepage follows the approved structured-content order and preserves place
   }
   assert.doesNotMatch(home, /renderSolutions|createCapabilityBand/);
   assert.match(home, /createClientLogos\(\{ showDestinationLink: true \}\)/);
+  assert.equal((home.match(/productImageSrc:/g) ?? []).length, 4);
+  for (const group of ['industrial_', 'central-host_', 'commercial-terminal_', 'custom_']) {
+    assert.match(home, new RegExp(`products_v2.*${group}`));
+  }
+
+  const heroCarousel = await read('src/components/hero-carousel/HeroCarousel.ts');
+  assert.match(heroCarousel, /productImageSrc/);
+  assert.match(heroCarousel, /hero-carousel__product/);
 
   const heroIntro = await read('src/components/hero-intro/HeroIntro.ts');
   assert.match(heroIntro, /companyData/);
@@ -41,7 +49,7 @@ test('homepage follows the approved structured-content order and preserves place
     ['src/components/industry-preview/IndustryPreview.ts', /industries\.json/, /industry\.status/, /industries\.status\.example/, /basePath\('\/industries\/'\)/],
     ['src/components/case-carousel/CaseCarousel.ts', /data\/projects/, /project\.status/, /basePath\('\/cases\/'\)/, /cases\/detail/],
     ['src/components/client-logos/ClientLogos.ts', /clients\.json/, /partnerGroup\.status/, /basePath\('\/about\/clients\/'\)/],
-    ['src/components/news-preview/NewsPreview.ts', /news\.json/, /\.filter\(\(article\) => article\.featured\)/, /basePath\('\/news\/'\)/, /news\/detail/],
+    ['src/components/news-preview/NewsPreview.ts', /news\.json/, /\.filter\(\(article\) => article\.featured\)/, /article\.featuredImage \?\? article\.images\[0\]/, /basePath\('\/news\/'\)/, /news\/detail/],
     ['src/components/service-strip/ServiceStrip.ts', /technical-support\.json/, /contentStatus/, /publicationStatus/, /basePath\('\/support\/'\)/],
     ['src/components/about-summary/AboutSummary.ts', /company\.json/, /renderContactChannels/, /createSummaryLink\('\/about\/'/, /createSummaryLink\('\/contact\/'/, /basePath\(path\)/],
   ];
@@ -58,8 +66,14 @@ test('homepage follows the approved structured-content order and preserves place
   assert.match(caseCarousel, /cases\.status\.example/);
   assert.doesNotMatch(caseCarousel, /cases\.status\.\$\{project\.status\}/);
 
+  const projects = JSON.parse(await read('src/data/projects.json'));
+  const netcare = projects.find(({ id }) => id === 'netcare-pinehaven-hospital');
+  assert.equal(netcare.featuredImage.filename, 'stakeholder-cases-2026/netcare-pinehaven-02.webp');
+
   const caseCarouselStyles = await read('src/styles/components/_case-carousel.scss');
   assert.match(caseCarouselStyles, /max-width: 100%/);
+  assert.match(caseCarouselStyles, /&__media \{\s*aspect-ratio: 16 \/ 9/);
+  assert.doesNotMatch(caseCarouselStyles, /&__media[\s\S]*?@media[\s\S]*?aspect-ratio: auto/);
   assert.doesNotMatch(caseCarouselStyles, /margin-inline-end:\s*calc\(-1/);
 
   const company = JSON.parse(await read('src/data/company.json'));
@@ -98,8 +112,10 @@ test('homepage additions are translated and responsive without clipping long cop
   assert.match(styles, /grid-template-columns: 1fr/);
   assert.match(styles, /width >= \$breakpoint-sm/);
   assert.match(styles, /width >= \$breakpoint-md/);
-  assert.match(styles, /width >= \$breakpoint-lg/);
   assert.match(styles, /overflow-wrap: anywhere/);
   assert.match(styles, /min-height: 2\.75rem/);
   assert.doesNotMatch(styles, /^\s*height:\s*\d/m);
+  assert.match(styles, /\.home-news-grid \{\s*grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /aspect-ratio: 4 \/ 3/);
+  assert.doesNotMatch(styles, /home-news-card--featured/);
 });

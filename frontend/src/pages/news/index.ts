@@ -18,12 +18,13 @@ const LOCALE_DATE_MAP: Record<Locale, string> = {
 let activeCategory: NewsCategory | 'all' = 'all';
 
 function formatNewsDate(isoDate: string): string {
-  const date = new Date(`${isoDate}T00:00:00`);
+  const date = new Date(`${isoDate}T00:00:00Z`);
 
   return new Intl.DateTimeFormat(LOCALE_DATE_MAP[getLocale()], {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   }).format(date);
 }
 
@@ -91,7 +92,7 @@ function createCategoryFilter(): HTMLElement {
 function createNewsCard(item: NewsArticle): HTMLElement {
   const article = document.createElement('article');
   article.className = 'news-card';
-  const image = item.images[0];
+  const image = item.featuredImage ?? item.images[0];
   const link = document.createElement('a');
   link.className = 'news-card__link';
   link.href = `${basePath('/news/detail/')}?id=${encodeURIComponent(item.id)}`;

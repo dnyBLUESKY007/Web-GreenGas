@@ -124,6 +124,7 @@ export interface Project {
   readonly result_zh?: string;
   readonly result_ru?: string;
   readonly images: readonly CaseImage[];
+  readonly featuredImage?: CaseImage;
   readonly relatedCaseIds: readonly string[];
 }
 
@@ -485,4 +486,5 @@ export interface NewsArticle {
   readonly paragraphs_zh: readonly string[];
   readonly paragraphs_ru: readonly string[];
   readonly images: readonly NewsImage[];
+  readonly featuredImage?: NewsImage;
 }

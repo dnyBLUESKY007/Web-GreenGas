@@ -10,7 +10,7 @@ export function getProjectById(id: string | null): Project | undefined {
 }
 
 export function getPrimaryProjectImage(project: Project): CaseImage {
-  const image = project.images[0];
+  const image = project.featuredImage ?? project.images[0];
   if (!image) {
     throw new Error(`Project "${project.id}" has no images`);
   }

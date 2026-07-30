@@ -28,21 +28,21 @@ export function createNewsPreview(): HTMLElement {
   const grid = document.createElement('div');
   grid.className = 'home-news-grid';
   const featuredArticles = newsArticles.filter((article) => article.featured);
-  for (const [index, article] of featuredArticles.entries()) {
-    grid.appendChild(createNewsCard(article, index === 0));
+  for (const article of featuredArticles) {
+    grid.appendChild(createNewsCard(article));
   }
   container.append(head, grid);
   section.appendChild(container);
   return section;
 }
 
-function createNewsCard(article: NewsArticle, featured: boolean): HTMLElement {
+function createNewsCard(article: NewsArticle): HTMLElement {
   const card = document.createElement('article');
-  card.className = `home-news-card${featured ? ' home-news-card--featured' : ''}`;
+  card.className = 'home-news-card';
   const link = document.createElement('a');
   link.className = 'home-news-card__link';
   link.href = `${basePath('/news/detail/')}?id=${encodeURIComponent(article.id)}`;
-  const imageData = article.images[0];
+  const imageData = article.featuredImage ?? article.images[0];
   const image = document.createElement('img');
   image.className = 'home-news-card__image';
   image.src = cdnUrl(imageData.category, imageData.filename);
@@ -54,7 +54,8 @@ function createNewsCard(article: NewsArticle, featured: boolean): HTMLElement {
   meta.className = 'home-news-card__meta';
   const date = new Intl.DateTimeFormat(localeDates[getLocale()], {
     year: 'numeric', month: 'short', day: 'numeric',
-  }).format(new Date(`${article.date}T00:00:00`));
+    timeZone: 'UTC',
+  }).format(new Date(`${article.date}T00:00:00Z`));
   meta.textContent = `${date} · ${t(`news.category.${article.category}`)}`;
   const title = document.createElement('h3');
   title.className = 'home-news-card__title';
@@ -62,7 +63,10 @@ function createNewsCard(article: NewsArticle, featured: boolean): HTMLElement {
   const excerpt = document.createElement('p');
   excerpt.className = 'home-news-card__excerpt';
   excerpt.textContent = td(article, 'excerpt');
-  body.append(meta, title, excerpt);
+  const readMore = document.createElement('span');
+  readMore.className = 'home-news-card__more';
+  readMore.textContent = `${t('news.readMore')} →`;
+  body.append(meta, title, excerpt, readMore);
   link.append(image, body);
   card.appendChild(link);
   return card;

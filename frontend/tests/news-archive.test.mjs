@@ -141,6 +141,10 @@ test('news archive preserves official records and homepage-ready featured data',
     assert.deepEqual(images.map(({ filename }) => filename), filenames, `${id}: image order`);
     assert.ok(images.every(({ category }) => category === 'news-0730'), `${id}: image category`);
   }
+  assert.equal(
+    getArticle(articles, 'company-team-building-2025').featuredImage.filename,
+    'team-building-2025-01.webp',
+  );
 
   const expectedOriginalPaths = {
     'crh-2021-01.webp': '0730/新闻照片/CRH 2021 (2).jpg',
@@ -181,7 +185,7 @@ test('news list and generic detail expose required behavior', async () => {
   }
   assert.match(listPage, /td\(item, 'title'\)/);
   assert.match(listPage, /td\(item, 'excerpt'\)/);
-  assert.match(listPage, /item\.images\[0\]/);
+  assert.match(listPage, /item\.featuredImage \?\? item\.images\[0\]/);
   assert.match(listPage, /basePath\('\/news\/detail\/'\)/);
   assert.match(listPage, /encodeURIComponent\(item\.id\)/);
   assert.match(listPage, /\['all', 'company', 'industry'\]/);
@@ -192,6 +196,11 @@ test('news list and generic detail expose required behavior', async () => {
   assert.match(detailPage, /news\.notFound\.title/);
   assert.match(detailPage, /news\.notFound\.desc/);
 
-  assert.match(styles, /@media \(width >= \$breakpoint-md\)/);
-  assert.match(styles, /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(listPage, /timeZone: 'UTC'/);
+  assert.match(detailPage, /timeZone: 'UTC'/);
+  assert.match(styles, /max-width: 44rem/);
+  assert.match(styles, /height: auto/);
+  assert.match(styles, /object-fit: contain/);
+  assert.doesNotMatch(styles, /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.doesNotMatch(styles, /&__link \{\s*display: block/);
 });
