@@ -1,6 +1,6 @@
 # Active Context（当前焦点）
 
-> 2026-07-31: Completed and locally verified the approved navigation/content cleanup. The left brand remains typographically stable from 390–2000px; Chinese navigation appears from 1024px at full size, while English and Russian appear from 1080px and 1152px with fluid 14–17px labels. Representative projects render in complete reverse order, stakeholder-supplied ISO/CE images replace certificate and news assets through a new OSS prefix, and the cancelled EmailJS message area is removed from Contact. Typecheck, 24 tests, root/subpath builds, OSS checks, and responsive Chrome checks pass. Production deployment has not occurred.
+> 2026-07-31: Deployed and accepted fixed candidate `5935b84` for the navigation/content cleanup. The stable left brand, locale-aware fluid desktop navigation, reversed projects, 0731 ISO/CE assets, and Contact form removal are live. Typecheck, 24 tests, build, rollback archive, Nginx, eight public routes, exact local/remote dist identity, OSS checks, and live Chrome checks pass.
 
 > 2026-07-31: Deployed fixed visual/content correction candidate `f043249`. The four real-product hero groups, uniform 16:9 representative projects, equal 4:3 home-news cards, source-aligned dates/full article images, and certificate enlargement are live. Rollback archive, Nginx, eight routes, exact local/remote dist identity, and 390/1440px live CDP checks pass. High-resolution certificate replacement remains pending stakeholder files.
 
@@ -85,11 +85,11 @@
 
 ## 当前焦点
 
-甲方新增导航、案例顺序、高清证书与 Contact 清理已完成本地实现，等待本地排版确认；生产环境仍为固定候选 `f043249`。域名解析继续等待公安备案完成。
+甲方新增导航、案例顺序、高清证书与 Contact 清理固定候选 `5935b84` 已提交、推送、部署并通过线上验收。域名解析继续等待公安备案完成。
 
 ## 近期变更
 
-- 2026-07-31 导航与内容清理：左侧品牌在 390–2000px 保持字号和间距稳定；中文导航从 1024px 以完整字号显示，英文和俄文分别从 1080px、1152px 显示并在 14–17px 间平滑变化。代表性项目完整反序；0731 高清 ISO/CE 已转换并上传 OSS，证书页和相关新闻统一替换；甲方取消的 Contact 留言模块及 EmailJS 计划已删除。未部署生产。
+- 2026-07-31 导航与内容清理生产发布：固定候选 `5935b84` 已上线；稳定品牌排版、三语差异化导航断点与流式字号、代表性项目反序、0731 高清证书及 Contact 表单删除通过验收。回滚包、Nginx、8 路由、OSS、本地/生产产物一致性及在线 Chrome 检查通过。
 - 2026-07-31 视觉与内容修正生产发布：固定候选 `f043249` 已上线；首页四板块真实产品图、16:9 案例卡、三张等权 4:3 新闻卡、新闻日期/完整图片及证书放大通过线上验收。回滚包、Nginx、8 路由、本地/生产文件一致性及 390/1440px CDP 检查通过；证书高清源继续等待甲方提供。
 - 2026-07-30 补充资料生产发布：固定候选 `820c080` 已上线；产品四板块/大版头、浩达图片顺序、历史证书、四家合作公司和补充新闻均通过验收。25 张新 WebP 与 1 张恢复的旧新闻图可用，回滚包、Nginx、10 路由、48 文件一致性及 7 组在线 Chrome 三语/宽度检查通过。
 - 2026-07-27 #24 生产发布：固定候选 `9c6460d` 已上线；保留部署前回滚归档，Nginx、48 文件、20 组 Chrome 检查、三语、地图资源一致性及 39 组公开状态文案扫描通过。
