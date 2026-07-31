@@ -29,7 +29,7 @@
 : Company and industry news migrated from approved GREENGAS sources and displayed as categorized list and detail content.
 
 **Contact Page（联系我们）**
-: The combined FAQ and contact destination. FAQ appears before contact information and the message form.
+: The combined FAQ and contact destination. FAQ appears before approved direct contact information; the stakeholder cancelled the online message form on 2026-07-31.
 
 ## Content Status
 

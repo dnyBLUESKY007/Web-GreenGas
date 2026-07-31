@@ -6,7 +6,7 @@ The current About Us content is shorter than the approved company description an
 
 ## Solution
 
-Rebuild About Us around the approved four-paragraph company description and supporting company evidence. Merge FAQ into Contact Us with FAQ first, then direct contact information and the existing message area. Preserve the old FAQ URL through a compatibility redirect, and track all unconfirmed contact fields as Pending Replacement.
+Rebuild About Us around the approved four-paragraph company description and supporting company evidence. Merge FAQ into Contact Us with FAQ first, followed by direct contact information. Preserve the old FAQ URL through a compatibility redirect, and track all unconfirmed contact fields as Pending Replacement.
 
 ## Functional Requirements
 
@@ -33,7 +33,7 @@ Rebuild About Us around the approved four-paragraph company description and supp
 - Display approved contact channels grouped clearly by type.
 - Support phone, landline, email, address, WeChat, WhatsApp, working hours, and after-sales contact when supplied and approved.
 - Do not infer missing channels from competitor websites.
-- Keep the message form presentation, but do not claim successful delivery until EmailJS is configured.
+- Do not display an online message form; the stakeholder cancelled this functionality on 2026-07-31.
 - Link the legacy FAQ destination to the FAQ section on this page.
 
 ## Content Rules
@@ -51,7 +51,7 @@ Rebuild About Us around the approved four-paragraph company description and supp
 - Contact Us displays all six supplied FAQ items before contact information.
 - FAQ interaction is keyboard usable and exposes expanded state accessibly if collapsible.
 - Contact channels use approved values and Pending Replacement is tracked for missing values.
-- The form does not falsely report that a message has been delivered.
+- Contact Us contains no online message form or delivery claim.
 - The legacy FAQ URL reaches the FAQ section.
 - Pages remain usable at all representative widths and in all three languages.
 - The production build passes.
@@ -60,11 +60,9 @@ Rebuild About Us around the approved four-paragraph company description and supp
 
 - The material inventory identifies approved company, certificate, and contact assets.
 - Global route work supplies the Contact Us anchor and legacy redirect.
-- EmailJS integration is a separate credential-blocked ticket.
 
 ## Out of Scope
 
 - Verifying the validity or current status of ISO certificates as part of this requirement set.
 - Creating new certification claims.
-- EmailJS account creation or credential provisioning.
 - A server-side contact backend.

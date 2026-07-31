@@ -57,19 +57,16 @@ test('contact page only exposes approved channels', async () => {
   assert.match(contactConfig, /channel\.status === 'approved'/);
 });
 
-test('contact page exposes FAQ before an honestly disabled message form', async () => {
+test('contact page exposes FAQ and approved channels without a message form', async () => {
   const contactPage = await read('src/pages/contact/index.ts');
   assert.match(contactPage, /main\.replaceChildren\(header, faqSection, contactSection\)/);
   assert.match(contactPage, /location\.hash === '#faq'/);
   assert.match(contactPage, /faqSection\.scrollIntoView\(\)/);
-
-  const form = await read('src/components/contact-form/ContactForm.ts');
-  assert.match(form, /disabled aria-disabled="true"/);
-  assert.doesNotMatch(form, /addEventListener\('submit'|alert\(/);
+  assert.doesNotMatch(contactPage, /ContactForm|formMount|createContactForm/);
+  assert.match(contactPage, /contactLayout\.appendChild\(channelsMount\)/);
 
   for (const locale of ['en', 'zh', 'ru']) {
     const messages = JSON.parse(await read(`src/i18n/locales/${locale}.json`));
-    assert.match(messages['form.note'], /EmailJS/i);
-    assert.ok(messages['form.unavailable']);
+    assert.equal(Object.keys(messages).some((key) => key.startsWith('form.')), false);
   }
 });

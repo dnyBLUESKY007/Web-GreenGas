@@ -58,7 +58,7 @@ All public content must carry an explicit status. Verified Content may be presen
 - Provide Case Center as a layered world map, filterable list, and reusable generic case-detail page.
 - Represent geography at an honest precision. A country- or province-level point must not imply an unverified city or site.
 - Host approved public technical files in OSS and keep their metadata and URLs in structured website data.
-- Keep EmailJS delivery as a separate credential-blocked ticket. It is not required for this release; until configured, the form must not claim successful delivery.
+- Do not include an online message form; the stakeholder cancelled EmailJS delivery on 2026-07-31. Keep approved direct contact channels.
 - Complete implementation slices without automatically deploying them. All implementation issues included in this release must pass the production build and their page-behavior checks before a release-candidate ticket can be created. Deploy only through a separately approved release ticket.
 - Record daily progress, remaining requirements, placeholders, and requested source material throughout implementation.
 
@@ -84,7 +84,6 @@ All public content must carry an explicit status. Verified Content may be presen
 - Publishing archive files solely because they exist in a supplied archive.
 - Exact project coordinates where only a country or region is known.
 - Automatic production deployment from each implementation issue.
-- EmailJS credential creation or account administration.
 
 ## Further Notes
 

@@ -127,5 +127,4 @@ OSS 命令行上传使用青岛 Endpoint `https://oss-cn-qingdao.aliyuncs.com`�
 ## 外部依赖 / 集成
 
 - **阿里云 OSS**：图片 CDN（`web-greengas.oss-cn-qingdao.aliyuncs.com`）
-- **EmailJS**（预留）：无服务器联系表单
 - **高德地图 JS API 2.0**（待做，见 issue-0001）：Contact 页地址展示

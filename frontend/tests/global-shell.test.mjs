@@ -65,14 +65,24 @@ test('global shell exposes the approved navigation, title, and legacy routes', a
   const navbarStyles = await read('src/styles/components/_navbar.scss');
   assert.match(navbarStyles, /font-size: 1\.0625rem/);
   assert.match(navbarStyles, /width: calc\(100% - 2rem\)/);
-  assert.equal(navbarStyles.match(/width >= \$breakpoint-nav-desktop/g)?.length, 2);
+  assert.equal(navbarStyles.match(/\.navbar__brand-zh\s*{\s*display: none;/g)?.length, 1);
+  assert.match(navbarStyles, /@media \(width < 23rem\)/);
+  assert.match(navbarStyles, /:root\[lang='en'\],[\s\S]*:root\[lang='ru'\]/);
+  assert.match(navbarStyles, /font-size: clamp\(0\.875rem, calc\(0\.5rem \+ 0\.5vw\), 1\.0625rem\)/);
+  assert.match(navbarStyles, /&__brand\s*{[\s\S]*?gap: 0\.5rem;[\s\S]*?font-size: 1\.125rem;/);
+  assert.match(navbarStyles, /&__brand-zh\s*{\s*font-size: 0\.875em;/);
+  assert.match(navbarStyles, /width >= \$breakpoint-nav-zh/);
+  assert.match(navbarStyles, /width >= \$breakpoint-nav-en/);
+  assert.match(navbarStyles, /width >= \$breakpoint-nav-ru/);
   assert.match(
     navbarStyles,
     /\.navbar__action-button--menu,\s*\.navbar__action-button--top\s*{\s*display: none;/,
   );
 
   const styleVariables = await read('src/styles/base/_variables.scss');
-  assert.match(styleVariables, /\$breakpoint-nav-desktop: 84rem/);
+  assert.match(styleVariables, /\$breakpoint-nav-zh: 64rem/);
+  assert.match(styleVariables, /\$breakpoint-nav-en: 67\.5rem/);
+  assert.match(styleVariables, /\$breakpoint-nav-ru: 72rem/);
 
   const pageMeta = await read('src/config/pageMeta.ts');
   assert.match(pageMeta, new RegExp(`const BRAND_TITLE = ['\"]${BRAND_TITLE}['\"]`));

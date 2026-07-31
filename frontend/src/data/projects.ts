@@ -1,7 +1,7 @@
 import projectsData from '@/data/projects.json';
 import type { CaseImage, Project } from '@/types';
 
-export const projects = projectsData as readonly Project[];
+export const projects = [...(projectsData as readonly Project[])].reverse();
 
 const projectsById = new Map(projects.map((project) => [project.id, project]));
 

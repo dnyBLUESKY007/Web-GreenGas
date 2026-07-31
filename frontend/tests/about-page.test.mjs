@@ -51,6 +51,13 @@ test('About page preserves formal company content and evidence boundaries', asyn
   const certifications = JSON.parse(await read('src/data/certifications.json'));
   const imageResources = JSON.parse(await read('src/data/image-resources.json'));
   assert.deepEqual(
+    certifications.map(({ imageCategory, image }) => ({ imageCategory, image })),
+    [
+      { imageCategory: 'certifications-0731', image: 'iso9001.webp' },
+      { imageCategory: 'certifications-0731', image: 'ce.webp' },
+    ],
+  );
+  assert.deepEqual(
     certifications.map(({ id, publicationStatus, validityStatus, validUntil }) => ({
       id,
       publicationStatus,

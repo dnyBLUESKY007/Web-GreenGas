@@ -15,4 +15,4 @@ The following fields remain unconfirmed and must not be published until the stak
 - Dedicated after-sales phone or email
 - Whether the existing channels should be available in additional locales
 
-EmailJS service, template, and public client configuration are tracked separately by GitHub #17. Until that integration is configured, the message form remains visible but cannot send.
+The stakeholder cancelled the EmailJS message feature on 2026-07-31. The Contact page now exposes only FAQ and approved direct channels; no form credentials or message-delivery integration are required.

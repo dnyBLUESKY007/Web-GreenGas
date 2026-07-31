@@ -10,14 +10,17 @@ async function read(relativePath) {
 
 test('case center provides sourced filterable cases and a recoverable generic detail', async () => {
   const projects = JSON.parse(await read('src/data/projects.json'));
-  const projectIds = new Set(projects.map(({ id }) => id));
+  const projectModule = await read('src/data/projects.ts');
+  const orderedProjectIds = projects.map(({ id }) => id).reverse();
+  const projectIds = new Set(orderedProjectIds);
+  assert.match(projectModule, /\.reverse\(\)/);
   assert.deepEqual(
-    [...projectIds],
+    orderedProjectIds,
     [
-      'haoda-tools-hvac',
-      'netcare-pinehaven-hospital',
-      'mauritania-parliament-hvac',
       'brisbane-airport-air-handling',
+      'mauritania-parliament-hvac',
+      'netcare-pinehaven-hospital',
+      'haoda-tools-hvac',
     ],
   );
   assert.equal(projectIds.size, projects.length, 'project IDs must be unique');

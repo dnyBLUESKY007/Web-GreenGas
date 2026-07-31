@@ -1,5 +1,4 @@
 import '@/styles/main.scss';
-import { createContactForm } from '@/components/contact-form/ContactForm';
 import { createSectionTitle } from '@/components/section-title/SectionTitle';
 import { setPageHeaderBackground } from '@/config/assets';
 import { t } from '@/i18n';
@@ -51,10 +50,7 @@ function renderContactPage(): void {
   const channelsMount = document.createElement('div');
   channelsMount.id = 'contact-channels';
 
-  const formMount = document.createElement('div');
-  formMount.appendChild(createContactForm());
-
-  contactLayout.append(channelsMount, formMount);
+  contactLayout.appendChild(channelsMount);
   contactContainer.appendChild(contactLayout);
   contactSection.appendChild(contactContainer);
 

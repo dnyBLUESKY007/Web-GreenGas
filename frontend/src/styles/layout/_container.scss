@@ -159,8 +159,6 @@
 }
 
 .contact-layout {
-  display: grid;
-  gap: 2.5rem;
   width: min(100%, 52rem);
   margin-inline: auto;
 }
@@ -177,9 +175,5 @@
   .page-header,
   .page-header--has-bg {
     padding-block: 2.75rem 2rem;
-  }
-
-  .contact-layout {
-    gap: 2rem;
   }
 }

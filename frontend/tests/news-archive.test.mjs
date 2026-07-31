@@ -122,6 +122,20 @@ test('news archive preserves official records and homepage-ready featured data',
   }
 
   assert.equal(getArticle(articles, 'iso9001-certification').paragraphs_zh.length, 4);
+  assert.deepEqual(getArticle(articles, 'iso9001-certification').images[0], {
+    category: 'certifications-0731',
+    filename: 'iso9001.webp',
+    alt: 'ISO 9001 certificate',
+    alt_zh: 'ISO 9001 认证证书',
+    alt_ru: 'Сертификат ISO 9001',
+  });
+  assert.deepEqual(getArticle(articles, 'ce-certification').images[0], {
+    category: 'certifications-0731',
+    filename: 'ce.webp',
+    alt: 'CE certificate',
+    alt_zh: 'CE 认证证书',
+    alt_ru: 'Сертификат CE',
+  });
   assert.equal(getArticle(articles, 'meltblown-fabric-workshop-delivery').paragraphs_zh.length, 3);
   assert.match(getArticle(articles, 'company-team-building-2025').paragraphs_zh.join(''), /拔河、反应大挑战、乒乓球PK赛/);
   assert.match(getArticle(articles, 'employee-health-check-2021').paragraphs_zh[0], /切实维护员工身心健康/);
